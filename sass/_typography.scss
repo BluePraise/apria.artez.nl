@@ -1,0 +1,127 @@
+// Basic font definitions
+
+@mixin font-text {
+	font: normal 18px/21px $fontCrimsonStack;
+	-ms-font-kerning: auto;
+	font-kerning: auto;
+}
+
+@mixin font-text-large {
+	font: normal 30px/32px $fontCrimsonStack;
+}
+
+@mixin font-article-title {
+	font: normal 55px/50px $fontCrimsonStack;
+	font-weight: bold;
+
+	@include breakpoint($breakpointMobile) {
+		font-size: 40px;
+		line-height: 38px;
+	}
+}
+
+@mixin font-article-subtitle {
+	font: normal 55px/50px $fontCrimsonStack;
+	font-style: italic;
+
+	@include breakpoint($breakpointMobile) {
+		font-size: 40px;
+		line-height: 38px;
+	}
+}
+
+@mixin font-opencall-subtitle {
+	font: normal 30px/30px $fontCrimsonStack;
+}
+
+@mixin font-home-intro {
+	font: bold 30px/34px $fontCrimsonStack;
+}
+
+@mixin font-preview-title {
+	font: bold 30px/30px $fontCrimsonStack;
+}
+
+@mixin font-preview-subtitle {
+	font: bold 30px/30px $fontCrimsonStack;
+	font-style: italic;
+}
+
+@mixin font-site-title {
+	font: bold 30px/26px $fontCrimsonStack;
+
+	@include breakpoint($breakpointMobile) {
+		font-size: 17px;
+		line-height: 17px;
+	}
+}
+
+@mixin font-sidebar-title {
+	font: bold 30px/30px $fontCrimsonStack;
+}
+
+@mixin font-preview-title-issue {
+	font: bold 26px/23px $fontCrimsonStack;
+}
+
+@mixin font-preview-subtitle-issue {
+	font: normal 26px/23px $fontCrimsonStack;
+	font-style: italic;
+}
+
+@mixin font-issue-preview-text {
+	font: normal 16px/17px $fontCrimsonStack;
+}
+
+@mixin font-article-metainfo {
+	font: normal 12px/14px $fontAhamonoStack;
+}
+
+@mixin font-result-info {
+	font: normal 12px/14px $fontAhamonoStack;
+}
+
+@mixin font-bio-name {
+	font: normal 12px/14px $fontAhamonoStack;
+}
+
+@mixin font-menu {
+	font: normal 12px/14px $fontAhamonoStack;
+}
+
+@mixin font-caption {
+	font: normal 12px/14px $fontAhamonoStack;
+}
+
+@mixin font-filter {
+	font: normal 12px/14px $fontAhamonoStack;
+}
+
+@mixin font-preview-text {
+	font: normal 13px/17px $fontAhamonoStack;
+}
+
+@mixin font-bio-text {
+	font: normal 13px/17px $fontAhamonoStack;
+}
+
+@mixin font-sidebar-text {
+	font: normal 13px/17px $fontAhamonoStack;
+}
+
+@mixin font-tooltip {
+	font: normal 13px/14px $fontAhamonoStack;
+}
+
+@mixin font-result-text {
+	font: normal 13px/17px $fontAhamonoStack;
+}
+
+@mixin font-footer {
+	font: normal 10px/12px $fontAhamonoStack;
+}
+
+@mixin font-icon {
+	font-family: $fontIconsStack;
+	line-height: 1;
+}
