@@ -19,7 +19,7 @@
 
 
 // @import "breakpoint";
-@import "susy";
+// @import "susy";
 @import "_reset";
 @import "_clearfix";
 @import "_colors";
@@ -62,7 +62,7 @@ $breakpointTablet: max-width 1024px;
 
 @mixin clickable {
 	cursor: pointer;
-	@include user-select(none);
+	// @include user-select(none);
 }
 
 @mixin custom-bullet($bulletText: ">", $indentWidth: 20px) {
