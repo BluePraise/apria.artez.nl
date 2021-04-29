@@ -92,5 +92,11 @@ defined('ABSPATH') || exit;
 			of the Arts
 		</div>
 
+		<div class="logo-container">
+			<a href="<?php echo esc_url(home_url()); ?>" class="logo" style="background-color: #000000">
+				<svg class="apria_logo"></svg>
+			</a>
+		</div>
+
 	</div>
 </header>
