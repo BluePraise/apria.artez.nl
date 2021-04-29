@@ -69,6 +69,11 @@ function apria_change_nav_menu_items($items, $args)
 		$items .= '<li class="menu-item">';
 		$items .= get_search_form(false);
 		$items .= "</li>";
+
+		// Parazine Link
+		$items .= "<li class=\"menu-item menu-item__spaced hide-on-desktop\">
+					<a href=\"https://periodical.networkcultures.org/\">PARAZINE</a>
+				</li>";
 	}
 
 	return $items;
