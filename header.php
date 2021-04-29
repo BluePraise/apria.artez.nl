@@ -23,7 +23,7 @@ defined('ABSPATH') || exit;
 <body <?php body_class(); ?>>
 <?php do_action('wp_body_open'); ?>
 
-<header style="position: relative !important; top: unset !important;">
+<header>
 	<div class="main-column">
 		<div class="menu">
 			<!-- Here will be the Main menu -->
@@ -47,7 +47,7 @@ defined('ABSPATH') || exit;
 
 			<?php
 
-			// Getting Menus Locations
+			// Getting Menus Locations (Functionality for Open Call Button)
 			$menus_locations = get_nav_menu_locations();
 
 			// Checking header_menu location
@@ -82,7 +82,7 @@ defined('ABSPATH') || exit;
 					<?php endif; ?>
 				<?php endif; ?>
 			<?php endif; ?>
-		</div>
+		</div> <!-- .menu -->
 
 
 		<div class="site-title hide-on-desktop clickable-block" data-href="<?php echo esc_url(home_url()); ?>">
@@ -118,19 +118,92 @@ defined('ABSPATH') || exit;
 			<li class="socialmedia-item">
 				<a href="https://www.youtube.com/channel/UCzeADbgeHInL4Rr1A6CofGw">
 					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_youtube.svg"); ?>"
-						 alt="<?php _e("Facebook Icon", THEME_NAME) ?>">
+						 alt="<?php _e("Youtube Icon", THEME_NAME) ?>">
 				</a>
 			</li>
 
 			<li class="socialmedia-item">
 				<a href="https://www.instagram.com/apria_journal_and_platform/">
 					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_instagram.svg"); ?>"
-						 alt="<?php _e("Facebook Icon", THEME_NAME) ?>">
+						 alt="<?php _e("Instagram Icon", THEME_NAME) ?>">
 				</a>
 			</li>
 		</ul>
 
 		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">⠇</div>
 
-	</div>
+	</div> <!-- .main-column -->
+
+	<div class="sidebar-column">
+		<?php
+
+		// Getting number of published News
+		$published_news = wp_count_posts("news");
+		$published_news = $published_news->publish;
+
+		if ($published_news) : ?>
+			<div class="site-title site-title--news clickable-block" data-href="{$homeUrl}">
+				<img src="<?php echo esc_url(get_template_directory_uri() . "/elements/news.svg"); ?>"
+					 width="100"
+					 alt="<?php _e("News", THEME_NAME) ?>">
+			</div>
+		<?php else: ?>
+			<div class="site-title clickable-block" data-href="<?php echo esc_url(home_url()); ?>">
+				ArtEZ Platform<br>
+				for Research<br>
+				Interventions<br>
+				of the Arts
+			</div>
+		<?php endif; ?>
+
+		<?php
+
+		// Checking header_menu location (Functionality for Open Call Button)
+		if (isset($menus_locations['header_menu'])) :
+
+			// Getting Menu Object from Location
+			$menu_object = wp_get_nav_menu_object($menus_locations['header_menu']);
+
+			// Header Menu Additional Fields
+			$open_call_parameters = get_field("open_call_parameters", $menu_object);
+
+			// Checking if we need to show Open Call Button
+			if ($open_call_parameters['show_open_call_button']) :
+
+				// Getting Link Parameters
+				$open_call_btn_link = $open_call_parameters['open_call_button_link'];
+
+				// Checking if Button link is set
+				if ($open_call_btn_link) :
+
+					$open_call_btn_link_url = $open_call_btn_link['url'];
+					$open_call_btn_link_title = $open_call_btn_link['title'];
+					$open_call_btn_link_target = $open_call_btn_link['target'] ? $open_call_btn_link['target'] : '_self';
+
+					?>
+
+					<a href="<?php echo esc_url($open_call_btn_link_url); ?>"
+					   target="<?php echo esc_attr($open_call_btn_link_target); ?>"
+					   title="<?php echo esc_attr($open_call_btn_link_title); ?>"
+					   class="sidebar__open-call js-open-as-overlay"></a>
+
+				<?php endif; ?>
+			<?php endif; ?>
+		<?php endif; ?>
+
+		<div class="picture-text-toggle js-picture-text-toggle">
+			<div class="toggle-outer">
+				<div class="toggle-inner"></div>
+			</div>
+			<div class="toogle-tooltip">
+				<span class="switch-to-picture">
+					<?php _e("Switch to Image View", THEME_NAME); ?>
+				</span>
+				<span class="switch-to-text">
+					<?php _e("Switch to Text View", THEME_NAME); ?>
+				</span>
+			</div>
+		</div>
+	</div> <!-- .sidebar-column -->
+
 </header>
