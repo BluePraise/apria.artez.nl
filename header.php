@@ -98,5 +98,39 @@ defined('ABSPATH') || exit;
 			</a>
 		</div>
 
+		<div class="additional-links hide-on-mobile">
+			<ul class="additional-links__list">
+				<li class="additional-links__item">
+					<a href="https://periodical.networkcultures.org/">PARAZINE</a>
+				</li>
+			</ul>
+		</div>
+
+		<!-- ------------------------------------------ -->
+		<ul class="socialmedia-items">
+			<li class="socialmedia-item">
+				<a href="https://www.facebook.com/APRIAjournalandplatform/">
+					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_facebook.svg"); ?>"
+						 alt="<?php _e("Facebook Icon", THEME_NAME) ?>">
+				</a>
+			</li>
+
+			<li class="socialmedia-item">
+				<a href="https://www.youtube.com/channel/UCzeADbgeHInL4Rr1A6CofGw">
+					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_youtube.svg"); ?>"
+						 alt="<?php _e("Facebook Icon", THEME_NAME) ?>">
+				</a>
+			</li>
+
+			<li class="socialmedia-item">
+				<a href="https://www.instagram.com/apria_journal_and_platform/">
+					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_instagram.svg"); ?>"
+						 alt="<?php _e("Facebook Icon", THEME_NAME) ?>">
+				</a>
+			</li>
+		</ul>
+
+		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">⠇</div>
+
 	</div>
 </header>
