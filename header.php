@@ -85,11 +85,10 @@ defined('ABSPATH') || exit;
 		</div> <!-- .menu -->
 
 
-		<div class="site-title hide-on-desktop clickable-block" data-href="<?php echo esc_url(home_url()); ?>">
-			ArtEZ Platform<br>
-			for Research<br>
-			Interventions<br>
-			of the Arts
+		<div class="site-title hide-on-desktop clickable-block" data-href="<?php echo esc_url(home_url()); ?>"
+			 style="max-width: 25%;"
+		>
+			<?php echo esc_html(get_bloginfo()); ?>
 		</div>
 
 		<div class="logo-container">
@@ -142,17 +141,16 @@ defined('ABSPATH') || exit;
 		$published_news = $published_news->publish;
 
 		if ($published_news) : ?>
-			<div class="site-title site-title--news clickable-block" data-href="{$homeUrl}">
+			<div class="site-title site-title--news clickable-block" data-href="<?php echo esc_url(home_url()); ?>">
 				<img src="<?php echo esc_url(get_template_directory_uri() . "/elements/news.svg"); ?>"
 					 width="100"
 					 alt="<?php _e("News", THEME_NAME) ?>">
 			</div>
 		<?php else: ?>
-			<div class="site-title clickable-block" data-href="<?php echo esc_url(home_url()); ?>">
-				ArtEZ Platform<br>
-				for Research<br>
-				Interventions<br>
-				of the Arts
+			<div class="site-title clickable-block" data-href="<?php echo esc_url(home_url()); ?>"
+				 style="max-width: 55%;"
+			>
+				<?php echo esc_html(get_bloginfo()); ?>
 			</div>
 		<?php endif; ?>
 
