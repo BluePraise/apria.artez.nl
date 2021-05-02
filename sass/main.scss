@@ -16,9 +16,7 @@
   Changes to these files are PROHIBITED due to license restrictions.
 */
 
-
-
-// @import "breakpoint";
+@import "legacy/breakpoint-sass/breakpoint";
 @import "susy";
 @import "_reset";
 @import "_clearfix";
@@ -26,7 +24,7 @@
 @import "_fonts";
 @import "_typography";
 @import "_grid";
-@import "compass/css3/";
+// @import "compass/css3/";
 
 // Variables
 $widthAsideColumn: 344px;
@@ -96,11 +94,11 @@ a {
 }
 
 html {
-	-webkit-font-smoothing: antialiased;	// Fixes the issue that webfonts appear bolder on dark backgrounds in Chrome & Safari
+	-webkit-font-smoothing: antialiased; // Fixes the issue that webfonts appear bolder on dark backgrounds in Chrome & Safari
 	-moz-osx-font-smoothing: grayscale;
 	overflow-y: scroll;
 	word-wrap: break-word;
-	-webkit-text-size-adjust: 100%;			// Disable auto-resizing but keep zoom on desktop
+	-webkit-text-size-adjust: 100%; // Disable auto-resizing but keep zoom on desktop
 	box-sizing: border-box;
 	background-color: $colorRose;
 
@@ -109,7 +107,9 @@ html {
 	}
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
 	box-sizing: inherit;
 }
 
@@ -118,7 +118,7 @@ body {
 	position: relative;
 }
 
-strong{
+strong {
 	font-weight: bold;
 }
 
@@ -197,11 +197,11 @@ strong{
 	}
 }
 
-.affix-placeholder{
+.affix-placeholder {
 	position: relative;
 }
 
-.affix-content{
+.affix-content {
 	position: absolute;
 	left: 0;
 	padding-left: 26px;
@@ -249,9 +249,9 @@ header {
 	}
 
 	.header-fixed.header-open & {
-		-webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
-		-moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
-		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
+		-webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
 		margin-top: 139px;
 	}
 }
@@ -275,12 +275,11 @@ header {
 	}
 
 	.header-fixed.header-open & {
-		opacity: 1
+		opacity: 1;
 	}
 }
 
 .menu-item {
-
 	.menu-item + & {
 		margin-top: 7px;
 	}
@@ -346,11 +345,9 @@ header {
 			background-color: $colorHighlight;
 		}
 	}
-
 }
 
 .form__label {
-
 	.search-form & {
 		left: 0;
 		position: absolute;
@@ -412,16 +409,13 @@ header {
 }
 
 @include breakpoint($breakpointTablet) {
-
 	.logo {
-
 		.logo-fixed &,
 		#overlay-content {
 			left: calc((100% - #{$widthAsideColumn}) / 2);
 		}
 	}
 }
-
 
 .site-title {
 	@include font-site-title;
@@ -463,7 +457,7 @@ header {
 		margin-top: 8px;
 	}
 
-	img{
+	img {
 		width: 24px;
 		height: auto;
 	}
@@ -580,7 +574,7 @@ footer {
 	}
 }
 
-.article__issue{
+.article__issue {
 	text-transform: uppercase;
 	float: right;
 	width: span(3 of 12);
@@ -630,7 +624,7 @@ footer {
 		width: $maxWidthMainColum;
 		max-width: $maxWidthMainColum;
 
-		@include breakpoint(max-width 1130px){
+		@include breakpoint(max-width 1130px) {
 			width: 100%;
 		}
 	}
@@ -711,19 +705,17 @@ footer {
 	width: span(3 of 12);
 }
 
-.article__tags{
+.article__tags {
 	@include span(8 of 12 last);
 }
 
 .article__date {
-
 	.article__number + & {
 		margin-left: 0;
 	}
 }
 
 .article__text {
-
 	.article__head + & {
 		margin-top: 12px;
 
@@ -732,7 +724,7 @@ footer {
 		}
 	}
 
-	.article__title + & ,
+	.article__title + &,
 	.article__subtitle + & {
 		margin-top: 18px;
 	}
@@ -766,7 +758,7 @@ footer {
 	}
 
 	li {
-		@include custom-bullet('•', 18px);
+		@include custom-bullet("•", 18px);
 	}
 
 	&.text--large {
@@ -778,14 +770,14 @@ footer {
 	}
 }
 
-.article__text-indents{
+.article__text-indents {
 	p:not(:first-child):not(.text--no-indent) {
 		margin-top: 0;
 		text-indent: 18px;
 	}
 }
 
-.wp-block-image figcaption, 
+.wp-block-image figcaption,
 .inline-images {
 	@include clearfix;
 	margin-left: span(1 of 12);
@@ -836,7 +828,6 @@ figcaption {
 }
 
 .author-bio {
-
 	.author-bio + & {
 		margin-top: 12px;
 	}
@@ -883,7 +874,6 @@ figcaption {
 }
 
 .issue-preview {
-
 	.column-label + &,
 	&:first-child {
 		margin-top: 22px;
@@ -1077,7 +1067,7 @@ figcaption {
 		top: -10px;
 		border-top: 10px solid transparent;
 		border-right: 10px solid $colorText;
-		content: '';
+		content: "";
 		display: block;
 		height: 10px;
 		position: absolute;
@@ -1095,7 +1085,6 @@ figcaption {
 }
 
 .text-view {
-
 	.preview__title,
 	.preview__subtitle,
 	.preview__text {
@@ -1130,7 +1119,6 @@ figcaption {
 }
 
 .picture-view {
-
 	.preview__title,
 	.preview__subtitle,
 	.preview__text {
@@ -1180,7 +1168,6 @@ figcaption {
 }
 
 .sidebar__text {
-
 	margin-top: 15px;
 
 	h3 {
@@ -1232,14 +1219,27 @@ figcaption {
 }
 
 .animation--rotate {
-	-webkit-animation:rotate 300s linear infinite;
-    -moz-animation:rotate 300s linear infinite;
-    animation:rotate 300s linear infinite;
+	-webkit-animation: rotate 300s linear infinite;
+	-moz-animation: rotate 300s linear infinite;
+	animation: rotate 300s linear infinite;
 }
 
-@-moz-keyframes rotate { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes rotate { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-moz-keyframes rotate {
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
 
 .all-colored {
 	a,
@@ -1250,7 +1250,6 @@ figcaption {
 }
 
 .issue-content {
-
 	a {
 		color: inherit;
 	}
@@ -1268,10 +1267,9 @@ figcaption {
 		margin-top: 80px; // Which is the hight of the issue header
 	}
 
-	aside.sidebar-column{
+	aside.sidebar-column {
 		margin-top: 95px;
 	}
-
 
 	&.main-content {
 		padding-top: 0;
@@ -1346,7 +1344,7 @@ figcaption {
 		bottom: -18px;
 		border-top: 11px solid $colorWhite;
 		border-right: 7px solid transparent;
-		content: '';
+		content: "";
 		display: block;
 		height: 11px;
 		left: 0;
@@ -1358,7 +1356,7 @@ figcaption {
 		bottom: -18px;
 		border-top: 11px solid $colorWhite;
 		border-left: 7px solid transparent;
-		content: '';
+		content: "";
 		display: block;
 		height: 11px;
 		left: -7px;
@@ -1384,7 +1382,6 @@ figcaption {
 }
 
 .article__footnotes {
-
 	.article__bios + & {
 		margin-top: 34px;
 	}
@@ -1448,7 +1445,6 @@ figcaption {
 	z-index: 2; // To be above the header when NOT opend as overlay
 
 	#overlay-content & {
-
 		.main-column {
 			padding-top: 92px;
 		}
@@ -1462,7 +1458,7 @@ figcaption {
 .subscribe-form {
 	@include clearfix;
 	margin-top: 36px;
-	width: span(11 of 12)
+	width: span(11 of 12);
 }
 
 .input-wrap {
@@ -1487,11 +1483,9 @@ figcaption {
 		@include font-menu;
 		display: block;
 		margin-top: 3px;
-
 	}
 }
 .form__label {
-
 	.input-wrap .form__input.has-error + & {
 		color: $colorHighlight;
 	}
@@ -1500,7 +1494,6 @@ figcaption {
 		color: $colorText;
 	}
 }
-
 
 .input--half {
 	width: span(5 of 11);
@@ -1516,7 +1509,7 @@ figcaption {
 	width: span(7 of 11);
 }
 
-.appear-nicely{
+.appear-nicely {
 	margin-top: 36px;
 }
 
@@ -1588,7 +1581,6 @@ figcaption {
 }
 
 .result__title {
-
 	em {
 		font-style: italic;
 	}
@@ -1648,7 +1640,7 @@ figcaption {
 	}
 
 	input[type="checkbox"] {
-    	display: none;
+		display: none;
 	}
 
 	label {
@@ -1659,7 +1651,7 @@ figcaption {
 		&:before {
 			border: 1px solid $colorHighlight;
 			border-radius: 7px;
-			content: '';
+			content: "";
 			display: inline-block;
 			height: 14px;
 			left: 0;
@@ -1671,7 +1663,7 @@ figcaption {
 		&:after {
 			background-color: $colorHighlight;
 			border-radius: 5px;
-			content: '';
+			content: "";
 			display: inline-block;
 			height: 10px;
 			left: 2px;
@@ -1683,11 +1675,11 @@ figcaption {
 }
 
 .filter-checkbox input[type="checkbox"] + label::after {
-    content: none;
+	content: none;
 }
 
 .filter-checkbox input[type="checkbox"]:checked + label::after {
-    content: '';
+	content: "";
 }
 
 .filter-date {
@@ -1731,87 +1723,86 @@ figcaption {
 }
 
 //holding
-.holding{
+.holding {
 	background-color: $colorRose;
 }
 
-.holder-content{
+.holder-content {
 	@include transform(translateY(-50%));
 	text-align: center;
 	position: absolute;
-    left: 0;
-    right: 0;
-    top: 50%;
+	left: 0;
+	right: 0;
+	top: 50%;
 }
 
-.holder-logo{
+.holder-logo {
 	display: inline-block;
 	width: 158px;
 	height: 158px;
 	background-color: #000;
 	border-radius: 50%;
-	background-image: url('../elements/logo.svg');
+	background-image: url("../elements/logo.svg");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
 }
 
-.holding-title{
+.holding-title {
 	@include font-article-title;
 	margin-top: 40px;
-	line-height: .818em;
+	line-height: 0.818em;
 
 	@include breakpoint($breakpointMobile) {
 		font-size: 38px;
-		line-height: .818em;
+		line-height: 0.818em;
 	}
 }
 
-.holding-subtitle{
+.holding-subtitle {
 	@include font-article-subtitle;
 	margin-top: 52px;
-	line-height: .818em;
+	line-height: 0.818em;
 
 	@include breakpoint($breakpointMobile) {
 		font-size: 38px;
-		line-height: .818em;
+		line-height: 0.818em;
 	}
 }
 
-.creative-commons-license{
+.creative-commons-license {
 	display: inline-block;
 }
 
-.issue__authors{
+.issue__authors {
 	@include font-sidebar-text;
 	text-align: center;
 
-	.article__head + &{
+	.article__head + & {
 		margin-top: 32px;
 	}
 }
 
-.article__bibliography{
-	* + &{
+.article__bibliography {
+	* + & {
 		margin-top: 32px;
 	}
 
-	h3{
+	h3 {
 		@include font-bio-name;
 		text-decoration: underline;
 		margin-bottom: 15px;
 	}
 
-	ul{
+	ul {
 		@include font-bio-name;
 	}
 
-	li{
-
+	li {
 		margin-left: 16px;
 		position: relative;
 
-		&:before{
+		&:before {
 			content: "";
 			position: absolute;
 			left: -16px;
@@ -1822,20 +1813,18 @@ figcaption {
 			background-color: #fff;
 		}
 
-
-		& + li{
+		& + li {
 			margin-top: 14px;
 		}
 	}
-
 }
 
 .download_pdf {
 	text-transform: uppercase;
 }
 
-.sidebar__open-call{
-	background-image: url('../elements/APRIA-open-call-V03.svg');
+.sidebar__open-call {
+	background-image: url("../elements/APRIA-open-call-V03.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	position: absolute;
@@ -1846,35 +1835,34 @@ figcaption {
 	z-index: 10;
 }
 
-.article__text--open-call{
+.article__text--open-call {
 	padding-bottom: 50px;
 
-	h3{
+	h3 {
 		@include font-opencall-subtitle;
 
-		* + &{
+		* + & {
 			margin-top: 0.8666em;
 		}
 
-		& + *:not(h3){
+		& + *:not(h3) {
 			margin-top: 1.033em !important;
 			text-indent: 0 !important;
 		}
 	}
 
-	h3 + h3{
+	h3 + h3 {
 		margin-top: 7px !important;
 	}
 }
 
 @include breakpoint($breakpointMobile) {
-
 	#bp {
 		width: 1px;
 	}
 
-	.mobile__open-call{
-		background-image: url('../elements/APRIA-open-call-button-mobile.svg');
+	.mobile__open-call {
+		background-image: url("../elements/APRIA-open-call-button-mobile.svg");
 		background-size: contain;
 		background-repeat: no-repeat;
 		position: absolute;
@@ -1916,7 +1904,6 @@ figcaption {
 		}
 	}
 
-
 	.main-column {
 		padding-left: $paddingMobile;
 		padding-right: $paddingMobile;
@@ -1947,7 +1934,6 @@ figcaption {
 	}
 
 	.issue-content {
-
 		article.main-column {
 			margin-top: 55px;
 			padding-top: 0;
@@ -1959,7 +1945,6 @@ figcaption {
 	}
 
 	aside {
-
 		article + & {
 			margin-top: 17px;
 		}
@@ -1986,9 +1971,9 @@ figcaption {
 	}
 
 	.menu {
-		-webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
-		-moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
-		box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.4);
+		-webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+		-moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+		box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
 		background: $colorRose;
 		display: none;
 		left: 0;
@@ -2041,28 +2026,24 @@ figcaption {
 	}
 
 	footer {
-
 		span + span {
 			margin-top: 12px;
 		}
 	}
 
 	.article__title {
-
 		.home-issue & {
 			@include font-preview-title;
 		}
 	}
 
 	.article__subtitle {
-
 		.home-issue & {
 			@include font-preview-subtitle;
 		}
 	}
 
 	.home-issue {
-
 		.article__title + .article__subtitle {
 			margin-top: 0;
 		}
@@ -2128,7 +2109,6 @@ figcaption {
 	}
 
 	.content-wrap {
-
 		.main-content & {
 			margin-left: 0;
 		}
@@ -2152,12 +2132,12 @@ figcaption {
 		width: span(4 of 10);
 	}
 
-	.article__tags{
+	.article__tags {
 		@include span(6 of 10 last);
 	}
 
 	.article__authors {
-		width: span( 6 of 10);
+		width: span(6 of 10);
 
 		.issue-content & {
 			margin-left: span(2 of 10);
