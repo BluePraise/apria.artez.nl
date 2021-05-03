@@ -97,13 +97,49 @@ defined('ABSPATH') || exit;
 			</a>
 		</div>
 
-		<div class="additional-links hide-on-mobile">
-			<ul class="additional-links__list">
-				<li class="additional-links__item">
-					<a href="https://periodical.networkcultures.org/">PARAZINE</a>
-				</li>
-			</ul>
-		</div>
+		<?php
+
+		// Additional Menu Items (DESKTOP)
+
+		// Getting Menus Locations (Functionality for Open Call Button)
+		$menus_locations = get_nav_menu_locations();
+
+		// Checking header_menu location
+		if (isset($menus_locations['header_menu'])) :
+
+			// Getting Menu Object from Location
+			$menu_object = wp_get_nav_menu_object($menus_locations['header_menu']);
+
+			// Header Menu Additional Fields
+			$additional_menu_links = get_field("additional_menu_links", $menu_object);
+
+			// Checking Additional Menu Links
+			if ($additional_menu_links) :
+
+				?>
+				<div class="additional-links hide-on-mobile">
+					<ul class="additional-links__list">
+						<?php
+						foreach ($additional_menu_links as $additional_menu_link) :
+
+							$additional_menu_link_url = $additional_menu_link['additional_link']['url'];
+							$additional_menu_link_title = $additional_menu_link['additional_link']['title'];
+							$additional_menu_link_target = $additional_menu_link['additional_link']['target'] ? $additional_menu_link['additional_link']['target'] : '_self';
+
+							?>
+							<li class="additional-links__item">
+								<a href="<?php echo esc_url($additional_menu_link_url); ?>"
+								   target="<?php echo esc_attr($additional_menu_link_target); ?>"
+								   title="<?php echo esc_attr($additional_menu_link_title); ?>"
+								>
+									<?php echo esc_html($additional_menu_link_title); ?>
+								</a>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			<?php endif; ?>
+		<?php endif; // Checking header_menu location ?>
 
 		<!-- ------------------------------------------ -->
 		<ul class="socialmedia-items">

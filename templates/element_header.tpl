@@ -45,11 +45,6 @@
 			<a href="{home_url()}" class="logo" style="background-color: #000000">
 				<svg class="apria_logo"{if $color != 'ffffff'} style="background-color: #{$color}"{/if}></svg>
 			</a>
-			{*
-			<a href="{home_url()}" class="logo" {if $color != 'ffffff'}style="background-color: #{$color}"{/if}>
-				<img src="{$documentroot}wp-content/themes/apria/elements/logo.svg" alt="" />
-			</a>
-			*}
 		</div>
 
 		<div class="additional-links hide-on-mobile">
