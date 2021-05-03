@@ -17,12 +17,6 @@
       "oAP" : "\/author.php",
       "oF" : 0
     },
-    "\/cache" : {
-      "ft" : 65536,
-      "oA" : 1,
-      "oAP" : "\/cache",
-      "oF" : 0
-    },
     "\/controllers\/articles_show.inc.php" : {
       "cB" : 0,
       "ft" : 8192,
