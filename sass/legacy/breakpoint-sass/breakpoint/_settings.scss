@@ -3,10 +3,9 @@
 //////////////////////////////
 @function breakpoint-has($setting) {
   @if map-has-key($breakpoint, $setting) {
-    @return true;
-  }
-  @else {
-    @return false;
+	@return true;
+  } @else {
+	@return false;
   }
 }
 
@@ -15,10 +14,9 @@
 //////////////////////////////
 @function breakpoint-get($setting) {
   @if breakpoint-has($setting) {
-    @return map-get($breakpoint, $setting);
-  }
-  @else {
-    @return map-get($Breakpoint-Settings, $setting);
+	@return map-get($breakpoint, $setting);
+  } @else {
+	@return map-get($Breakpoint-Settings, $setting);
   }
 }
 
@@ -27,7 +25,7 @@
 //////////////////////////////
 @function breakpoint-set($setting, $value) {
   @if (str-index($setting, '-') or str-index($setting, '_')) and str-index($setting, ' ') == null {
-    @warn "Words in Breakpoint settings should be separated by spaces, not dashes or underscores. Please replace dashes and underscores between words with spaces. Settings will not work as expected until changed.";
+	@warn "Words in Breakpoint settings should be separated by spaces, not dashes or underscores. Please replace dashes and underscores between words with spaces. Settings will not work as expected until changed.";
   }
   $breakpoint: map-merge($breakpoint, ($setting: $value)) !global;
   @return true;
@@ -44,6 +42,7 @@
 @mixin bkpt-change($setting, $value) {
   @include breakpoint-change($setting, $value);
 }
+
 @mixin bkpt-set($setting, $value) {
   @include breakpoint-change($setting, $value);
 }
@@ -53,11 +52,11 @@
 //////////////////////////////
 @function breakpoint-reset($settings...) {
   @if length($settings) == 1 {
-    $settings: nth($settings, 1);
+	$settings: nth($settings, 1);
   }
 
   @each $setting in $settings {
-    $breakpoint: map-remove($breakpoint, $setting) !global;
+	$breakpoint: map-remove($breakpoint, $setting) !global;
   }
   @return true;
 }
