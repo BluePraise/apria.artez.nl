@@ -14,7 +14,7 @@
 	font: normal 55px/50px $fontCrimsonStack;
 	font-weight: bold;
 
-	@include breakpoint($breakpointMobile) {
+	@media (max-width: 768px) {
 		font-size: 40px;
 		line-height: 38px;
 	}
@@ -24,7 +24,7 @@
 	font: normal 55px/50px $fontCrimsonStack;
 	font-style: italic;
 
-	@include breakpoint($breakpointMobile) {
+	@media (max-width: 768px) {
 		font-size: 40px;
 		line-height: 38px;
 	}
@@ -50,7 +50,7 @@
 @mixin font-site-title {
 	font: bold 30px/26px $fontCrimsonStack;
 
-	@include breakpoint($breakpointMobile) {
+	@media (max-width: 768px) {
 		font-size: 17px;
 		line-height: 17px;
 	}

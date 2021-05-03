@@ -194,7 +194,7 @@ strong {
 #overlay-content .main-content .main-column {
   min-height: auto;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .main-column {
     width: calc(100% - 344px);
   }

@@ -16,7 +16,7 @@
   Changes to these files are PROHIBITED due to license restrictions.
 */
 
-@import "legacy/breakpoint-sass/breakpoint";
+// @import "legacy/breakpoint-sass/breakpoint";
 @import "legacy/compass/compass";
 @import "legacy/compass/lemonade";
 @import "legacy/susy-sass/susy";
@@ -111,7 +111,7 @@ strong {
 		}
 	}
 
-	@include breakpoint($breakpointTablet) {
+	@media (max-width: 768px) {
 		width: calc(100% - #{$widthAsideColumn});
 	}
 }
@@ -379,7 +379,7 @@ header {
 	pointer-events: none;
 }
 
-@include breakpoint($breakpointTablet) {
+@media (max-width: 1024px) {
 	.logo {
 		.logo-fixed &,
 		#overlay-content {
@@ -604,7 +604,7 @@ footer {
 		width: $maxWidthMainColum;
 		max-width: $maxWidthMainColum;
 
-		@include breakpoint(max-width 1130px) {
+		@media (max-width: 1130px) {
 			width: 100%;
 		}
 	}
@@ -1767,7 +1767,7 @@ figcaption {
 	margin-top: 40px;
 	line-height: 0.818em;
 
-	@include breakpoint($breakpointMobile) {
+	@media (max-width: 768px) {
 		font-size: 38px;
 		line-height: 0.818em;
 	}
@@ -1778,7 +1778,7 @@ figcaption {
 	margin-top: 52px;
 	line-height: 0.818em;
 
-	@include breakpoint($breakpointMobile) {
+	@media (max-width: 768px) {
 		font-size: 38px;
 		line-height: 0.818em;
 	}
