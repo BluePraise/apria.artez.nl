@@ -142,28 +142,45 @@ defined('ABSPATH') || exit;
 		<?php endif; // Checking header_menu location ?>
 
 		<!-- ------------------------------------------ -->
-		<ul class="socialmedia-items">
-			<li class="socialmedia-item">
-				<a href="https://www.facebook.com/APRIAjournalandplatform/">
-					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_facebook.svg"); ?>"
-						 alt="<?php _e("Facebook Icon", THEME_NAME) ?>">
-				</a>
-			</li>
+		<?php
 
-			<li class="socialmedia-item">
-				<a href="https://www.youtube.com/channel/UCzeADbgeHInL4Rr1A6CofGw">
-					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_youtube.svg"); ?>"
-						 alt="<?php _e("Youtube Icon", THEME_NAME) ?>">
-				</a>
-			</li>
+		// Social Medias
+		$social_medias = get_field("social_media_links", "options");
 
-			<li class="socialmedia-item">
-				<a href="https://www.instagram.com/apria_journal_and_platform/">
-					<img src="<?php echo esc_attr(get_template_directory_uri() . "/elements/icon_instagram.svg"); ?>"
-						 alt="<?php _e("Instagram Icon", THEME_NAME) ?>">
-				</a>
-			</li>
-		</ul>
+		if ($social_medias) : ?>
+			<ul class="socialmedia-items">
+				<?php
+				foreach ($social_medias as $social_media) :
+
+					$social_media_link = $social_media['social_media_link'];
+					$social_media_icon = $social_media['social_media_icon'];
+
+
+					if ($social_media_link) :
+
+						$social_media_link_url = $social_media_link['url'];
+						$social_media_link_title = $social_media_link['title'];
+						$social_media_link_target = $social_media_link['target'] ? $social_media_link['target'] : '_self';
+
+						?>
+						<li class="socialmedia-item">
+							<a href="<?php echo esc_url($social_media_link_url); ?>"
+							   target="<?php echo esc_attr($social_media_link_target); ?>"
+							   title="<?php echo esc_attr($social_media_link_title); ?>"
+							>
+								<?php if ($social_media_icon) : ?>
+									<img src="<?php echo esc_url($social_media_icon['url']); ?>"
+										 alt="<?php echo esc_attr($social_media_icon['alt']); ?>"
+										 title="<?php echo esc_attr($social_media_icon['title']); ?>">
+								<?php else: ?>
+									<?php echo esc_html($social_media_link_title); ?>
+								<?php endif; ?>
+							</a>
+						</li>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 
 		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">⠇</div>
 

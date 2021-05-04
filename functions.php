@@ -95,6 +95,18 @@ function apria_change_nav_menu_items($items, $args)
 	return $items;
 }
 
+// Acf Options Pages
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+}
 
 // Register custom post types
 function create_post_types()
@@ -128,14 +140,6 @@ function create_post_types()
 }
 
 add_action('init', 'create_post_types');
-
-function cc_mime_types($mimes)
-{
-	$mimes['svg'] = 'image/svg+xml';
-	return $mimes;
-}
-
-add_filter('upload_mimes', 'cc_mime_types');
 
 function change_wp_search_size($queryVars)
 {

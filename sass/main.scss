@@ -466,8 +466,7 @@ footer {
   @include font-footer;
   @include clearfix;
   color: $colorHighlight;
-  padding-bottom: 24px;
-  padding-top: 24px;
+  padding: 24px;
 
   a {
 	color: $colorHighlight;

@@ -433,8 +433,7 @@ footer {
   font: normal 10px/12px "Ahamono", monospace;
   zoom: 1;
   color: #ff2020;
-  padding-bottom: 24px;
-  padding-top: 24px; }
+  padding: 24px; }
   footer:before, footer:after {
     content: "";
     display: table; }
