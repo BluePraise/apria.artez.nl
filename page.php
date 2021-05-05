@@ -35,12 +35,18 @@ get_header(); ?>
 			</div>
 		</article>
 
-		<?php if ($page_sidebar_text) : ?>
+		<?php
+
+		if ($page_sidebar_text) : ?>
 			<aside class="sidebar-column affix-placeholder">
 				<div class="affix-content js-affix-scrolling">
 					<div class="content-wrap">
 						<div class="sidebar__text">
-							<?php echo $page_sidebar_text; ?>
+							<?php
+
+							dynamic_sidebar("rp-right-sidebar");
+
+							?>
 						</div>
 						<!-- {include "element_footer.tpl" class="hide-on-desktop"} -->
 					</div>

@@ -96,16 +96,35 @@ function apria_change_nav_menu_items($items, $args)
 }
 
 // Acf Options Pages
-if( function_exists('acf_add_options_page') ) {
+if (function_exists('acf_add_options_page')) {
 
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
+		'page_title' => 'Theme General Settings',
+		'menu_title' => 'Theme Settings',
+		'menu_slug' => 'theme-general-settings',
+		'capability' => 'edit_posts',
+		'redirect' => false
 	));
 
+}
+
+// Register Sidebar
+add_action('widgets_init', 'apria_register_sidebars');
+function apria_register_sidebars()
+{
+
+	register_sidebar(array(
+		'name' => __("Regular Pages Right Sidebar"),
+		'id' => "rp-right-sidebar",
+		'description' => 'Right Sidebar on regular pages',
+		'class' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s sidebar__text">',
+		'after_widget' => "</div>\n",
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => "</h2>\n",
+		'before_sidebar' => '', // WP 5.6
+		'after_sidebar' => '', // WP 5.6
+	));
 }
 
 // Register custom post types
