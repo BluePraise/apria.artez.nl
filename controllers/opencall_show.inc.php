@@ -27,7 +27,7 @@ $content = get_post($id);
 if($content){
 	$page = (object)[
 		'title' => get_the_title(),
-		'subtitle' => get_field('subtitle', $id),
+		'subtitle' => get_field(	'subtitle', $id),
 		'content' => apply_filters('the_content', $content->post_content),
 		'paragraph_layout' => get_field('paragraph_layout'),
 	];
