@@ -21,7 +21,6 @@ Template Name: Page Home
 */
 
 
-
 // This is the WordPress adaptor for the Systemantics boilerplate
 // All access is handled by main.php (usually triggered from .htaccess)
 

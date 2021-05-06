@@ -19,10 +19,8 @@
 */
 
 
-
 error_reporting(E_ALL ^ E_NOTICE);
 ini_set('display_errors', 1);
-
 
 
 if (!defined('WORDPRESS')) {
@@ -71,7 +69,6 @@ $ACTIONS = array(
 );
 
 
-
 ini_set('zlib.output_compression', 0);
 ini_set('session.use_only_cookies', 0);
 
@@ -90,7 +87,7 @@ if (!isset($documentroot)) {
 	$documentroot = '/';
 }
 if (!isset($homeUrl)) {
-	$homeUrl = $documentroot.'';
+	$homeUrl = $documentroot . '';
 }
 
 // Try to get content by id
@@ -134,7 +131,7 @@ $smarty->setConfigDir(__DIR__ . '/locales');
 
 $smarty->configLoad("$lang.ini");
 
-$template = $realm.'_'.$action;
+$template = $realm . '_' . $action;
 $smarty->assign('content', "$template.tpl");
 
 $filename = __DIR__ . "/controllers/$template.inc.php";
