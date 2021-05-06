@@ -17,6 +17,7 @@
 			</div>
 		</article>
 
+		{* If we have Def Sidebar Text (Special Post - Stupid desicion) or Sidebar text for this Page (ACF Field) *}
 		{if $defaultSidebarText || $page->sidebartext}
 			<aside class="sidebar-column affix-placeholder">
 				<div class="affix-content js-affix-scrolling">

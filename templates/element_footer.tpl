@@ -13,7 +13,10 @@
 			{/foreach}
 		</span>
 	{/if}
-	<span class="social-media">APRIA on <a href="https://www.facebook.com/APRIAjournalandplatform/">facebook</a> <a
-				href="https://www.youtube.com/channel/UCzeADbgeHInL4Rr1A6CofGw">YouTube</a> <a
-				href="https://www.instagram.com/apria_journal_and_platform/">Instagram</a></span>
+	<span class="social-media">
+		APRIA on
+		<a href="https://www.facebook.com/APRIAjournalandplatform/">facebook</a>
+		<a href="https://www.youtube.com/channel/UCzeADbgeHInL4Rr1A6CofGw">YouTube</a>
+		<a href="https://www.instagram.com/apria_journal_and_platform/">Instagram</a>
+	</span>
 </footer>

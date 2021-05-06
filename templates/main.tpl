@@ -2,10 +2,10 @@
 {get_header()}
 
 {if function_exists('gtm4wp_the_gtm_tag')}
-    {gtm4wp_the_gtm_tag()}
+	{gtm4wp_the_gtm_tag()}
 {/if}
 {if $realm != "issue" && $realm != 'holding'}
-    {include "element_header.tpl"}
+	{include "element_header.tpl"}
 {/if}
 {block name="content"}{/block}
 
