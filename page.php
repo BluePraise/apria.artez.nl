@@ -35,16 +35,19 @@ get_header(); ?>
 			</div>
 		</article>
 
-		<?php
-
-		if ($page_sidebar_text) : ?>
+		<?php if ($page_sidebar_text || is_active_sidebar("rp-right-sidebar")) : ?>
 			<aside class="sidebar-column affix-placeholder">
 				<div class="affix-content js-affix-scrolling">
 					<div class="content-wrap">
 						<div class="sidebar__text">
 							<?php
 
-							dynamic_sidebar("rp-right-sidebar");
+							if ($page_sidebar_text) {
+								echo $page_sidebar_text;
+							}
+							else {
+								dynamic_sidebar("rp-right-sidebar");
+							}
 
 							?>
 						</div>
