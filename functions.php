@@ -27,7 +27,7 @@ define("THEME_NAME", "apria-theme");
 
 // Front end scripts
 add_action('wp_enqueue_scripts', function () {
-	wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);
+	wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.min.css'), false);
 	wp_enqueue_script('apria_scripts_jquery', get_theme_file_uri('scripts/jquery-1.11.3.min.js'), false);
 	wp_enqueue_script('apria_scripts_fastclick', get_theme_file_uri('scripts/fastclick.js'), false);
 	wp_enqueue_script('apria_scripts_sysaffix', get_theme_file_uri('scripts/jquery.sys-affix.js'), false);
