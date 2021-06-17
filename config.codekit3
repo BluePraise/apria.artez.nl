@@ -9,12 +9,34 @@
   ],
   "creatorBuild" : "34127",
   "files" : {
+    "\/.editorconfig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.editorconfig",
+      "oF" : 0
+    },
+    "\/.gitignore" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/.gitignore",
+      "oF" : 0
+    },
     "\/author.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/author.php",
+      "oF" : 0
+    },
+    "\/cache" : {
+      "ft" : 65536,
+      "oA" : 1,
+      "oAP" : "\/cache",
       "oF" : 0
     },
     "\/controllers\/articles_show.inc.php" : {
@@ -274,6 +296,14 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/footer.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/footer.php",
+      "oF" : 0
+    },
     "\/functions.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -282,16 +312,13 @@
       "oAP" : "\/functions.php",
       "oF" : 0
     },
-    "\/gulpfile.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
+    "\/header.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/gulpfile-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
+      "oAP" : "\/header.php",
+      "oF" : 0
     },
     "\/home.php" : {
       "cB" : 0,
@@ -1549,28 +1576,6 @@
       "oAP" : "\/main.php",
       "oF" : 0
     },
-    "\/node_modules" : {
-      "ft" : 65536,
-      "oA" : 2,
-      "oAP" : "\/node_modules",
-      "oF" : 0
-    },
-    "\/package-lock.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-lock-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/package.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
     "\/page-holding.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1595,6 +1600,14 @@
       "oAP" : "\/page-opencall.php",
       "oF" : 0
     },
+    "\/page.old.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/page.old.php",
+      "oF" : 0
+    },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1602,6 +1615,25 @@
       "oA" : 0,
       "oAP" : "\/page.php",
       "oF" : 0
+    },
+    "\/readme.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/readme.html",
+      "oF" : 1,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
     },
     "\/sass\/_clearfix.scss" : {
       "aP" : 0,
@@ -3662,6 +3694,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/search.php",
+      "oF" : 0
+    },
+    "\/searchform.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/searchform.php",
       "oF" : 0
     },
     "\/single-issue.php" : {
