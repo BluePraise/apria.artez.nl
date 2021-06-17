@@ -1,21 +1,35 @@
-"use strict";
-const gulp = require("gulp");
-const sass = require("gulp-sass");
-var concat = require("gulp-concat");
+const {src, dest, series, watch} = require('gulp'),
+	sass = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	concat = require('gulp-concat'),
+	sourcemaps = require('gulp-sourcemaps'),
+	rename = require('gulp-rename'),
+	clean_css = require('gulp-clean-css'),
+	group_media = require('gulp-group-css-media-queries')
+;
 
-sass.compiler = require("node-sass");
+function scss() {
+	return src('sass/main.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass({
+			outputStyle: "expanded"
+		}))
+		.pipe(group_media())
+		.pipe(autoprefixer())
+		.pipe(concat('main.css'))
+		.pipe(dest('styles/'))
+		.pipe(clean_css())
+		.pipe(rename({
+			extname: ".min.css"
+		}))
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest('styles/'))
 
-gulp.task("scss", () => {
-	return gulp.src("sass/**/*.scss")
-		.pipe(concat("main.scss"))
-		.pipe(sass().on("error", sass.logError))
-		.pipe(gulp.dest("./styles/"));
-});
+}
 
-gulp.task("watch", () => {
-	gulp.watch("sass/**/*.scss", (done) => {
-		gulp.series(["scss"])(done);
-	});
-});
+function projectWatch() {
+	watch('sass/**/**.scss', series(scss));
+}
 
-gulp.task("default", gulp.series("scss"));
+exports.scss = scss;
+exports.watch = projectWatch;

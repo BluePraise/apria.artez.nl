@@ -1,6 +1,5 @@
 {extends file="main.tpl"}
 {block name="content"}
-
 	<div class="holder-content">
 		<div class="holder-logo"></div>
 		<div class="holding-title">
@@ -14,5 +13,4 @@
 		</div>
 
 	</div>
-
 {/block}
