@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.5, created on 2021-03-29 19:36:05
+<?php /* Smarty version Smarty-3.1.5, created on 2021-06-29 20:41:22
          compiled from "/Users/mchetrit/Dropbox/Work/APRIA/APRIA_WP/wp-content/themes/apria/templates/element_header.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:109687890760621005f3c224-53470649%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'f3f4508e3627a5e72661c5f711a17bb2780b1728' => 
     array (
       0 => '/Users/mchetrit/Dropbox/Work/APRIA/APRIA_WP/wp-content/themes/apria/templates/element_header.tpl',
-      1 => 1594792200,
+      1 => 1623940065,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.5',
+  'unifunc' => 'content_606210060ea6c',
   'variables' => 
   array (
     'mainMenu' => 0,
@@ -32,38 +34,39 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'newsPosts' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.5',
-  'unifunc' => 'content_606210060ea6c',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_606210060ea6c')) {function content_606210060ea6c($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_replace')) include '/Users/mchetrit/Dropbox/Work/APRIA/APRIA_WP/wp-content/themes/apria/libs/plugins/modifier.replace.php';
-?><header>
+?><header style="display:none;">
 	<div class="main-column">
 		<div class="menu">
 			<ul class="menu-items">
-<?php  $_smarty_tpl->tpl_vars['aItem'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aItem']->_loop = false;
+				<?php  $_smarty_tpl->tpl_vars['aItem'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['aItem']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['mainMenu']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['aItem']->key => $_smarty_tpl->tpl_vars['aItem']->value){
 $_smarty_tpl->tpl_vars['aItem']->_loop = true;
 ?>
-				<li class="menu-item"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
-"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['aItem']->value->url;?>
+					<li class="menu-item"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
+"<?php }?>><a
+								href="<?php echo $_smarty_tpl->tpl_vars['aItem']->value->url;?>
 "><?php echo $_smarty_tpl->tpl_vars['aItem']->value->title;?>
 </a></li>
-<?php } ?>
-				<li class="menu-item"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
-"<?php }?>><a href="<?php echo $_smarty_tpl->tpl_vars['newsletter']->value;?>
-" class="js-open-as-overlay"><?php echo $_smarty_tpl->getConfigVariable('menu_subscribe');?>
-</a></li>
-<?php if ($_smarty_tpl->tpl_vars['currentIssue']->value){?>
+				<?php } ?>
 				<li class="menu-item"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
 "<?php }?>>
-					<a href="<?php echo $_smarty_tpl->tpl_vars['currentIssue']->value->url;?>
-">
-						<?php echo $_smarty_tpl->getConfigVariable('current_issue');?>
-
-					</a>
+					<a href="<?php echo $_smarty_tpl->tpl_vars['newsletter']->value;?>
+" class="js-open-as-overlay"><?php echo $_smarty_tpl->getConfigVariable('menu_subscribe');?>
+</a>
 				</li>
-<?php }?>
+				<?php if ($_smarty_tpl->tpl_vars['currentIssue']->value){?>
+					<li class="menu-item"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
+"<?php }?>>
+						<a href="<?php echo $_smarty_tpl->tpl_vars['currentIssue']->value->url;?>
+">
+							<?php echo $_smarty_tpl->getConfigVariable('current_issue');?>
+
+						</a>
+					</li>
+				<?php }?>
 				<li class="menu-item"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
 "<?php }?>>
 					<form action="<?php echo get_home_url();?>
@@ -84,10 +87,10 @@ $_smarty_tpl->tpl_vars['aItem']->_loop = true;
 wp-content/themes/apria/elements/icon_close_highlight.svg">
 			</div>
 
-<?php if ($_smarty_tpl->tpl_vars['showOpenCallButton']->value){?>
-		<a href="<?php echo $_smarty_tpl->tpl_vars['opencall']->value;?>
+			<?php if ($_smarty_tpl->tpl_vars['showOpenCallButton']->value){?>
+				<a href="<?php echo $_smarty_tpl->tpl_vars['opencall']->value;?>
 " class="mobile__open-call js-open-as-overlay"></a>
-<?php }?>
+			<?php }?>
 		</div>
 
 		<div class="site-title hide-on-desktop clickable-block" data-href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
@@ -109,15 +112,15 @@ wp-content/themes/apria/elements/icon_close_highlight.svg">
 				<li class="additional-links__item">
 					<a href="https://periodical.networkcultures.org/">PARAZINE</a>
 				</li>
-			</li>
+			</ul>
 		</div>
 
 		<ul class="socialmedia-items">
 			<li class="socialmedia-item">
 				<a href="https://www.facebook.com/APRIAjournalandplatform/"><?php $_smarty_tpl->_capture_stack[] = array("svg", null, null); ob_start(); ?>
-					<?php echo $_smarty_tpl->getSubTemplate ("../elements/icon_facebook.svg", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+						<?php echo $_smarty_tpl->getSubTemplate ("../elements/icon_facebook.svg", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-				<?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack);
+					<?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack);
 if (!empty($_capture_buffer)) {
  if (isset($_capture_assign)) $_smarty_tpl->assign($_capture_assign, ob_get_contents());
  if (isset( $_capture_append)) $_smarty_tpl->append( $_capture_append, ob_get_contents());
@@ -128,9 +131,9 @@ if (!empty($_capture_buffer)) {
 
 			<li class="socialmedia-item">
 				<a href="https://www.youtube.com/channel/UCzeADbgeHInL4Rr1A6CofGw"><?php $_smarty_tpl->_capture_stack[] = array("svg", null, null); ob_start(); ?>
-					<?php echo $_smarty_tpl->getSubTemplate ("../elements/icon_youtube.svg", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+						<?php echo $_smarty_tpl->getSubTemplate ("../elements/icon_youtube.svg", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-				<?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack);
+					<?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack);
 if (!empty($_capture_buffer)) {
  if (isset($_capture_assign)) $_smarty_tpl->assign($_capture_assign, ob_get_contents());
  if (isset( $_capture_append)) $_smarty_tpl->append( $_capture_append, ob_get_contents());
@@ -141,9 +144,9 @@ if (!empty($_capture_buffer)) {
 
 			<li class="socialmedia-item">
 				<a href="https://www.instagram.com/apria_journal_and_platform/"><?php $_smarty_tpl->_capture_stack[] = array("svg", null, null); ob_start(); ?>
-					<?php echo $_smarty_tpl->getSubTemplate ("../elements/icon_instagram.svg", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
+						<?php echo $_smarty_tpl->getSubTemplate ("../elements/icon_instagram.svg", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, null, null, array(), 0);?>
 
-				<?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack);
+					<?php list($_capture_buffer, $_capture_assign, $_capture_append) = array_pop($_smarty_tpl->_capture_stack);
 if (!empty($_capture_buffer)) {
  if (isset($_capture_assign)) $_smarty_tpl->assign($_capture_assign, ob_get_contents());
  if (isset( $_capture_append)) $_smarty_tpl->append( $_capture_append, ob_get_contents());
@@ -157,24 +160,24 @@ if (!empty($_capture_buffer)) {
 	</div>
 
 	<div class="sidebar-column">
-<?php if ($_smarty_tpl->tpl_vars['newsPosts']->value){?>
-		<div class="site-title site-title--news clickable-block" data-href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
+		<?php if ($_smarty_tpl->tpl_vars['newsPosts']->value){?>
+			<div class="site-title site-title--news clickable-block" data-href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
 ">
-			<img src="<?php echo $_smarty_tpl->tpl_vars['documentroot']->value;?>
+				<img src="<?php echo $_smarty_tpl->tpl_vars['documentroot']->value;?>
 wp-content/themes/apria/elements/news.svg" width="100" alt="News">
-		</div>
-<?php }else{ ?>
-		<div class="site-title clickable-block" data-href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
+			</div>
+		<?php }else{ ?>
+			<div class="site-title clickable-block" data-href="<?php echo $_smarty_tpl->tpl_vars['homeUrl']->value;?>
 ">
-			<?php echo $_smarty_tpl->getConfigVariable('side_title');?>
+				<?php echo $_smarty_tpl->getConfigVariable('side_title');?>
 
-		</div>
-<?php }?>
+			</div>
+		<?php }?>
 
-<?php if ($_smarty_tpl->tpl_vars['showOpenCallButton']->value){?>
-		<a href="<?php echo $_smarty_tpl->tpl_vars['opencall']->value;?>
+		<?php if ($_smarty_tpl->tpl_vars['showOpenCallButton']->value){?>
+			<a href="<?php echo $_smarty_tpl->tpl_vars['opencall']->value;?>
 " class="sidebar__open-call js-open-as-overlay"></a>
-<?php }?>
+		<?php }?>
 
 		<div class="picture-text-toggle js-picture-text-toggle">
 			<div class="toggle-outer"<?php if ($_smarty_tpl->tpl_vars['color']->value){?> style="background-color:<?php echo $_smarty_tpl->tpl_vars['color']->value;?>
