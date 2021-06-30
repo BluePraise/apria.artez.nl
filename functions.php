@@ -171,3 +171,89 @@ function realhero_ajax_subscribe() {
 add_action( 'wp_ajax_realhero_subscribe', 'realhero_ajax_subscribe' );
 add_action( 'wp_ajax_nopriv_realhero_subscribe', 'realhero_ajax_subscribe' );
 
+add_filter( 'render_block', function( $content, $block ) {
+	if( 'core/image' !== $block['blockName'] )
+		return $content;
+
+	$alt = get_post_meta( $block['attrs']['id'], '_wp_attachment_image_alt', true );
+	if( empty( $alt ) )
+		return $content;
+
+	// Empty alt
+	if( false !== strpos( $content, 'alt=""' ) ) {
+		$content = str_replace( 'alt=""', 'alt="' . $alt . '"', $content );
+
+	// No alt
+	} elseif( false === strpos( $content, 'alt="' ) ) {
+		$content = str_replace( 'src="', 'alt="' . $alt . '" src="', $content );
+	}
+
+	return $content;
+}, 10, 2 );
+
+if(!function_exists("getAuthors")) {
+function getAuthors($post_id){
+	return array_map(function ($aAuthor) {
+		if (isset($aAuthor->data)) {
+			// Regular author
+			return (object)[
+				'id' => $aAuthor->ID,
+				'name' => $aAuthor->data->display_name,
+				'biography' => get_field('biography', $aAuthor),
+				'post_url' => get_author_posts_url($aAuthor->ID),
+			];
+		}
+		// Co-author
+		return (object)[
+			'id' => $aAuthor->ID,
+			'name' => $aAuthor->display_name,
+			'biography' => get_field('biography', $aAuthor->ID),
+			'post_url' => get_site_url().'/author/'.$aAuthor->user_nicename.'/',
+		];
+	}, get_coauthors($post_id));
+}
+}
+
+if(!function_exists("extendIssuePost")) {
+function extendIssuePost($item){
+
+	$previewtext = get_field('preview_text', $item->ID);
+	if(!$previewtext){
+		$previewtext = wp_trim_words( apply_filters('the_content', $item->post_content), 50 );
+	}
+
+	$postIssue = get_field('issue', $item->ID);
+	if($postIssue){
+		$postIssueNumber = get_field('number', $postIssue->ID);
+		$postIssueUrl = get_permalink($postIssue->ID);
+	}
+
+	$postTags = get_the_tags($item->ID);
+	$tags = array();
+	if($postTags){
+		foreach ($postTags as $aTag) {
+			$tags[] = (object)[
+				'id' => $aTag->term_id,
+				'name' => $aTag->name,
+				'url' => get_tag_link($aTag),
+			];
+		}
+	}
+
+	return (object)[
+		'title' => get_the_title($item->ID),
+		'subtitle' => get_field('subtitle', $item->ID),
+		'url' => get_permalink($item->ID),
+		'date' => $item->post_date,
+		'previewtext' => $previewtext,
+		'authors' => getAuthors($item->ID),
+		'issue_id' => $postIssue->ID,
+		'issue_number' => $postIssueNumber,
+		'issue_url' => $postIssueUrl,
+		'tags' => $tags,
+		'tagIds' => array_map(function ($aTag) { return $aTag->id; }, $tags),
+		'categoryIds' => array_map(function ($aCategory) { return $aCategory->term_id; }, get_the_category($item->ID)),
+		'featureImage' => wp_get_attachment_image_src( get_post_thumbnail_id( $item->ID ), 'preview-size'),
+	];
+}
+}

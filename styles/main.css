@@ -555,7 +555,8 @@ header .main-column {
     float: left;
     opacity: 1;
     padding-left: 10px;
-    width: calc(100% - 30px)
+    width: calc(100% - 30px);
+    max-width: 230px;
 }
 
 @media (max-width: 768px) {

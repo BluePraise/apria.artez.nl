@@ -103,6 +103,7 @@ function footnotify($item) {
 	return $item;
 }
 
+if(!function_exists("getAuthors")) {
 function getAuthors($post_id){
 	return array_map(function ($aAuthor) {
 		if (isset($aAuthor->data)) {
@@ -123,8 +124,9 @@ function getAuthors($post_id){
 		];
 	}, get_coauthors($post_id));
 }
+}
 
-
+if(!function_exists("extendIssuePost")) {
 function extendIssuePost($item){
 
 	$previewtext = get_field('preview_text', $item->ID);
@@ -165,6 +167,7 @@ function extendIssuePost($item){
 		'categoryIds' => array_map(function ($aCategory) { return $aCategory->term_id; }, get_the_category($item->ID)),
 		'featureImage' => wp_get_attachment_image_src( get_post_thumbnail_id( $item->ID ), 'preview-size'),
 	];
+}
 }
 
 function extendIssue($issue){
