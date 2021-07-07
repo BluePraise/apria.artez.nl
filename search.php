@@ -146,10 +146,10 @@ if ($posts->filterableAuthors || $posts->filterableTags || $posts->filterableIss
 						<div class="filter__group-title">By issue</div>
 						<div class="filter-clear-button icon js-reset-filter-group">×</div>
 						<div class="filter__items">
-<?php foreach ($posts->filterableIssues as $aIssue) : ?>
+<?php foreach ($posts->filterableIssues as $key=>$aIssue) : ?>
 							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_issue_{$aIssue@iteration}"  value="<?=$aIssue->id ?>" data-type="issue">
-								<label for="checkbox_issue_{$aIssue@iteration}"> <?=$aIssue->number; ?> <?=$aIssue->title; ?> (<?=$aIssue->count; ?>)</label>
+								<input class="js-filter" type="checkbox" id="checkbox_issue_<?=$key?>"  value="<?=$aIssue->id ?>" data-type="issue">
+								<label for="checkbox_issue_<?=$key?>"> <?=$aIssue->number; ?> <?=$aIssue->title; ?> (<?=$aIssue->count; ?>)</label>
 							</div>
 <?php endforeach; ?>
 						</div>
@@ -162,10 +162,10 @@ if ($posts->filterableAuthors) : ?>
 						<div class="filter__group-title">By Author</div>
 						<div class="filter-clear-button icon js-reset-filter-group">×</div>
 						<div class="filter__items">
-<?php foreach ($posts->filterableAuthors as $aAuthor) : ?>
+<?php foreach ($posts->filterableAuthors as $key=>$aAuthor) : ?>
 							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_author_{$aAuthor@iteration}"  value="<?=$aAuthor->id; ?>" data-type="author">
-								<label for="checkbox_author_{$aAuthor@iteration}"> <?=$aAuthor->display_name?>  (<?=$aAuthor->count; ?>)</label>
+								<input class="js-filter" type="checkbox" id="checkbox_author_<?=$key?>"  value="<?=$aAuthor->id; ?>" data-type="author">
+								<label for="checkbox_author_<?=$key?>"> <?=$aAuthor->display_name?>  (<?=$aAuthor->count; ?>)</label>
 							</div>
 <?php endforeach; ?>
 
@@ -178,10 +178,10 @@ if ($posts->filterableTags) : ?>
 						<div class="filter__group-title">By Tag</div>
 						<div class="filter-clear-button icon js-reset-filter-group">×</div>
 						<div class="filter__items">
-<?php foreach ($posts->filterableTags as $aTag) : ?>
+<?php foreach ($posts->filterableTags as $key=>$aTag) : ?>
 							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_tag_{$aTag@iteration}" value="<?=$aTag->id; ?>" data-type="tag">
-								<label for="checkbox_tag_{$aTag@iteration}"><?=$aTag->name; ?> (<?=$aTag->count; ?>)</label>
+								<input class="js-filter" type="checkbox" id="checkbox_tag_<?=$key?>" value="<?=$aTag->id; ?>" data-type="tag">
+								<label for="checkbox_tag_<?=$key?>"><?=$aTag->name; ?> (<?=$aTag->count; ?>)</label>
 							</div>
 <?php endforeach; ?>
 						</div>
