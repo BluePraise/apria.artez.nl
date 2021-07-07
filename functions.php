@@ -89,8 +89,10 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 function change_wp_search_size($queryVars) {
-    if ( isset($_REQUEST['s']) )
+    if ( isset($_REQUEST['s']) ) {
         $queryVars['posts_per_page'] = -1;
+
+ }
     return $queryVars;
 }
 add_filter('request', 'change_wp_search_size');
@@ -256,4 +258,157 @@ function extendIssuePost($item){
 		'featureImage' => wp_get_attachment_image_src( get_post_thumbnail_id( $item->ID ), 'preview-size'),
 	];
 }
+}
+
+if(!function_exists("getFilter")) {
+function getFilter($results){
+
+	//get all authors with posts from coauthors taxonomy
+	$getAuthors = get_terms('author', array(
+		'orderby' => 'name',
+		'hide_empty' => true,
+		'number' => 20,
+	));
+
+
+	$filterableAuthors = array();
+	foreach($getAuthors as $aAuthor){
+
+		$aAuthor = getCorrectAuthor($aAuthor);
+
+		$filterableAuthors[$aAuthor->ID] = (object)[
+			'id' => $aAuthor->ID,
+			'display_name' => $aAuthor->display_name,
+			'count' => 0,
+		];
+	}
+
+	//get all tags with posts
+	$getTags = get_terms('post_tag', array(
+		'orderby' => 'name',
+		'hide_empty' => true,
+	));
+
+	$filterableTags = array();
+	foreach ($getTags as $aTag) {
+		$filterableTags[$aTag->term_id] = (object)[
+			'id' => $aTag->term_id,
+			'name' => ucfirst($aTag->name),
+			'count' => 0,
+		];
+	}
+
+	//get all issues
+	$getIssues = get_posts(array(
+		'post_type' => 'issue',
+	    'post_status' => 'publish',
+	    'numberposts' => -1,
+	    'orderby' => 'number',
+	    'order' => 'DESC',
+	));
+
+	$filterableIssues = array();
+	foreach($getIssues as $aIssue){
+		$filterableIssues[$aIssue->ID] = (object)[
+			'id' => $aIssue->ID,
+			'number' => get_field('number', $aIssue),
+			'title' => get_the_title($aIssue),
+			'count' => 0,
+		];
+	}
+
+	foreach ($results as $aResult) {
+
+		//count result by same author
+		if($aResult->authors) {
+		foreach ($aResult->authors as $aAuthor) {
+			if($filterableAuthors[$aAuthor->id]){
+				$filterableAuthors[$aAuthor->id]->count = $filterableAuthors[$aAuthor->id]->count + 1;
+			}
+		}
+
+		//store author ids to result
+		$aResult->author_ids = array();
+		foreach ($aResult->authors as $aAuthor) {
+			$aResult->author_ids[$aAuthor->id] = $aAuthor->id;
+		}
+	}
+
+		//count result by same tag
+	if($aResult->tags) {
+		foreach ($aResult->tags as $aTag) {
+			if($filterableTags[$aTag->id]){
+				$filterableTags[$aTag->id]->count = $filterableTags[$aTag->id]->count + 1;
+			}
+		}
+
+		//store tag ids to result
+		$aResult->tag_ids = array();
+		foreach ($aResult->tags as $aTag) {
+			$aResult->tag_ids[$aTag->id] = $aTag->id;
+		}
+	}
+
+		//count result by same issue
+		if($filterableIssues[$aResult->issue_id]){
+			$filterableIssues[$aResult->issue_id]->count = $filterableIssues[$aResult->issue_id]->count + 1;
+		}
+	}
+
+	// var_dump($aResult);
+
+
+	return (object)[
+		'filterableAuthors' => $filterableAuthors,
+		'filterableTags' => $filterableTags,
+		'filterableIssues' => $filterableIssues,
+		'total' => count($results) ,
+		'results' => $results,
+	];
+
+}
+}
+
+
+if(!function_exists("getCorrectAuthor")) {
+function getCorrectAuthor($author){
+	global $wpdb;
+
+	//get regular author
+	$getAuthor = get_user_by('slug', substr($author->slug, 4));
+
+	if(!$getAuthor){
+		//get coauthors author
+		$query = $wpdb->prepare( "SELECT post_id FROM $wpdb->postmeta WHERE meta_key=%s AND meta_value=%s;", 'cap-user_login', substr($author->slug, 4) );
+		$post_id = $wpdb->get_var( $query );
+
+		if($post_id){
+
+			$getAuthor = get_post($post_id);
+
+		}else{
+			return false;
+		}
+	}
+
+	return (object)[
+		'ID' => $getAuthor->ID,
+		'display_name' => getCoAuthorDisplayName($getAuthor),
+	];
+}
+}
+
+if(!function_exists("getCoAuthorDisplayName")) {
+function getCoAuthorDisplayName($author){
+	if($author->display_name){
+		return $author->display_name;
+	}else if($author->first_name || $author->last_name){
+		return $author->first_name . ' ' . $author->last_name;
+	}else if($author->nicname){
+		return $author->nicname;
+	}else{
+		return $author->post_title;
+	}
+}
+
 }
