@@ -261,6 +261,7 @@ function extendIssuePost($item){
 }
 
 if(!function_exists("getFilter")) {
+	
 function getFilter($results){
 
 	//get all authors with posts from coauthors taxonomy

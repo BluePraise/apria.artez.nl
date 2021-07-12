@@ -196,6 +196,8 @@ function extendIssue($issue){
 	];
 }
 
+if(!function_exists("getCoAuthorDisplayName")) {
+
 function getCoAuthorDisplayName($author){
 	if($author->display_name){
 		return $author->display_name;
@@ -207,6 +209,10 @@ function getCoAuthorDisplayName($author){
 		return $author->post_title;
 	}
 }
+}
+
+
+if(!function_exists("getCorrectAuthor")) {
 
 function getCorrectAuthor($author){
 	global $wpdb;
@@ -233,6 +239,9 @@ function getCorrectAuthor($author){
 		'display_name' => getCoAuthorDisplayName($getAuthor),
 	];
 }
+}
+
+if(!function_exists("getFilter")) {
 
 function getFilter($results){
 
@@ -334,6 +343,8 @@ function getFilter($results){
 		'total' => count($results),
 		'results' => $results,
 	];
+
+}
 
 }
 
