@@ -26,25 +26,19 @@ Template Name: Newsletter
 // All access is handled by main.php (usually triggered from .htaccess)
 
 
-define('WORDPRESS', true);
+wp_head();
 
 
-// Set request variables accordingly
-$_GET = array(
-	'realm' => 'newsletter',
-	'action' => 'show',
-);
-
-// Redirect request to main.php controller
-require __DIR__ . '/main.php';
 ?>
 
 <div class="main-content subscribe-content">
 	<div class="overlay-close-button js-newsletter-close-button">
-		<img src="/wp-content/themes/apria/elements/icon_close_black.svg">
+		<a href="<?=get_home_url() ?>" >
+			<img src="/wp-content/themes/apria/elements/icon_close_black.svg">
+		</a>
 	</div>
 
-	<a href="{get_home_url()}" class="logo" style="background-color: #">
+	<a href="<?=get_home_url() ?>" class="logo" style="background-color: #">
 		<img src="/wp-content/themes/apria/elements/logo.svg" alt="">
 	</a>
 
@@ -53,7 +47,7 @@ require __DIR__ . '/main.php';
 			<h1 class="article__title">Subscribe to our newsletter to stay up-to-date with the APRIA Journal and Platform.</h1>
 
 			<div class="tnp">
-				<form method="post" id="newsletter" action="http://apria.artez.nl/?na=s" onsubmit="return newsletter_check(this)" class="subscribe-form">
+				<form method="post" id="newsletter" action="http://apriawp1.local/?na=s" onsubmit="return newsletter_check(this)" class="subscribe-form">
 
 					<input type="hidden" name="nlang" value="">
 					<div class="tnp-field tnp-field-firstname input-wrap input--half">
@@ -65,13 +59,13 @@ require __DIR__ . '/main.php';
 					<div class="tnp-field tnp-field-lastname input-wrap input--half">
 
 						<input class="tnp-lastname form__input" type="text" name="ns" >
-						<label class="form__label">{#subscribe__lastname#}</label>
+						<label class="form__label">Last name</label>
 					</div>
 
 					<div class="tnp-field tnp-field-email input-wrap">
 
 						<input class="tnp-email form__input" type="email" name="ne" required>
-						<label class="form__label">{#subscribe__email#}</label>
+						<label class="form__label">Email</label>
 					</div>
 
 
@@ -85,6 +79,6 @@ require __DIR__ . '/main.php';
 	</article>
 </div>
 
-{/block}
+
 
 
