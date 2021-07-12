@@ -32,8 +32,10 @@ function ll($key) {
 	return $GLOBALS['smarty']->getConfigVariable($key);
 }
 
+if(!function_exists("removenbsp")) {
 function removenbsp($s) {
 	return str_replace(array('&nbsp;'), ' ', $s);
+}
 }
 
 function myStrftime($format, $timestamp) {
