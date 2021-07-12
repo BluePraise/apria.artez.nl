@@ -119,7 +119,7 @@ $pageTitle = $issue->title . ' - ' . $pageTitle;
 <!--
 		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop" style="color: <?=$color ?>;">⠇</div>
 -->
-		<div class="main-column">
+		<div class="main-column logo-fixed">
 			<a href="<?=get_home_url() ?>" class="logo">
 				<svg class="apria_logo" <?php if($backgroundcolor) : ?> style="background-color: <?=$backgroundcolor ?>" <?php endif; ?> ></svg>
 			</a>
@@ -238,8 +238,8 @@ if ($footnotes):  ?>
 
 		</div>
 	</article>
+<?php get_sidebar("", array("sidebar_posts"=> $sidebar_posts, "sidebar_issue" => false)); ?>
 
-{include "element_sidebar.tpl" sidebar_issue=false sidebar_posts=$sidebar_posts}
 
 </div>
 

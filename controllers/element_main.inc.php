@@ -43,35 +43,7 @@ function myStrftime($format, $timestamp) {
 	);
 }
 
-function formatDateShort($date) {
-	//Jan 2019
-	if (is_object($date)) {
-		$date = strtotime($date->date);
-	}else{
-		$date = strtotime($date);
-	}
 
-	$formatCode = ll('date_format_short');
-
-	return myStrftime($formatCode, $date);
-}
-
-function formatDateLarge($date) {
-	//January 2019
-	if (is_object($date)) {
-		$date = strtotime($date->date);
-	}else{
-		$date = strtotime($date);
-	}
-
-	$formatCode = ll('date_format_large');
-
-	return myStrftime($formatCode, $date);
-}
-
-function formatDate($date){
-	return date('m-d-Y', strtotime($date));
-}
 
 function rgba($hex, $opacity) {
 	return 'rgba(' . hexdec(substr($hex, 1, 2)) . ',' . hexdec(substr($hex, 3, 2)) . ',' . hexdec(substr($hex, 5)) . ',' . $opacity . ')';

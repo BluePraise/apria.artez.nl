@@ -1,4 +1,13 @@
-<footer <?php if($args["color"]) { ?> style="color: <?=$args['color'] ;?>" <?php } ?>>
+<?php 
+
+    if($args["class"]){
+
+        $classname = $args["class"];
+    }
+
+?>
+
+<footer class="<?=$classname?>" <?php if($args["color"]) { ?> style="color: <?=$args['color'] ;?>" <?php } ?>>
 
 	<span class="copyright-info">©2019 APRIA <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" class="creative-commons-license">
     <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />

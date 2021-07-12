@@ -430,3 +430,32 @@ function removenbsp($s) {
 }
 }
 
+function formatDateShort($date) {
+	//Jan 2019
+	if (is_object($date)) {
+		$date = strtotime($date->date);
+	}else{
+		$date = strtotime($date);
+	}
+
+	$formatCode = ll('date_format_short');
+
+	return myStrftime($formatCode, $date);
+}
+
+function formatDateLarge($date) {
+	//January 2019
+	if (is_object($date)) {
+		$date = strtotime($date->date);
+	}else{
+		$date = strtotime($date);
+	}
+
+	$formatCode = ll('date_format_large');
+
+	return myStrftime($formatCode, $date);
+}
+
+function formatDate($date){
+	return date('m-d-Y', strtotime($date));
+}
