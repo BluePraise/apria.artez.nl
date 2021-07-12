@@ -261,7 +261,7 @@ function extendIssuePost($item){
 }
 
 if(!function_exists("getFilter")) {
-	
+
 function getFilter($results){
 
 	//get all authors with posts from coauthors taxonomy
@@ -413,3 +413,20 @@ function getCoAuthorDisplayName($author){
 }
 
 }
+
+function aria_hex_rgb($hex) {
+	
+list($r, $g, $b) = sscanf($hex, "#%02x%02x%02x");
+return "{$r}, {$g}, {$b}";
+}
+
+function removenbsp1($s) {
+	return str_replace(array('&nbsp;'), ' ', $s);
+}
+
+if(!function_exists("removenbsp")) {
+function removenbsp($s) {
+	return str_replace(array('&nbsp;'), ' ', $s);
+}
+}
+

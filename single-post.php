@@ -39,9 +39,6 @@ get_header();
 	}
 
 
-function removenbsp1($s) {
-	return str_replace(array('&nbsp;'), ' ', $s);
-}
 
 	$text = removenbsp1(get_the_content());
 
