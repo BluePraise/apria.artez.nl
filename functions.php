@@ -459,3 +459,121 @@ function formatDateLarge($date) {
 function formatDate($date){
 	return date('m-d-Y', strtotime($date));
 }
+
+
+function e($s) {
+	return htmlspecialchars($s);
+}
+
+function ll($key) {
+	return $GLOBALS['smarty']->getConfigVariable($key);
+}
+
+
+function myStrftime($format, $timestamp) {
+	return strftime(
+		str_replace('%b', ll('month_short_'.date('m', $timestamp)), str_replace('%A', ll('weekday_'.date('w', $timestamp)), str_replace('%B', ll('month_'.date('m', $timestamp)), $format))),
+		$timestamp
+	);
+}
+
+
+
+function rgba($hex, $opacity) {
+	return 'rgba(' . hexdec(substr($hex, 1, 2)) . ',' . hexdec(substr($hex, 3, 2)) . ',' . hexdec(substr($hex, 5)) . ',' . $opacity . ')';
+}
+
+function formatIssueNumber($number){
+	return '#'.str_pad($number, 2, '0', STR_PAD_LEFT);
+}
+
+if(!function_exists("footnotify")) {
+function footnotify($item) {
+	global $smarty, $documentroot;
+
+	$text = removenbsp($item->content);
+
+	$smarty->assign('documentroot', $documentroot);
+
+	$footnotes = array();
+
+	$replace = function ($match) use (&$footnotes, $smarty) {
+		$index = count($footnotes) + 1;
+		$footnotes[$index] = $match[2];
+
+		return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
+	};
+
+	$item->content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
+	$item->footnotes = $footnotes;
+
+	return $item;
+}
+}
+
+
+
+function extendIssue($issue){
+
+	$previewtext = get_field('preview_text', $issue->ID);
+	if($previewtext){
+		$previewtext = "<p>$previewtext</p>";
+	} else {
+		$previewtext = wp_trim_words( apply_filters('the_content', $issue->post_content), 50 );
+	}
+
+	$background_image = get_field('background_image', $issue->ID);
+
+	return (object)[
+		'title' => get_the_title($issue),
+		'subtitle' => get_field('subtitle', $issue),
+		'url' => get_permalink($issue),
+		'number' => get_field('number', $issue),
+		'date' => $issue->post_date,
+		'background_image' => $background_image ? $background_image['url'] : false,
+		'background_color' => get_field('background_color', $issue),
+		'text_color' => get_field('text_color', $issue),
+		'preview_text' => $previewtext,
+		'authors' => getAuthors($issue->ID),
+		'download_pdf' => get_field('download_pdf', $issue),
+	];
+}
+
+
+$mainMenu = array();
+$mainMenuItems = wp_get_nav_menu_items('main-menu');
+if($mainMenuItems){
+	foreach ($mainMenuItems as $aLink) {
+		$mainMenu[] = (object)[
+			'title' => $aLink->title,
+			'url' => $aLink->url,
+		];
+	}
+}
+
+$footerMenu = array();
+$footerMenuItems = wp_get_nav_menu_items('footer-menu');
+if($footerMenuItems){
+	foreach ($footerMenuItems as $aLink) {
+		$footerMenu[] = (object)[
+			'title' => $aLink->title,
+			'url' => $aLink->url,
+		];
+	}
+}
+
+//get current issue
+$getCurrentIssue = @reset(get_posts(array(
+    'post_type' => 'issue',
+    'post_status' => 'publish',
+    'numberposts' => 1,
+    'orderby' => 'number',
+    'order' => 'DESC',
+)));
+
+if($getCurrentIssue){
+	$currentIssue = (object)[
+		'number' => get_field('number', $getCurrentIssue->ID),
+		'url' => get_permalink($getCurrentIssue),
+	];
+}

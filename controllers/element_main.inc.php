@@ -24,13 +24,6 @@ require_once __DIR__ . '/systemantics.inc.php';
 
 
 
-function e($s) {
-	return htmlspecialchars($s);
-}
-
-function ll($key) {
-	return $GLOBALS['smarty']->getConfigVariable($key);
-}
 
 if(!function_exists("removenbsp")) {
 function removenbsp($s) {
@@ -38,24 +31,9 @@ function removenbsp($s) {
 }
 }
 
-function myStrftime($format, $timestamp) {
-	return strftime(
-		str_replace('%b', ll('month_short_'.date('m', $timestamp)), str_replace('%A', ll('weekday_'.date('w', $timestamp)), str_replace('%B', ll('month_'.date('m', $timestamp)), $format))),
-		$timestamp
-	);
-}
 
 
-
-function rgba($hex, $opacity) {
-	return 'rgba(' . hexdec(substr($hex, 1, 2)) . ',' . hexdec(substr($hex, 3, 2)) . ',' . hexdec(substr($hex, 5)) . ',' . $opacity . ')';
-}
-
-function formatIssueNumber($number){
-	return '#'.str_pad($number, 2, '0', STR_PAD_LEFT);
-}
-
-if(!function_exists(footnotify)) {
+if(!function_exists("footnotify")) {
 function footnotify($item) {
 	global $smarty, $documentroot;
 
@@ -146,31 +124,7 @@ function extendIssuePost($item){
 }
 }
 
-function extendIssue($issue){
 
-	$previewtext = get_field('preview_text', $issue->ID);
-	if($previewtext){
-		$previewtext = "<p>$previewtext</p>";
-	} else {
-		$previewtext = wp_trim_words( apply_filters('the_content', $issue->post_content), 50 );
-	}
-
-	$background_image = get_field('background_image', $issue->ID);
-
-	return (object)[
-		'title' => get_the_title($issue),
-		'subtitle' => get_field('subtitle', $issue),
-		'url' => get_permalink($issue),
-		'number' => get_field('number', $issue),
-		'date' => $issue->post_date,
-		'background_image' => $background_image ? $background_image['url'] : false,
-		'background_color' => get_field('background_color', $issue),
-		'text_color' => get_field('text_color', $issue),
-		'preview_text' => $previewtext,
-		'authors' => getAuthors($issue->ID),
-		'download_pdf' => get_field('download_pdf', $issue),
-	];
-}
 
 if(!function_exists("getCoAuthorDisplayName")) {
 
