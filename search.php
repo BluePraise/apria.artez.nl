@@ -57,7 +57,7 @@ $aposts = new WP_Query( $args );
 				</div>
 				<h1 class="article__title"><?php 
 				// var_dump($_GET); 
-				echo get_search_query(); ?></h1>
+				echo ucfirst(get_search_query()); ?></h1>
 			</div>
 
 			<div class="search-results">
@@ -93,7 +93,7 @@ if ($searchResults->results) :
    ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
    <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
    class="result__info"> <div class="result__date"><?php echo
-   $aPost->date; ?></div> <ul class="result__meta"> <?php if
+   formatDate($aPost->date); ?></div> <ul class="result__meta"> <?php if
    ($aPost->authors) : ?> <li> <?php foreach ($aPost->authors as
    $aAuthor) : ?> <a
    href="<?=$aAuthor->post_url ?>"><?=$aAuthor->name; ?></a> <?php

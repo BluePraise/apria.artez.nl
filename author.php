@@ -79,7 +79,7 @@ $pageTitle = get_the_author_meta('display_name') . ' - ' . $pageTitle;
 				</div>
 				<h1 class="article__title"><?php 
 				// var_dump($_GET); 
-				echo $term; ?></h1>
+				echo ucfirst($term); ?></h1>
 			</div>
 
 			<div class="search-results">
@@ -97,7 +97,7 @@ if ($searchResults->results) :
    ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
    <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
    class="result__info"> <div class="result__date"><?php echo
-   $aPost->date; ?></div> <ul class="result__meta"> <?php if
+   formatDate($aPost->date); ?></div> <ul class="result__meta"> <?php if
    ($aPost->authors) : ?> <li> <?php foreach ($aPost->authors as
    $aAuthor) : ?> <a
    href="<?=$aAuthor->post_url ?>"><?=$aAuthor->name; ?></a> <?php
