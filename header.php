@@ -40,10 +40,7 @@ defined('ABSPATH') || exit;
 
 			?>
 
-			<div class="mobile-menu-close-button js-mobile-menu-close-button hide-on-desktop">
-				<img src="<?php echo esc_url(get_template_directory_uri() . "/elements/icon_close_highlight.svg"); ?>"
-					 alt="<?php _e("Mobile Close Icon", THEME_NAME); ?>">
-			</div>
+			<div class="mobile-menu-close-button js-mobile-menu-close-button hide-on-desktop"></div>
 
 			<?php
 
@@ -197,7 +194,7 @@ defined('ABSPATH') || exit;
 			<div class="site-title site-title--news clickable-block" data-href="<?php echo esc_url(home_url()); ?>">
 				<img src="<?php echo esc_url(get_template_directory_uri() . "/elements/news.svg"); ?>"
 					 width="100"
-					 alt="<?php _e("News", THEME_NAME) ?>">
+					 alt="<?php _e("News", 'apria') ?>">
 			</div>
 		<?php else: ?>
 			<div class="site-title clickable-block" data-href="<?php echo esc_url(home_url()); ?>"
@@ -248,10 +245,10 @@ defined('ABSPATH') || exit;
 			</div>
 			<div class="toogle-tooltip">
 				<span class="switch-to-picture">
-					<?php _e("Switch to Image View", THEME_NAME); ?>
+					<?php _e("Switch to Image View", 'apria'); ?>
 				</span>
 				<span class="switch-to-text">
-					<?php _e("Switch to Text View", THEME_NAME); ?>
+					<?php _e("Switch to Text View", 'apria'); ?>
 				</span>
 			</div>
 		</div>

@@ -1,30 +1,5 @@
 <?php
 
-/*
-	APRIA
-	Copyright (C) 2018 by Systemantics, Bureau for Informatics
-
-	Systemantics GmbH
-	Bleichstr. 11
-	41747 Viersen
-	GERMANY
-
-	Web:    www.systemantics.net
-	Email:  hello@systemantics.net
-
-	Permission granted to use the files associated with this
-	website only on your webserver.
-
-	Changes to these files are PROHIBITED due to license restrictions.
-*/
-
-
-// require __DIR__ . '/controllers/element_main.inc.php';
-
-
-// Constants
-define("THEME_NAME", "apria-theme");
-
 // Front end scripts
 add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);

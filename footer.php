@@ -2,9 +2,9 @@
 
 <footer>
 	<span class="copyright-info">
-		&copy;<?php echo esc_html(date("Y") . " " . __("APRIA", THEME_NAME)); ?>
+		&copy;<?php echo esc_html(date("Y") . " " . __("APRIA", 'apria')); ?>
 		<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" class="creative-commons-license">
-			<img alt="<?php _e("Creative Commons License", THEME_NAME); ?>"
+			<img alt="<?php _e("Creative Commons License", 'apria'); ?>"
 				 src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png"/>
 		</a>
 	</span>
@@ -30,7 +30,7 @@
 	if ($social_medias) : ?>
 		<span class="social-media">
 			<span>
-				<?php _e("APRIA on", THEME_NAME); ?>
+				<?php _e("APRIA on", 'apria'); ?>
 			</span>
 			<?php
 			foreach ($social_medias as $social_media) :
