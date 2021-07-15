@@ -481,62 +481,6 @@
       "oAP" : "\/tag.php",
       "oF" : 0
     },
-    "\/templates\/element_footer.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/element_footer.tpl",
-      "oF" : 0
-    },
-    "\/templates\/element_header.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/element_header.tpl",
-      "oF" : 0
-    },
-    "\/templates\/element_sidebar.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/element_sidebar.tpl",
-      "oF" : 0
-    },
-    "\/templates\/home_show.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/home_show.tpl",
-      "oF" : 0
-    },
-    "\/templates\/main.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/main.tpl",
-      "oF" : 0
-    },
-    "\/templates\/pages_show.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/pages_show.tpl",
-      "oF" : 0
-    },
-    "\/templates\/search_results.tpl" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/search_results.tpl",
-      "oF" : 0
-    },
     "\/webfonts\/AHAMONO-Regular.otf" : {
       "cB" : 0,
       "ft" : 8192,
