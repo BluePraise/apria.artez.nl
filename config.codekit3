@@ -37,25 +37,25 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/author.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/footer.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/footer.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/functions.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/functions.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/gulpfile.js" : {
       "bF" : 0,
@@ -68,13 +68,21 @@
       "sC" : 3,
       "tS" : 0
     },
+    "\/head.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/head.php",
+      "oF" : 1
+    },
     "\/header.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/header.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/home.php" : {
       "cB" : 0,
@@ -88,17 +96,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/index.php",
-      "oF" : 0
-    },
-    "\/main.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/main.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/package-lock.json" : {
       "ft" : 524288,
@@ -120,41 +120,41 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page-holding.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page-newsletter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page-newsletter.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page-opencall.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page-opencall.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page.old.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page.old.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/sass\/_clearfix.scss" : {
       "aP" : 0,
@@ -179,20 +179,6 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/_colors.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/sass\/_fonts.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/_fonts.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -264,6 +250,34 @@
       "oA" : 1,
       "oAP" : "\/sass\/_variables.css",
       "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/header.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/header.css",
+      "oF" : 1,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/index.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/index.css",
+      "oF" : 1,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -393,41 +407,41 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/search.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/searchform.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/searchform.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/single-issue.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/single-issue.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/single-news.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/single-news.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/single-post.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/single-post.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/style-min.css" : {
       "aP" : 1,
@@ -477,9 +491,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/tag.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/webfonts\/AHAMONO-Regular.otf" : {
       "cB" : 0,

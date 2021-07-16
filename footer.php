@@ -11,14 +11,14 @@
 
 	<?php
 
-	// Printing Header Menu
-	wp_nav_menu([
-			'theme_location' => 'footer_menu',
-			'container_class' => 'footer-pages',
-			'menu_class' => 'menu-items',
-			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-			'depth' => 1,
-	]);
+
+		wp_nav_menu([
+				'theme_location' => 'footer_menu',
+				'container_class' => 'footer-pages',
+				'menu_class' => 'menu-items',
+				'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+				'depth' => 1,
+		]);
 
 	?>
 

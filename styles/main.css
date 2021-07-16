@@ -2,60 +2,83 @@ main {
   max-width: 1640px;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, p,
-a, abbr, address, code, img, q, s, sub, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+header {
+  zoom: 1;
+  transition: margin-top 250ms;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+  margin-top: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
+.main-navigation ul {
   list-style: none;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+.main-navigation ul li {
+  border: 1px solid var(--text-color-1);
+  width: 122px;
+}
+.main-navigation ul li + li {
+  margin-left: 16px;
+}
+.main-navigation ul li a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: var(--text-color-1);
+  text-decoration: none;
+  padding: 10px 0;
+  text-align: center;
 }
 
- q {
-  quotes: none;
+@font-face {
+  font-family: "Crimson";
+  src: url("../webfonts/crimson-roman-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
 }
-
-
-q:before, q:after {
-  content: "";
-  content: none;
+@font-face {
+  font-family: "Crimson";
+  src: url("../webfonts/crimson-italic-webfont.woff") format("woff");
+  font-style: italic;
+  font-weight: normal;
 }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+@font-face {
+  font-family: "Crimson";
+  src: url("../webfonts/crimson-semibold-webfont.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
 }
-
+@font-face {
+  font-family: "Crimson";
+  src: url("../webfonts/crimson-semibolditalic-webfont.woff") format("woff");
+  font-style: italic;
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Ahamono";
+  src: url("../webfonts/AHAMONO-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "APRIA-Icons";
+  src: url("../webfonts/icons.woff2") format("woff2"), url("../webfonts/icons.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
 :root {
   --color-1: #fce4e9;
+  --text-color-1: #ff0000;
+  --text-color-2: #000;
+  --font-mono: "Ahamono";
 }
 
 html {
@@ -80,6 +103,10 @@ html.no-scroll {
 body {
   min-height: 100vh;
   position: relative;
+}
+
+ul {
+  list-style: none;
 }
 
 /*# sourceMappingURL=main.css.map */
