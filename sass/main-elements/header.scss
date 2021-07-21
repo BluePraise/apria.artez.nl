@@ -7,14 +7,31 @@ header {
 	display: flex;
 	justify-content: center;
 	margin-top: 0;
-	width: 100%;
 	z-index: 1;
+	margin-bottom: 90px;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 1210px;
+	}
+	ul {
+		margin-left: 0;
+		margin-bottom: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			a {
+				color: var(--text-color-1);
+				font-family: var(--font-mono);
+			}
+		}
+	}
 }
 
 .main-navigation {
 	ul {
-		list-style: none;
-		display: inline-flex;
 		li {
 			border: 1px solid var(--text-color-1);
 			width: 122px;
@@ -23,14 +40,33 @@ header {
 			}
 			a {
 				display: block;
-				font-family: var(--font-mono);
 				font-size: 12px;
 				line-height: 17px;
 				text-transform: uppercase;
-				color: var(--text-color-1);
 				text-decoration: none;
 				padding: 10px 0;
 				text-align: center;
+			}
+		}
+	}
+}
+
+// SOCIAL MEDIA NAV
+.social-list {
+	display: flex;
+	align-items: center;
+	.social-item {
+		margin-right: 20px;
+		a {
+			display: block;
+			background: var(--text-color-1);
+			padding: 4px;
+			border-radius: 60px;
+			svg {
+				fill: var(--color-1);
+				width: 17px;
+				display: block;
+				height: 17px;
 			}
 		}
 	}

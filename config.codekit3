@@ -121,6 +121,44 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/acf-json\/group_60f866677d92e.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_60f866677d92e-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/assets\/svg\/facebook.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/facebook.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/twitter.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/twitter.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/youtube.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/youtube.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/author.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -244,20 +282,6 @@
       "oAP" : "\/page.php",
       "oF" : 1
     },
-    "\/sass\/_clearfix.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/_clearfix.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/sass\/_colors.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -267,6 +291,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/_colors.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/_frontpage.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_frontpage.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -300,7 +338,7 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/_reset.scss" : {
+    "\/sass\/base\/html.scss" : {
       "aP" : 0,
       "bl" : 0,
       "dP" : 10,
@@ -308,13 +346,13 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/sass\/_reset.css",
+      "oAP" : "\/sass\/base\/html.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/_typography.scss" : {
+    "\/sass\/base\/index.scss" : {
       "aP" : 0,
       "bl" : 0,
       "dP" : 10,
@@ -322,13 +360,13 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/sass\/_typography.css",
+      "oAP" : "\/sass\/base\/index.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/_variables.scss" : {
+    "\/sass\/base\/typography.scss" : {
       "aP" : 0,
       "bl" : 0,
       "dP" : 10,
@@ -336,7 +374,21 @@
       "ft" : 4,
       "ma" : 0,
       "oA" : 1,
-      "oAP" : "\/sass\/_variables.css",
+      "oAP" : "\/sass\/base\/typography.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/base\/variables.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/base\/variables.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,

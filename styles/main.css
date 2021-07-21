@@ -1,7 +1,3 @@
-main {
-  max-width: 1640px;
-}
-
 header {
   zoom: 1;
   transition: margin-top 250ms;
@@ -10,15 +6,31 @@ header {
   -webkit-justify-content: center;
           justify-content: center;
   margin-top: 0;
-  width: 100%;
   z-index: 1;
+  margin-bottom: 90px;
+}
+header .container {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  width: 100%;
+  max-width: 1210px;
+}
+header ul {
+  margin-left: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+header ul li {
+  display: inline-block;
+}
+header ul li a {
+  color: var(--text-color-1);
+  font-family: var(--font-mono);
 }
 
-.main-navigation ul {
-  list-style: none;
-  display: -webkit-inline-flex;
-  display: inline-flex;
-}
 .main-navigation ul li {
   border: 1px solid var(--text-color-1);
   width: 122px;
@@ -28,14 +40,79 @@ header {
 }
 .main-navigation ul li a {
   display: block;
-  font-family: var(--font-mono);
   font-size: 12px;
   line-height: 17px;
   text-transform: uppercase;
-  color: var(--text-color-1);
   text-decoration: none;
   padding: 10px 0;
   text-align: center;
+}
+
+.social-list {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.social-list .social-item {
+  margin-right: 20px;
+}
+.social-list .social-item a {
+  display: block;
+  background: var(--text-color-1);
+  padding: 4px;
+  border-radius: 60px;
+}
+.social-list .social-item a svg {
+  fill: var(--color-1);
+  width: 17px;
+  display: block;
+  height: 17px;
+}
+
+:root {
+  --color-1: #fce4e9;
+  --text-color-1: #ff0000;
+  --text-color-2: #000;
+  --text-color-3: #f1f1f2;
+  --font-mono: "Ahamono";
+}
+
+html,
+body {
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  height: 100%;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  background-color: var(--color-1);
+}
+html.no-scroll {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  background-color: var(--color-1);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
 }
 
 @font-face {
@@ -74,39 +151,71 @@ header {
   font-style: normal;
   font-weight: normal;
 }
-:root {
-  --color-1: #fce4e9;
-  --text-color-1: #ff0000;
-  --text-color-2: #000;
-  --font-mono: "Ahamono";
+p {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
 }
 
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-y: scroll;
-  word-wrap: break-word;
-  -webkit-text-size-adjust: 100%;
-  box-sizing: border-box;
-  background-color: var(--color-1);
+main {
+  max-width: 1566px;
+  margin: 0 auto;
 }
-html.no-scroll {
-  overflow: hidden;
+main section {
+  display: -webkit-flex;
+  display: flex;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+.logo-container {
+  width: 398px;
+  height: 398px;
+}
+.logo-container a.logo {
+  display: block;
+  background-color: var(--text-color-1);
+  border-radius: 200px;
 }
 
-body {
-  min-height: 100vh;
-  position: relative;
+.hero {
+  color: var(--text-color-1);
+}
+.hero .intro-text {
+  display: inline-block;
+  margin-left: 154px;
+  max-width: 812px;
+}
+.hero .news-column {
+  margin-left: 34px;
+  text-align: center;
+}
+.hero .news-column h2 {
+  display: inline-block;
+  margin: 0;
+  width: 77px;
+  font-family: var(--font-mono);
+  color: var(--text-color-3);
+  background: var(--text-color-1);
+  padding: 25px 0px;
+  border-radius: 70px;
+  font-size: 24px;
+  line-height: 1;
+}
+.hero .news-column .news-text {
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-align-items: center;
+          align-items: center;
+  max-width: 154px;
+  margin-top: 20px;
 }
 
-ul {
-  list-style: none;
+.posts ul {
+  display: -webkit-inline-flex;
+  display: inline-flex;
+}
+.posts ul li {
+  width: 100%;
+  max-width: 398px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -20,6 +20,25 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_60f8777447027",
+            "label": "News Text",
+            "name": "news_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
         }
     ],
     "location": [
@@ -36,8 +55,18 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags"
+    ],
     "active": true,
     "description": "",
-    "modified": 1626551236
+    "modified": 1626896285
 }
