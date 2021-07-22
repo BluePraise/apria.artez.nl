@@ -1,9 +1,6 @@
 main {
-	max-width: 1566px;
+	max-width: 1640px;
 	margin: 0 auto;
-	section {
-		display: flex;
-	}
 }
 
 .logo-container {
@@ -17,32 +14,25 @@ main {
 }
 
 .hero {
+	display: grid;
+	grid-template-columns: 1fr 2fr 260px;
 	color: var(--text-color-1);
 	.intro-text {
-		display: inline-block;
-		margin-left: 154px;
+		font-family: "Libre Baskerville", serif;
 		max-width: 812px;
 	}
 	.news-column {
-		margin-left: 34px;
 		text-align: center;
 		h2 {
 			display: inline-block;
 			margin: 0;
-			width: 77px;
-			font-family: var(--font-mono);
-			color: var(--text-color-3);
-			background: var(--text-color-1);
-			padding: 25px 0px;
-			border-radius: 70px;
-			font-size: 24px;
-			line-height: 1;
+			max-width: 77px;
 		}
 		.news-text {
 			flex-direction: column;
 			align-items: center;
-			max-width: 154px;
 			margin-top: 20px;
+			font-family: "Libre Baskerville", serif;
 		}
 	}
 }

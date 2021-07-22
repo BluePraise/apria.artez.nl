@@ -22,37 +22,6 @@
 
 	?>
 
-	<?php
-
-	// Social Medias
-	$social_medias = get_field("social_media_links", "options");
-
-	if ($social_medias) : ?>
-		<span class="social-media">
-			<span>
-				<?php _e("APRIA on", 'apria'); ?>
-			</span>
-			<?php
-			foreach ($social_medias as $social_media) :
-
-				$social_media_link = $social_media['social_media_link'];
-
-				if ($social_media_link) :
-
-					$social_media_link_url = $social_media_link['url'];
-					$social_media_link_title = $social_media_link['title'];
-					$social_media_link_target = $social_media_link['target'] ? $social_media_link['target'] : '_self';
-					?>
-					<a href="<?php echo esc_url($social_media_link_url); ?>"
-					   target="<?php echo esc_attr($social_media_link_target); ?>"
-					   title="<?php echo esc_attr($social_media_link_title); ?>"
-					>
-						<?php echo esc_html($social_media_link_title); ?>
-					</a>
-				<?php endif; ?>
-			<?php endforeach; ?>
-		</span>
-	<?php endif; ?>
 </footer>
 
 

@@ -4,6 +4,17 @@
   --text-color-2: #000;
   --text-color-3: #f1f1f2;
   --font-mono: "Ahamono";
+  --font-serif: "Libre Baskerville", serif;
+}
+
+/* global box-sizing */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 html,
@@ -22,7 +33,6 @@ html {
   word-wrap: break-word;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
-  background-color: var(--color-1);
 }
 html.no-scroll {
   overflow: hidden;
@@ -34,6 +44,7 @@ html.no-scroll {
   }
 }
 body {
+  font-weight: 400;
   background-color: var(--color-1);
   max-width: 100%;
   overflow-x: hidden;
@@ -97,12 +108,11 @@ header {
   margin-bottom: 90px;
 }
 header .container {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  width: 100%;
-  max-width: 1210px;
+  display: grid;
+  grid-template-columns: repeat(12, 122px);
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
 }
 header ul {
   margin-left: 0;
@@ -118,6 +128,9 @@ header ul li a {
   font-family: var(--font-mono);
 }
 
+.main-navigation {
+  grid-column: 3/12;
+}
 .main-navigation ul li {
   border: 1px solid var(--text-color-1);
   width: 122px;
@@ -158,12 +171,8 @@ header ul li a {
 }
 
 main {
-  max-width: 1566px;
+  max-width: 1640px;
   margin: 0 auto;
-}
-main section {
-  display: -webkit-flex;
-  display: flex;
 }
 
 .logo-container {
@@ -177,36 +186,29 @@ main section {
 }
 
 .hero {
+  display: grid;
+  grid-template-columns: 1fr 2fr 260px;
   color: var(--text-color-1);
 }
 .hero .intro-text {
-  display: inline-block;
-  margin-left: 154px;
+  font-family: "Libre Baskerville", serif;
   max-width: 812px;
 }
 .hero .news-column {
-  margin-left: 34px;
   text-align: center;
 }
 .hero .news-column h2 {
   display: inline-block;
   margin: 0;
-  width: 77px;
-  font-family: var(--font-mono);
-  color: var(--text-color-3);
-  background: var(--text-color-1);
-  padding: 25px 0px;
-  border-radius: 70px;
-  font-size: 24px;
-  line-height: 1;
+  max-width: 77px;
 }
 .hero .news-column .news-text {
   -webkit-flex-direction: column;
           flex-direction: column;
   -webkit-align-items: center;
           align-items: center;
-  max-width: 154px;
   margin-top: 20px;
+  font-family: "Libre Baskerville", serif;
 }
 
 .posts ul {
