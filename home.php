@@ -22,24 +22,29 @@ get_header();
 	</section>
 	<section class="posts">
 		<ul>
-			<?php
-			global $post;
+			<?php // WP_Query arguments
+				$args = array(
+					'post_type'              => array( 'post' ),
+					'nopaging'               => true,
+					'posts_per_page'		 => 5,
+					'offset' 				 => 3
+				);
 
-			$myposts = get_posts( array(
-				'posts_per_page' => 5,
-				'offset'         => 1,
-				'category'       => 1
-			) );
+				// The Query
+				$query = new WP_Query( $args );
 
-			if ( $myposts ) {
-				foreach ( $myposts as $post ) :
-					setup_postdata( $post ); ?>
-					<li><a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></a></h3></li>
-				<?php
-				endforeach;
-				wp_reset_postdata();
-			}
-			?>
+				// The Loop
+				if ( $query->have_posts() ) :
+					while ( $query->have_posts() ):
+						$query->the_post(); ?>
+					<li>
+						<a href="<?php the_permalink(); ?>">
+							<h3><?php the_title(); ?></h3>
+							<p><?php the_author();?></p>
+						</a>
+					</li>
+				<?php endwhile; endif; ?>
+			<?php wp_reset_postdata(); ?>
 
 		</ul>
 

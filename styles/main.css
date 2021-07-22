@@ -5,6 +5,7 @@
   --text-color-3: #f1f1f2;
   --font-mono: "Ahamono";
   --font-serif: "Libre Baskerville", serif;
+  --font-sans-serif: "Francois One", sans-serif;
 }
 
 /* global box-sizing */
@@ -212,12 +213,36 @@ main {
 }
 
 .posts ul {
-  display: -webkit-inline-flex;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(4, 366px);
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+  row-gap: 16px;
 }
 .posts ul li {
-  width: 100%;
-  max-width: 398px;
+  background-color: lightblue;
+  padding: 160px 32px;
+  border-radius: 199px;
+}
+.posts ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+.posts ul li h3,
+.posts ul li p {
+  font-family: var(--font-sans-serif);
+  font-size: 40px;
+}
+.posts ul li h3 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 16px 0;
+}
+.posts ul li p {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */

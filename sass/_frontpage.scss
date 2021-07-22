@@ -38,9 +38,32 @@ main {
 }
 
 .posts ul {
-	display: inline-flex;
+	display: grid;
+	grid-template-columns: repeat(4, 366px);
+	column-gap: 16px;
+	row-gap: 16px;
 	li {
-		width: 100%;
-		max-width: 398px;
+		background-color: lightblue;
+		padding: 160px 32px;
+		border-radius: 199px;
+		a {
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+			text-align: center;
+		}
+		h3,
+		p {
+			font-family: var(--font-sans-serif);
+			font-size: 40px;
+		}
+		h3 {
+			font-size: 40px;
+			line-height: 40px;
+			margin: 0 0 16px 0;
+		}
+		p {
+			font-size: 20px;
+		}
 	}
 }
