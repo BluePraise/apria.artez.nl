@@ -177,8 +177,8 @@ main {
 }
 
 .logo-container {
-  width: 398px;
-  height: 398px;
+  max-width: 398px;
+  height: auto;
 }
 .logo-container a.logo {
   display: block;
@@ -189,6 +189,9 @@ main {
 .hero {
   display: grid;
   grid-template-columns: 1fr 2fr 260px;
+  -webkit-column-gap: 1em;
+     -moz-column-gap: 1em;
+          column-gap: 1em;
   color: var(--text-color-1);
 }
 .hero .intro-text {
@@ -243,6 +246,11 @@ main {
 }
 .posts ul li p {
   font-size: 20px;
+}
+.posts ul li p.post-type {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 17px;
 }
 
 /*# sourceMappingURL=main.css.map */

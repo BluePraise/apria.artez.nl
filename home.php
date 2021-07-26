@@ -3,7 +3,6 @@
 Template Name: Page Home
 */
 get_header();
-// <p><?=get_field("intro_text");
 ?>
 <main>
 	<section class="hero">
@@ -23,27 +22,39 @@ get_header();
 	<section class="posts">
 		<ul>
 			<?php // WP_Query arguments
-				$args = array(
+				$post_args = array(
 					'post_type'              => array( 'post' ),
-					'nopaging'               => true,
-					'posts_per_page'		 => 5,
-					'offset' 				 => 3
+					'posts_per_page'         => 5
 				);
 
+				$news_args = array(
+					'post_type'              => array( 'news' ),
+					'posts_per_page'         => 5
+				);
+				$issue_args = array(
+					'post_type'              => array( 'issue' ),
+					'posts_per_page'         => 5
+				);
 				// The Query
-				$query = new WP_Query( $args );
+				$query_posts   = new WP_Query( $post_args );
+				$query_news    = new WP_Query( $news_args );
+				$query_issues  = new WP_Query( $issue_args );
+
+				$result        = new WP_Query();
+
+				// start putting the contents in the new object
+				$result->posts = array_unique(array_merge( $query_posts->posts, $query_news->posts, $query_issues->posts ), SORT_REGULAR );
+
+				// $posts = get_posts( $defaults );
+				var_dump($results);
 
 				// The Loop
-				if ( $query->have_posts() ) :
-					while ( $query->have_posts() ):
-						$query->the_post(); ?>
-					<li>
-						<a href="<?php the_permalink(); ?>">
-							<h3><?php the_title(); ?></h3>
-							<p><?php the_author();?></p>
-						</a>
-					</li>
-				<?php endwhile; endif; ?>
+				// if ( $query->have_posts() ) : while ( $query->have_posts() ): $query->the_post(); 
+				// 	$post = get_post( $post );
+				
+				?>
+					
+				<?php //endwhile; endif; ?>
 			<?php wp_reset_postdata(); ?>
 
 		</ul>

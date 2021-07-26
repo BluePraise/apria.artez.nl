@@ -4,8 +4,8 @@ main {
 }
 
 .logo-container {
-	width: 398px;
-	height: 398px;
+	max-width: 398px;
+	height: auto;
 	a.logo {
 		display: block;
 		background-color: var(--text-color-1);
@@ -16,6 +16,7 @@ main {
 .hero {
 	display: grid;
 	grid-template-columns: 1fr 2fr 260px;
+	column-gap: 1em;
 	color: var(--text-color-1);
 	.intro-text {
 		font-family: "Libre Baskerville", serif;
@@ -64,6 +65,11 @@ main {
 		}
 		p {
 			font-size: 20px;
+		}
+		p.post-type {
+			font-family: var(--font-mono);
+			font-size: 13px;
+			line-height: 17px;
 		}
 	}
 }

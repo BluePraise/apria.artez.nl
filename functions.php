@@ -38,8 +38,7 @@ add_action("after_setup_theme", function () {
 
 //Add Search Form Into Header Menu
 add_filter('wp_nav_menu_items', 'apria_change_nav_menu_items', 10, 2);
-function apria_change_nav_menu_items($items, $args)
-{
+function apria_change_nav_menu_items($items, $args) {
 	if ('header_menu' == $args->theme_location) {
 		$items .= '<li class="menu-item">';
 		$items .= get_search_form(false);
@@ -151,6 +150,7 @@ function create_post_types()
 		]
 	);
 }
+
 
 add_action('init', 'create_post_types');
 
