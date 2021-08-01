@@ -2,3 +2,9 @@
 @import "_grid";
 @import "main-elements/index.scss";
 @import "frontpage.scss";
+
+// HELPERS
+
+.show {
+	display: block;
+}

@@ -260,7 +260,7 @@ $(function() {
 	// 	if(prevItem.hasClass('inline-images')){
 	// 		prevItem.append(item);
 	// 		prevItem.removeClass('inline-images--one').addClass('inline-images--two');
-			
+
 	// 	}else{
 
 	// 		figure.insertAfter(item);
@@ -441,7 +441,7 @@ $(function() {
 		.on('scroll', function () {
 			if ($('header').length) {
 				var headerPos,
-					LogoPos;
+					logoPos;
 
 				if (getBreakpoint() == 'desktop') {
 					logoPos = 70;
@@ -578,11 +578,15 @@ $(function() {
 	$(document)
 		.on('click', 'a', function (e) {
 			if(!$(this).attr('href')){
-
-			}else if (this.hostname != location.hostname && $(this).attr('href').substr(0,7) != 'mailto:') {
+			}
+			else if (this.hostname != location.hostname && $(this).attr('href').substr(0,7) != 'mailto:') {
 				this.blur();
 				window.open(this.href);
 				e.preventDefault();
 			}
 		});
-});
+}); // end doc ready
+
+
+
+

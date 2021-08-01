@@ -3,26 +3,36 @@ main {
 	margin: 0 auto;
 }
 
-.logo-container {
-	max-width: 398px;
-	height: auto;
-	a.logo {
-		display: block;
-		background-color: var(--text-color-1);
-		border-radius: 200px;
-	}
-}
 
 .hero {
 	display: grid;
 	grid-template-columns: 1fr 2fr 260px;
+	grid-auto-rows: minmax(100px, auto);
 	column-gap: 1em;
 	color: var(--text-color-1);
+	margin-bottom: 60px;
+
+	.logo-container {
+		grid-column-start: 1;
+		grid-row-start: 1;
+		grid-row-end: 3;
+		max-width: 398px;
+		height: auto;
+		a.logo {
+			display: block;
+			background-color: var(--text-color-1);
+			border-radius: 200px;
+		}
+	}
 	.intro-text {
+		grid-column-start: 2;
+		grid-row-start: 1;
 		font-family: "Libre Baskerville", serif;
 		max-width: 812px;
 	}
 	.news-column {
+		grid-row-start: 1;
+		grid-row-end: 3;
 		text-align: center;
 		h2 {
 			display: inline-block;
@@ -36,22 +46,64 @@ main {
 			font-family: "Libre Baskerville", serif;
 		}
 	}
+	.filters {
+		grid-column-start: 2;
+		grid-row-start: 2;
+		display: flex;
+		a {
+			display: block;
+			font-family: var(--font-mono);
+			color: var(--text-color-1);
+			font-size: 12px;
+			line-height: 17px;
+			text-transform: uppercase;
+			text-decoration: none;
+			// padding: 10px;
+			text-align: center;
+			margin-bottom: 20px;
+			margin-right: 16px;
+			min-width: 130px;
+			&:before {
+				content: "";
+				padding-top: 10px;
+				display: inline-block;
+				border-top: 2px solid transparent;
+				width: 100%;
+			}
+			&:after {
+				content: "";
+				display: inline-block;
+				border-bottom: 2px solid var(--text-color-1);
+				width: 100%;
+			}
+			&.active:before {
+				border-top: 2px solid var(--text-color-1);
+			}
+		}
+	}
+
 }
 
-.posts ul {
+ul.posts  {
 	display: grid;
 	grid-template-columns: repeat(4, 366px);
 	column-gap: 16px;
 	row-gap: 16px;
+	padding-left: 0;
+	&.hide {
+		display: none;
+	}
 	li {
+		display: flex;
+		align-items: center;
 		background-color: lightblue;
-		padding: 160px 32px;
-		border-radius: 199px;
+		// padding: 160px 32px;
 		a {
 			text-decoration: none;
 			color: white;
 			text-transform: uppercase;
 			text-align: center;
+			width: 100%;
 		}
 		h3,
 		p {
@@ -73,3 +125,22 @@ main {
 		}
 	}
 }
+
+.main-content .open-call {
+	color: var(--text-color-1);
+	&.hide {
+		display: none;
+	}
+}
+
+.main-content .apria-journal {
+	&.hide {
+		display: none;
+	}
+}
+
+.circle {
+	height: 370px;
+	border-radius: 50%;
+}
+

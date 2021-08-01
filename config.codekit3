@@ -509,6 +509,17 @@
       "oAP" : "\/scripts\/jquery-1.11.3.min.map",
       "oF" : 0
     },
+    "\/scripts\/jquery-latest.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/scripts\/jquery-latest.min-min.js",
+      "oF" : 1,
+      "sC" : 3,
+      "tS" : 0
+    },
     "\/scripts\/jquery.cookie.min.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -531,14 +542,25 @@
       "sC" : 3,
       "tS" : 0
     },
-    "\/scripts\/main.js" : {
+    "\/scripts\/main-min.js" : {
       "bF" : 0,
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
       "oA" : 0,
-      "oAP" : "\/scripts\/main-min.js",
+      "oAP" : "\/scripts\/main-min-min.js",
       "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/scripts\/main.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/scripts\/main-min.js",
+      "oF" : 1,
       "sC" : 3,
       "tS" : 0
     },
@@ -550,6 +572,28 @@
       "oA" : 0,
       "oAP" : "\/scripts\/planck.min-min.js",
       "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/scripts\/script-min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/scripts\/script-min-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/scripts\/script.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 1,
+      "oAP" : "\/scripts\/script-min.js",
+      "oF" : 1,
       "sC" : 3,
       "tS" : 0
     },
