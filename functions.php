@@ -161,12 +161,6 @@ function create_post_types()
 
 add_action('init', 'create_post_types');
 
-function change_wp_search_size($queryVars)
-{
-	if (isset($_REQUEST['s']))
-		$queryVars['posts_per_page'] = -1;
-	return $queryVars;
-}
 
 function change_wp_search_size($queryVars) {
     if ( isset($_REQUEST['s']) ) {
@@ -174,6 +168,7 @@ function change_wp_search_size($queryVars) {
 
  }
     return $queryVars;
+}
 
 add_filter('request', 'change_wp_search_size');
 
