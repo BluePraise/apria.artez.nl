@@ -2,6 +2,7 @@
 /*
 Template Name: Page Home
 */
+
 get_header();
 ?>
 <main>
@@ -173,7 +174,9 @@ get_header();
 		</div>
 	</section>
 
+
 </main>
 
 
 <?php get_footer(); ?>
+
