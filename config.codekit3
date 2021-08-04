@@ -348,6 +348,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/sass\/_single.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_single.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/sass\/base\/html.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -612,6 +626,14 @@
       "oA" : 1,
       "oAP" : "\/searchform.php",
       "oF" : 1
+    },
+    "\/single.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single.php",
+      "oF" : 0
     },
     "\/style-min.css" : {
       "aP" : 1,

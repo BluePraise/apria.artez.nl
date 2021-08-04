@@ -74,8 +74,12 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "excerpt",
+        "discussion",
+        "send-trackbacks"
+    ],
     "active": true,
     "description": "",
-    "modified": 1626551207
+    "modified": 1628006615
 }
