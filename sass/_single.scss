@@ -6,7 +6,7 @@
 	// grid-auto-rows: minmax(100px, auto);
 }
 
-article {
+body.single article {
 	max-width: 950px;
 	margin: auto;
 	header {
@@ -14,6 +14,8 @@ article {
 		max-width: 500px;
 	}
 }
+
+
 
 h1.content-title,
 h2.subtitle {

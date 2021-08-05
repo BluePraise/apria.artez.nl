@@ -336,15 +336,6 @@ ul.posts li p.post-type {
   border-radius: 50%;
 }
 
-article {
-  max-width: 950px;
-  margin: auto;
-}
-article header {
-  display: block;
-  max-width: 500px;
-}
-
 h1.content-title,
 h2.subtitle {
   font-family: var(--font-sans-serif);
@@ -363,8 +354,15 @@ h2.subtitle {
   margin: 0;
 }
 
+.grid-sizer,
 .search-result {
-  width: 200px;
+  width: 24%;
+  margin-bottom: 20px;
+}
+.grid-sizer img,
+.search-result img {
+  max-width: 100%;
+  height: auto;
 }
 
 .show {

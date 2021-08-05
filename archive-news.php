@@ -50,16 +50,15 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 
 if ($searchResults->results) : 
 
-    foreach ($searchResults->results as $aPost) :
+    foreach ($getPosts as $post) :
 ?> 
 
-<div class="search-result <?php if($aPost->tag_ids) { foreach ($aPost->tag_ids as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } 
-   if($aPost->author_ids) { foreach ($aPost->author_ids as $aId): ?> filter-author-<?=$aId;  endforeach; } ?>"> 
-<div class="result__date"><?php echo formatDate($aPost->date); ?></div>
+<div class="search-result"> 
+<div class="result__date"><?php echo formatDate($post->post_date); ?></div>
    <a
-   href="<?=$aPost->url; ?> " class="result__title"><?=$aPost->title?> <?php if
-   ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
-   <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
+   href="<?=get_the_permalink("thumbnail"); ?> " class="result__title"><?php the_title(); ?> </a>
+   <?php the_post_thumbnail($post->ID); ?>
+   <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
    class="result__info">  
                     </div>
                 </div>

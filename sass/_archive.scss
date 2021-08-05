@@ -1,1 +1,20 @@
-.search-result { width: 200px; }
+
+body.archive {
+		article {
+		    max-width: 1200px;
+		    margin: 0 auto;
+		} 
+	}
+
+
+.grid-sizer,
+.search-result { 
+	width: 24%; 
+	 margin-bottom: 20px;
+	img {
+	    max-width: 100%;
+	    height: auto;
+	}
+}
+
+

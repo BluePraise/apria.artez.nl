@@ -32,7 +32,10 @@ $( document ).ready(function() {
 	$('.search-results').masonry({
   // options
   itemSelector: '.search-result',
-  columnWidth: 200
+  columnWidth: 200,
+  gutter: 20,
+  percentPosition: true,
+  columnWidth: '.grid-sizer'
 });
 
 

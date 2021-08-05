@@ -12,11 +12,6 @@
 defined('ABSPATH') || exit;
 get_header(); 
 
-global $wp_query, $wpdb;
-
-
-
-$tag = get_queried_object();
 
 $getPosts = get_posts(array(
     'post_type' => 'post',
@@ -25,19 +20,19 @@ $getPosts = get_posts(array(
     
 ));
 
-$posts = array();
-foreach($getPosts as $aPost){
-    $posts[] = extendIssuePost($aPost);
-}
+// $posts = array();
+// foreach($getPosts as $aPost){
+//     $posts[] = extendIssuePost($aPost);
+// }
 
-$searchResults = getFilter($posts);
+// $searchResults = getFilter($posts);
 
-$pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
+// $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 
 
-    $posts = $searchResults;
-    $surtitle = "Results tagged by";
-    $term = ucfirst($tag->name);
+//     $posts = $searchResults;
+//     $surtitle = "Results tagged by";
+//     $term = ucfirst($tag->name);
 
 
 ?>
@@ -47,21 +42,21 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
         <div class="content-wrap">
 
             <div class="search-results">
-
+<div class="grid-sizer"></div>
 <?php 
 
-if ($searchResults->results) : 
-
-    foreach ($searchResults->results as $aPost) :
+if ($getPosts) : 
+// var_dump($getPosts);
+// die();
+    foreach ($getPosts as $post) :
 ?> 
 
-<div class="search-result <?php if($aPost->tag_ids) { foreach ($aPost->tag_ids as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } 
-   if($aPost->author_ids) { foreach ($aPost->author_ids as $aId): ?> filter-author-<?=$aId;  endforeach; } ?>"> 
-<div class="result__date"><?php echo formatDate($aPost->date); ?></div>
+<div class="search-result"> 
+<div class="result__date"><?php echo formatDate($post->post_date); ?></div>
    <a
-   href="<?=$aPost->url; ?> " class="result__title"><?=$aPost->title?> <?php if
-   ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
-   <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
+   href="<?=get_the_permalink("thumbnail"); ?> " class="result__title"><?php the_title(); ?> </a>
+   <?php the_post_thumbnail($post->ID); ?>
+   <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
    class="result__info">  
                     </div>
                 </div>
