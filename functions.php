@@ -14,6 +14,7 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_script('apria_scripts_sysaffix', get_theme_file_uri('scripts/jquery.sys-affix.js'), 'apria_scripts_jquery', '', true);
 	wp_enqueue_script('apria_scripts_balancetext', get_theme_file_uri('scripts/balancetext.min.js'), '', '', true);
 	wp_enqueue_script('apria_scripts_cookie', get_theme_file_uri('scripts/jquery.cookie.min.js'),'apria_scripts_jquery', '', true);
+	wp_enqueue_script('apria_scripts_masonry', get_theme_file_uri('scripts/masonry.pkgd.min.js'),'apria_scripts_jquery', '', true);
 	wp_enqueue_script('apria_scripts_planck', get_theme_file_uri('scripts/planck.min.js'), '', '',  true);
 	wp_enqueue_script('apria_scripts_d3', get_theme_file_uri('scripts/d3.min.js'), '', '', true);
 	wp_enqueue_script('apria_scripts_aprialogo', get_theme_file_uri('scripts/apria_logo.js'), '', '', true);
@@ -149,9 +150,9 @@ function create_post_types()
 				'name' => __('News'),
 				'singular_name' => __('News')
 			],
-			'has_archive' => false,
+			'has_archive' => true,
 			'public' => true,
-			'show_in_rest' => false,
+			'show_in_rest' => true,
 			'supports' => ['title', 'author', 'editor'],
 			// 'taxonomies'  => [],
 		]

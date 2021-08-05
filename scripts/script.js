@@ -26,7 +26,14 @@ $( document ).ready(function() {
 			otherFilters.removeClass('active');
 		}
 
-	})
+	});
+
+
+	$('.search-results').masonry({
+  // options
+  itemSelector: '.search-result',
+  columnWidth: 200
+});
 
 
 });

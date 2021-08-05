@@ -129,6 +129,22 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/archive-news.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/archive-news.php",
+      "oF" : 0
+    },
+    "\/archive.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/archive.php",
+      "oF" : 0
+    },
     "\/assets\/svg\/facebook.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -315,6 +331,20 @@
       "oA" : 1,
       "oAP" : "\/page.php",
       "oF" : 1
+    },
+    "\/sass\/_archive.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_archive.css",
+      "oF" : 1,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
     },
     "\/sass\/_colors.scss" : {
       "aP" : 0,
@@ -599,6 +629,17 @@
       "oA" : 1,
       "oAP" : "\/scripts\/main-min.js",
       "oF" : 1,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/scripts\/masonry.pkgd.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/scripts\/masonry.pkgd.min-min.js",
+      "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },

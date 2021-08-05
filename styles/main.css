@@ -363,6 +363,10 @@ h2.subtitle {
   margin: 0;
 }
 
+.search-result {
+  width: 200px;
+}
+
 .show {
   display: block;
 }

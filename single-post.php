@@ -79,7 +79,7 @@ get_header();
 					</span>
 <?php endif; ?>
 				</div>
-				<h1 class="article__title balance-text"><?php the_title(); ?></h1>
+				<h1 class="content-title balance-text"><?php the_title(); ?></h1>
 <?php if(get_field('subtitle')): ?>
 				<h2 class="article__subtitle balance-text"><?=get_field('subtitle'); ?></h2>
 <?php endif; ?>
