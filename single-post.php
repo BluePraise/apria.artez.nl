@@ -154,7 +154,7 @@ if ($footnotes):  ?>
 
 		</div>
 	</article>
-	<?php get_sidebar("home"); ?>
+	<?php //get_sidebar("home"); ?>
 
 </div>
 

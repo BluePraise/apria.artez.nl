@@ -177,6 +177,22 @@
       "oAP" : "\/author.php",
       "oF" : 1
     },
+    "\/controllers\/element_main.inc.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/controllers\/element_main.inc.php",
+      "oF" : 0
+    },
+    "\/footer-article.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/footer-article.php",
+      "oF" : 0
+    },
     "\/footer.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -235,6 +251,14 @@
       "oA" : 1,
       "oAP" : "\/index.php",
       "oF" : 1
+    },
+    "\/main.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/main.php",
+      "oF" : 0
     },
     "\/package-lock.json" : {
       "ft" : 524288,
@@ -455,7 +479,7 @@
       "ma" : 1,
       "oA" : 0,
       "oAP" : "\/styles\/main.css",
-      "oF" : 2,
+      "oF" : 3,
       "oS" : 1,
       "pg" : 2,
       "sct" : 0
@@ -626,6 +650,38 @@
       "oA" : 1,
       "oAP" : "\/searchform.php",
       "oF" : 1
+    },
+    "\/sidebar-home.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sidebar-home.php",
+      "oF" : 0
+    },
+    "\/sidebar.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/sidebar.php",
+      "oF" : 0
+    },
+    "\/single-issue.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single-issue.php",
+      "oF" : 0
+    },
+    "\/single-post.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single-post.php",
+      "oF" : 0
     },
     "\/single.php" : {
       "cB" : 0,

@@ -68,12 +68,13 @@ get_header();
 					<?php if($post->post_type == 'issue'): ?>
 				   		<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);">
 					<?php elseif($post->post_type == 'post'): ?>
-						<li class="post-item article" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+						<li class="post-item article" style="background-image: url();">
 					<?php else: ?>
 						<li class="post-item news" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
 					<?php endif; ?>
 						<a href="<?php the_permalink(); ?>">
-							<h3><?php the_title(); ?></h3>
+							<img src="<?php the_post_thumbnail_url( ); ?>">
+							<div class="post-content-wrap"><div class="post-content-inner"><h3><?php the_title(); ?></h3>
 							<?php
 								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
 							else: ?>
@@ -82,6 +83,7 @@ get_header();
 							<p class="post-type">
 								<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
 							</p>
+						</div></div>
 						</a>
 					</li>
 				<?php } ?>
