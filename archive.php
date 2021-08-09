@@ -20,21 +20,6 @@ $getPosts = get_posts(array(
     
 ));
 
-// $posts = array();
-// foreach($getPosts as $aPost){
-//     $posts[] = extendIssuePost($aPost);
-// }
-
-// $searchResults = getFilter($posts);
-
-// $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
-
-
-//     $posts = $searchResults;
-//     $surtitle = "Results tagged by";
-//     $term = ucfirst($tag->name);
-
-
 ?>
 
 <div class="main-content">
@@ -46,16 +31,15 @@ $getPosts = get_posts(array(
 <?php 
 
 if ($getPosts) : 
-// var_dump($getPosts);
-// die();
+
     foreach ($getPosts as $post) :
 ?> 
 
 <div class="search-result"> 
 <div class="result__date"><?php echo formatDate($post->post_date); ?></div>
    <a
-   href="<?=get_the_permalink("thumbnail"); ?> " class="result__title"><?php the_title(); ?> </a>
-   <?php the_post_thumbnail($post->ID); ?>
+   href="<?=get_the_permalink(); ?> " class="result__title"><?php the_title(); ?> </a>
+   <?php the_post_thumbnail("thumbnail"); ?>
    <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
    class="result__info">  
                     </div>

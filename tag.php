@@ -46,17 +46,12 @@ $getPosts = get_posts(array(
     )
 ));
 
-$posts = array();
-foreach($getPosts as $aPost){
-	$posts[] = extendIssuePost($aPost);
-}
 
-$searchResults = getFilter($posts);
 
 $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 
 
-	$posts = $searchResults;
+	$posts = $posts;
 	$surtitle = "Results tagged by";
 	$term = ucfirst($tag->name);
 
@@ -79,20 +74,21 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 			<div class="search-results">
 <div class="grid-sizer"></div>
 <?php 
+//var_dump($getPosts);
 
-if ($searchResults->results) : 
+if ($getPosts) : 
 
-	foreach ($searchResults->results as $aPost) :
+	foreach ($getPosts as $post) :
 ?> 
 
 <div class="search-result"> 
-<div class="result__date"><?php echo formatDate($aPost->date); ?></div>
-	<a
-   href="<?=$aPost->url; ?> " class="result__title"><?=$aPost->title?> <?php if
-   ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
-   <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
-   class="result__info"> 
-					</div>
+<div class="result__date"><?php echo formatDate($post->post_date); ?></div>
+   <a
+   href="<?=get_the_permalink($post->ID); ?> " class="result__title"><?php the_title($post->ID); ?> </a>
+   <?php the_post_thumbnail($post->ID); ?>
+    <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
+   class="result__info">  
+                    </div>
 				</div>
 <?php endforeach; 
 

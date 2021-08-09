@@ -45,9 +45,13 @@ get_header(); ?>
 							<?php
 
 							dynamic_sidebar("rp-right-sidebar");
+							?>
 
-
-
+</div>
+</div>
+</div>
+</aside>
+<?php endif; 
 $content = get_post($id);
 if($content){
 	$page = (object)[
