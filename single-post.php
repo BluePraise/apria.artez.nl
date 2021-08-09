@@ -62,8 +62,8 @@ get_header();
 	<article class="main-column">
 		<div class="content-wrap">
 			<div class="article__head">
-				<div class="head__top-line" {if $color} style="color:{$color}"{/if} >
-					<span class="article__date"><?=get_the_date('m-d-Y'); ?></span>
+				<div class="head__top-line" >
+					<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
 					<span class="article__authors">
 			<?php		foreach ($authors as $aAuthor) { ?>
 			<a href="<?=get_site_url().'/author/'.$aAuthor->user_nicename.'/'; ?>">
@@ -71,10 +71,23 @@ get_header();
 	
 	<?php } ?>
 						</span>
+
+<?php 
+if(get_field('issue')): 
+	//var_dump(get_field('issue'));
+	$article_issue = get_field('issue');
+	
+	?>
+					<span class="article__source">
+						Published in<br />
+						<?=$article_issue->post_title; ?>
+					</span>
+<?php endif; ?>
+
 <?php if(get_field('doi')): ?>
 					<span class="article__issue">
 						<a href="https://doi.org/{$article->doi|trim}">
-							{#current_doi#}: <?=get_field('doi'); ?>
+							 <?=get_field('doi'); ?>
 						</a>
 					</span>
 <?php endif; ?>
@@ -84,18 +97,12 @@ get_header();
 				<h2 class="article__subtitle balance-text"><?=get_field('subtitle'); ?></h2>
 <?php endif; ?>
 				<div class="head__bottom-line">
-<?php echo get_field('issue'); if(get_field('issue')): 
-	$article_issue = extendIssue(get_field('issue'));
-	//var_dump($article_issue);
-	?>
-					<span class="article__source"{if $color} style="color:{$color}"{/if}>
-						Published in<br />
-						<a href="">Issue </a>
-					</span>
-<?php endif; ?>
+
+
+
 				
 <?php if($article_tags): $i = 0; ?>
-					<span class="article__tags"{if $color} style="color:{$color}"{/if}>
+					<span class="article__tags">
 <?php foreach($article_tags as $aTag) { ?>
 						<a href="<?=$aTag->url; ?>"><?=$aTag->name; ?></a> 
 						<?php if(++$i !== count($article_tags)) {

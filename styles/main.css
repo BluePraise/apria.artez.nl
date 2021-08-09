@@ -363,6 +363,32 @@ h2.subtitle {
   margin: 0;
 }
 
+.head__top-line {
+  display: -webkit-flex;
+  display: flex;
+  gap: 20px;
+}
+.head__top-line span.article__date, .head__top-line span.article__authors, .head__top-line .article__issue, .head__top-line .article__source {
+  color: var(--text-color-1);
+  border-bottom: 1px solid var(--text-color-1);
+  text-decoration: none;
+}
+.head__top-line span.article__authors a, .head__top-line .article__issue a {
+  color: var(--text-color-1);
+  text-decoration: none;
+}
+
+.head__bottom-line {
+  margin-bottom: 20px;
+}
+.head__bottom-line .article__tags {
+  color: var(--text-color-1);
+}
+.head__bottom-line .article__tags a {
+  color: var(--text-color-1);
+  text-decoration: none;
+}
+
 .grid-sizer {
   width: 23%;
 }

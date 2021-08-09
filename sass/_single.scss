@@ -34,3 +34,37 @@ h2.subtitle {
 	font-size: 40px;
 	margin: 0;
 }
+
+.head__top-line {
+    display: flex;
+    gap: 20px;
+
+    span.article__date, span.article__authors, .article__issue, .article__source {
+	    color: var(--text-color-1);
+	    border-bottom: 1px solid var(--text-color-1);
+	    text-decoration:none;
+	}
+
+	span.article__authors, .article__issue {
+	a {
+	 	color: var(--text-color-1);
+		 text-decoration:none;
+	}
+}
+}
+
+.head__bottom-line {
+	
+	margin-bottom:20px;
+
+	.article__tags {
+		color: var(--text-color-1);
+		
+		a {
+			color: var(--text-color-1);
+		 text-decoration:none;
+		}
+	}
+}
+
+
