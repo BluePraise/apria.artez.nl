@@ -77,7 +77,7 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 			</div>
 
 			<div class="search-results">
-
+<div class="grid-sizer"></div>
 <?php 
 
 if ($searchResults->results) : 
@@ -85,34 +85,13 @@ if ($searchResults->results) :
 	foreach ($searchResults->results as $aPost) :
 ?> 
 
-<div class="search-result <?php if($aPost->tag_ids) { foreach ($aPost->tag_ids as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } 
-   if($aPost->author_ids) { foreach ($aPost->author_ids as $aId): ?> filter-author-<?=$aId;  endforeach; } ?>"> <a
+<div class="search-result"> 
+<div class="result__date"><?php echo formatDate($aPost->date); ?></div>
+	<a
    href="<?=$aPost->url; ?> " class="result__title"><?=$aPost->title?> <?php if
    ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
    <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
-   class="result__info"> <div class="result__date"><?php echo formatDate($aPost->date); ?></div> <ul class="result__meta"> <?php if
-   ($aPost->authors) : ?> <li> <?php foreach ($aPost->authors as
-   $aAuthor) : ?> <a
-   href="<?=$aAuthor->post_url ?>"><?=$aAuthor->name; ?></a> <?php
-   endforeach; ?> </li> <?php endif; 
-
-	if ($aPost->tags) :
-?>
-
-
-							<li>
-<?php foreach ($aPost->tags as $aTag) : ?>
-
-								<a href="<?=$aTag->url ?>"><?=$aTag->name; ?></a>
-<?php endforeach; ?>
-							</li>
-<?php endif; 
-if ($aPost->issue_number) :
-?>
-
-							<li>Published in <a href="<?=$aPost->issue_url ?>">ISSUE <?=$aPost->issue_number ?></a></li>
-<?php endif; ?>
-						</ul>
+   class="result__info"> 
 					</div>
 				</div>
 <?php endforeach; 
@@ -125,78 +104,5 @@ else : ?>
 				<?php get_footer(); ?>
 		</div>
 	</article>
-<?php 
 
-$posts = $searchResults;
-
-if ($posts->filterableAuthors || $posts->filterableTags || $posts->filterableIssues) : ?>
-
-	<aside class="sidebar-column affix-placeholder">
-		<div class="affix-content js-affix-scrolling">
-			<div class="content-wrap">
-				<div class="filter">
-					<div class="filter__header">
-						<span>Filter Results</span> (<?=$posts->total ?>) | <span class="filter-reset js-reset-filter">Clear all filters</span>
-					</div>
-<?php if  ($posts->filterableIssues) : ?>
-					<div class="filter__group">
-						<div class="filter__group-title">By issue</div>
-						<div class="filter-clear-button icon js-reset-filter-group">×</div>
-						<div class="filter__items">
-<?php foreach ($posts->filterableIssues as $key=>$aIssue) : ?>
-							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_issue_<?=$key?>"  value="<?=$aIssue->id ?>" data-type="issue">
-								<label for="checkbox_issue_<?=$key?>"> <?=$aIssue->number; ?> <?=$aIssue->title; ?> (<?=$aIssue->count; ?>)</label>
-							</div>
-<?php endforeach; ?>
-						</div>
-					</div>
-<?php endif; 
-
-if ($posts->filterableAuthors) : ?>
-
-					<div class="filter__group">
-						<div class="filter__group-title">By Author</div>
-						<div class="filter-clear-button icon js-reset-filter-group">×</div>
-						<div class="filter__items">
-<?php foreach ($posts->filterableAuthors as $key=>$aAuthor) : ?>
-							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_author_<?=$key?>"  value="<?=$aAuthor->id; ?>" data-type="author">
-								<label for="checkbox_author_<?=$key?>"> <?=$aAuthor->display_name?>  (<?=$aAuthor->count; ?>)</label>
-							</div>
-<?php endforeach; ?>
-
-						</div>
-					</div>
-<?php endif; 
-
-if ($posts->filterableTags) : ?>
-					<div class="filter__group">
-						<div class="filter__group-title">By Tag</div>
-						<div class="filter-clear-button icon js-reset-filter-group">×</div>
-						<div class="filter__items">
-<?php foreach ($posts->filterableTags as $key=>$aTag) : ?>
-							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_tag_<?=$key?>" value="<?=$aTag->id; ?>" data-type="tag">
-								<label for="checkbox_tag_<?=$key?>"><?=$aTag->name; ?> (<?=$aTag->count; ?>)</label>
-							</div>
-<?php endforeach; ?>
-						</div>
-					</div>
-<?php endif; ?>
-<!-- // {*
-// 					<div class="filter__group">
-// 						<div class="filter__group-title">{#filter_by_date#}</div>
-// 						<div class="filter-clear-button icon">×</div>
-// 						<div class="filter-date">from <span>12</span>/<span>2017</span> to <span>03</span>/<span>2018</span></div>
-// 					</div>
-// *} -->
-				</div>
-
-				<!-- // {include "element_footer.tpl" class="hide-on-desktop"} -->
-				<?php get_footer(); ?>
-			</div>
-		</div>
-	</aside>
-<?php endif; ?>
 </div>
