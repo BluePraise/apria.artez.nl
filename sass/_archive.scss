@@ -9,12 +9,32 @@ body.archive {
 
 .grid-sizer,
 .search-result { 
-	width: 24%; 
+	width: 23%; 
 	 margin-bottom: 20px;
 	img {
 	    max-width: 100%;
 	    height: auto;
+	    margin-top:10px;
 	}
+
+	a.result__title {
+	    font-family: var(--font-sans-serif);
+	    color: var(--text-color-1);
+	    text-transform: uppercase;
+	    line-height: 1;
+	    font-size: 30px;
+	    text-decoration: none;
+	    display: block;
+}
+	.result__date {
+	    font-family: var(--font-sans-serif);
+	    color: #ffffff;
+	    text-transform: uppercase;
+	    line-height: 1;
+	    font-size: 30px;
+	    text-decoration: none;
+	    display: block;
+}
 }
 
 

@@ -365,13 +365,34 @@ h2.subtitle {
 
 .grid-sizer,
 .search-result {
-  width: 24%;
+  width: 23%;
   margin-bottom: 20px;
 }
 .grid-sizer img,
 .search-result img {
   max-width: 100%;
   height: auto;
+  margin-top: 10px;
+}
+.grid-sizer a.result__title,
+.search-result a.result__title {
+  font-family: var(--font-sans-serif);
+  color: var(--text-color-1);
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
+}
+.grid-sizer .result__date,
+.search-result .result__date {
+  font-family: var(--font-sans-serif);
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 30px;
+  text-decoration: none;
+  display: block;
 }
 
 .show {

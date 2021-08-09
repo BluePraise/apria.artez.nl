@@ -84,8 +84,9 @@ if ($getPosts) :
 <div class="search-result"> 
 <div class="result__date"><?php echo formatDate($post->post_date); ?></div>
    <a
-   href="<?=get_the_permalink($post->ID); ?> " class="result__title"><?php the_title($post->ID); ?> </a>
-   <?php the_post_thumbnail($post->ID); ?>
+   href="<?=get_the_permalink($post->ID); ?> " class="result__title"><?php the_title($post->ID); ?>
+   <?php the_post_thumbnail(); ?>
+    </a>
     <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
    class="result__info">  
                     </div>

@@ -537,7 +537,7 @@ function formatDateLarge($date) {
 }
 
 function formatDate($date){
-	return date('m-d-Y', strtotime($date));
+	return date('d-M-Y', strtotime($date));
 }
 
 

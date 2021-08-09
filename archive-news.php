@@ -56,8 +56,9 @@ if ($searchResults->results) :
 <div class="search-result"> 
 <div class="result__date"><?php echo formatDate($post->post_date); ?></div>
    <a
-   href="<?=get_the_permalink(); ?> " class="result__title"><?php the_title(); ?> </a>
-   <?php the_post_thumbnail("thumbnail"); ?>
+   href="<?=get_the_permalink(); ?> " class="result__title"><?php the_title(); ?> 
+   <?php the_post_thumbnail(); ?>
+    </a>
    <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
    class="result__info">  
                     </div>
