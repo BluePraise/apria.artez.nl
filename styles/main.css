@@ -336,6 +336,15 @@ ul.posts li p.post-type {
   border-radius: 50%;
 }
 
+article {
+  max-width: 950px;
+  margin: auto;
+}
+article header {
+  display: block;
+  max-width: 500px;
+}
+
 h1.content-title,
 h2.subtitle {
   font-family: var(--font-sans-serif);
