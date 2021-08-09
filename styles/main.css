@@ -363,18 +363,21 @@ h2.subtitle {
   margin: 0;
 }
 
-.grid-sizer,
+.grid-sizer {
+  width: 23%;
+}
+
 .search-result {
   width: 23%;
   margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--text-color-1);
 }
-.grid-sizer img,
 .search-result img {
   max-width: 100%;
   height: auto;
   margin-top: 10px;
 }
-.grid-sizer a.result__title,
 .search-result a.result__title {
   font-family: var(--font-sans-serif);
   color: var(--text-color-1);
@@ -384,7 +387,6 @@ h2.subtitle {
   text-decoration: none;
   display: block;
 }
-.grid-sizer .result__date,
 .search-result .result__date {
   font-family: var(--font-sans-serif);
   color: #ffffff;
@@ -393,6 +395,11 @@ h2.subtitle {
   font-size: 30px;
   text-decoration: none;
   display: block;
+}
+.search-result .result__text {
+  font-family: var(--font-mono);
+  color: var(--text-color-1);
+  font-size: 12px;
 }
 
 .show {

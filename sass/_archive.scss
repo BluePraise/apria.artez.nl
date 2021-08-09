@@ -7,10 +7,15 @@ body.archive {
 	}
 
 
-.grid-sizer,
+.grid-sizer {
+	width: 23%; 
+}
 .search-result { 
 	width: 23%; 
 	 margin-bottom: 20px;
+	 padding-bottom: 10px;
+    border-bottom: 1px solid var(--text-color-1);
+    
 	img {
 	    max-width: 100%;
 	    height: auto;
@@ -34,6 +39,11 @@ body.archive {
 	    font-size: 30px;
 	    text-decoration: none;
 	    display: block;
+}
+.result__text {
+    font-family: var(--font-mono);
+    color: var(--text-color-1);
+    font-size: 12px;
 }
 }
 
