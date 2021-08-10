@@ -40,7 +40,7 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 
 ?>
 
-<div class="main-content">
+<main>
     <article class="main-column">
         <div class="content-wrap">
             
@@ -74,4 +74,4 @@ else : ?>
         </div>
     </article>
 
-</div>
+</main>
