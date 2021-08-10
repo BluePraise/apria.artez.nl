@@ -1,45 +1,22 @@
 <?php
 
-/*
-	APRIA
-	Copyright (C) 2018 by Systemantics, Bureau for Informatics
-
-	Systemantics GmbH
-	Bleichstr. 11
-	41747 Viersen
-	GERMANY
-
-	Web:    www.systemantics.net
-	Email:  hello@systemantics.net
-
-	Permission granted to use the files associated with this
-	website only on your webserver.
-
-	Changes to these files are PROHIBITED due to license restrictions.
-*/
 
 
 
-// This is the WordPress adaptor for the Systemantics boilerplate
-// All access is handled by main.php (usually triggered from .htaccess)
 
-wp_head();
+$text = removenbsp1(get_the_content());
 
+$footnotes = array();
 
+$replace = function ($match) use (&$footnotes) {
+	$index = count($footnotes) + 1;
+	$footnotes[$index] = $match[2];
 
-	$text = removenbsp1(get_the_content());
+	return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
+};
 
-	$footnotes = array();
-
-	$replace = function ($match) use (&$footnotes) {
-		$index = count($footnotes) + 1;
-		$footnotes[$index] = $match[2];
-
-		return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
-	};
-
-	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
-	$footnotes = $footnotes;
+$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
+$footnotes = $footnotes;
 
 
 
@@ -99,7 +76,7 @@ $pageTitle = $issue->title . ' - ' . $pageTitle;
 ?>
 
 
-<div class="main-content issue-content" style="color: <?=$color ?>; background-color: <?=$backgroundcolor ?>">
+<main class="main-content issue-content" style="color: <?=$color ?>; background-color: <?=$backgroundcolor ?>">
 	<div class="article__background-container hide-on-mobile">
 		<div class="article__background">
 <?php if($background_image): ?>
@@ -241,5 +218,5 @@ if ($footnotes):  ?>
 <?php get_sidebar("", array("sidebar_posts"=> $sidebar_posts, "sidebar_issue" => false)); ?>
 
 
-</div>
+</main>
 
