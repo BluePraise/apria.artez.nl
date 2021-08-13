@@ -199,6 +199,7 @@ a.sticky-logo .apria_logo {
 main {
   max-width: 1640px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .hero {
@@ -285,7 +286,7 @@ main {
 
 ul.posts {
   display: grid;
-  grid-template-columns: repeat(4, 366px);
+  grid-template-columns: repeat(4, 1fr);
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -354,6 +355,10 @@ ul.posts li p.post-type {
 }
 
 .main-content .apria-journal.hide {
+  display: none;
+}
+
+.main-content .latest-articles.hide {
   display: none;
 }
 
