@@ -1,6 +1,7 @@
 main {
 	max-width: 1640px;
 	margin: 0 auto;
+	padding: 0 10px;
 }
 
 
@@ -84,7 +85,7 @@ main {
 
 ul.posts  {
 	display: grid;
-	grid-template-columns: repeat(4, 366px);
+	grid-template-columns: repeat(4, 1fr);
 	column-gap: 16px;
 	row-gap: 16px;
 	padding-left: 0;
@@ -149,6 +150,12 @@ ul.posts  {
 }
 
 .main-content .apria-journal {
+	&.hide {
+		display: none;
+	}
+}
+
+.main-content .latest-articles {
 	&.hide {
 		display: none;
 	}
