@@ -339,16 +339,31 @@ ul.posts li p.post-type {
 article {
   max-width: 950px;
   margin: auto;
+  color: var(--text-color-1);
 }
-article header {
+article header.article-header {
   display: block;
   max-width: 500px;
+  margin-bottom: 0px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+article header.article-header span {
+  display: inline-block;
+  margin-right: 16px;
+  text-align: center;
+  padding: 0 5% 10px 5%;
+  border-bottom: 1px solid var(--text-color-1);
+}
+article a {
+  color: var(--text-color-1);
+  text-decoration: none;
 }
 
 h1.content-title,
 h2.subtitle {
   font-family: var(--font-sans-serif);
-  color: var(--text-color-1);
   text-transform: uppercase;
   line-height: 1;
 }
@@ -356,6 +371,7 @@ h2.subtitle {
 h1.content-title {
   font-size: 60px;
   margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 h2.subtitle {
@@ -363,30 +379,38 @@ h2.subtitle {
   margin: 0;
 }
 
-.head__top-line {
-  display: -webkit-flex;
-  display: flex;
-  gap: 20px;
-}
-.head__top-line span.article__date, .head__top-line span.article__authors, .head__top-line .article__issue, .head__top-line .article__source {
-  color: var(--text-color-1);
-  border-bottom: 1px solid var(--text-color-1);
-  text-decoration: none;
-}
-.head__top-line span.article__authors a, .head__top-line .article__issue a {
-  color: var(--text-color-1);
-  text-decoration: none;
+.tag-list {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
-.head__bottom-line {
+a.article__tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.article__text {
+  font-family: var(--font-serif);
+}
+.article__text p {
+  font-size: 22px;
+  line-height: 30px;
   margin-bottom: 20px;
 }
-.head__bottom-line .article__tags {
-  color: var(--text-color-1);
+.article__text p a {
+  text-decoration: underline;
 }
-.head__bottom-line .article__tags a {
-  color: var(--text-color-1);
-  text-decoration: none;
+.article__text .wp-block-image {
+  margin: 3em 0em 3em -7em;
+}
+.article__text .wp-block-image img {
+  width: 100%;
+}
+.article__text .wp-block-image figcaption {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  max-width: 500px;
 }
 
 .grid-sizer {
