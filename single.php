@@ -14,8 +14,6 @@ get_header();
 		}, $tags);
 	}
 
-
-
 	$text = removenbsp1(get_the_content());
 
 	$footnotes = array();

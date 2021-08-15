@@ -566,6 +566,7 @@ $(function() {
 				e.preventDefault();
 			}
 		});
+	
 }); // end doc ready
 
 
