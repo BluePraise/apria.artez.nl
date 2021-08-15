@@ -1,5 +1,5 @@
 <?php
-
+get_header();
 $text = removenbsp1(get_the_content());
 
 $footnotes = array();
@@ -13,8 +13,6 @@ $replace = function ($match) use (&$footnotes) {
 
 $content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
 $footnotes = $footnotes;
-
-
 
 $issue = get_post(get_the_ID());
 if($issue){
@@ -68,7 +66,6 @@ $pageTitle = $issue->title . ' - ' . $pageTitle;
 	$htmlClass = 'logo-fixed';
 
 ?>
-
 <main class="main-content issue-content" style="color: <?=$color ?>; background-color: <?=$backgroundcolor ?>">
 	<div class="article__background-container hide-on-mobile">
 		<div class="article__background">
