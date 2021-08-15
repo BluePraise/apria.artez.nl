@@ -57,8 +57,6 @@ foreach ($sidebar_posts as $aPost) {
 	}
 }
 
-
-
 $pageTitle = $issue->title . ' - ' . $pageTitle;
 
 	$issue = $issue;
@@ -71,13 +69,12 @@ $pageTitle = $issue->title . ' - ' . $pageTitle;
 
 ?>
 
-
 <main class="main-content issue-content" style="color: <?=$color ?>; background-color: <?=$backgroundcolor ?>">
 	<div class="article__background-container hide-on-mobile">
 		<div class="article__background">
-<?php if($background_image): ?>
-			<img class="article__background-image animation--rotate"src="<?=$background_image ?>" alt="" />
-<?php endif; ?>
+			<?php if($background_image): ?>
+				<img class="article__background-image animation--rotate"src="<?=$background_image ?>" alt="" />
+			<?php endif; ?>
 		</div>
 	</div>
 	<a href="<?=get_home_url(); ?>" class="overlay-close-button js-overlay-close-button">
