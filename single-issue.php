@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 $text = removenbsp1(get_the_content());
 
 $footnotes = array();

@@ -233,17 +233,6 @@
       "oAP" : "\/functions.php",
       "oF" : 0
     },
-    "\/gulpfile.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/gulpfile-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/head.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -283,22 +272,6 @@
       "oA" : 0,
       "oAP" : "\/main.php",
       "oF" : 0
-    },
-    "\/package-lock.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-lock-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/package.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
     },
     "\/page-holding.php" : {
       "cB" : 0,
@@ -475,6 +448,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/base\/variables.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/footer.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/footer.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -722,14 +709,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/single-issue.php",
-      "oF" : 0
-    },
-    "\/single-OLD.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/single-OLD.php",
       "oF" : 0
     },
     "\/single.php" : {
