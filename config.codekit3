@@ -189,9 +189,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/author.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/controllers\/element_main.inc.php" : {
       "cB" : 0,
@@ -213,17 +213,17 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/footer.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/functions.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/functions.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/gulpfile.js" : {
       "bF" : 0,
@@ -256,17 +256,17 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/home.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/index.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/main.php" : {
       "cB" : 0,
@@ -304,33 +304,33 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/page-newsletter.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/page-opencall.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/page-opencall.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/page.old.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/page.old.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/page.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/sass\/_archive.scss" : {
       "aP" : 0,
@@ -341,7 +341,7 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/_archive.css",
-      "oF" : 1,
+      "oF" : 0,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -509,9 +509,9 @@
       "ma" : 1,
       "oA" : 0,
       "oAP" : "\/styles\/main.css",
-      "oF" : 3,
-      "oS" : 1,
-      "pg" : 2,
+      "oF" : 2,
+      "oS" : 3,
+      "pg" : 0,
       "sct" : 0
     },
     "\/scripts\/apria_logo.js" : {
@@ -670,9 +670,9 @@
       "ft" : 64,
       "ma" : 0,
       "mi" : 1,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/scripts\/script-min.js",
-      "oF" : 1,
+      "oF" : 0,
       "sC" : 3,
       "tS" : 0
     },
@@ -680,9 +680,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/search.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/searchform.php" : {
       "cB" : 0,
@@ -758,14 +758,14 @@
     },
     "\/styles\/main.css" : {
       "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
+      "bl" : 1,
+      "ci" : 1,
       "co" : 0,
       "ft" : 16,
-      "ma" : 0,
+      "ma" : 1,
       "oA" : 0,
-      "oAP" : "\/styles\/main-min.css",
-      "oF" : 0,
+      "oAP" : "\/styles\/main.css",
+      "oF" : 2,
       "pg" : 0
     },
     "\/styles\/main.css.map" : {
@@ -780,9 +780,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 1,
+      "oA" : 0,
       "oAP" : "\/tag.php",
-      "oF" : 1
+      "oF" : 0
     },
     "\/webfonts\/AHAMONO-Regular.otf" : {
       "cB" : 0,

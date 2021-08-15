@@ -35,7 +35,7 @@ get_header();
 ?>
 
 
-<main>
+<main class="content">
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
@@ -80,24 +80,22 @@ get_header();
 			<div class="article__text">
 				<?=$content; ?>
 			</div>
-<?php /* get_footer('article');*/ ?>
-<!-- {include "element_article_footer.tpl" authors=$article->authors footnotes=$article->footnotes bibliography=$article->bibliography} -->
-<?php 
 
-$authors = getAuthors(get_the_ID());
-if($authors):
-?>
+	<?php 
+		$authors = getAuthors(get_the_ID());
+		if($authors):
+	?>
 
-			<div class="article__bios">
-<?php foreach($authors as $aAuthor) { ?>
-				<div class="author-bio">
-					<a href="<?=$aAuthor->posts_url; ?>" class="bio__name"><?=$aAuthor->name; ?></a>
-					<div class="bio__text">
-						<?=$aAuthor->biography; ?>
+	<div class="article__bios">
+		<?php foreach($authors as $aAuthor) { ?>
+						<div class="author-bio">
+							<a href="<?=$aAuthor->posts_url; ?>" class="bio__name"><?=$aAuthor->name; ?></a>
+							<div class="bio__text">
+								<?=$aAuthor->biography; ?>
+							</div>
+						</div>
+		<?php } ?>
 					</div>
-				</div>
-<?php } ?>
-			</div>
 <?php endif; 
 
 		if ($footnotes):  ?>
