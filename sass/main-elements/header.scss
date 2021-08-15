@@ -18,6 +18,7 @@ header {
 		// max-width: 1640px;
 	}
 	ul {
+		display: flex; // to remove whitespace
 		margin-left: 0;
 		margin-bottom: 0;
 		padding: 0;
