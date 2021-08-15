@@ -79,6 +79,12 @@
 				max-width: 500px;
 			}
 		}
+
+		.wp-block-separator {
+			color: var(--color-1);
+			height: 3px;
+			background-color: var(--text-color-1);
+		}
 		
 	}
 	aside {

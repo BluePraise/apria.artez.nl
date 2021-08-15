@@ -62,43 +62,43 @@ get_header();
 
 			<h1 class="content-title"><?php the_title(); ?></h1>
 
-		<?php if(get_field('subtitle')): ?>
-			<h2 class="subtitle"><?=get_field('subtitle'); ?></h2>
-		<?php endif; ?>
-
-		<div class="tag-list">
-			<?php if($article_tags): $i = 0; ?>
-				<?php foreach($article_tags as $aTag): ?>
-					<a class="article__tag" href="<?=$aTag->url; ?>"><?=$aTag->name; ?></a> 
-						<?php if(++$i !== count($article_tags)):
-							echo '<span class="article-separator">/</span>';
-						endif; ?>
-				<?php endforeach; ?>
-			
+			<?php if(get_field('subtitle')): ?>
+				<h2 class="subtitle"><?=get_field('subtitle'); ?></h2>
 			<?php endif; ?>
-		</div>
+
+			<div class="tag-list">
+				<?php if($article_tags): $i = 0; ?>
+					<?php foreach($article_tags as $aTag): ?>
+						<a class="article__tag" href="<?=$aTag->url; ?>"><?=$aTag->name; ?></a> 
+							<?php if(++$i !== count($article_tags)):
+								echo '<span class="article-separator">/</span>';
+							endif; ?>
+					<?php endforeach; ?>
+				
+				<?php endif; ?>
+			</div>
 			
-		<div class="article__text">
-			<?=$content; ?>
-		</div>
+			<div class="article__text">
+				<?=$content; ?>
+			</div>
 
-	<?php 
-		$authors = getAuthors(get_the_ID());
-		if($authors):
-	?>
+		<?php 
+			$authors = getAuthors(get_the_ID());
+			if($authors):
+		?>
 
-	<div class="article__bios">
-		<?php foreach($authors as $aAuthor) : ?>
-			<div class="author-bio">
-				<a href="<?=$aAuthor->posts_url; ?>" class="bio__name"><?=$aAuthor->name; ?></a>
-				<div class="bio__text">
-					<?=$aAuthor->biography; ?>
-				</div><!-- .bio__text -->
-			</div><!-- .author-bio -->
-		<?php endforeach; ?>
-	</div><!-- .article__bios -->
+		<div class="article__bios">
+			<?php foreach($authors as $aAuthor) : ?>
+				<div class="author-bio">
+					<a href="<?=$aAuthor->posts_url; ?>" class="bio__name"><?=$aAuthor->name; ?></a>
+					<div class="bio__text">
+						<?=$aAuthor->biography; ?>
+					</div><!-- .bio__text -->
+				</div><!-- .author-bio -->
+			<?php endforeach; ?>
+		</div><!-- .article__bios -->
 	
-	<?php endif; 
+		<?php endif;  // AUTHOR
 
 		if ($footnotes):  ?>
 			<div class="article__footnotes">
@@ -110,7 +110,7 @@ get_header();
 					</div>
 				<?php endforeach; ?>
 			</div><!-- article__footnotes -->
-	<?php endif; ?>
+		<?php endif; ?>
 
 		<?php if(get_field('bibliography')): ?>
 			<div class="article__bibliography">
