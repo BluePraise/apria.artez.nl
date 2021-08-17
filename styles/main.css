@@ -128,6 +128,31 @@ header ul li a {
   font-family: var(--font-mono);
 }
 
+a.sticky-logo {
+  display: none;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  transition: margin-top 250ms;
+  border-radius: 50px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 100px;
+}
+a.sticky-logo .apria_logo {
+  border-radius: 50px;
+}
+
+.fixed-logo a.sticky-logo {
+  display: block;
+  background-color: #000000;
+  left: calc((100% - 1024px) / 2 + 514px);
+  position: fixed;
+  top: -50px;
+  z-index: 105;
+}
+
 .main-navigation {
   grid-column: 3/12;
 }

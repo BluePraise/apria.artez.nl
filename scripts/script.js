@@ -1,4 +1,16 @@
 $( document ).ready(function() {
+
+ $(document).scroll(function(){
+
+        if($(this).scrollTop() >= ($('html').offset().top + 100)) {
+            $("html").addClass("fixed-logo");
+          
+        } else {
+
+             $("html").removeClass("fixed-logo");
+        }
+    });
+
   var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
     $('.post-item').each(function(i) { // the element(s) you want to add the class to.
         $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );

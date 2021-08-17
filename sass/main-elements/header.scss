@@ -32,6 +32,41 @@ header {
 	}
 }
 
+
+
+a.sticky-logo {
+display:none;
+	    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    -moz-transition: margin-top 250ms;
+    -o-transition: margin-top 250ms;
+    -webkit-transition: margin-top 250ms;
+    transition: margin-top 250ms;
+    border-radius: 50px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 100px;
+
+    .apria_logo {
+		border-radius: 50px;
+	} 
+}
+
+.fixed-logo 
+{ 
+		a.sticky-logo{
+			display:block;
+			background-color: #000000;
+		    left: calc((100% - 1024px) / 2 + 514px);
+		    position: fixed;
+		    top: -50px;
+		    z-index: 105;
+		}
+}
 .main-navigation {
 	// margin-left: 16px;
 	grid-column: 3 /12;

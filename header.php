@@ -5,7 +5,16 @@
 
 <header>
 	<div class="container">
+<div class="logo-container">
+  			<a href="<?=get_home_url();?>" class="sticky-logo" style="background-color: #000000">
+  				<svg class="apria_logo" style="background-color: #000"></svg>
+  			</a>
 
+  			<!-- <a href="<?=get_home_url();?>" class="logo"style="background-color: #000">
+  				<img src="<?=$path; ?>wp-content/themes/apria/elements/logo.svg" alt="" />
+  			</a> -->
+
+  		</div>
 	<?php
 		wp_nav_menu([
 			'theme_location' => 'header_menu',
