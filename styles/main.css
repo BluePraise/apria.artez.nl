@@ -144,7 +144,7 @@ a.sticky-logo .apria_logo {
   border-radius: 50px;
 }
 
-.fixed-logo header {
+.fixed-logo body > header {
   left: 0;
   position: fixed;
   z-index: 105;
