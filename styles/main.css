@@ -109,7 +109,7 @@ header {
 }
 header .container {
   display: grid;
-  grid-template-columns: repeat(12, 122px);
+  /*grid-template-columns: repeat(12, 122px); */
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -129,28 +129,29 @@ header ul li a {
 }
 
 a.sticky-logo {
-  display: none;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   transition: margin-top 250ms;
   border-radius: 50px;
   height: 100px;
-  position: absolute;
+  display: block;
   left: 50%;
   top: 0;
+  margin-top: -50px;
   width: 100px;
 }
 a.sticky-logo .apria_logo {
   border-radius: 50px;
 }
 
-.fixed-logo a.sticky-logo {
-  display: block;
-  background-color: #000000;
-  left: calc((100% - 1024px) / 2 + 514px);
+.fixed-logo header {
+  left: 0;
   position: fixed;
-  top: -50px;
   z-index: 105;
+  right: 0;
+  background: #fce4e9;
+  padding-bottom: 10px;
+  box-shadow: 0px 3px 4px 1px #5d5d5d29;
 }
 
 .main-navigation {

@@ -6,8 +6,8 @@
 <header>
 	<div class="container">
 <div class="logo-container">
-  			<a href="<?=get_home_url();?>" class="sticky-logo" style="background-color: #000000">
-  				<svg class="apria_logo" style="background-color: #000"></svg>
+  			<a href="<?=get_home_url();?>" class="sticky-logo" style="background-color: var(--text-color-1);">
+  				<svg class="apria_logo" style="background-color: var(--text-color-1);"></svg>
   			</a>
 
   			<!-- <a href="<?=get_home_url();?>" class="logo"style="background-color: #000">
