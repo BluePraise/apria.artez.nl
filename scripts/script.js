@@ -13,7 +13,7 @@ $( document ).ready(function() {
 
   var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
     $('.post-item').each(function(i) { // the element(s) you want to add the class to.
-        $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
+       // $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
 		});
 
 	// FILTER TOGGLE
@@ -49,6 +49,17 @@ $( document ).ready(function() {
   percentPosition: true,
   columnWidth: '.grid-sizer'
 });
+
+		$('.home-grid').masonry({
+  // options
+  itemSelector: '.post-item',
+  columnWidth: 366,
+  gutter: 20,
+  percentPosition: true,
+
+});
+
+	
 
 
 });

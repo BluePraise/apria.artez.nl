@@ -84,10 +84,12 @@ main {
 
 ul.posts  {
 	display: grid;
-	grid-template-columns: repeat(4, 366px);
+	 grid-template-columns: repeat(4, 366px); 
 	column-gap: 16px;
 	row-gap: 16px;
 	padding-left: 0;
+	align-items: start;
+    grid-auto-rows: minmax(min-content, max-content);
 	&.hide {
 		display: none;
 	}
@@ -98,9 +100,12 @@ ul.posts  {
 		border-radius: 180px;
     overflow: hidden;
     position:relative;
+        min-height: 366px;
+        min-width: 366px;
+        margin-bottom:20px;
 		// padding: 160px 32px;
 		 img {
- 		   		max-width: 100%;
+ 		   		    max-width: 366px;
 			}
 			.post-content-wrap {
     position: absolute;

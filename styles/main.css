@@ -291,6 +291,10 @@ ul.posts {
           column-gap: 16px;
   row-gap: 16px;
   padding-left: 0;
+  -webkit-align-items: start;
+          align-items: start;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
 }
 ul.posts.hide {
   display: none;
@@ -304,9 +308,12 @@ ul.posts li {
   border-radius: 180px;
   overflow: hidden;
   position: relative;
+  min-height: 366px;
+  min-width: 366px;
+  margin-bottom: 20px;
 }
 ul.posts li img {
-  max-width: 100%;
+  max-width: 366px;
 }
 ul.posts li .post-content-wrap {
   position: absolute;

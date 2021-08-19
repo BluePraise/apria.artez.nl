@@ -29,7 +29,8 @@ get_header();
 	</section>
 
 	<section class="main-content">
-		<ul class="default-view posts show">
+		<ul class="default-view posts show home-grid">
+
 			<?php
 				$issue_bg = get_field('background_image');
 
@@ -73,7 +74,9 @@ get_header();
 						<li class="post-item news" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
 					<?php endif; ?>
 						<a href="<?php the_permalink(); ?>">
+							<?php if(has_post_thumbnail()) { ?>
 							<img src="<?php the_post_thumbnail_url( ); ?>">
+						<?php } ?>
 							<div class="post-content-wrap"><div class="post-content-inner"><h3><?php the_title(); ?></h3>
 							<?php
 								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
