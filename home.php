@@ -74,9 +74,21 @@ get_header();
 						<li class="post-item news" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
 					<?php endif; ?>
 						<a href="<?php the_permalink(); ?>">
-							<?php if(has_post_thumbnail()) { ?>
+
+							<?php 
+
+							if(get_field("background")) { ?>
+								<img src="<?=get_field("background"); ?>">
+							<?php }
+							elseif(has_post_thumbnail()) { ?>
 							<img src="<?php the_post_thumbnail_url( ); ?>">
-						<?php } ?>
+						<?php } 
+
+						else { ?>
+							<img src="<?php echo get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>">
+						<?php }
+
+						?>
 							<div class="post-content-wrap"><div class="post-content-inner"><h3><?php the_title(); ?></h3>
 							<?php
 								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);

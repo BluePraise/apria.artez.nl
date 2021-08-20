@@ -25,6 +25,14 @@
       "oAP" : "\/.gitignore",
       "oF" : 0
     },
+    "\/.vscode\/extensions.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/.vscode\/extensions-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/.vscode\/settings.json" : {
       "ft" : 524288,
       "oA" : 1,
@@ -144,6 +152,19 @@
       "oA" : 0,
       "oAP" : "\/archive.php",
       "oF" : 0
+    },
+    "\/assets\/placeholder.jpeg" : {
+      "ft" : 16384,
+      "iS" : 47284,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/placeholder.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
     },
     "\/assets\/svg\/facebook.svg" : {
       "ft" : 2097152,
