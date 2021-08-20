@@ -313,7 +313,10 @@ ul.posts li {
   margin-bottom: 20px;
 }
 ul.posts li img {
+  min-height: 366px;
   max-width: 366px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 ul.posts li .post-content-wrap {
   position: absolute;
