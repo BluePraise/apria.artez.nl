@@ -153,19 +153,6 @@
       "oAP" : "\/archive.php",
       "oF" : 0
     },
-    "\/assets\/placeholder.jpeg" : {
-      "ft" : 16384,
-      "iS" : 47284,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/placeholder.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
-    },
     "\/assets\/svg\/facebook.svg" : {
       "ft" : 2097152,
       "miP" : 0,
