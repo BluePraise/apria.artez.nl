@@ -15,9 +15,16 @@
 <li>Uses CSS Grid - see `grid.css</li>
 <li>Classes: <code>&lt;main class=&quot;content-with-sidebar&quot;&gt;</code></li>
 <li>HTML Structure: \s\s
-<code>&lt;main class=&quot;content-with-sidebar&quot;&gt;
-&lt;article&gt;&lt;/article&gt;
-&lt;aside&gt;&lt;/aside&gt;</code></li>
+
+<pre><code class="<main">    &lt;article class=&quot;&quot;&gt;
+        &lt;header class=&quot;article-header&quot;&gt;
+            &lt;h1 class=&quot;content-title&quot;&gt;&lt;/h1&gt;
+            &lt;h2 class=&quot;subtitle&quot;&gt;&lt;/h2&gt;
+        &lt;/header&gt;
+        &lt;div class=&quot;article__text&quot;&gt;&lt;?php the_content(); ?&gt;&lt;/div&gt;
+    &lt;/article&gt; 
+    &lt;aside&gt;&lt;/aside&gt;```
+</code></pre></li>
 <li>Used by: <code>single.php</code>, <code>page-sidebar.php</code></li>
 <li>Widget/Sidebar: <code>rp-right-sidebar</code></li>
 </ul>

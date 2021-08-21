@@ -12,7 +12,6 @@
 defined('ABSPATH') || exit;
 
 $page_subtitle = get_field("subtitle");
-$page_sidebar_text = get_field("sidebar_text");
 
 get_header(); 
 ?>
@@ -25,7 +24,9 @@ get_header();
 					<h2 class="subtitle balance-text"><?php echo esc_html($page_subtitle); ?></h2>
 				<?php endif; ?>
 			</header>
+			<div class="article__text">
 				<?php the_content(); ?>
+			</div>
 		</article>
 	</main>
 

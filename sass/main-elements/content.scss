@@ -9,6 +9,12 @@
 	}
 }
 
+.main-content article {
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
 
 @media screen and (max-width: 768px) { 
 	.content-with-sidebar {
@@ -32,6 +38,7 @@
 
 h1.content-title,
 h2.subtitle {
+    color: var(--text-color-1);
     font-family: var(--font-sans-serif);
     text-transform: uppercase;
     line-height: 1;
@@ -48,6 +55,7 @@ h2.subtitle {
 
 .article__text {
     font-family: var(--font-serif);
+    color: var(--text-color-1);
     p {
         font-size: 22px;
         line-height: 30px;
