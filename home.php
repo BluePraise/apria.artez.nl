@@ -64,7 +64,6 @@ get_header();
 				// The Loop
 				for($i = 1; $result->have_posts(); $i++) {
                    $result->the_post();
-
 				?>
 					<?php if($post->post_type == 'issue'): ?>
 				   		<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);">
@@ -103,7 +102,6 @@ get_header();
 					</li>
 				<?php } ?>
 
-				<?php //endwhile; endif; ?>
 			<?php wp_reset_postdata(); ?>
 
 		</ul>

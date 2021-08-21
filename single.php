@@ -12,10 +12,7 @@ get_header();
 				'url' => get_tag_link($aTag),
 			];
 		}, $tags);
-		//$article->tagIds = array_map(function ($aTag) { return $aTag->term_id; }, $tags);
 	}
-
-
 
 	$text = removenbsp1(get_the_content());
 
@@ -35,7 +32,7 @@ get_header();
 ?>
 
 
-<main>
+<main class="content">
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
@@ -44,33 +41,35 @@ get_header();
 					<a href="<?=get_site_url().'/author/'.$aAuthor->user_nicename.'/'; ?>"><?=$aAuthor->display_name; ?></a>
 				<?php endforeach; ?>
 			</span>
-			<?php 
-				if(get_field('issue')): 
-					$article_issue = get_field('issue');?>
-					<span class="article__source">
-						Published in<br />
-						<?=$article_issue->post_title; ?>
-					</span>
-				<?php endif; ?>
-			
-				<?php if(get_field('doi')): ?>
-					<span class="article__issue">
-						<a href="https://doi.org/{$article->doi|trim}">
-							<?=get_field('doi'); ?>
-						</a>
-					</span>
-				<?php endif; ?>
+			<?php if(get_field('issue')): 
+				$article_issue = get_field('issue');?>
+				<span class="article__source">
+					Published in<br />
+					<?=$article_issue->post_title; ?>
+				</span>
+			<?php endif; ?>
+		
+			<?php if(get_field('doi')): ?>
+				<span class="article__issue">
+					<a href="https://doi.org/{$article->doi|trim}">
+						<?=get_field('doi'); ?>
+					</a>
+				</span>
+			<?php endif; ?>
 		</header>
-		<h1 class="content-title"><?php the_title(); ?></h1>
-		<?php if(get_field('subtitle')): ?>
-			<h2 class="subtitle"><?=get_field('subtitle'); ?></h2>
-		<?php endif; ?>
-		<div class="tag-list">
+
+			<h1 class="content-title"><?php the_title(); ?></h1>
+
+			<?php if(get_field('subtitle')): ?>
+				<h2 class="subtitle"><?=get_field('subtitle'); ?></h2>
+			<?php endif; ?>
+
+			<div class="tag-list">
 				<?php if($article_tags): $i = 0; ?>
 					<?php foreach($article_tags as $aTag): ?>
 						<a class="article__tag" href="<?=$aTag->url; ?>"><?=$aTag->name; ?></a> 
 							<?php if(++$i !== count($article_tags)):
-								echo '<span class="article-tag-separator">/</span>';
+								echo '<span class="article-separator">/</span>';
 							endif; ?>
 					<?php endforeach; ?>
 				
@@ -80,25 +79,24 @@ get_header();
 			<div class="article__text">
 				<?=$content; ?>
 			</div>
-<?php /* get_footer('article');*/ ?>
-<!-- {include "element_article_footer.tpl" authors=$article->authors footnotes=$article->footnotes bibliography=$article->bibliography} -->
-<?php 
 
-$authors = getAuthors(get_the_ID());
-if($authors):
-?>
+		<?php 
+			$authors = getAuthors(get_the_ID());
+			if($authors):
+		?>
 
-			<div class="article__bios">
-<?php foreach($authors as $aAuthor) { ?>
+		<div class="article__bios">
+			<?php foreach($authors as $aAuthor) : ?>
 				<div class="author-bio">
 					<a href="<?=$aAuthor->posts_url; ?>" class="bio__name"><?=$aAuthor->name; ?></a>
 					<div class="bio__text">
 						<?=$aAuthor->biography; ?>
-					</div>
-				</div>
-<?php } ?>
-			</div>
-<?php endif; 
+					</div><!-- .bio__text -->
+				</div><!-- .author-bio -->
+			<?php endforeach; ?>
+		</div><!-- .article__bios -->
+	
+		<?php endif;  // AUTHOR
 
 		if ($footnotes):  ?>
 			<div class="article__footnotes">
@@ -110,21 +108,89 @@ if($authors):
 					</div>
 				<?php endforeach; ?>
 			</div><!-- article__footnotes -->
-	<?php endif; ?>
+		<?php endif; ?>
 
-<?php if(get_field('bibliography')): ?>
+		<?php if(get_field('bibliography')): ?>
 			<div class="article__bibliography">
-				<!-- {$bibliography|shift_headlines:2} -->
 				<?=get_field('bibliography'); ?>
 			</div>
-<?php endif; ?>
+		<?php endif; ?>
+
+	</article>
+	
+	<aside class="latest-posts">
+		<ul>
+			<?php 
+
+				$post_args = array(
+					'post_type'              => array( 'post' ),
+					'posts_per_page'         => 2
+				);
+
+				$news_args = array(
+					'post_type'              => array( 'news' ),
+					'posts_per_page'         => 2
+				);
+				$issue_args = array(
+					'post_type'              => array( 'issue' ),
+					'posts_per_page'         => 1
+				);
+				// The Query
+				$query_posts   = new WP_Query( $post_args );
+				$query_news    = new WP_Query( $news_args );
+				$query_issues  = new WP_Query( $issue_args );
+
+				$result        = new WP_Query();
+
+				// start putting the contents in the new object
+				$result->posts = array_unique(array_merge( $query_posts->posts, $query_news->posts, $query_issues->posts ), SORT_REGULAR );
+
+				$result->post_count = count( $result->posts );
+				// var_dump($result);
+
+
+				// The Loop
+				for($i = 1; $result->have_posts(); $i++) {
+				$result->the_post();
+			?>
+			<li>
+				<a class="latest-post-link-wrapper" href="<?php the_permalink(); ?>">
+					<h2><?php the_title(); ?></h2>
+					<span class="article-separator-large">/</span>
+				</a>
+					<?php echo '<p class="aside-excerpt">' . get_the_excerpt() . '</p>'; ?>
+					<div class="article__meta">
+						<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
+						<span class="article-separator">/</span>
+						
+						<?php if($post->post_type == 'issue'): 
+							echo '<span class="issue__name">';
+							echo $post->post_title; 
+							echo '</span>';
+							echo '<span class="article-separator">/</span>';
+						endif; ?>	
+						
+						<div class="tag-list">
+							<?php if($article_tags): $i = 0; ?>
+								<?php foreach($article_tags as $aTag): ?>
+									<a class="article__tag_link" href="<?=$aTag->url; ?>"><span class="article__tag_name"><?=$aTag->name; ?></span>
+										<?php if(++$i !== count($article_tags)):
+											echo '<span class="article-separator">/</span>';
+										endif; ?>
+									</a> 
+								<?php endforeach; ?>
+							<?php endif; ?>
+						</div><!-- .tag-list -->
+						
+					</div><!-- .article__meta -->
+				
+			</li>
+			<?php } ?>
+			<?php wp_reset_postdata(); ?>
+		</ul>
+	</aside>
+</main>
 
 <?php get_footer() ?>
-
-		</div>
-	</article>
-	<?php get_sidebar("", array("sidebar_posts"=> $sidebar_posts, "sidebar_issue" => false)); ?>
-
-</main>
 
 

@@ -1,0 +1,140 @@
+.main-content.issue-content {
+    min-height: 100%;
+    position: relative;
+    display: flex;
+    .article__background-container {
+        overflow: hidden;
+        position: fixed;
+        height: 100vh;
+        width: calc((100% - 1024px) / 2 + 680px);
+        .article__background {
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 2230px;
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            width: 2230px;
+            .animation--rotation {
+                animation: rotate 300s linear infinite;
+            }
+            .article__background-image {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
+
+// copied from old apria site
+.all-colored a, .all-colored .site-title, .all-colored .preview__info {
+    color: inherit;
+}
+
+.all-colored a {
+    color: inherit !important;
+}
+
+.overlay-close-button {
+    cursor: pointer;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    left: 25px;
+    height: 24px;
+    position: fixed;
+    top: 72px;
+    width: 24px;
+    z-index: 104;
+}
+
+html:not(.issue-header-fixed) .issue-header {
+    background-color: transparent !important;
+}
+
+.issue-header {
+    zoom: 1;
+    display: flex;
+    left: 0;
+    height: 90px;
+    padding-top: 69px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 103;
+}
+.issue-content article.main-column {
+    margin-top: 80px;
+}
+
+.issue-content .main-column {
+    background-color: transparent !important;
+    padding-top: 0;
+    .logo {
+        display: none;
+    }
+}
+
+.main-content .main-column {
+    min-height: 100vh;
+    padding-top: 139px;
+}
+
+.main-column {
+    float: left;
+    padding-left: 26px;
+    padding-right: 26px;
+    position: relative;
+    width: calc((100% - 1024px) / 2 + 680px);
+    .article__title {
+        font: normal 55px/50px "Crimson", serif;
+            font-weight: normal;
+        font-weight: bold;
+        -moz-transition: opacity 250ms;
+        -o-transition: opacity 250ms;
+        -webkit-transition: opacity 250ms;
+        transition: opacity 250ms;
+        display: block;
+        text-decoration: none;
+        opacity: 1;
+    }
+    .issue-content .article__title {
+        text-align: center;
+    }
+    
+    .head__top-line + .article__title {
+        margin-top: 12px;
+    }
+    .article__title + .article__subtitle {
+        margin-top: 11px;
+    }
+    .article__head + .issue__authors {
+        margin-top: 32px;
+    }
+    .issue__authors {
+        font: normal 13px/17px "Ahamono", monospace;
+        text-align: center;
+    }
+}
+
+.hide-on-desktop {
+    display: none;
+}
+
+.main-column .content-wrap {
+    float: right;
+    width: 680px;
+    max-width: 680px;
+}
+
+.content-wrap {
+    position: relative;
+}
+
+

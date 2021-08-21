@@ -3,18 +3,14 @@
 <body <?php body_class(); ?>>
 <?php do_action('wp_body_open'); ?>
 
-<header>
+<header class="main-header">
 	<div class="container">
-<div class="logo-container">
-  			<a href="<?=get_home_url();?>" class="sticky-logo" style="background-color: var(--text-color-1);">
+		<div class="logo-container">
+			<a href="<?=get_home_url();?>" class="sticky-logo" style="background-color: var(--text-color-1);">
   				<svg class="apria_logo" style="background-color: var(--text-color-1);"></svg>
   			</a>
-
-  			<!-- <a href="<?=get_home_url();?>" class="logo"style="background-color: #000">
-  				<img src="<?=$path; ?>wp-content/themes/apria/elements/logo.svg" alt="" />
-  			</a> -->
-
-  		</div>
+		
+		</div>
 	<?php
 		wp_nav_menu([
 			'theme_location' => 'header_menu',
@@ -41,4 +37,5 @@
 			</ul>
 		<?php endif; ?>
 		</div>
+	</div>
 </header>

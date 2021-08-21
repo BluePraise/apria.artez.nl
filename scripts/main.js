@@ -1,22 +1,3 @@
-/*
-  APRIA
-  Copyright (C) 2018 by Systemantics, Bureau for Informatics
-
-  Systemantics GmbH
-  Bleichstr. 11
-  41747 Viersen
-  GERMANY
-
-  Web:    www.systemantics.net
-  Email:  hello@systemantics.net
-
-  Permission granted to use the files associated with this
-  website only on your webserver.
-
-  Changes to these files are PROHIBITED due to license restrictions.
-*/
-
-
 
 // Detect touch device
 var isTouch = 'ontouchstart' in document,
@@ -429,17 +410,19 @@ $(function() {
 
 	// Header behaviour
 	// "Open" header when hovering
-	$(document)
-		.on('mouseenter', 'header', function () {
-			$('html').addClass('header-open');
-		})
-		.on('mouseleave', 'header', function () {
-			$('html').removeClass('header-open');
-		});
+	// $(document)
+	// 	.on('mouseenter', 'header', function () {
+	// 		$('html').addClass('header-open');
+	// 	})
+	// 	.on('mouseleave', 'header', function () {
+	// 		$('html').removeClass('header-open');
+	// 	});
 	// Make header fixed
-	$(window)
-		.on('scroll', function () {
-			if ($('header').length) {
+	// debugger;
+	$(window).on('scroll', function (e) {
+		e.preventDefault();
+			
+			if ($('.main-header').length) {
 				var headerPos,
 					logoPos;
 
@@ -585,6 +568,7 @@ $(function() {
 				e.preventDefault();
 			}
 		});
+	
 }); // end doc ready
 
 
