@@ -1,15 +1,13 @@
 $( document ).ready(function() {
+	$(document).scroll(function(){
 
- $(document).scroll(function(){
+		if($(this).scrollTop() >= ($('html').offset().top + 100)) {
+			$("html").addClass("fixed-logo");
+		} else {
 
-        if($(this).scrollTop() >= ($('html').offset().top + 100)) {
-            $("html").addClass("fixed-logo");
-          
-        } else {
-
-             $("html").removeClass("fixed-logo");
-        }
-    });
+				$("html").removeClass("fixed-logo");
+		}
+	});
 
   var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
     $('.post-item').each(function(i) { // the element(s) you want to add the class to.
@@ -37,9 +35,7 @@ $( document ).ready(function() {
 		if (otherFilters.hasClass('active')) {
 			otherFilters.removeClass('active');
 		}
-
 	});
-
 
 	$('.search-results').masonry({
 		// options
@@ -51,7 +47,5 @@ $( document ).ready(function() {
 	});
 	var _el = $('.issue-content');
 	var elColor = _el.css( "background-color" );
-	console.log(elColor);
-	console.log("test");
-
+	// console.log(elColor);
 });

@@ -410,17 +410,19 @@ $(function() {
 
 	// Header behaviour
 	// "Open" header when hovering
-	$(document)
-		.on('mouseenter', 'header', function () {
-			$('html').addClass('header-open');
-		})
-		.on('mouseleave', 'header', function () {
-			$('html').removeClass('header-open');
-		});
+	// $(document)
+	// 	.on('mouseenter', 'header', function () {
+	// 		$('html').addClass('header-open');
+	// 	})
+	// 	.on('mouseleave', 'header', function () {
+	// 		$('html').removeClass('header-open');
+	// 	});
 	// Make header fixed
-	$(window)
-		.on('scroll', function () {
-			if ($('header').length) {
+	// debugger;
+	$(window).on('scroll', function (e) {
+		e.preventDefault();
+			
+			if ($('.main-header').length) {
 				var headerPos,
 					logoPos;
 
