@@ -3,3 +3,17 @@ main:not(.issue-content) {
 	margin: 0 auto;
 	padding: 0 10px;
 }
+
+.content-with-sidebar {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-gap: 100px;
+	margin: auto;
+	article {
+		max-width: 950px;
+		margin: auto;
+	}
+	aside {
+
+	}
+}	

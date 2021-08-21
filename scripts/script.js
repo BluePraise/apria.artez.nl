@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	$(document).scroll(function(){
-
+		console.log('test');
 		if($(this).scrollTop() >= ($('html').offset().top + 100)) {
 			$("html").addClass("fixed-logo");
 		} else {

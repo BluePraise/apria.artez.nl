@@ -31,8 +31,7 @@ get_header();
 
 ?>
 
-
-<main class="content">
+<main class="content-with-sidebar">
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>

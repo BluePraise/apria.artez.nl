@@ -153,6 +153,19 @@
       "oAP" : "\/archive.php",
       "oF" : 0
     },
+    "\/assets\/placeholder.jpeg" : {
+      "ft" : 16384,
+      "iS" : 47284,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/placeholder.jpg",
+      "oF" : 0,
+      "oIPL" : 0,
+      "opt" : 0,
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
+    },
     "\/assets\/svg\/facebook.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -273,14 +286,6 @@
       "oAP" : "\/main.php",
       "oF" : 0
     },
-    "\/page-holding.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/page-holding.php",
-      "oF" : 1
-    },
     "\/page-newsletter.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -295,6 +300,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/page-opencall.php",
+      "oF" : 0
+    },
+    "\/page-sidebar.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/page-sidebar.php",
       "oF" : 0
     },
     "\/page.old.php" : {
@@ -312,6 +325,33 @@
       "oA" : 0,
       "oAP" : "\/page.php",
       "oF" : 0
+    },
+    "\/readme.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/readme.html",
+      "oF" : 0
+    },
+    "\/readme.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/readme.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
     },
     "\/sass\/_archive.scss" : {
       "aP" : 0,
@@ -462,6 +502,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/base\/variables.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/content.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/content.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,

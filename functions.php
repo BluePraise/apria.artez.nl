@@ -123,9 +123,9 @@ function apria_register_sidebars()
 {
 
 	register_sidebar(array(
-		'name' => __("Regular Pages Right Sidebar"),
+		'name' => __("Pages With Sidebar"),
 		'id' => "rp-right-sidebar",
-		'description' => 'Right Sidebar on regular pages',
+		'description' => 'Right Sidebar on Pages',
 		'class' => '',
 		'before_widget' => '<div id="%1$s" class="widget %2$s sidebar__text">',
 		'after_widget' => "</div>\n",

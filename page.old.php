@@ -27,16 +27,6 @@ get_header();
 
 
 
-$content = get_post($id);
-if($content){
-	$page = (object)[
-		'title' => get_the_title(),
-		'subtitle' => get_field('subtitle', $id),
-		'content' => apply_filters('the_content', $content->post_content),
-		'sidebartext' => get_field('sidebar_text', $id),
-	];
-}
-
 $postDefaultSidebarText = get_post(295);
 $defaultSidebarText = apply_filters('the_content', $postDefaultSidebarText->post_content);
 

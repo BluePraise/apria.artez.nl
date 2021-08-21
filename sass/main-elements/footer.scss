@@ -2,6 +2,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;    
+    max-width: 1640px;
+    margin: auto;
     .menu-items ul {
         display: inline-flex;
         li {
