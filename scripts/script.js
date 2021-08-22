@@ -19,14 +19,16 @@ $( document ).ready(function() {
 		e.preventDefault();
 		var otherFilters = $(this).siblings();
 		var currentFilter = $(this).data('filter');
-		var selectedItem = $('.main-content').find('.' + currentFilter);
+		var selectedItem = $('.home').find('.' + currentFilter);
 		var otherItems = $('.main-content > *').not(selectedItem);
+		var andTheseItems = $('.filter-paragraphs > *').not(selectedItem);
 		// Toggle the content
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
+			andTheseItems.removeClass('show').addClass('hide');
 		}
 
 		// set active class on currentFilter
@@ -34,6 +36,7 @@ $( document ).ready(function() {
 		// check if other filters have a active class
 		if (otherFilters.hasClass('active')) {
 			otherFilters.removeClass('active');
+			andTheseItems.removeClass('active');
 		}
 	});
 
