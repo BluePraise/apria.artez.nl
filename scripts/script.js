@@ -10,20 +10,21 @@ $( document ).ready(function() {
 	});
 	function addRandomHeight() {
 		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
-		
+		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
+			//    $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
+			// add a random height bewteen 700px and 385px
+			min = Math.ceil(385);
+			max = Math.floor(700);
+			var h = Math.floor(Math.random() * (max - min + 1) + min);
+			$(this).css("height", h);
+			$(this).delay(150 * i).fadeIn(250);
+		});
     	
 	}
-	// addRandomHeight();
-	$('.post-item').each(function(i) { // the element(s) you want to add the class to.
-		//    $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
-		// add a random height bewteen 700px and 385px
-		min = Math.ceil(385);
-		max = Math.floor(700);
-		var h = Math.floor(Math.random() * (max - min + 1) + min);
-		$(this).css("height", h);
-		// $(this).delay(150 * i).fadeIn(250);
-	});
+	addRandomHeight();
+	
 	$('.home-grid').on( 'load', function() {
+		
 		$('.home-grid').masonry({
 			// options
 			itemSelector: '.post-item',
@@ -35,7 +36,7 @@ $( document ).ready(function() {
 	});
 	// function loadMasonryonHome() {
 	// }
-  	// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
+
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
