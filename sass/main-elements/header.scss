@@ -89,3 +89,19 @@ a.sticky-logo {
 		}
 	}
 }
+
+
+// RESPONSIVE
+
+@media (max-width: 767.9px) {
+	header.main-header .container {
+		display: block !important;
+	}
+	header.main-header {
+		margin-bottom: 30px;	
+	}
+}
+
+@media (max-width: 414.1px) {
+	
+}

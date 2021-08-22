@@ -13,4 +13,10 @@ main:not(.issue-content) {
 		max-width: 950px;
 		margin: auto;
 	}
-}	
+}
+
+@media (max-width: 767.9px) {
+	main:not(.issue-content) {
+		padding: 0 24px;
+	}
+}

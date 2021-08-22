@@ -56,19 +56,14 @@ get_header();
 
 	<section class="main-content">
 		<ul class="default-view posts show home-grid">
-				
+			<div class="grid-sizer"></div>	
 				<?php 
 				$issue_bg = get_field('background_image');
 
 				// WP_Query arguments
 				$post_args = array(
 					'post_type'              => array( 'post' ),
-					'posts_per_page'         => 2
-				);
-
-				$news_args = array(
-					'post_type'              => array( 'news' ),
-					'posts_per_page'         => 2
+					'posts_per_page'         => 10
 				);
 				$issue_args = array(
 					'post_type'              => array( 'issue' ),
@@ -76,68 +71,53 @@ get_header();
 				);
 				// The Query
 				$query_posts   = new WP_Query( $post_args );
-				$query_news    = new WP_Query( $news_args );
 				$query_issues  = new WP_Query( $issue_args );
 
 				$result        = new WP_Query();
 
 				// start putting the contents in the new object
-				$result->posts = array_unique(array_merge( $query_posts->posts, $query_news->posts, $query_issues->posts ), SORT_REGULAR );
+				$result->posts = array_unique(array_merge( $query_posts->posts, $query_issues->posts ), SORT_REGULAR );
 
 				$result->post_count = count( $result->posts );
 				// var_dump($result);
 
 				// The Loop
-				for($i = 1; $result->have_posts(); $i++) {
+				for($i = 1; $result->have_posts(); $i++) :
                    $result->the_post();
 				?>
 					<?php if($post->post_type == 'issue'): ?>
-				   		<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);">
+						<li class="post-item issue">
+							<a href="<?php the_permalink(); ?>" style="background-image: url(<?= $issue_bg; ?>);">
 					<?php elseif($post->post_type == 'post'): ?>
-						<li class="post-item article" style="background-image: url();">
-					<?php else: ?>
-						<li class="post-item news" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
-					<?php endif; ?>
-						<a href="<?php the_permalink(); ?>">
-
-							<?php if(get_field("background")) { ?>
-								<img src="<?=get_field("background"); ?>">
-							<?php }
-							elseif(has_post_thumbnail()) { ?>
-							<img src="<?php the_post_thumbnail_url( ); ?>">
-						<?php } 
-
-						else { ?>
-							<img src="<?php echo get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>">
-						<?php }
-
-						?>
-							<div class="post-content-wrap"><div class="post-content-inner"><h3><?php the_title(); ?></h3>
-							<?php
-								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
-							else: ?>
-								<p><?php the_author(); ?></p>
+						<li class="post-item article">
+							<?php if(get_field("background")) : ?>
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_field("background"); ?>);">	
+							<?php elseif(has_post_thumbnail()): ?>
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+							<?php else: ?>	
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
 							<?php endif; ?>
-							<p class="post-type">
-								<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
-							</p>
-						</div></div>
-						</a>
-					</li>
-				<?php } ?>
+					<?php endif; ?>
 
+							<div class="post-content-wrap">
+								<h3><?php the_title(); ?></h3>
+								<?php
+								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
+								else: ?>
+									<p><?php the_author(); ?></p>
+								<?php endif; ?>
+									<p class="post-type">
+										<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
+									</p>
+							</div>
+							</a>
+						</li>
+					<?php endfor;?>
 			<?php wp_reset_postdata(); ?>
 
 		</ul>
 
-		<div class="open-call hide">
-			<?php
-			$id=990;  // id of page open call
-			$post = get_post($id);
-			$content = apply_filters('the_content', $post->post_content);
-			echo $content;
-		?>
-		</div>
+		<div class="open-call hide"></div>
 			
 		<div class="apria-journal hide">
 			
@@ -219,4 +199,3 @@ get_header();
 
 
 <?php get_footer(); ?>
-
