@@ -1,7 +1,7 @@
 .hero {
 	display: grid;
 	grid-template-columns: 1fr 2fr 260px;
-	grid-auto-rows: minmax(100px, auto);
+	grid-auto-rows: 240px;
 	column-gap: 1em;
 	color: var(--text-color-1);
 	margin-bottom: 60px;
@@ -21,29 +21,37 @@
 	.intro-text {
 		grid-column-start: 2;
 		grid-row-start: 1;
-		font-family: "Libre Baskerville", serif;
+		font-family: var(--font-serif);
 		max-width: 812px;
 	}
 	.news-column {
 		grid-row-start: 1;
 		grid-row-end: 3;
 		text-align: center;
-		h2 {
-			display: inline-block;
-			margin: 0;
-			max-width: 77px;
-		}
-		.news-text {
-			flex-direction: column;
-			align-items: center;
-			margin-top: 20px;
-			font-family: "Libre Baskerville", serif;
+		a {
+			color: --var(--text-color-1);
+			text-decoration: none;
+			h2 {
+				display: inline-block;
+				margin: 0;
+				max-width: 77px;
+			}
+			.news-text {
+				color: var(--text-color-1);
+				flex-direction: column;
+				align-items: center;
+				margin-top: 20px;
+				font-family: var(--font-serif);
+			}
 		}
 	}
 	.filters {
 		grid-column-start: 2;
 		grid-row-start: 2;
 		display: flex;
+		flex-wrap: wrap;
+		margin-top: 40px;
+		// filter links
 		a {
 			display: block;
 			font-family: var(--font-mono);
@@ -71,6 +79,13 @@
 			}
 			&.active:before {
 				border-top: 2px solid var(--text-color-1);
+			}
+		}
+		.filter-paragraphs {
+			font-family: var(--font-serif);
+			p {
+				font-size: 20px;
+				line-height: 24px;
 			}
 		}
 	}
@@ -144,25 +159,9 @@ ul.posts  {
 
 .main-content .open-call {
 	color: var(--text-color-1);
-	&.hide {
-		display: none;
-	}
-}
-
-.main-content .apria-journal {
-	&.hide {
-		display: none;
-	}
-}
-
-.main-content .latest-articles {
-	&.hide {
-		display: none;
-	}
 }
 
 .circle {
 	height: 370px;
 	border-radius: 50%;
 }
-
