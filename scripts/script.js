@@ -1,7 +1,8 @@
 $( document ).ready(function() {
 	$(document).scroll(function(){
-		console.log('test');
-		if($(this).scrollTop() >= ($('html').offset().top + 100)) {
+		//console.log('test');
+		var stick_offset = $("body").hasClass("home") ? 300 : 100;
+		if($(this).scrollTop() >= ($('html').offset().top + stick_offset)) {
 			$("html").addClass("fixed-logo");
 		} else {
 
