@@ -181,6 +181,9 @@ a.sticky-logo {
 			z-index: 99999;
     		position: fixed;
     	}
+    	.home a.sticky-logo{
+    		display:block;
+    	}
 		.menu, .mobile-menu-close-button.hide-on-desktop {
 		    display: block;
 		    opacity: 1;

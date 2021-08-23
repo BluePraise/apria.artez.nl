@@ -290,6 +290,9 @@ a.sticky-logo .apria_logo {
     z-index: 99999;
     position: fixed;
   }
+  .mobile-menu-open .home a.sticky-logo {
+    display: block;
+  }
   .mobile-menu-open .menu, .mobile-menu-open .mobile-menu-close-button.hide-on-desktop {
     display: block;
     opacity: 1;
