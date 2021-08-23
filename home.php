@@ -28,7 +28,7 @@ get_header();
 		<div class="filters">
 			<a class="filter-item apria-journal" data-filter="apria-journal" href="#">Apria Journal</a>
 			<a class="filter-item open-call" data-filter="open-call" href="#">Open Call</a>
-			<a class="filter-item latest-articles" data-filter="latest-articles" href="#">Latest Articles</a>
+			<a class="filter-item latest-articles" data-filter="latest-articles" href="#">Curated By</a>
 			<a class="filter-item curated-by" data-filter="curated-by" href="#">Latest Articles</a>
 
 			<div class="filter-paragraphs">
