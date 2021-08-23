@@ -132,11 +132,10 @@ header.main-header {
 }
 header.main-header .container {
   display: grid;
-  grid-template-columns: repeat(12, 122px);
+  grid-template-columns: repeat(12, 1fr);
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
-  max-width: 1640px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -517,6 +516,7 @@ ul.posts .grid-sizer {
   width: 384px;
 }
 ul.posts li.post-item {
+  display: none;
   -webkit-align-items: center;
           align-items: center;
   border-radius: 199px;
@@ -616,6 +616,11 @@ ul.posts li.post-item .post-content-wrap p.post-type {
   .filters {
     -webkit-justify-content: center;
             justify-content: center;
+  }
+}
+@media (max-width: 414px) {
+  ul.posts {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 .single .content-with-sidebar header.article-header {

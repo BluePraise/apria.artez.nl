@@ -6,9 +6,9 @@ header.main-header {
 	margin-bottom: 90px;
 	.container {
 		display: grid;
-		grid-template-columns: repeat(12, 122px);
+		grid-template-columns: repeat(12, 1fr);
 		column-gap: 16px;
-		max-width: 1640px;
+		// max-width: 1640px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -180,12 +180,9 @@ a.sticky-logo {
 		    padding: 14px 0;
 		    text-align: left;
 		}
-}
-
-
+	}
 
 }
 
 @media (max-width: 414.1px) {
-	
 }

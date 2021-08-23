@@ -56,7 +56,6 @@ get_header();
 
 	<section class="main-content">
 		<ul class="default-view posts show home-grid">
-			<div class="grid-sizer"></div>	
 				<?php 
 				$issue_bg = get_field('background_image');
 

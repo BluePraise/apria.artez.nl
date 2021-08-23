@@ -199,3 +199,9 @@ ul.posts  {
 	}
 
 }
+
+@media (max-width: 414px) {
+	ul.posts {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

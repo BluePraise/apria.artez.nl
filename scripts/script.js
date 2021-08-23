@@ -22,22 +22,35 @@ $( document ).ready(function() {
 		});
     	
 	}
-	addRandomHeight();
-	
-	$('.home-grid').on( 'load', function() {
-		
+	// addRandomHeight();
+	var _items = $('.post-item');
+	var _count = _items.length;
+	function loadMasonryonHome() {
+		$('.home-grid').on( 'load', function() {
 		$('.home-grid').masonry({
 			// options
-			itemSelector: '.post-item',
-			columnWidth: '.grid-sizer',
+			itemSelector: _items,
 			gutter: 16,
 			percentPosition: true,
-			horizontalOrder: true
+			// horizontalOrder: true
 		});
 	});
-	// function loadMasonryonHome() {
-	// }
-
+	}
+	_items.each(function(i) { // the element(s) you want to add the class to.
+		//    $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
+		// add a random height bewteen 700px and 385px
+		min = Math.ceil(385);
+		max = Math.floor(700);
+		var h = Math.floor(Math.random() * (max - min + 1) + min);
+		$(this).css("height", h);
+		if (_items.last()) {
+			loadMasonryonHome();
+		}
+		// $(this).delay(150 * i).fadeIn(250);
+	});
+	
+	
+  	// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
