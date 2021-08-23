@@ -17,3 +17,15 @@ footer {
         }
     }
 }
+
+// RESPONSIVE
+
+@media (max-width: 767.9px) {
+
+footer {
+    .menu-items ul {
+            flex-wrap: wrap;
+    }
+}
+
+}
