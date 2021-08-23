@@ -210,9 +210,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/author.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/controllers\/element_main.inc.php" : {
       "cB" : 0,
@@ -234,17 +234,28 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/footer.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/functions.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/functions.php",
-      "oF" : 0
+      "oF" : 1
+    },
+    "\/gulpfile.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/gulpfile-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
     },
     "\/head.php" : {
       "cB" : 0,
@@ -266,17 +277,17 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/home.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/index.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/index.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/main.php" : {
       "cB" : 0,
@@ -286,72 +297,61 @@
       "oAP" : "\/main.php",
       "oF" : 0
     },
+    "\/package-lock.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/package-lock-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/package.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/package-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/page-holding.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 1,
+      "oAP" : "\/page-holding.php",
+      "oF" : 1
+    },
     "\/page-newsletter.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page-newsletter.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page-opencall.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page-opencall.php",
-      "oF" : 0
-    },
-    "\/page-sidebar.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/page-sidebar.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page.old.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page.old.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/page.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/page.php",
-      "oF" : 0
-    },
-    "\/readme.html" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/readme.html",
-      "oF" : 0
-    },
-    "\/readme.md" : {
-      "cB" : 0,
-      "cS" : 0,
-      "eF" : 1,
-      "eL" : 1,
-      "ema" : 1,
-      "eSQ" : 1,
-      "ft" : 4096,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/readme.html",
-      "oF" : 0,
-      "oFM" : 0,
-      "oS" : 0,
-      "pHT" : 0,
-      "pME" : 1,
-      "rFN" : 0,
-      "uCM" : 0
+      "oF" : 1
     },
     "\/sass\/_archive.scss" : {
       "aP" : 0,
@@ -362,7 +362,7 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/_archive.css",
-      "oF" : 0,
+      "oF" : 1,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0
@@ -507,34 +507,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/main-elements\/content.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/main-elements\/content.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
-    "\/sass\/main-elements\/footer.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/main-elements\/footer.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/sass\/main-elements\/header.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -572,9 +544,9 @@
       "ma" : 1,
       "oA" : 0,
       "oAP" : "\/styles\/main.css",
-      "oF" : 2,
-      "oS" : 3,
-      "pg" : 0,
+      "oF" : 3,
+      "oS" : 1,
+      "pg" : 2,
       "sct" : 0
     },
     "\/scripts\/apria_logo.js" : {
@@ -743,9 +715,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/search.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/searchform.php" : {
       "cB" : 0,
@@ -777,6 +749,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/single-issue.php",
+      "oF" : 0
+    },
+    "\/single-OLD.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/single-OLD.php",
       "oF" : 0
     },
     "\/single.php" : {
@@ -813,14 +793,14 @@
     },
     "\/styles\/main.css" : {
       "aP" : 1,
-      "bl" : 1,
-      "ci" : 1,
+      "bl" : 0,
+      "ci" : 0,
       "co" : 0,
       "ft" : 16,
-      "ma" : 1,
+      "ma" : 0,
       "oA" : 0,
-      "oAP" : "\/styles\/main.css",
-      "oF" : 2,
+      "oAP" : "\/styles\/main-min.css",
+      "oF" : 0,
       "pg" : 0
     },
     "\/styles\/main.css.map" : {
@@ -835,9 +815,9 @@
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
-      "oA" : 0,
+      "oA" : 1,
       "oAP" : "\/tag.php",
-      "oF" : 0
+      "oF" : 1
     },
     "\/webfonts\/AHAMONO-Regular.otf" : {
       "cB" : 0,

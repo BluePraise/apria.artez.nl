@@ -90,12 +90,14 @@ get_header();
 							<a href="<?php the_permalink(); ?>" style="background-image: url(<?= $issue_bg; ?>);">
 					<?php elseif($post->post_type == 'post'): ?>
 						<li class="post-item article">
+								<a href="<?php the_permalink(); ?>">
 							<?php if(get_field("background")) : ?>
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_field("background"); ?>);">	
+								<img src="<?= get_field("background"); ?>">
+							
 							<?php elseif(has_post_thumbnail()): ?>
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+								<img src="<?php the_post_thumbnail_url( ); ?>">
 							<?php else: ?>	
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
+								<img src="<?php echo get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>">
 							<?php endif; ?>
 					<?php endif; ?>
 

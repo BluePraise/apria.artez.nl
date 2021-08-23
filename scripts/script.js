@@ -17,22 +17,13 @@ $( document ).ready(function() {
 	$('.post-item').each(function(i) { // the element(s) you want to add the class to.
 		//    $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
 		// add a random height bewteen 700px and 385px
-		min = Math.ceil(385);
-		max = Math.floor(700);
-		var h = Math.floor(Math.random() * (max - min + 1) + min);
-		$(this).css("height", h);
+		// min = Math.ceil(385);
+		// max = Math.floor(700);
+		// var h = Math.floor(Math.random() * (max - min + 1) + min);
+		// $(this).css("height", h);
 		// $(this).delay(150 * i).fadeIn(250);
 	});
-	$('.home-grid').on( 'load', function() {
-		$('.home-grid').masonry({
-			// options
-			itemSelector: '.post-item',
-			columnWidth: '.grid-sizer',
-			gutter: 16,
-			percentPosition: true,
-			horizontalOrder: true
-		});
-	});
+	
 	// function loadMasonryonHome() {
 	// }
   	// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
@@ -71,5 +62,18 @@ $( document ).ready(function() {
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
+
+
+		$('.home-grid').masonry({
+			// options
+			itemSelector: '.post-item',
+			columnWidth: '.grid-sizer',
+			gutter: 16,
+			percentPosition: true,
+			horizontalOrder: true,
+			
+		});
+
+
 
 });
