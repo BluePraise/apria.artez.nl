@@ -49,3 +49,5 @@ $pageTitle = $page->title . ' - ' . $pageTitle;
 ?>
 
 </div>
+
+<?php get_footer(); ?>

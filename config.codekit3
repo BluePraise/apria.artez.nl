@@ -176,6 +176,26 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/svg\/icon_close_highlight.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_close_highlight.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_mobile_menu.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_mobile_menu.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/svg\/news.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -246,17 +266,6 @@
       "oAP" : "\/functions.php",
       "oF" : 1
     },
-    "\/gulpfile.js" : {
-      "bF" : 0,
-      "ft" : 64,
-      "ma" : 0,
-      "mi" : 1,
-      "oA" : 0,
-      "oAP" : "\/gulpfile-min.js",
-      "oF" : 0,
-      "sC" : 3,
-      "tS" : 0
-    },
     "\/head.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -297,30 +306,6 @@
       "oAP" : "\/main.php",
       "oF" : 0
     },
-    "\/package-lock.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-lock-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/package.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/package-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
-    "\/page-holding.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 1,
-      "oAP" : "\/page-holding.php",
-      "oF" : 1
-    },
     "\/page-newsletter.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -337,6 +322,14 @@
       "oAP" : "\/page-opencall.php",
       "oF" : 1
     },
+    "\/page-sidebar.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/page-sidebar.php",
+      "oF" : 0
+    },
     "\/page.old.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -352,6 +345,33 @@
       "oA" : 1,
       "oAP" : "\/page.php",
       "oF" : 1
+    },
+    "\/readme.html" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/readme.html",
+      "oF" : 0
+    },
+    "\/readme.md" : {
+      "cB" : 0,
+      "cS" : 0,
+      "eF" : 1,
+      "eL" : 1,
+      "ema" : 1,
+      "eSQ" : 1,
+      "ft" : 4096,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/readme.html",
+      "oF" : 0,
+      "oFM" : 0,
+      "oS" : 0,
+      "pHT" : 0,
+      "pME" : 1,
+      "rFN" : 0,
+      "uCM" : 0
     },
     "\/sass\/_archive.scss" : {
       "aP" : 0,
@@ -502,6 +522,34 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/base\/variables.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/content.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/content.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/footer.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/footer.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -749,14 +797,6 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/single-issue.php",
-      "oF" : 0
-    },
-    "\/single-OLD.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/single-OLD.php",
       "oF" : 0
     },
     "\/single.php" : {
