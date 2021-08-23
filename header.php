@@ -15,10 +15,11 @@
 		wp_nav_menu([
 			'theme_location' => 'header_menu',
 			'container' => 'nav',
-			'menu_class' => 'main-navigation',
+			'menu_class' => 'main-navigation menu',
 			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			'depth' => 1,
 			]);
+
 
 	// Social Medias
 		$social_media_group = get_field("social_media_links", "options");
@@ -36,6 +37,12 @@
 				</li>
 			</ul>
 		<?php endif; ?>
+		<div class="mobile-menu-close-button js-mobile-menu-close-button hide-on-desktop">
+				<img src="/wp-content/themes/apria/elements/icon_close_highlight.svg">
+			</div>
+			
 		</div>
+		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">⠇
+		
 	</div>
 </header>
