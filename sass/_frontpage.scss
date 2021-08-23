@@ -91,13 +91,9 @@
 	}
 }
 
-ul.home-view{
-	.grid-sizer {
-		display: none;
-		width: 384px;
-	}
+ul.home-grid {
 	li.post-item {
-		// display: none;
+		// opacity: 0;
 		display: flex !important;
 		align-items: center;
 		// background-color: lightblue;
@@ -120,6 +116,9 @@ ul.home-view{
 				text-align: center;
 				width: 100%;
 				height: 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
 			}
 			.post-content-wrap {
 				background-color: rgba(255,0,0, 0.4 );

@@ -149,8 +149,19 @@ get_header();
 
 
 				// The Loop
-				for($i = 1; $result->have_posts(); $i++) {
-				$result->the_post();
+				for($i = 1; $result->have_posts(); $i++) :
+					$result->the_post();
+					
+					if(get_the_tags()){
+						$tags = get_the_tags();
+						$article_tags = array_map(function ($aTag) {
+						return (object)[
+							'id' => $aTag->term_id,
+							'name' => $aTag->name,
+							'url' => get_tag_link($aTag),
+						];
+						}, $tags);
+					}
 			?>
 			<li>
 				<a class="latest-post-link-wrapper" href="<?php the_permalink(); ?>">
@@ -169,22 +180,23 @@ get_header();
 							echo '<span class="article-separator">/</span>';
 						endif; ?>	
 						
-						<div class="tag-list">
-							<?php if($article_tags): $i = 0; ?>
-								<?php foreach($article_tags as $aTag): ?>
-									<a class="article__tag_link" href="<?=$aTag->url; ?>"><span class="article__tag_name"><?=$aTag->name; ?></span>
-										<?php if(++$i !== count($article_tags)):
-											echo '<span class="article-separator">/</span>';
-										endif; ?>
-									</a> 
-								<?php endforeach; ?>
-							<?php endif; ?>
-						</div><!-- .tag-list -->
+						
+						<?php if($article_tags): $i = 0; ?>
+							<?php foreach($article_tags as $aTag): ?>
+								<a class="article__tag_link" href="<?=$aTag->url; ?>"><span class="article__tag_name"><?=$aTag->name; ?></span>
+									<?php if(++$i !== count($article_tags)):
+										echo '<span class="article-separator">/</span>';
+									endif; ?>
+								</a> 
+							<?php endforeach; endif; ?>
+						
+						<!-- </div>.tag-list -->
 						
 					</div><!-- .article__meta -->
 				
 			</li>
-			<?php } ?>
+			<?php endfor; ?>
+
 			<?php wp_reset_postdata(); ?>
 		</ul>
 	</aside>

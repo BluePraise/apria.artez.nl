@@ -593,6 +593,71 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   line-height: 24px;
 }
 
+ul.home-grid li.post-item {
+  display: -webkit-flex !important;
+  display: flex !important;
+  -webkit-align-items: center;
+          align-items: center;
+  border-radius: 199px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+ul.home-grid li.post-item img {
+  height: auto;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+ul.home-grid li.post-item a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+ul.home-grid li.post-item .post-content-wrap {
+  background-color: rgba(255, 0, 0, 0.4);
+  position: absolute;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-align-items: center;
+          align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  padding: 0 20px;
+}
+ul.home-grid li.post-item .post-content-wrap h3,
+ul.home-grid li.post-item .post-content-wrap p {
+  font-family: var(--font-sans-serif);
+}
+ul.home-grid li.post-item .post-content-wrap h3 {
+  font-size: 40px;
+  line-height: 40px;
+  margin: 0 0 16px 0;
+}
+ul.home-grid li.post-item .post-content-wrap p {
+  font-size: 20px;
+}
+ul.home-grid li.post-item .post-content-wrap p.post-type {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 17px;
+}
+
 .main-content .open-call {
   color: var(--text-color-1);
 }
@@ -685,6 +750,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .single .content-with-sidebar aside .aside-excerpt {
   font-family: var(--font-mono);
   font-size: 13px;
+  line-height: 17px;
   color: var(--text-color-1);
 }
 .single .content-with-sidebar aside ul li {

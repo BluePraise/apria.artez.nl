@@ -55,7 +55,7 @@ get_header();
 
 
 	<section class="main-content">
-		<ul class="default-view show home-grid grid-view">
+		<ul class="default-view home-grid grid-view">
 				<?php 
 				$issue_bg = get_field('background_image');
 
@@ -88,7 +88,7 @@ get_header();
 						<li class="post-item issue">
 							<a href="<?php the_permalink(); ?>" style="background-image: url(<?= $issue_bg; ?>);">
 					<?php elseif($post->post_type == 'post'): ?>
-						<li class="post-item article">
+						<li class="post-item article" style="height: <?php echo rand(438, 700); ?>px">
 							<?php if(get_field("background")) : ?>
 								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_field("background"); ?>);">	
 							<?php elseif(has_post_thumbnail()): ?>
