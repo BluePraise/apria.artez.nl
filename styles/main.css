@@ -419,6 +419,11 @@ h2.subtitle,
   font-size: 40px;
 }
 
+.page-view article {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--text-color-1);
+}
+
 .page-view .article__date {
   text-transform: uppercase;
   font-family: var(--font-sans-serif);
