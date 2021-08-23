@@ -78,7 +78,7 @@ $( document ).ready(function() {
 		}
 	});
 
-	$('.search-results').masonry({
+	$('.grid-view').masonry({
 	// options
 		itemSelector: '.search-result',
 		columnWidth: 200,

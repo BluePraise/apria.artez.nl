@@ -4,6 +4,16 @@ main:not(.issue-content) {
 	padding: 0 10px;
 }
 
+.grid-view {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 16px;
+	row-gap: 16px;
+	padding-left: 0;
+	align-items: start;
+    grid-auto-rows: minmax(min-content, max-content);
+}
+
 .content-with-sidebar {
 	display: grid;
 	grid-template-columns: 2fr 1fr;

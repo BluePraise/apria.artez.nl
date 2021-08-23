@@ -107,6 +107,20 @@ main:not(.issue-content) {
   padding: 0 10px;
 }
 
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+  row-gap: 16px;
+  padding-left: 0;
+  -webkit-align-items: start;
+          align-items: start;
+  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
+  grid-auto-rows: minmax(min-content, max-content);
+}
+
 .content-with-sidebar {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -398,9 +412,32 @@ h1.content-title {
   margin-top: 30px;
 }
 
-h2.subtitle, .single .content-with-sidebar h2.subtitle,
+.page-view .article__date,
+h2.subtitle,
+.single .content-with-sidebar h2.subtitle,
 .single .content-with-sidebar .latest-posts h2 {
   font-size: 40px;
+}
+
+.page-view .article__date {
+  text-transform: uppercase;
+  font-family: var(--font-sans-serif);
+  color: white;
+}
+
+h2.subtitle, .single .content-with-sidebar h2.subtitle,
+.single .content-with-sidebar .latest-posts h2 {
+  margin-top: 0;
+}
+
+.article__excerpt {
+  font-size: 13px;
+  font-family: var(--font-mono);
+  color: var(--text-color-1);
+  line-height: 17px;
+}
+.article__excerpt + p {
+  margin-top: 16px;
 }
 
 .article__text {
@@ -549,84 +586,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .hero .filters .filter-paragraphs p {
   font-size: 20px;
   line-height: 24px;
-}
-
-ul.posts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  -webkit-column-gap: 16px;
-     -moz-column-gap: 16px;
-          column-gap: 16px;
-  row-gap: 16px;
-  padding-left: 0;
-  -webkit-align-items: start;
-          align-items: start;
-  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
-  grid-auto-rows: minmax(min-content, max-content);
-}
-ul.posts .grid-sizer {
-  display: none;
-  width: 384px;
-}
-ul.posts li.post-item {
-  display: none;
-  -webkit-align-items: center;
-          align-items: center;
-  border-radius: 199px;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 20px;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-ul.posts li.post-item img {
-  height: auto;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-ul.posts li.post-item a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
-ul.posts li.post-item .post-content-wrap {
-  background-color: rgba(255, 0, 0, 0.4);
-  position: absolute;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-          flex-direction: column;
-  -webkit-justify-content: center;
-          justify-content: center;
-  -webkit-align-items: center;
-          align-items: center;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  padding: 0 20px;
-}
-ul.posts li.post-item .post-content-wrap h3,
-ul.posts li.post-item .post-content-wrap p {
-  font-family: var(--font-sans-serif);
-}
-ul.posts li.post-item .post-content-wrap h3 {
-  font-size: 40px;
-  line-height: 40px;
-  margin: 0 0 16px 0;
-}
-ul.posts li.post-item .post-content-wrap p {
-  font-size: 20px;
-}
-ul.posts li.post-item .post-content-wrap p.post-type {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 17px;
 }
 
 .main-content .open-call {

@@ -244,14 +244,6 @@
       "oAP" : "\/author.php",
       "oF" : 1
     },
-    "\/controllers\/element_main.inc.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/controllers\/element_main.inc.php",
-      "oF" : 0
-    },
     "\/footer-article.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -308,12 +300,12 @@
       "oAP" : "\/index.php",
       "oF" : 1
     },
-    "\/main.php" : {
+    "\/page-news.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/main.php",
+      "oAP" : "\/page-news.php",
       "oF" : 0
     },
     "\/page-newsletter.php" : {

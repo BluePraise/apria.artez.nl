@@ -91,21 +91,14 @@
 	}
 }
 
-ul.posts  {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	column-gap: 16px;
-	row-gap: 16px;
-	padding-left: 0;
-	align-items: start;
-    grid-auto-rows: minmax(min-content, max-content);
+ul.home-view{
 	.grid-sizer {
 		display: none;
 		width: 384px;
 	}
 	li.post-item {
-		display: none;
-		// display: flex !important;
+		// display: none;
+		display: flex !important;
 		align-items: center;
 		// background-color: lightblue;
 		border-radius: 199px;
