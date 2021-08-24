@@ -25,19 +25,15 @@ $( document ).ready(function() {
 	addRandomHeight();
 
  	home_grid = $('.home-grid').masonry({
-			// options
-			itemSelector: '.post-item',
-			columnWidth: '.grid-sizer',
-			gutter: 16,
-			percentPosition: true,
-			horizontalOrder: true,
-		});
+		// options
+		itemSelector: '.post-item',
+		columnWidth: '.grid-sizer',
+		gutter: 16,
+		percentPosition: true,
+		horizontalOrder: true,
+	});
 
 	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
-	
-	
-	// function loadMasonryonHome() {
-	// }
 
 
 	// FILTER TOGGLE

@@ -92,6 +92,10 @@
 }
 
 ul.home-grid {
+	.grid-sizer {
+		display: none;
+		width: 384px;
+	}
 	li.post-item {
 		display: none;
 		// display: flex !important;

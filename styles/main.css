@@ -593,6 +593,10 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   line-height: 24px;
 }
 
+ul.home-grid .grid-sizer {
+  display: none;
+  width: 384px;
+}
 ul.home-grid li.post-item {
   display: none;
   -webkit-align-items: center;
@@ -894,10 +898,6 @@ html:not(.issue-header-fixed) .issue-header {
 
 .content-wrap {
   position: relative;
-}
-
-.grid-sizer {
-  width: 23%;
 }
 
 .search-result {

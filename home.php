@@ -56,6 +56,7 @@ get_header();
 
 	<section class="main-content">
 		<ul class="default-view home-grid grid-view">
+			<div class="grid-sizer"></div>
 				<?php 
 				$issue_bg = get_field('background_image');
 
