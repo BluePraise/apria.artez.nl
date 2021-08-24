@@ -31,14 +31,40 @@
 		font-size: 12px;
 		text-transform: uppercase;
 	}
-	.footnotes__headline {
-		font-size: 22px;
+	.bio__name {
+		display: block;
+		font-size: 40px;
+		border-bottom: 1px solid;
+		margin-bottom: 15px;
+	}
+	.bibliography__headline {
 		border-top: 2px solid;
 		border-bottom: 2px solid;
-		margin-top: 20px;
-		margin-bottom: 20px;
+	}
+	.footnotes__headline {
+		border-bottom: 2px solid;
+	}
+	.footnotes__headline,
+	.bibliography__headline {
+		font-size: 22px;
 		padding-top: 20px;
 		padding-bottom: 20px;
+	}
+	.article__bibliography {
+		ul li {
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+	}
+	.footnote {
+		margin-left: 45px;
+		margin-bottom: 10px;
+		&:first-child {
+			margin-top: 20px;
+		}
+		p {
+			font-size: 20px;
+		}
 	}
 
 	aside {

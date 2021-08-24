@@ -53,6 +53,9 @@ p {
 	margin: 0;
 	font-size: 26px;
 	line-height: 1.2;
+	+ p {
+		margin-bottom: 20px; 
+	}
 }
 @media (max-width: 414.1px) {
 	p {

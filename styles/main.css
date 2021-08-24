@@ -47,6 +47,7 @@ body {
   font-weight: 400;
   background-color: var(--color-1);
   max-width: 100%;
+  color: var(--text-color-1);
 }
 
 ul {
@@ -93,6 +94,9 @@ p {
   margin: 0;
   font-size: 26px;
   line-height: 1.2;
+}
+p + p {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 414.1px) {
@@ -744,14 +748,38 @@ ul.home-grid li.post-item.open-call .post-content-wrap {
   font-size: 12px;
   text-transform: uppercase;
 }
-.single .content-with-sidebar .footnotes__headline {
-  font-size: 22px;
+.single .content-with-sidebar .bio__name {
+  display: block;
+  font-size: 40px;
+  border-bottom: 1px solid;
+  margin-bottom: 15px;
+}
+.single .content-with-sidebar .bibliography__headline {
   border-top: 2px solid;
   border-bottom: 2px solid;
-  margin-top: 20px;
-  margin-bottom: 20px;
+}
+.single .content-with-sidebar .footnotes__headline {
+  border-bottom: 2px solid;
+}
+.single .content-with-sidebar .footnotes__headline,
+.single .content-with-sidebar .bibliography__headline {
+  font-size: 22px;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+.single .content-with-sidebar .article__bibliography ul li {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.single .content-with-sidebar .footnote {
+  margin-left: 45px;
+  margin-bottom: 10px;
+}
+.single .content-with-sidebar .footnote:first-child {
+  margin-top: 20px;
+}
+.single .content-with-sidebar .footnote p {
+  font-size: 20px;
 }
 .single .content-with-sidebar aside .article-separator {
   display: inline-block;

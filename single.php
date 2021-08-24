@@ -98,7 +98,7 @@ get_header();
 		<?php if(get_field('bibliography')): ?>
 		<div class="article__bibliography">
 			<details>
-    			<summary>Bibliography</summary>
+    			<summary class="bibliography__headline">Bibliography</summary>
     			<?=get_field('bibliography'); ?>
 			</details>
 		</div>
@@ -127,7 +127,8 @@ get_header();
 
 				$post_args = array(
 					'post_type'              => array( 'post' ),
-					'posts_per_page'         => 2
+					'posts_per_page'         => 5,
+					'post__not_in' => array( $post->ID )
 				);
 
 				$news_args = array(
