@@ -4,7 +4,7 @@
 	grid-auto-rows: 240px;
 	column-gap: 1em;
 	color: var(--text-color-1);
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 
 	.logo-container {
 		grid-column-start: 1;
@@ -100,7 +100,6 @@ ul.home-grid {
 		display: none;
 		// display: flex !important;
 		align-items: center;
-		// background-color: lightblue;
 		border-radius: 199px;
     	overflow: hidden;
     	position: relative;
@@ -108,54 +107,59 @@ ul.home-grid {
 		background-position: center center;
 		background-repeat: no-repeat;
 		min-width: 384px;
-		 img {
-				height: auto;
-				width: 100%;
-			    object-fit: cover;
+		img {
+			height: auto;
+			width: 100%;
+			object-fit: cover;
+		}
+		a {	
+			display: block;
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.post-content-wrap {
+			background-color: rgba(255,0,0, 0.4 );
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			left: 0;	
+			padding: 0 20px;
+			h3,
+			p {
+				font-family: var(--font-sans-serif);
 			}
-			a {	
-				display: block;
-				text-decoration: none;
-				color: white;
-				text-transform: uppercase;
-				text-align: center;
-				width: 100%;
-				height: 100%;
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-position: center;
+			h3 {
+				font-size: 40px;
+				line-height: 40px;
+				margin: 0 0 16px 0;
 			}
-			.post-content-wrap {
-				background-color: rgba(255,0,0, 0.4 );
-				position: absolute;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				top: 0;
-				width: 100%;
-				height: 100%;
-				left: 0;	
-				padding: 0 20px;
-				
-				h3,
-				p {
-					font-family: var(--font-sans-serif);
-				}
-				h3 {
-					font-size: 40px;
-					line-height: 40px;
-					margin: 0 0 16px 0;
-				}
-				p {
-					font-size: 20px;
-				}
-				p.post-type {
-					font-family: var(--font-mono);
-					font-size: 13px;
-					line-height: 17px;
-				}
+			p {
+				font-size: 20px;
 			}
+			p.post-type {
+				font-family: var(--font-mono);
+				font-size: 13px;
+				line-height: 17px;
+			}
+		}
+		&.issue .post-content-wrap {
+			background-color: rgba(120, 191, 255, 0.71);
+		}
+		&.open-call .post-content-wrap {
+			background-color: rgba(169, 228, 167, 0.71);
+		}
 	}
 }
 

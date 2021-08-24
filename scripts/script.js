@@ -63,6 +63,15 @@ $( document ).ready(function() {
 			andTheseItems.removeClass('active');
 		}
 	});
+	// $('.active').on('click', function(e){
+	// 	console.log('clicked')
+	// 	var currentFilter = $(this).data('filter');
+	// 	var selectedItem = $('.home').find('.' + currentFilter);
+	// 	$(this).removeClass('active');
+	// 	$(this).removeClass('show').addClass('hide').fadeOut(200);
+	// 	selectedItem.removeClass('show').addClass('hide').fadeOut(200);
+	// 	$('.default-view').removeClass('hide').addClass('show').fadeIn(100);
+	// });
 
 	// $('.grid-view').masonry({
 	// // options

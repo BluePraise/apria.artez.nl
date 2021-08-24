@@ -156,8 +156,9 @@ function create_post_types()
 		[
 			'labels' => [
 				'name' => __('News'),
-				'singular_name' => __('News')
+				'singular_name' => __('News'),
 			],
+			'taxonomies'    => array('category' ),
 			'has_archive' => true,
 			'public' => true,
 			'show_in_rest' => true,

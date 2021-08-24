@@ -504,7 +504,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
      -moz-column-gap: 1em;
           column-gap: 1em;
   color: var(--text-color-1);
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .hero .logo-container {
   grid-column-start: 1;
@@ -660,6 +660,12 @@ ul.home-grid li.post-item .post-content-wrap p.post-type {
   font-family: var(--font-mono);
   font-size: 13px;
   line-height: 17px;
+}
+ul.home-grid li.post-item.issue .post-content-wrap {
+  background-color: rgba(120, 191, 255, 0.71);
+}
+ul.home-grid li.post-item.open-call .post-content-wrap {
+  background-color: rgba(169, 228, 167, 0.71);
 }
 
 .main-content .open-call {
