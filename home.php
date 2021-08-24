@@ -85,7 +85,7 @@ get_header();
                    $result->the_post();
 				?>
 					<?php if($post->post_type == 'issue'): ?>
-						<li class="post-item issue">
+						<li class="post-item issue" >
 							<a href="<?php the_permalink(); ?>" style="background-image: url(<?= $issue_bg; ?>);">
 					<?php elseif($post->post_type == 'post'): ?>
 						<li class="post-item article" style="height: <?php echo rand(438, 700); ?>px">

@@ -1,14 +1,15 @@
 $( document ).ready(function() {
 	$(document).scroll(function(){
-		//console.log('test');
-		var stick_offset = $("body").hasClass("home") ? 300 : 100;
-		if($(this).scrollTop() >= ($('html').offset().top + stick_offset)) {
+		// console.log('test');
+		if($(this).scrollTop() >= ($('html').offset().top + 100)) {
 			$("html").addClass("fixed-logo");
 		} else {
 
 				$("html").removeClass("fixed-logo");
 		}
 	});
+	var home_grid;
+
 	function addRandomHeight() {
 		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
 		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
@@ -18,40 +19,28 @@ $( document ).ready(function() {
 			max = Math.floor(700);
 			var h = Math.floor(Math.random() * (max - min + 1) + min);
 			$(this).css("height", h);
-			$(this).delay(150 * i).fadeIn(250);
+			$(this).delay(0 * i).fadeIn(250);
 		});
     	
 	}
-	// addRandomHeight();
-	var _items = $('.post-item');
-	var _count = _items.length;
-	function loadMasonryonHome() {
-		// $('.home-grid').on( 'load', function() {
-			
-		// });
-	}
-	// _items.each(function(i) { // the element(s) you want to add the class to.
-	// 	//    $(this).addClass(classes[ Math.floor( Math.random()*classes.length ) ] );
-	// 	// add a random height bewteen 700px and 385px
-	// 	min = Math.ceil(385);
-	// 	max = Math.floor(700);
-	// 	var h = Math.floor(Math.random() * (max - min + 1) + min);
-	// 	$(this).css("height", h);
-	// 	if (_items.last()) {
-	// 		loadMasonryonHome();
-	// 	}
-	// 	$(this).delay(150 * i).css('opacity', '1');
-	// });
-	$('.home-grid').masonry({
-		// options
-		columnWidth: 438,
-		itemSelector: $('.post-item'),
-		gutter: 16,
-		percentPosition: true,
-		horizontalOrder: true
-	});
+	addRandomHeight();
+
+ home_grid = $('.home-grid').masonry({
+			// options
+			itemSelector: '.post-item',
+			columnWidth: '.grid-sizer',
+			gutter: 16,
+			percentPosition: true,
+			horizontalOrder: true,
+		});
+
+
+	setTimeout(function(){ home_grid.masonry('layout'); }, 50);
 	
-  	// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
+	
+	// function loadMasonryonHome() {
+	// }
+
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
@@ -87,5 +76,9 @@ $( document ).ready(function() {
 	// 	percentPosition: true,
 	// 	columnWidth: '.grid-sizer'
 	// });
+
+
+	
+
 
 });
