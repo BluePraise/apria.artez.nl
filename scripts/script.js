@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	$(document).scroll(function(){
-		console.log('test');
+		// console.log('test');
 		if($(this).scrollTop() >= ($('html').offset().top + 100)) {
 			$("html").addClass("fixed-logo");
 		} else {
@@ -8,6 +8,8 @@ $( document ).ready(function() {
 				$("html").removeClass("fixed-logo");
 		}
 	});
+	var home_grid;
+
 	function addRandomHeight() {
 		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
 		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
@@ -17,23 +19,25 @@ $( document ).ready(function() {
 			max = Math.floor(700);
 			var h = Math.floor(Math.random() * (max - min + 1) + min);
 			$(this).css("height", h);
-			$(this).delay(150 * i).fadeIn(250);
+			$(this).delay(0 * i).fadeIn(250);
 		});
     	
 	}
 	addRandomHeight();
-	
-	$('.home-grid').on( 'load', function() {
-		
-		$('.home-grid').masonry({
+
+ home_grid = $('.home-grid').masonry({
 			// options
 			itemSelector: '.post-item',
 			columnWidth: '.grid-sizer',
 			gutter: 16,
 			percentPosition: true,
-			horizontalOrder: true
+			horizontalOrder: true,
 		});
-	});
+
+
+	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
+	
+	
 	// function loadMasonryonHome() {
 	// }
 
@@ -72,5 +76,9 @@ $( document ).ready(function() {
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
+
+
+	
+
 
 });
