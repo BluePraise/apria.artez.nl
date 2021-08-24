@@ -57,8 +57,7 @@ get_header();
 	<section class="main-content">
 		<ul class="default-view home-grid grid-view">
 			<div class="grid-sizer"></div>
-				<?php 
-				$issue_bg = get_field('background_image');
+				<?php
 
 				// WP_Query arguments
 				$post_args = array(
@@ -84,34 +83,36 @@ get_header();
 				// The Loop
 				for($i = 1; $result->have_posts(); $i++) :
                    $result->the_post();
+				   $issue_bg = get_field('background_image');
 				?>
-					<?php if($post->post_type == 'issue'): ?>
-						<li class="post-item issue" >
-							<a href="<?php the_permalink(); ?>" style="background-image: url(<?= $issue_bg; ?>);">
-					<?php elseif($post->post_type == 'post'): ?>
-						<li class="post-item article" style="height: <?php echo rand(438, 700); ?>px">
-							<?php if(get_field("background")) : ?>
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_field("background"); ?>);">	
-							<?php elseif(has_post_thumbnail()): ?>
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
-							<?php else: ?>	
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
-							<?php endif; ?>
+				<?php if($post->post_type == 'issue'): ?>
+				<li class="post-item issue" >
+					<a href="<?php the_permalink(); ?>" style="background-image: url(<?= $issue_bg; ?>);">
+				<?php elseif($post->post_type == 'post'): ?>
+				<li class="post-item article">
+					<?php if(get_field("background")) : ?>
+						<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_field("background"); ?>);">	
+					<?php elseif(has_post_thumbnail()): ?>
+						<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+					<?php else: ?>	
+						<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
 					<?php endif; ?>
+				<?php endif; ?>
 
-							<div class="post-content-wrap">
-								<h3><?php the_title(); ?></h3>
-								<?php
-								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
-								else: ?>
-									<p><?php the_author(); ?></p>
-								<?php endif; ?>
-									<p class="post-type">
-										<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
-									</p>
-							</div>
-							</a>
-						</li>
+					<div class="post-content-wrap">
+						<h3><?php the_title(); ?></h3>
+						<?php
+						if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
+						else: ?>
+							<p><?php the_author(); ?></p>
+						<?php endif; ?>
+							<p class="post-type">
+								<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
+							</p>
+					</div>
+					</a>
+				</li>
+
 					<?php endfor;?>
 			<?php wp_reset_postdata(); ?>
 
@@ -128,32 +129,38 @@ get_header();
 				);
 				$the_query = new WP_Query( $issue_args );
 				// The Loop 
+				
 				if ( $the_query->have_posts() ) : 
+
 				?>
 				
-					<ul class="issue-view posts">
+					<ul class="issue-view home-grid grid-view">
+					<div class="grid-sizer"></div>
 					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);">
-						<a href="<?php the_permalink(); ?>">
-							<h3><?php the_title(); ?></h3>
-							<?php
-								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
-							else: ?>
-								<p><?php the_author(); ?></p>
+						<li class="post-item issue">
+							<?php $issue_bg = get_field('background_image');?>
+							<?php if(get_field('background_image')) : ?>
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $issue_bg; ?>);">
+							<?php elseif(has_post_thumbnail()): ?>
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+							<?php else: ?>	
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
 							<?php endif; ?>
-							<p class="post-type">
-								<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
-							</p>
-						</a>
-						<?php endwhile; ?>
+							<div class="post-content-wrap">
+								<h3><?php the_title(); ?></h3>
+								<?php
+								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
+								else: ?>
+									<p><?php the_author(); ?></p>
+								<?php endif; ?>
+									<p class="post-type">
+										<?php echo $post->post_type; ?>
+									</p>
+							</div>
+							</a>
+						</li>
+						<?php endwhile; endif; wp_reset_postdata();?>
 					</ul>
-				<?php else :
-					// no posts found
-					echo '<p>Sorry, there are no results for this.</p>';
-				endif;
-				/* Restore original Post Data */
-				wp_reset_postdata();
-			?>
 		</div>
 
 		<div class="latest-articles hide">
@@ -168,9 +175,9 @@ get_header();
 
 				// The Loop
 				if ( $the_query->have_posts() ) : ?>
-					<ul class="posts">
+					<ul class="posts home-grid">
 					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);">
+						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);" style="height: <?php echo rand(438, 700); ?>px">
 						<a href="<?php the_permalink(); ?>">
 							<h3><?php the_title(); ?></h3>
 							<?php

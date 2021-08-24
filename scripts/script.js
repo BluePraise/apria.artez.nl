@@ -24,13 +24,13 @@ $( document ).ready(function() {
 	}
 	addRandomHeight();
 
- 	home_grid = $('.home-grid').masonry({
+ 	home_grid = $('.default-view').masonry({
 		// options
 		itemSelector: '.post-item',
 		columnWidth: '.grid-sizer',
 		gutter: 16,
 		percentPosition: true,
-		horizontalOrder: true,
+		isFitWidth: true
 	});
 
 	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
@@ -42,12 +42,14 @@ $( document ).ready(function() {
 		var otherFilters = $(this).siblings();
 		var currentFilter = $(this).data('filter');
 		var selectedItem = $('.home').find('.' + currentFilter);
+		var msnryItem = $('.main-content').find('.' + currentFilter);
 		var otherItems = $('.main-content > *').not(selectedItem);
 		var andTheseItems = $('.filter-paragraphs > *').not(selectedItem);
 		// Toggle the content
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
+			msnryItem.find('.home-grid').masonry('layout');
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
 			andTheseItems.removeClass('show').addClass('hide');
