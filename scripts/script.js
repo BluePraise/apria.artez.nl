@@ -21,11 +21,10 @@ $( document ).ready(function() {
 			$(this).css("height", h);
 			$(this).delay(0 * i).fadeIn(250);
 		});
-    	
 	}
 	addRandomHeight();
 
- home_grid = $('.home-grid').masonry({
+ 	home_grid = $('.home-grid').masonry({
 			// options
 			itemSelector: '.post-item',
 			columnWidth: '.grid-sizer',
@@ -34,8 +33,7 @@ $( document ).ready(function() {
 			horizontalOrder: true,
 		});
 
-
-	setTimeout(function(){ home_grid.masonry('layout'); }, 50);
+	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
 	
 	
 	// function loadMasonryonHome() {

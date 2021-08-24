@@ -594,8 +594,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 }
 
 ul.home-grid li.post-item {
-  display: -webkit-flex !important;
-  display: flex !important;
+  display: none;
   -webkit-align-items: center;
           align-items: center;
   border-radius: 199px;
@@ -604,6 +603,7 @@ ul.home-grid li.post-item {
   margin-bottom: 20px;
   background-position: center center;
   background-repeat: no-repeat;
+  min-width: 384px;
 }
 ul.home-grid li.post-item img {
   height: auto;
