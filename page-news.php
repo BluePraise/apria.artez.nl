@@ -27,7 +27,7 @@ $the_query = new WP_Query(array(
             <?php if(get_field('preview_text')): ?>
                 <p class="article__excerpt"><?= get_field('preview_text'); ?></p>
             <?php else: ?>
-                <p class="article__excerpt><?php the_excerpt(); ?></p>
+                <p class="article__excerpt"><?php the_excerpt(); ?></p>
             <?php endif;?>
         <?php 
             endwhile; 
@@ -38,4 +38,4 @@ $the_query = new WP_Query(array(
 
 </main>
 
-<?php get_header(); ?>
+<?php get_footer(); ?>

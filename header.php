@@ -6,7 +6,7 @@
 <header class="main-header">
 	<div class="container">
 		<div class="logo-container">
-			<a href="<?=get_home_url();?>" class="sticky-logo">
+			<a href="<?=get_site_url();?>" class="sticky-logo">
   				<svg class="apria_logo" style="background-color: var(--text-color-1);"></svg>
   			</a>
 		
