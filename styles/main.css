@@ -744,6 +744,15 @@ ul.home-grid li.post-item.open-call .post-content-wrap {
   font-size: 12px;
   text-transform: uppercase;
 }
+.single .content-with-sidebar .footnotes__headline {
+  font-size: 22px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 .single .content-with-sidebar aside .article-separator {
   display: inline-block;
   margin-left: 3px;

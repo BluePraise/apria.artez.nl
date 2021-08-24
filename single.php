@@ -28,7 +28,6 @@ get_header();
 	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
 	$footnotes = $footnotes;
 
-
 ?>
 
 <main class="content-with-sidebar">
@@ -93,26 +92,31 @@ get_header();
 					</div><!-- .bio__text -->
 				</div><!-- .author-bio -->
 			<?php endforeach; ?>
-		</div><!-- .article__bios -->
-	
-		<?php endif;  // AUTHOR
+			<?php endif;  // AUTHOR  ?>	
 
-		if ($footnotes):  ?>
+		</div><!-- .article__bios -->
+		<?php if(get_field('bibliography')): ?>
+		<div class="article__bibliography">
+			<details>
+    			<summary>Bibliography</summary>
+    			<?=get_field('bibliography'); ?>
+			</details>
+		</div>
+		
+		<?php endif;  // Bibliography  ?>
+
+		<?php if ($footnotes):  ?>
 			<div class="article__footnotes">
-				<div class="footnotes__headline">References</div>
+			<details>
+				<summary class="footnotes__headline">References</summary>
 				<?php foreach($footnotes as $aFootnote) : ?>
 					<div class="footnote">
 						<span class="footnote-up icon js-footnote-up" data-footnotetext="{$aFootnote@iteration}">↑</span>
 						<p><?=$aFootnote; ?></p>
 					</div>
 				<?php endforeach; ?>
+				</details>
 			</div><!-- article__footnotes -->
-		<?php endif; ?>
-
-		<?php if(get_field('bibliography')): ?>
-			<div class="article__bibliography">
-				<?=get_field('bibliography'); ?>
-			</div>
 		<?php endif; ?>
 
 	</article>
