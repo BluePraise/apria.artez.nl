@@ -166,6 +166,36 @@
       "q" : 100,
       "rq" : 75
     },
+    "\/assets\/svg\/APRIA-open-call-button-desktop.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/APRIA-open-call-button-desktop.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/APRIA-open-call-button-mobile.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/APRIA-open-call-button-mobile.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/APRIA-open-call-V03.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/APRIA-open-call-V03.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/svg\/facebook.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -176,21 +206,81 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/svg\/icon_close_highlight.svg" : {
+    "\/assets\/svg\/icon_arrow_right.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_close_highlight.svg",
+      "oAP" : "\/assets\/svg\/icon_arrow_right.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/svg\/icon_mobile_menu.svg" : {
+    "\/assets\/svg\/icon_arrow_up.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_mobile_menu.svg",
+      "oAP" : "\/assets\/svg\/icon_arrow_up.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_close_black.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_close_black.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_close_color.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_close_color.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_facebook.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_facebook.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_instagram.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_instagram.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_youtube.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_youtube.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/logo.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/logo.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -206,15 +296,18 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/svg\/news.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/news.svg",
+    "\/assets\/svg\/preview_image_placeholder.jpg" : {
+      "ft" : 16384,
+      "iS" : 95266,
+      "jF" : 0,
+      "oA" : 0,
+      "oAP" : "\/assets\/svg\/preview_image_placeholder.jpg",
       "oF" : 0,
+      "oIPL" : 0,
       "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
+      "ou" : "lpckwebp-none",
+      "q" : 100,
+      "rq" : 75
     },
     "\/assets\/svg\/twitter.svg" : {
       "ft" : 2097152,
@@ -830,6 +923,18 @@
       "ma" : 0,
       "oA" : 0,
       "oAP" : "\/style-min.css",
+      "oF" : 0,
+      "pg" : 0
+    },
+    "\/styles\/apria-old.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/styles\/apria-old-min.css",
       "oF" : 0,
       "pg" : 0
     },

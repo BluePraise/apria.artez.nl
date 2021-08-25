@@ -1,5 +1,5 @@
 <?php
-get_header();
+get_template_part('head');
 $text = removenbsp1(get_the_content());
 
 $footnotes = array();
@@ -60,12 +60,15 @@ $pageTitle = $issue->title . ' - ' . $pageTitle;
 	$issue = $issue;
 	$color = $issue->text_color ? $issue->text_color : '#000';
 	$backgroundcolor = $issue->background_color ? $issue->background_color : '#fff';
-	$background_image = $issue->background_image ? $issue->background_image['url'] : false;
+	// $background_image = $issue->background_image ? $issue->background_image['url'] : false;
 	$sidebar_posts = $sidebar_posts;
 	$allIssueAutors = $allIssueAutors;
 	$htmlClass = 'logo-fixed';
 
 ?>
+<body <?php body_class(); ?>>
+<?php do_action('wp_body_open'); ?>
+
 <main class="main-content issue-content" style="color: <?=$color ?>; background-color: <?=$backgroundcolor ?>">
 	<div class="article__background-container hide-on-mobile">
 		<div class="article__background">

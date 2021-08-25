@@ -9,7 +9,11 @@ add_action('wp_enqueue_scripts', function () {
 
 function theme_scripts() {
 	// styles
-    wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);
+	if(is_singular( 'issue' )):
+    	wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/apria-old.css'), false);
+	else:
+		wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);
+	endif;
     // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
 
 	// scripts
