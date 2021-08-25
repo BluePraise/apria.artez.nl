@@ -137,6 +137,14 @@
       "oO" : 1,
       "oS" : 1
     },
+    "\/acf-json\/group_6126855b77900.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/acf-json\/group_6126855b77900-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/archive-news.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1001,6 +1009,18 @@
       "oA" : 0,
       "oAP" : "\/styles\/main.css.map",
       "oF" : 0
+    },
+    "\/styles\/wp-default-min.css" : {
+      "aP" : 1,
+      "bl" : 0,
+      "ci" : 0,
+      "co" : 0,
+      "ft" : 16,
+      "ma" : 0,
+      "oA" : 0,
+      "oAP" : "\/styles\/wp-default-min-min.css",
+      "oF" : 0,
+      "pg" : 0
     },
     "\/styles\/wp-default.css" : {
       "aP" : 1,

@@ -55,7 +55,7 @@ get_header();
 
 
 	<section class="main-content">
-		<ul class="default-view home-grid grid-view">
+		<ul class="default-view home-grid">
 			<div class="grid-sizer"></div>
 				<?php
 

@@ -5,19 +5,17 @@ main:not(.issue-content) {
 }
 
 .grid-view {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	column-gap: 16px;
-	row-gap: 16px;
-	padding-left: 0;
+	display: flex;
+	.grid-sizer {
+		display: none;
+		width: 25%;
+	}
 	.grid-item {
-		max-width: 384px;
+		width: calc(100% / 4 - 16px);
 		margin-bottom: 30px;
 	}
 }
-.grid-sizer {
-	display: none;
-}
+
 
 .content-with-sidebar {
 	display: grid;

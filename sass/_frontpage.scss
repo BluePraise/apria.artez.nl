@@ -90,10 +90,16 @@
 	}
 }
 
+.home .main-content {
+	display: flex;
+	justify-content: center;
+}
+
 ul.home-grid {
+	padding-left: 0;
 	.grid-sizer {
 		display: none;
-		width: 384px;
+		width: 25%;
 	}
 	li.post-item {
 		display: none;
@@ -102,10 +108,10 @@ ul.home-grid {
 		border-radius: 199px;
     	overflow: hidden;
     	position: relative;
-        margin-bottom:20px;
+        margin-bottom: 20px;
 		background-position: center center;
 		background-repeat: no-repeat;
-		min-width: 384px;
+		min-width: calc(100%/4 - 16px);
 		img {
 			height: auto;
 			width: 100%;

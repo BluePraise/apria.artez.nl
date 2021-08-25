@@ -13,8 +13,8 @@ $the_query = new WP_Query(array(
 )); ?>
 
 <main class="page-view grid-view">
-    <article>
-        <div class="grid-sizer"></div>
+    <div class="grid-sizer"></div>
+    <article class="grid-item">
 
         <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <p class="article__date"><?=get_the_date('d-M-Y'); ?></p>

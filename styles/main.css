@@ -143,21 +143,16 @@ main:not(.issue-content) {
 }
 
 .grid-view {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  -webkit-column-gap: 16px;
-     -moz-column-gap: 16px;
-          column-gap: 16px;
-  row-gap: 16px;
-  padding-left: 0;
+  display: -webkit-flex;
+  display: flex;
+}
+.grid-view .grid-sizer {
+  display: none;
+  width: 25%;
 }
 .grid-view .grid-item {
-  max-width: 384px;
+  width: calc(100% / 4 - 16px);
   margin-bottom: 30px;
-}
-
-.grid-sizer {
-  display: none;
 }
 
 .content-with-sidebar {
@@ -721,9 +716,19 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   line-height: 24px;
 }
 
+.home .main-content {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+ul.home-grid {
+  padding-left: 0;
+}
 ul.home-grid .grid-sizer {
   display: none;
-  width: 384px;
+  width: 25%;
 }
 ul.home-grid li.post-item {
   display: none;
@@ -735,7 +740,7 @@ ul.home-grid li.post-item {
   margin-bottom: 20px;
   background-position: center center;
   background-repeat: no-repeat;
-  min-width: 384px;
+  min-width: calc(100%/4 - 16px);
 }
 ul.home-grid li.post-item img {
   height: auto;
