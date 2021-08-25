@@ -41,6 +41,25 @@
             "new_lines": ""
         },
         {
+            "key": "field_61265aa4a9574",
+            "label": "News URL",
+            "name": "news_url",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
             "key": "field_61212bdb4dd08",
             "label": "Paragraph for APRIA JOURNAL filter",
             "name": "",
@@ -208,5 +227,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1629637861
+    "modified": 1629903558
 }
