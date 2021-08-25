@@ -25,8 +25,7 @@ Template Name: Newsletter
 // This is the WordPress adaptor for the Systemantics boilerplate
 // All access is handled by main.php (usually triggered from .htaccess)
 
-
-wp_head();
+get_header();
 
 
 ?>
@@ -37,10 +36,6 @@ wp_head();
 			<img src="/wp-content/themes/apria/elements/icon_close_black.svg">
 		</a>
 	</div>
-
-	<a href="<?=get_home_url() ?>" class="logo" style="background-color: #">
-		<img src="/wp-content/themes/apria/elements/logo.svg" alt="">
-	</a>
 
 	<article class="main-column">
 		<div class="content-wrap">

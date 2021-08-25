@@ -246,6 +246,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/svg\/icon_close_highlight.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_close_highlight.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/svg\/icon_facebook.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -261,6 +271,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/svg\/icon_instagram.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/icon_mobile_menu.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/icon_mobile_menu.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -291,6 +311,16 @@
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/svg\/mobile-menu.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/svg\/news.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/svg\/news.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -674,6 +704,20 @@
       "oA" : 1,
       "oAP" : "\/sass\/main-elements\/index.css",
       "oF" : 1,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/main-elements\/newsletter.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/main-elements\/newsletter.css",
+      "oF" : 0,
       "oS" : 0,
       "pg" : 0,
       "sct" : 0

@@ -1,0 +1,98 @@
+// stolen from newsletter
+
+.subscribe-content .main-column {
+    // background-color: #fff
+}
+.form__input {
+    background-color: transparent;
+    border: none;
+    padding: 0
+}
+
+.form__input:focus {
+    outline: none
+}
+
+
+.subscribe-form {
+    zoom: 1;
+    margin-top: 36px;
+    width: 91.66667%
+}
+
+.subscribe-form:before,
+.subscribe-form:after {
+    content: "";
+    display: table
+}
+
+.subscribe-form:after {
+    clear: both
+}
+
+.input-wrap {
+    float: left;
+    margin-bottom: 3px;
+    width: 100%
+}
+
+.input-wrap .form__input {
+    border-bottom: 1px solid var(--text-color-1);
+    width: 100%
+}
+
+.input-wrap .form__input.has-error {
+    border-color: #ff2020
+}
+
+.input-wrap .form__input:focus {
+    border-color: #000
+}
+
+.input-wrap .form__label {
+    font: normal 12px/14px var(--font-mono);
+    display: block;
+    margin-top: 3px
+}
+
+.input-wrap .form__input.has-error+.form__label {
+    color: #ff2020
+}
+
+.input-wrap .form__input:focus+.form__label {
+    color: #000
+}
+
+.input--half {
+    width: 45.45455%
+}
+
+.input--half+.input--half {
+    margin-left: 9.09091%
+}
+
+.form__text {
+    float: left;
+    margin-top: 26px;
+    width: 63.63636%
+}
+
+.subscribe-form .form__submit {
+    border: none;
+    font: bold 30px/43px var(--font-serif);
+    background-color: var(--text-color-1);
+    color: #fff;
+    // float: right;
+    margin-top: 19px;
+    padding: 4px 10px;
+}
+.tnp-field-button {
+    text-align: right;
+}
+.subscribe-form .form__submit:not(.disabled) {
+    cursor: pointer;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
