@@ -120,6 +120,17 @@ if (function_exists('acf_add_options_page')) {
 		'redirect' => false
 	));
 
+	acf_add_options_page(array(
+		'page_title' => 'Curation',
+		'menu_title' => 'curation',
+		'menu_slug'  => 'curation',
+		'capability' => 'edit_posts',
+		'capability' => 'edit_posts',
+		'position' => '8',
+		'icon_url' => 'dashicons-welcome-view-site',
+		'redirect' => false
+	));
+
 }
 
 // Register Sidebar

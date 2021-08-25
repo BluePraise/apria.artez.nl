@@ -463,9 +463,7 @@ h2.subtitle,
 .archive-view article,
 .page-view article {
   padding-bottom: 16px;
-  border-bottom: 1px solid var(--text-color-1);
 }
-
 .archive-view .article__date,
 .page-view .article__date {
   text-transform: uppercase;

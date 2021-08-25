@@ -35,8 +35,8 @@
                 },
                 {
                     "key": "field_60f867cb70f6d",
-                    "label": "Twitter URL",
-                    "name": "twitter_url",
+                    "label": "Instagram URL",
+                    "name": "instagram_url",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -101,6 +101,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
-    "modified": 1626892596
+    "description": "Contains information for the site such as social media links",
+    "modified": 1629903278
 }
