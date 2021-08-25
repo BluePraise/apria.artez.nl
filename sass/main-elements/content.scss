@@ -124,6 +124,7 @@ h2.subtitle {
 }
 
 @media (max-width: 1800px) {
+    .article__text .wp-block-image,
     .article__text a img,
     .wp-block-image {
         margin: 3em 0em 3em 0em;

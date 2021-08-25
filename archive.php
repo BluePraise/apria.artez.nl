@@ -17,7 +17,6 @@ $getPosts = get_posts(array(
     'post_type' => 'post',
     'post_status' => 'publish',
     'numberposts' => -1,
-    
 ));
 
 ?>
