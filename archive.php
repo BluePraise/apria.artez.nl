@@ -22,38 +22,32 @@ $getPosts = get_posts(array(
 
 ?>
 
-<div class="main-content">
-    <article class="main-column">
-        <div class="content-wrap">
 
-            <div class="search-results">
-<div class="grid-sizer"></div>
-<?php 
+<main class="page-view msnry-view grid-view">
+	<div class="grid-sizer"></div>
+	<?php 
+		if ($getPosts) : 
 
-if ($getPosts) : 
+			foreach ($getPosts as $post) :
+		?>
+	<article class="grid-item">
+		<a href="<?php the_permalink(); ?>">
+			<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
+				<h2 class="subtitle"><?php the_title();?></h2>
+				
+				<?php if(has_post_thumbnail()): ?>
+					<figure>
+						<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+					</figure>
+				<?php endif;?>
+				<?php if(get_field('preview_text')): ?>
+					<p class="article__excerpt"><?= get_field('preview_text'); ?></p>
+				<?php else: ?>
+					<p class="article__excerpt"><?php the_excerpt(); ?></p>
+				<?php endif;?>
+			</a>	
+	</article>
+	<?php endforeach; endif; ?>
+</main>
 
-    foreach ($getPosts as $post) :
-?> 
-
-<div class="search-result"> 
-<div class="result__date"><?php echo formatDate($post->post_date); ?></div>
-   <a
-   href="<?=get_the_permalink(); ?> " class="result__title"><?php the_title(); ?> 
-   <?php the_post_thumbnail(); ?>
-   </a>
-   <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
-   class="result__info">  
-                    </div>
-                </div>
-<?php endforeach; 
-
-else : ?>
-                No Result Found
-<?php endif; ?>
-
-            </div>
-                <?php get_footer(); ?>
-        </div>
-    </article>
-
-</div>
+<?php get_footer(); ?>

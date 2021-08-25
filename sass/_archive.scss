@@ -1,10 +1,19 @@
-
-body.archive {
-	article {
-		max-width: 1200px;
-		margin: 0 auto;
-	} 
+.archive-view {
+	h1 {
+		font-size: 60px;
+		font-family: var(--font-sans-serif);
+	}
 }
+
+
+article.grid-item {	
+	a {
+		text-decoration: none;
+	}
+	figure {
+		margin-left: 0;
+	}	
+} 
 
 .search-result { 
 	width: 23%; 

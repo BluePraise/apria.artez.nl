@@ -12,6 +12,7 @@ function theme_scripts() {
 	if(is_singular( 'issue' )):
     	wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/apria-old.css'), false);
 	else:
+		// wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/wp-default.css'), false);
 		wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);
 	endif;
     // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );

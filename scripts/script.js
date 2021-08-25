@@ -73,14 +73,13 @@ $( document ).ready(function() {
 	// 	$('.default-view').removeClass('hide').addClass('show').fadeIn(100);
 	// });
 
-	// $('.grid-view').masonry({
-	// // options
-	// 	itemSelector: '.search-result',
-	// 	columnWidth: 200,
-	// 	gutter: 20,
-	// 	percentPosition: true,
-	// 	columnWidth: '.grid-sizer'
-	// });
+	$('.msnry-view').masonry({
+	// options
+		itemSelector: '.grid-item',
+		gutter: 20,
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
+	});
 
 
 	

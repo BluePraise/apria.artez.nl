@@ -49,16 +49,19 @@ h1.content-title {
     margin-bottom: 20px;
     margin-top: 30px;
 }
+
+.archive-view .article__date,
 .page-view .article__date,
 h2.subtitle {
     font-size: 40px;
 }
 // page and archive
-
+.archive-view article,
 .page-view article {
     padding-bottom: 16px;
     border-bottom: 1px solid var(--text-color-1);
 }
+.archive-view .article__date,
 .page-view .article__date {
     text-transform: uppercase;
     font-family: var(--font-sans-serif);

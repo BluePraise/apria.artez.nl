@@ -10,8 +10,13 @@ main:not(.issue-content) {
 	column-gap: 16px;
 	row-gap: 16px;
 	padding-left: 0;
-	align-items: start;
-    grid-auto-rows: minmax(min-content, max-content);
+	.grid-item {
+		max-width: 384px;
+		margin-bottom: 30px;
+	}
+}
+.grid-sizer {
+	display: none;
 }
 
 .content-with-sidebar {
