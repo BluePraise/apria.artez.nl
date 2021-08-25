@@ -1,7 +1,6 @@
 .hero {
 	display: grid;
 	grid-template-columns: 1fr 2fr 260px;
-	grid-auto-rows: 240px;
 	column-gap: 1em;
 	color: var(--text-color-1);
 	margin-bottom: 30px;

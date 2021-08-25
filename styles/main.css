@@ -628,7 +628,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .hero {
   display: grid;
   grid-template-columns: 1fr 2fr 260px;
-  grid-auto-rows: 240px;
   -webkit-column-gap: 1em;
      -moz-column-gap: 1em;
           column-gap: 1em;
