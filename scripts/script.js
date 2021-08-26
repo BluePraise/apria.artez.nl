@@ -35,6 +35,9 @@ $( document ).ready(function() {
 
 	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
 
+	var filter_grid = " ";
+
+	 
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
@@ -49,7 +52,21 @@ $( document ).ready(function() {
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
-			msnryItem.find('.home-grid').masonry('layout');
+
+			filter_grid = $('.' + currentFilter).masonry({
+					itemSelector: '.post-item',
+					columnWidth: '.grid-sizer',
+					gutter: 16,
+					percentPosition: true,
+					isFitWidth: true
+			});
+
+			setTimeout(function(){ 
+				console.log("Fired!");
+				// filter_grid.masonry('layout'); 
+
+			}, 500);
+
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
 			andTheseItems.removeClass('show').addClass('hide');
@@ -61,10 +78,15 @@ $( document ).ready(function() {
 		if (otherFilters.hasClass('active')) {
 			otherFilters.removeClass('active');
 			andTheseItems.removeClass('active');
+
 		}
+
+		
+	
+		
 	});
 
-	$('.msnry-view').masonry({
+	var gridMasonry = $('.msnry-view').masonry({
 	// options
 		itemSelector: '.grid-item',
 		gutter: 20,

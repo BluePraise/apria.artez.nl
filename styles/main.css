@@ -742,6 +742,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 
 ul.home-grid {
   padding-left: 0;
+  min-width: 100%;
 }
 ul.home-grid .grid-sizer {
   display: none;
@@ -823,7 +824,7 @@ ul.home-grid li.post-item .post-content-wrap p.post-type {
 ul.home-grid li.post-item.issue .post-content-wrap {
   background-color: rgba(120, 191, 255, 0.71);
 }
-ul.home-grid li.post-item.open-call .post-content-wrap {
+ul.home-grid li.post-item.open-call-view .post-content-wrap {
   background-color: rgba(169, 228, 167, 0.71);
 }
 

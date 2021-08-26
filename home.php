@@ -56,7 +56,7 @@ get_header();
 
 	<section class="main-content">
 		<ul class="default-view home-grid grid-view">
-			<div class="grid-sizer"></div>
+			<div class="grid-sizer" id="grid-sizer"></div>
 				<?php
 
 				// WP_Query arguments
@@ -134,8 +134,8 @@ get_header();
 
 		</ul>
 
-		<div class="open-call hide">
-		<ul class="open-call-view home-grid grid-view">
+		
+		<ul class="open-call-view home-grid grid-view open-call hide">
 			<div class="grid-sizer"></div>
 			<?php // The Query
 				$issue_args = array(
@@ -147,7 +147,7 @@ get_header();
 				
 				if ( $the_query->have_posts() ) : ?>
 				<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-						<li class="post-item open-call">
+						<li class="post-item open-call-view">
 							<?php $issue_bg = get_field('background_image');?>
 							<?php if(has_post_thumbnail()): ?>
 								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
@@ -170,9 +170,9 @@ get_header();
 
 				<?php endwhile; endif; wp_reset_postdata();?>
 
-		</div>
+	</ul>
 			
-		<div class="apria-journal hide">
+		
 			
 				<?php // The Query
 				$issue_args = array(
@@ -184,7 +184,7 @@ get_header();
 				
 				if ( $the_query->have_posts() ) : ?>
 				
-					<ul class="issue-view home-grid grid-view">
+					<ul class="apria-journal apria-journal-view issue-view home-grid grid-view hide">
 					<div class="grid-sizer"></div>
 					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
 						<li class="post-item issue">
@@ -211,9 +211,9 @@ get_header();
 						</li>
 						<?php endwhile; endif; wp_reset_postdata();?>
 					</ul>
-		</div>
+	
 
-		<div class="latest-articles hide">
+	
 			<?php
 				// The Query
 				$issue_args = array(
@@ -225,7 +225,7 @@ get_header();
 
 				// The Loop
 				if ( $the_query->have_posts() ) : ?>
-					<ul class="posts home-grid">
+					<ul class="posts home-grid latest-articles grid-view hide">
 					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
 						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);" style="height: <?php echo rand(438, 700); ?>px">
 						<a href="<?php the_permalink(); ?>">
@@ -248,9 +248,8 @@ get_header();
 				/* Restore original Post Data */
 				wp_reset_postdata();
 			?>
-		</div>
-
-		<div class="curated-by hide">
+		
+	
 			<?php
 				// The Query
 				$issue_args = array(
@@ -262,7 +261,7 @@ get_header();
 
 				// The Loop
 				if ( $the_query->have_posts() ) : ?>
-					<ul class="posts home-grid">
+					<ul class="curated-by-view posts home-grid curated-by grid-view hide">
 					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
 						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);" style="height: <?php echo rand(438, 700); ?>px">
 						<a href="<?php the_permalink(); ?>">
