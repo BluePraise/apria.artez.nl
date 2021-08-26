@@ -5,13 +5,16 @@ main:not(.issue-content) {
 }
 
 .grid-view {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
 	.grid-sizer {
 		display: none;
-		width: calc(98% / 4 - 16px);
+		grid-column-start: 1;
+		grid-column-end: 4;
 	}
 	.grid-item {
-		width: calc(98% / 4 - 16px);
+		grid-column-start: 1;
+		grid-column-end: 4;
 		margin-bottom: 30px;
 	}
 }

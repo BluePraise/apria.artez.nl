@@ -97,11 +97,17 @@
 
 
 ul.home-grid {
-	width: 64.1vw;
+	// width: 64.1vw;
 	padding-left: 0;
 	.grid-sizer {
 		display: none;
-		width: calc(100%/4 - 16px);
+		grid-column-start: 1;
+		grid-column-end: 4;
+	}
+	.grid-item {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		margin-bottom: 30px;
 	}
 	&.issue-view li.post-item {
 		margin-right: 16px;
