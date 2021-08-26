@@ -36,7 +36,7 @@ get_header();
 					$journal_par  = get_field('apria_journal_filter_paragraph', false, false);
 					$opencall_par = get_field('open_call_filter_paragraph', false, false,);
 					$latest_par   = get_field('latest_articles_filter_paragraph', false, false);
-					$curated_par  = get_field('curated_by_filter_paragraph', false, false);
+					// $curated_par  = get_field('curated_by_filter_paragraph', false, false);
 					if ($journal_par): ?>
 						<p class="apria-journal hide"><?php echo $journal_par; ?></p>
 					<?php endif; 
@@ -46,9 +46,9 @@ get_header();
 					if ($latest_par): ?>
 						<p class="latest-articles hide"><?php echo $latest_par; ?></p>
 					<?php endif;
-					if ($latescurated_part_par): ?>
-						<p class="curated-by hide"><?php echo $curated_par; ?></p>
-					<?php endif; ?>
+					// if ($latescurated_part_par): ?>
+					<p class="curated-by hide"><?php echo $curated_par; ?></p>
+					<?php // endif; ?>
 			</div>
 		</div>
 	</section>
