@@ -75,7 +75,7 @@ get_header();
 			</div>
 			
 			<div class="article__text">
-				<?=$content; ?>
+				<?php the_content(); ?>
 			</div>
 
 		<?php 
