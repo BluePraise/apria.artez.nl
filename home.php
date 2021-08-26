@@ -28,15 +28,16 @@ get_header();
 		<div class="filters">
 			<a class="filter-item apria-journal" data-filter="apria-journal" href="#">Apria Journal</a>
 			<a class="filter-item open-call" data-filter="open-call" href="#">Open Call</a>
-			<!-- <a class="filter-item latest-articles" data-filter="latest-articles" href="#">Latest Articles</a> -->
-			<a class="filter-item curated-by" data-filter="curated-by" href="#">Curated By</a>
-
+			<a class="filter-item latest-articles" data-filter="latest-articles" href="#">Latest Articles</a>
+			<?php if(get_field('curator_name', 'option')): ?>
+			<a class="filter-item curated-by" data-filter="curated-by" href="#">Curated By: <?= get_field('curator_name', 'option'); ?></a>
+			<?php endif; ?>
 			<div class="filter-paragraphs">
 				<?php
 					$journal_par  = get_field('apria_journal_filter_paragraph', false, false);
 					$opencall_par = get_field('open_call_filter_paragraph', false, false,);
 					$latest_par   = get_field('latest_articles_filter_paragraph', false, false);
-					// $curated_par  = get_field('curated_by_filter_paragraph', false, false);
+					$curator_text = get_field('curator_text', 'option');
 					if ($journal_par): ?>
 						<p class="apria-journal hide"><?php echo $journal_par; ?></p>
 					<?php endif; 
@@ -46,9 +47,9 @@ get_header();
 					if ($latest_par): ?>
 						<p class="latest-articles hide"><?php echo $latest_par; ?></p>
 					<?php endif;
-					// if ($latescurated_part_par): ?>
-					<p class="curated-by hide"><?php echo $curated_par; ?></p>
-					<?php // endif; ?>
+					if ($curator_text): ?>
+						<p class="curated-by hide"><?php echo $curator_text; ?></p>
+					<?php endif; ?>
 			</div>
 		</div>
 	</section>
@@ -249,41 +250,24 @@ get_header();
 				wp_reset_postdata();
 			?>
 		
-	
-			<?php
-				// The Query
-				$issue_args = array(
-					'post_type'         => array( 'post' ),
-					'posts_per_page'    => 10,
-					'orderby'			=> 'date'
-				);
-				$the_query = new WP_Query( $issue_args );
 
-				// The Loop
-				if ( $the_query->have_posts() ) : ?>
-					<ul class="curated-by-view posts home-grid curated-by grid-view hide">
-					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);" style="height: <?php echo rand(438, 700); ?>px">
-						<a href="<?php the_permalink(); ?>">
-							<h3><?php the_title(); ?></h3>
-							<?php
-								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
-							else: ?>
-								<p><?php the_author(); ?></p>
-							<?php endif; ?>
-							<p class="post-type">
-								<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
-							</p>
-						</a>
-						<?php endwhile; ?>
+		<div class="curated-by">
+		<ul class="curated-posts grid-view">
+			<?php
+				// get repeater field data
+				$curated_posts = get_field('curated_posts');
+				var_dump($curated_posts);	
+				if( have_rows($curated_posts) ): 
+					// Loop through rows. ?>
+					
+					<?php while( have_rows($curated_posts) ) : the_row(); ?>
+					<?php $post_object = get_sub_field('curated_item'); ?>
+					<?php var_dump($post_object); ?>
+						<?php if( $post_object ): ?>
+							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+						<?php endif; endwhile; endif; ?>
 					</ul>
-				<?php else :
-					// no posts found
-					echo '<p>Sorry, there are no results for this.</p>';
-				endif;
-				/* Restore original Post Data */
-				wp_reset_postdata();
-			?>
 		</div>
 	</section>
 

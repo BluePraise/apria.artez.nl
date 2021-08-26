@@ -130,41 +130,6 @@
             "delay": 0
         },
         {
-            "key": "field_61212def0576d",
-            "label": "Paragraph for Curated By Filter",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_61224ca47a0ce",
-            "label": "",
-            "name": "curated_by_filter_paragraph",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
-        },
-        {
             "key": "field_61212dfe0576e",
             "label": "Paragraph for Latest Article Filter",
             "name": "",
@@ -227,5 +192,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1629903558
+    "modified": 1630004835
 }
