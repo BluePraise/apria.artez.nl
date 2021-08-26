@@ -73,11 +73,11 @@
 			&:after {
 				content: "";
 				display: inline-block;
-				border-bottom: 2px solid var(--text-color-1);
+				border-bottom: 1px solid var(--text-color-1);
 				width: 100%;
 			}
 			&.active:before {
-				border-top: 2px solid var(--text-color-1);
+				border-top: 1px solid var(--text-color-1);
 			}
 		}
 		.filter-paragraphs {

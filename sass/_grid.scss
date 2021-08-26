@@ -18,7 +18,8 @@ main:not(.issue-content) {
 
 
 .content-with-sidebar {
-	display: flex;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
 	article {
 		max-width: 950px;
 		margin-top: 0;

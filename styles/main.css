@@ -156,8 +156,8 @@ main:not(.issue-content) {
 }
 
 .content-with-sidebar {
-  display: -webkit-flex;
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 .content-with-sidebar article {
   max-width: 950px;
@@ -701,11 +701,11 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .hero .filters a:after {
   content: "";
   display: inline-block;
-  border-bottom: 2px solid var(--text-color-1);
+  border-bottom: 1px solid var(--text-color-1);
   width: 100%;
 }
 .hero .filters a.active:before {
-  border-top: 2px solid var(--text-color-1);
+  border-top: 1px solid var(--text-color-1);
 }
 .hero .filters .filter-paragraphs {
   font-family: var(--font-serif);
@@ -880,11 +880,11 @@ ul.home-grid li.post-item.open-call .post-content-wrap {
   margin-bottom: 15px;
 }
 .single .content-with-sidebar .bibliography__headline {
-  border-top: 2px solid;
-  border-bottom: 2px solid;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
 }
 .single .content-with-sidebar .footnotes__headline {
-  border-bottom: 2px solid;
+  border-bottom: 1px solid;
 }
 .single .content-with-sidebar .footnotes__headline,
 .single .content-with-sidebar .bibliography__headline {
