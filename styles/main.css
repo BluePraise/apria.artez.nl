@@ -124,7 +124,7 @@ img {
 }
 p {
   margin: 0;
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.2;
 }
 p + p {
@@ -474,6 +474,7 @@ h2.subtitle,
 .page-view article {
   padding-bottom: 16px;
 }
+
 .archive-view .article__date,
 .page-view .article__date {
   text-transform: uppercase;
@@ -514,7 +515,9 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 }
 .article__text a img img,
 .article__text .wp-block-image img {
+  width: 100%;
   max-width: 100%;
+  height: auto;
 }
 .article__text a img figcaption,
 .article__text .wp-block-image figcaption {
@@ -901,9 +904,13 @@ ul.home-grid li.post-item.open-call .post-content-wrap {
 }
 .single .content-with-sidebar .bio__name {
   display: block;
-  font-size: 40px;
+  font-size: 30px;
   border-bottom: 1px solid;
   margin-bottom: 15px;
+}
+.single .content-with-sidebar .bio__text p {
+  font-size: 22px;
+  line-height: 1.2;
 }
 .single .content-with-sidebar .bibliography__headline {
   border-top: 1px solid;

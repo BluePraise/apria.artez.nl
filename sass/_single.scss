@@ -33,9 +33,13 @@
 	}
 	.bio__name {
 		display: block;
-		font-size: 40px;
+		font-size: 30px;
 		border-bottom: 1px solid;
 		margin-bottom: 15px;
+	}
+	.bio__text p {
+		font-size: 22px;
+		line-height: 1.2;
 	}
 	.bibliography__headline {
 		border-top: 1px solid;

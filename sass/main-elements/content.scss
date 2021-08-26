@@ -44,9 +44,6 @@ h2.subtitle {
 .archive-view article,
 .page-view article {
     padding-bottom: 16px;
-    .content-with-sidebar & {
-        // border-bottom: 1px solid var(--text-color-1);
-    }
 }
 .archive-view .article__date,
 .page-view .article__date {
@@ -81,10 +78,13 @@ h2.subtitle {
         }
     }
     a img,
-    .wp-block-image {
+    .wp-block-image,
+    .wp-block-embed {
         margin: 3em 0em 3em -3em;
         img {
+            width: 100%;
             max-width: 100%;
+            height: auto;
         }
         figcaption {
             font-family: var(--font-mono);
@@ -111,7 +111,8 @@ h2.subtitle {
 @media (max-width: 1800px) {
     .article__text .wp-block-image,
     .article__text a img,
-    .wp-block-image {
+    .wp-block-image,
+    .wp-block-embed {
         margin: 3em 0em 3em 0em;
         
     }
