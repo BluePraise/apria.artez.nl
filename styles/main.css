@@ -202,6 +202,9 @@ header.main-header .container {
 header.main-header nav.main-navigation {
   grid-column: 3/12;
 }
+header.main-header nav.main-navigation ul {
+  padding: 0;
+}
 header.main-header nav.main-navigation ul li {
   display: inline-block;
   border: 1px solid var(--text-color-1);

@@ -15,7 +15,8 @@
 		wp_nav_menu([
 			'theme_location' => 'header_menu',
 			'container' => 'nav',
-			'menu_class' => 'main-navigation menu',
+			'container_class' => 'main-navigation',
+			'menu_class' => 'menu',
 			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 			'depth' => 1,
 			]);
