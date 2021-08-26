@@ -74,6 +74,7 @@ body {
   background-color: var(--color-1);
   max-width: 100%;
   color: var(--text-color-1);
+  font-family: var(--font-serif);
 }
 
 ul {
@@ -635,15 +636,16 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 2fr 260px;
-  -webkit-column-gap: 1em;
-     -moz-column-gap: 1em;
-          column-gap: 1em;
+  grid-template-columns: repeat(12, 1fr);
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
   color: var(--text-color-1);
   margin-bottom: 30px;
 }
 .hero .logo-container {
   grid-column-start: 1;
+  grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 3;
   max-width: 398px;
@@ -655,12 +657,15 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   border-radius: 200px;
 }
 .hero .intro-text {
-  grid-column-start: 2;
+  grid-column-start: 5;
+  grid-column-end: 11;
   grid-row-start: 1;
   font-family: var(--font-serif);
   max-width: 812px;
 }
 .hero .news-column {
+  grid-column-start: 11;
+  grid-column-end: 13;
   grid-row-start: 1;
   grid-row-end: 3;
   text-align: center;
@@ -684,7 +689,8 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   font-family: var(--font-serif);
 }
 .hero .filters {
-  grid-column-start: 2;
+  grid-column-start: 5;
+  grid-column-end: 11;
   grid-row-start: 2;
   display: -webkit-flex;
   display: flex;

@@ -1,12 +1,13 @@
 .hero {
 	display: grid;
-	grid-template-columns: 1fr 2fr 260px;
-	column-gap: 1em;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 16px;
 	color: var(--text-color-1);
 	margin-bottom: 30px;
 
 	.logo-container {
 		grid-column-start: 1;
+		grid-column-end: 4;
 		grid-row-start: 1;
 		grid-row-end: 3;
 		max-width: 398px;
@@ -18,12 +19,15 @@
 		}
 	}
 	.intro-text {
-		grid-column-start: 2;
+		grid-column-start: 5;
+		grid-column-end: 11;
 		grid-row-start: 1;
 		font-family: var(--font-serif);
 		max-width: 812px;
 	}
 	.news-column {
+		grid-column-start: 11;
+		grid-column-end: 13;
 		grid-row-start: 1;
 		grid-row-end: 3;
 		text-align: center;
@@ -45,7 +49,8 @@
 		}
 	}
 	.filters {
-		grid-column-start: 2;
+		grid-column-start: 5;
+		grid-column-end: 11;
 		grid-row-start: 2;
 		display: flex;
 		flex-wrap: wrap;
