@@ -34,9 +34,9 @@ get_header();
 			<div class="filter-paragraphs">
 				<?php
 					$journal_par  = get_field('apria_journal_filter_paragraph', false, false);
-					$opencall_par = get_field('open_call_filter_paragraph');
-					$latest_par   = get_field('latest_articles_filter_paragraph');
-					$curated_par  = get_field('curated_by_filter_paragraph');
+					$opencall_par = get_field('open_call_filter_paragraph', false, false,);
+					$latest_par   = get_field('latest_articles_filter_paragraph', false, false);
+					$curated_par  = get_field('curated_by_filter_paragraph', false, false);
 					if ($journal_par): ?>
 						<p class="apria-journal hide"><?php echo $journal_par; ?></p>
 					<?php endif; 
