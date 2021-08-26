@@ -4,12 +4,13 @@ get_header();
 
 global $wp_query, $wpdb;
 
-$authorID = get_the_author_meta('ID');
-
+$authorID = get_queried_object_id();
+$author_info = get_user_by( 'id',$authorID);
 $getPosts = get_posts(array(
     'post_type' => 'post',
 	'post_status' => 'publish',
 	'numberposts' => -1,
+	'author' => $authorID
 ));
 
 $posts = array();
@@ -29,16 +30,19 @@ foreach($getPosts as $aPost){
 	}
 }
 
-$searchResults = getFilter($posts);
-
-$pageTitle = get_the_author_meta('display_name') . ' - ' . $pageTitle;
-
+	$searchResults = getFilter($posts);
 
 	$posts = $searchResults;
 	$surtitle = "Results by author";
 	$term = get_the_author_meta('display_name');
 
 ?>
+
+<div class="author-info container">
+	<h1><?=$author_info->display_name; ?></h1>
+	<?=get_field("biography", 'user_'.$authorID); ?>
+
+</div>
 
 <main class="page-view msnry-view grid-view">
 	<div class="grid-sizer"></div>
@@ -67,5 +71,4 @@ $pageTitle = get_the_author_meta('display_name') . ' - ' . $pageTitle;
 	<?php endforeach; endif; ?>
 </main>
 
-<?php get_footer(); ?>
-
+<?php get_footer(); 
