@@ -6,8 +6,9 @@
 <header class="main-header">
 	<div class="container">
 		<div class="logo-container">
-			<a xlink:href="<?=get_bloginfo('url'); ?>" class="sticky-logo">
-  				<svg xlink:href="<?=get_bloginfo('url'); ?>" class="apria_logo" style="background-color: var(--text-color-1);"></svg>
+				<a href="<?=get_bloginfo('url'); ?>" class="logo-svg-cover"></a>
+			<a xlink:href="<?=get_bloginfo('url'); ?>" target="_blank" class="sticky-logo">
+  				<svg  class="apria_logo" style="background-color: var(--text-color-1);"></svg>
   			</a>
 		
 		</div>
