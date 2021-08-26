@@ -15,6 +15,7 @@ header.main-header {
 	nav.main-navigation {
 		grid-column: 3 /12;
 		ul {
+			padding: 0;
 			li {
 				display: inline-block;
 				border: 1px solid var(--text-color-1);

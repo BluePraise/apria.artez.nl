@@ -38,13 +38,10 @@ foreach($getPosts as $aPost){
 
 ?>
 
-<div class="author-info container">
-	<h1><?=$author_info->display_name; ?></h1>
+<main class="archive-view">
+	<h1>Articles by: <?=$author_info->display_name; ?></h1> 
 	<?=get_field("biography", 'user_'.$authorID); ?>
-
-</div>
-
-<main class="page-view msnry-view grid-view">
+	<div class="grid-view msnry-view">
 	<div class="grid-sizer"></div>
 	<?php 
 		if ($getPosts) : 
@@ -69,6 +66,7 @@ foreach($getPosts as $aPost){
 			</a>	
 	</article>
 	<?php endforeach; endif; ?>
+	</div>
 </main>
 
 <?php get_footer(); 

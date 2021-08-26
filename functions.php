@@ -57,38 +57,38 @@ add_action("after_setup_theme", function () {
 	]);
 });
 
-//Add Search Form Into Header Menu
-add_filter('wp_nav_menu_items', 'apria_change_nav_menu_items', 10, 2);
-function apria_change_nav_menu_items($items, $args) {
-	if ('header_menu' == $args->theme_location) {
-		$items .= '<li class="menu-item">';
-		$items .= get_search_form(false);
-		$items .= "</li>";
+// //Add Search Form Into Header Menu
+// add_filter('wp_nav_menu_items', 'apria_change_nav_menu_items', 10, 2);
+// function apria_change_nav_menu_items($items, $args) {
+// 	if ('header_menu' == $args->theme_location) {
+// 		$items .= '<li class="menu-item">';
+// 		$items .= get_search_form(false);
+// 		$items .= "</li>";
 
-		// Getting Menu Object
-		$menu_object = $args->menu;
+// 		// Getting Menu Object
+// 		$menu_object = $args->menu;
 
-		// Header Menu Additional Fields
-		$additional_menu_links = get_field("additional_menu_links", $menu_object);
+// 		// Header Menu Additional Fields
+// 		$additional_menu_links = get_field("additional_menu_links", $menu_object);
 
-		// Checking Additional Menu Links
-		if ($additional_menu_links) {
-			foreach ($additional_menu_links as $additional_menu_link) {
-				$additional_menu_link_url = $additional_menu_link['additional_link']['url'];
-				$additional_menu_link_title = $additional_menu_link['additional_link']['title'];
-				$additional_menu_link_target = $additional_menu_link['additional_link']['target'] ? $additional_menu_link['additional_link']['target'] : '_self';
+// 		// Checking Additional Menu Links
+// 		if ($additional_menu_links) {
+// 			foreach ($additional_menu_links as $additional_menu_link) {
+// 				$additional_menu_link_url = $additional_menu_link['additional_link']['url'];
+// 				$additional_menu_link_title = $additional_menu_link['additional_link']['title'];
+// 				$additional_menu_link_target = $additional_menu_link['additional_link']['target'] ? $additional_menu_link['additional_link']['target'] : '_self';
 
-				// Printing additional menu Items (Mobile version)
-				$items .= "<li class='menu-item menu-item__spaced hide-on-desktop'>";
-				$items .= "<a href='" . esc_url($additional_menu_link_url) . "' target='" . esc_attr($additional_menu_link_target) . "' title='" . esc_attr($additional_menu_link_title) . "'>" . esc_html($additional_menu_link_title) . "</a>";
-				$items .= "</li>";
-			}
-		}
+// 				// Printing additional menu Items (Mobile version)
+// 				$items .= "<li class='menu-item menu-item__spaced hide-on-desktop'>";
+// 				$items .= "<a href='" . esc_url($additional_menu_link_url) . "' target='" . esc_attr($additional_menu_link_target) . "' title='" . esc_attr($additional_menu_link_title) . "'>" . esc_html($additional_menu_link_title) . "</a>";
+// 				$items .= "</li>";
+// 			}
+// 		}
 
-	}
+// 	}
 
-	return $items;
-}
+// 	return $items;
+// }
 
 
 /***

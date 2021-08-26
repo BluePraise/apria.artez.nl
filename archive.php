@@ -21,7 +21,6 @@ $getPosts = get_posts(array(
 
 ?>
 
-
 <main class="page-view msnry-view grid-view">
 	<div class="grid-sizer"></div>
 	<?php 
