@@ -18,18 +18,28 @@ main:not(.issue-content) {
 
 
 .content-with-sidebar {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-gap: 100px;
-	margin: auto;
+	display: flex;
 	article {
 		max-width: 950px;
-		margin: auto;
+		margin-top: 0;
 	}
 }
 
 @media (max-width: 767.9px) {
 	main:not(.issue-content) {
 		padding: 0 24px;
+	}
+}
+
+
+@media screen and (max-width: 768px) { 
+	.content-with-sidebar {
+		display: flex;
+		flex-direction: column;
+		grid-gap: 0;
+		article,
+		aside {
+			max-width: 100%;
+		}
 	}
 }

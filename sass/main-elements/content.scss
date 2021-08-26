@@ -1,6 +1,5 @@
 .content-with-sidebar {
     article {
-		margin: auto;
 		color: var(--text-color-1)
 	}
 	a {
@@ -18,21 +17,7 @@
 
 @media screen and (max-width: 768px) { 
 	.content-with-sidebar {
-		display: flex;
 		grid-gap: 0;
-	}
-}
-
-
-@media screen and (max-width: 768px) { 
-	.content-with-sidebar {
-		display: flex;
-		flex-direction: column;
-		grid-gap: 0;
-		article,
-		aside {
-			max-width: 100%;
-		}
 	}
 }
 
