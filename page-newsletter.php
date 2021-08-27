@@ -30,15 +30,15 @@ get_header();
 
 ?>
 
-<div class="main-content subscribe-content">
-	<div class="overlay-close-button js-newsletter-close-button">
+<main class="page-view">
+	<!-- <div class="overlay-close-button js-newsletter-close-button">
 		<a href="<?=get_home_url() ?>" >
 			<img src="/wp-content/themes/apria/elements/icon_close_black.svg">
 		</a>
-	</div>
+	</div> -->
 
 	<article class="main-column">
-		<div class="content-wrap">
+	
 			<h1 class="article__title">Subscribe to our newsletter to stay up-to-date with the APRIA Journal and Platform.</h1>
 
 			<div class="tnp">
@@ -70,10 +70,11 @@ get_header();
 				</form>
 			</div>
 
-		</div>
+		
 	</article>
-</div>
+	
+</main>
 
-
+<?php get_footer(); ?>
 
 
