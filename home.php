@@ -29,9 +29,12 @@ get_header();
 			<a class="filter-item apria-journal" data-filter="apria-journal" href="#">Apria Journal</a>
 			<a class="filter-item open-call" data-filter="open-call" href="#">Open Call</a>
 			<a class="filter-item latest-articles" data-filter="latest-articles" href="#">Latest Articles</a>
+			
 			<?php if(get_field('curator_name', 'option')): ?>
-			<a class="filter-item curated-by" data-filter="curated-by" href="#">Curated By: <?= get_field('curator_name', 'option'); ?></a>
+				<a class="filter-item curated-by" data-filter="curated-by" href="#">Curated By: <?= get_field('curator_name', 'option'); ?>
+				</a>
 			<?php endif; ?>
+
 			<div class="filter-paragraphs">
 				<?php
 					$journal_par  = get_field('apria_journal_filter_paragraph', false, false);
@@ -239,7 +242,7 @@ get_header();
 							<p class="post-type">
 								<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
 							</p>
-						</a>
+						</a> </li>
 						<?php endwhile; ?>
 					</ul>
 				<?php else :
@@ -251,24 +254,49 @@ get_header();
 			?>
 		
 
-		<div class="curated-by">
-		<ul class="curated-posts grid-view">
+		
+		<ul class="curated-posts curated-by home-grid grid-view hide">
+			<div class="grid-sizer"></div>
 			<?php
-				// get repeater field data
-				$curated_posts = get_field('curated_posts');
-				var_dump($curated_posts);	
-				if( have_rows($curated_posts) ): 
+			
+				$curated_posts = get_field('curated_posts', 'option');
+				
+				if( have_rows('curated_posts', 'option') ): 
 					// Loop through rows. ?>
 					
-					<?php while( have_rows($curated_posts) ) : the_row(); ?>
+					<?php while( have_rows('curated_posts', 'option') ) : the_row(); ?>
 					<?php $post_object = get_sub_field('curated_item'); ?>
-					<?php var_dump($post_object); ?>
-						<?php if( $post_object ): ?>
-							<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+
+						<?php if( $post_object ): 
+							//var_dump($post_object);  
+							foreach($post_object as $post)
+							?>
+							<li class="post-item issue">
+							<?php $issue_bg = get_field('background_image', $post->ID);?>
+							<?php if(get_field('background_image', $post->ID)) : ?>
+								<a href="<?php the_permalink($post->ID); ?>" style="background-image: url(<?php echo $issue_bg; ?>);">
+							<?php elseif(has_post_thumbnail($post->ID)): ?>
+								<a href="<?php the_permalink($post->ID); ?>" style="background-image: url(<?php the_post_thumbnail_url($post->ID); ?>);">
+							<?php else: ?>	
+								<a href="<?php the_permalink($post->ID); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
+							<?php endif; ?>
+							<div class="post-content-wrap">
+								<h3><?php the_title($post->ID); ?></h3>
+								<?php
+								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
+								else: ?>
+									<p><?php the_author($post->ID); ?></p>
+								<?php endif; ?>
+									<p class="post-type">
+										<?php echo $post->post_type; ?>
+									</p>
+							</div>
+							</a>
+						</li>
 							<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 						<?php endif; endwhile; endif; ?>
 					</ul>
-		</div>
+		
 	</section>
 
 
