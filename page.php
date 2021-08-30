@@ -5,9 +5,8 @@ defined('ABSPATH') || exit;
 get_header(); 
 ?>
 
-<main class="page-view grid-view">
+<main class="page-view">
     <article>
-        <div class="grid-sizer"></div>
             <p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
             <h2 class="subtitle"><?php the_title();?></h2>
             <?php if(has_post_thumbnail()): ?>
@@ -20,6 +19,9 @@ get_header();
             <?php else: ?>
                 <p class="article__excerpt"><?php the_excerpt(); ?></p>
             <?php endif;?>        
+            <div class="article__text">
+                <?php the_content(); ?>
+            </div>
     </article>
 
 </main>
