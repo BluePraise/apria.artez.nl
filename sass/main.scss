@@ -11,3 +11,10 @@
 .hide {
 	display: none;
 }
+
+.page-template-default .page-view {
+    article {
+        max-width: 950px;
+        margin: auto;
+    }
+}

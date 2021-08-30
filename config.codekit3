@@ -668,7 +668,7 @@
     },
     "\/sass\/main.scss" : {
       "aP" : 1,
-      "bl" : 1,
+      "bl" : 0,
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
@@ -677,7 +677,7 @@
       "oAP" : "\/styles\/main.css",
       "oF" : 3,
       "oS" : 1,
-      "pg" : 2,
+      "pg" : 1,
       "sct" : 0
     },
     "\/sass\/templates\/_archive.scss" : {

@@ -721,7 +721,6 @@ article.grid-item figure, .grid-sizer figure {
     width: calc(100%/1 - 16px);
   }
 }
-
 .main-content.issue-content {
   min-height: 100%;
   position: relative;
@@ -849,7 +848,7 @@ html:not(.issue-header-fixed) .issue-header {
 .hero {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr 50px 1fr;
+  grid-template-rows: 200px 50px 200px;
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -860,6 +859,7 @@ html:not(.issue-header-fixed) .issue-header {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
+  grid-row-end: 3;
   max-width: 398px;
   height: auto;
 }
@@ -942,6 +942,7 @@ html:not(.issue-header-fixed) .issue-header {
   grid-row-start: 3;
   grid-column-start: 5;
   grid-column-end: 11;
+  margin-top: 32px;
 }
 .hero .filter-paragraphs p {
   font-size: 20px;

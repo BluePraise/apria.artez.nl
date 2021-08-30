@@ -1,7 +1,7 @@
 .hero {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows:  1fr 50px 1fr;;
+	grid-template-rows: 200px 50px 200px;
 	column-gap: 16px;
 	color: var(--text-color-1);
 	margin-bottom: 30px;
@@ -9,6 +9,7 @@
 		grid-column-start: 1;
 		grid-column-end: 4;
 		grid-row-start: 1;
+		grid-row-end: 3;
 		max-width: 398px;
 		height: auto;
 		a.logo {
@@ -88,6 +89,7 @@
 		grid-row-start: 3;
 		grid-column-start: 5;
 		grid-column-end: 11;
+		margin-top: 32px;
 		p {
 			font-size: 20px;
 			line-height: 24px;
