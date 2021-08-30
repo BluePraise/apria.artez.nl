@@ -847,10 +847,10 @@ ul.home-grid li.post-item .post-content-wrap p.post-type {
   line-height: 17px;
 }
 ul.home-grid li.post-item.issue .post-content-wrap {
-  background-color: rgba(120, 191, 255, 0.71);
+  background-color: #A5C8D1A1;
 }
 ul.home-grid li.post-item.open-call-view .post-content-wrap {
-  background-color: rgba(169, 228, 167, 0.71);
+  background-color: #986F2D82;
 }
 
 .main-content .open-call {
