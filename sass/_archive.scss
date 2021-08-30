@@ -6,7 +6,8 @@
 }
 
 
-article.grid-item {	
+article.grid-item, .grid-sizer {
+	width: calc(100%/4 - 16px);	
 	a {
 		text-decoration: none;
 	}
@@ -50,6 +51,21 @@ article.grid-item {
     color: var(--text-color-1);
     font-size: 12px;
 }
+}
+
+@media (max-width: 768px) {
+	article.grid-item, .grid-sizer {
+		width: calc(100%/2 - 16px);
+	}
+
+}
+
+@media (max-width: 414px) {
+	article.grid-item, .grid-sizer {
+		width: calc(100%/1 - 16px);
+	}
+
+	
 }
 
 
