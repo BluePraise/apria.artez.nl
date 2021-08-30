@@ -50,6 +50,9 @@ main:not(.issue-content) {
 		article,
 		aside {
 			max-width: 100%;
-		}
+		}	
+	}
+	.content-with-sidebar aside ul {
+		padding-left: 0;
 	}
 }
