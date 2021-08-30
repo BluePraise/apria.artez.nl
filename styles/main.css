@@ -164,14 +164,9 @@ main:not(.issue-content) {
   margin-top: 0;
 }
 
-.page-template-default .page-view article {
-  max-width: 950px;
-  margin: auto;
-}
-
 @media (max-width: 767.9px) {
   main:not(.issue-content) {
-    padding: 0 24px;
+    padding: 0px 24px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -329,6 +324,22 @@ a.sticky-logo .apria_logo {
 }
 
 @media (max-width: 767.9px) {
+  .logo-container {
+    width: 100%;
+    -webkit-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .logo-container a.logo-svg-cover {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100px;
+    height: 50px;
+    z-index: 9999;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   header.main-header {
     margin-bottom: 30px;
     max-width: 100vw !important;
@@ -351,6 +362,10 @@ a.sticky-logo .apria_logo {
     display: block;
     text-align: center;
     margin: -60px auto 20px;
+    position: fixed;
+  }
+  .fixed-logo header.main-header {
+    padding-bottom: 60px;
   }
 
   .mobile-menu-button.hide-on-desktop {
@@ -362,7 +377,7 @@ a.sticky-logo .apria_logo {
   }
 
   .menu {
-    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 18px 15px 0px rgba(0, 0, 0, 0.4);
     background: #fce4e9;
     display: none;
     left: 0;
@@ -393,6 +408,14 @@ a.sticky-logo .apria_logo {
   }
   .mobile-menu-open .mobile-menu-button.hide-on-desktop {
     display: none !important;
+  }
+  .mobile-menu-open header.main-header {
+    margin-bottom: 90px;
+  }
+  .mobile-menu-open header.main-header .logo-container {
+    height: 60px;
+    -webkit-flex: 0 0 100%;
+            flex: 0 0 100%;
   }
   .mobile-menu-open header.main-header nav.main-navigation ul {
     padding: 0;
@@ -526,24 +549,18 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .article__text p a {
   text-decoration: underline;
 }
-.article__text a {
-  color: var(--text-color-1);
-}
 .article__text a img,
-.article__text .wp-block-image,
-.article__text .wp-block-embed {
+.article__text .wp-block-image {
   margin: 3em 0em 3em -3em;
 }
 .article__text a img img,
-.article__text .wp-block-image img,
-.article__text .wp-block-embed img {
+.article__text .wp-block-image img {
   width: 100%;
   max-width: 100%;
   height: auto;
 }
 .article__text a img figcaption,
-.article__text .wp-block-image figcaption,
-.article__text .wp-block-embed figcaption {
+.article__text .wp-block-image figcaption {
   font-family: var(--font-mono);
   font-size: 13px;
   max-width: 500px;
@@ -555,7 +572,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   margin-top: 2em;
   margin-bottom: 2em;
 }
-.article__text .wp-block-separator,
+
 .article__text hr {
   color: var(--color-1);
   height: 3px;
@@ -563,16 +580,10 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   border: 1px solid var(--color-1);
 }
 
-.page-template-default .page-view article {
-  max-width: 950px;
-  margin: auto;
-}
-
 @media (max-width: 1800px) {
   .article__text .wp-block-image,
 .article__text a img,
-.wp-block-image,
-.wp-block-embed {
+.wp-block-image {
     margin: 3em 0em 3em 0em;
   }
 
@@ -655,12 +666,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 
 .input--half + .input--half {
   margin-left: 9.09091%;
-}
-
-.form__text {
-  float: left;
-  margin-top: 26px;
-  width: 63.63636%;
 }
 
 .subscribe-form .form__submit {
@@ -765,21 +770,9 @@ article.grid-item figure, .grid-sizer figure {
   top: 50%;
   width: 2230px;
 }
-.main-content.issue-content .article__background-container .article__background .animation--rotation {
-  -webkit-animation: rotate 300s linear infinite;
-          animation: rotate 300s linear infinite;
-}
 .main-content.issue-content .article__background-container .article__background .article__background-image {
   height: 100%;
   width: 100%;
-}
-
-.all-colored a, .all-colored .site-title, .all-colored .preview__info {
-  color: inherit;
-}
-
-.all-colored a {
-  color: inherit !important;
 }
 
 .overlay-close-button {
@@ -1225,11 +1218,6 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
           align-items: center;
   margin-top: 10px;
   color: var(--text-color-1);
-}
-
-.page-template-default .page-view article {
-  max-width: 950px;
-  margin: auto;
 }
 
 .show {

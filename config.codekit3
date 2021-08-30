@@ -137,14 +137,6 @@
       "oO" : 1,
       "oS" : 1
     },
-    "\/acf-json\/group_6126855b77900.json" : {
-      "ft" : 524288,
-      "oA" : 1,
-      "oAP" : "\/acf-json\/group_6126855b77900-min.json",
-      "oF" : 0,
-      "oO" : 1,
-      "oS" : 1
-    },
     "\/archive-news.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -174,81 +166,11 @@
       "q" : 100,
       "rq" : 75
     },
-    "\/assets\/svg\/APRIA-open-call-button-desktop.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/APRIA-open-call-button-desktop.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/APRIA-open-call-button-mobile.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/APRIA-open-call-button-mobile.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/APRIA-open-call-V03.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/APRIA-open-call-V03.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/assets\/svg\/facebook.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/svg\/facebook.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/icon_arrow_right.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_arrow_right.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/icon_arrow_up.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_arrow_up.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/icon_close_black.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_close_black.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/icon_close_color.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_close_color.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -264,51 +186,11 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/svg\/icon_facebook.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_facebook.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/icon_instagram.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_instagram.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
     "\/assets\/svg\/icon_mobile_menu.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/svg\/icon_mobile_menu.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/icon_youtube.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/icon_youtube.svg",
-      "oF" : 0,
-      "opt" : 0,
-      "plM" : 52780316221407,
-      "prP" : 0
-    },
-    "\/assets\/svg\/logo.svg" : {
-      "ft" : 2097152,
-      "miP" : 0,
-      "oA" : 2,
-      "oAP" : "\/assets\/svg\/logo.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -333,19 +215,6 @@
       "opt" : 0,
       "plM" : 52780316221407,
       "prP" : 0
-    },
-    "\/assets\/svg\/preview_image_placeholder.jpg" : {
-      "ft" : 16384,
-      "iS" : 95266,
-      "jF" : 0,
-      "oA" : 0,
-      "oAP" : "\/assets\/svg\/preview_image_placeholder.jpg",
-      "oF" : 0,
-      "oIPL" : 0,
-      "opt" : 0,
-      "ou" : "lpckwebp-none",
-      "q" : 100,
-      "rq" : 75
     },
     "\/assets\/svg\/twitter.svg" : {
       "ft" : 2097152,
@@ -374,6 +243,22 @@
       "oA" : 1,
       "oAP" : "\/author.php",
       "oF" : 1
+    },
+    "\/controllers\/element_main.inc.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/controllers\/element_main.inc.php",
+      "oF" : 0
+    },
+    "\/footer-article.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/footer-article.php",
+      "oF" : 0
     },
     "\/footer.php" : {
       "cB" : 0,
@@ -423,12 +308,12 @@
       "oAP" : "\/index.php",
       "oF" : 1
     },
-    "\/page-news.php" : {
+    "\/main.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/page-news.php",
+      "oAP" : "\/main.php",
       "oF" : 0
     },
     "\/page-newsletter.php" : {
@@ -498,6 +383,20 @@
       "rFN" : 0,
       "uCM" : 0
     },
+    "\/sass\/_archive.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_archive.css",
+      "oF" : 1,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/sass\/_colors.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -507,6 +406,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/_colors.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/_frontpage.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_frontpage.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -526,6 +439,20 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/sass\/_issue.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_issue.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/sass\/_mixins.scss" : {
       "aP" : 0,
       "bl" : 0,
@@ -535,6 +462,20 @@
       "ma" : 0,
       "oA" : 1,
       "oAP" : "\/sass\/_mixins.css",
+      "oF" : 0,
+      "oS" : 0,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/sass\/_single.scss" : {
+      "aP" : 0,
+      "bl" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 0,
+      "oA" : 1,
+      "oAP" : "\/sass\/_single.css",
       "oF" : 0,
       "oS" : 0,
       "pg" : 0,
@@ -652,23 +593,9 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/sass\/main-elements\/newsletter.scss" : {
-      "aP" : 0,
-      "bl" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 0,
-      "oA" : 1,
-      "oAP" : "\/sass\/main-elements\/newsletter.css",
-      "oF" : 0,
-      "oS" : 0,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/sass\/main.scss" : {
       "aP" : 1,
-      "bl" : 0,
+      "bl" : 1,
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
@@ -677,7 +604,7 @@
       "oAP" : "\/styles\/main.css",
       "oF" : 3,
       "oS" : 1,
-      "pg" : 1,
+      "pg" : 2,
       "sct" : 0
     },
     "\/sass\/templates\/_archive.scss" : {
@@ -998,18 +925,6 @@
       "oF" : 0,
       "pg" : 0
     },
-    "\/styles\/apria-old.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/styles\/apria-old-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/styles\/main.css" : {
       "aP" : 1,
       "bl" : 0,
@@ -1030,30 +945,6 @@
       "oAP" : "\/styles\/main.css.map",
       "oF" : 0
     },
-    "\/styles\/wp-default-min.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/styles\/wp-default-min-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
-    "\/styles\/wp-default.css" : {
-      "aP" : 1,
-      "bl" : 0,
-      "ci" : 0,
-      "co" : 0,
-      "ft" : 16,
-      "ma" : 0,
-      "oA" : 0,
-      "oAP" : "\/styles\/wp-default-min.css",
-      "oF" : 0,
-      "pg" : 0
-    },
     "\/tag.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1061,14 +952,6 @@
       "oA" : 1,
       "oAP" : "\/tag.php",
       "oF" : 1
-    },
-    "\/template-parts\/home\/post-items.php" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/template-parts\/home\/post-items.php",
-      "oF" : 0
     },
     "\/webfonts\/AHAMONO-Regular.otf" : {
       "cB" : 0,
