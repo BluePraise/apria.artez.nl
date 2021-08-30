@@ -1126,10 +1126,13 @@ html:not(.issue-header-fixed) .issue-header {
   font-family: var(--font-sans-serif);
 }
 
-article.grid-item a {
+article.grid-item, .grid-sizer {
+  width: calc(100%/4 - 16px);
+}
+article.grid-item a, .grid-sizer a {
   text-decoration: none;
 }
-article.grid-item figure {
+article.grid-item figure, .grid-sizer figure {
   margin-left: 0;
 }
 
@@ -1168,6 +1171,16 @@ article.grid-item figure {
   font-size: 12px;
 }
 
+@media (max-width: 768px) {
+  article.grid-item, .grid-sizer {
+    width: calc(100%/2 - 16px);
+  }
+}
+@media (max-width: 414px) {
+  article.grid-item, .grid-sizer {
+    width: calc(100%/1 - 16px);
+  }
+}
 .show {
   display: block;
 }
