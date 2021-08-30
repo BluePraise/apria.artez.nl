@@ -226,16 +226,27 @@ get_header();
 				$issue_args = array(
 					'post_type'         => array( 'post' ),
 					'posts_per_page'    => 10,
-					'orderby'			=> 'date'
+					'orderby'			=> 'date',
+					'order'				=> 'ASC'
 				);
 				$the_query = new WP_Query( $issue_args );
 
 				// The Loop
 				if ( $the_query->have_posts() ) : ?>
 					<ul class="posts home-grid latest-articles grid-view hide">
-					<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-						<li class="post-item issue" style="background-image: url(<?php echo $issue_bg['url']; ?>);" style="height: <?php echo rand(438, 700); ?>px">
-						<a href="<?php the_permalink(); ?>">
+					<div class="grid-sizer"></div>
+					<?php while ( $the_query->have_posts() ): $the_query->the_post(); 
+							$issue_bg = get_field('background_image');
+						?>
+						<li class="post-item issue">
+							<?php $issue_bg = get_field('background_image');?>
+							<?php if(get_field('background_image')) : ?>
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $issue_bg; ?>);">
+							<?php elseif(has_post_thumbnail()): ?>
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+							<?php else: ?>	
+								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
+							<?php endif; ?>
 							<h3><?php the_title(); ?></h3>
 							<?php
 								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
