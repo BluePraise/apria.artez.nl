@@ -49,10 +49,8 @@ get_header();
 					<?php endif;
 					if ($latest_par): ?>
 						<p class="latest-articles hide"><?php echo $latest_par; ?></p>
-					<?php endif;
-					if ($curator_text): ?>
-						<p class="curated-by hide"><?php echo $curator_text; ?></p>
 					<?php endif; ?>
+				
 			</div>
 		</div>
 	</section>
@@ -140,6 +138,7 @@ get_header();
 
 		
 		<ul class="open-call-view home-grid grid-view open-call hide">
+		
 			<div class="grid-sizer"></div>
 			<?php // The Query
 				$issue_args = array(
@@ -254,8 +253,11 @@ get_header();
 			?>
 		
 
-		
+		<?php 	if ($curator_text): ?>
+						<div class="curated-by hide"><?php echo $curator_text; ?></div>
+					<?php endif; ?>
 		<ul class="curated-posts curated-by home-grid grid-view hide">
+				
 			<div class="grid-sizer"></div>
 			<?php
 			

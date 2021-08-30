@@ -125,6 +125,7 @@ ul.home-grid {
 		background-position: center center;
 		background-repeat: no-repeat;
 		width: calc(100%/4 - 16px);
+		
 		img {
 			height: auto;
 			width: 100%;
@@ -195,6 +196,10 @@ ul.home-grid {
 }
 
 @media (max-width: 768px) {
+	ul.home-grid li.post-item {
+		width: calc(100%/2 - 16px);
+	}
+
 	.hero {
 		display: flex !important;
 		flex-direction: column;
@@ -220,6 +225,10 @@ ul.home-grid {
 }
 
 @media (max-width: 414px) {
+	ul.home-grid li.post-item {
+		width: calc(100%/1 - 16px);
+	}
+
 	ul.posts {
 		grid-template-columns: repeat(1, 1fr);
 	}

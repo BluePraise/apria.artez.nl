@@ -42,18 +42,27 @@ $( document ).ready(function() {
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
 		e.preventDefault();
+
 		var otherFilters = $(this).siblings();
 		var currentFilter = $(this).data('filter');
 		var selectedItem = $('.home').find('.' + currentFilter);
 		var msnryItem = $('.main-content').find('.' + currentFilter);
 		var otherItems = $('.main-content > *').not(selectedItem);
 		var andTheseItems = $('.filter-paragraphs > *').not(selectedItem);
+		
+		if($(this).hasClass("active")) {
+			selectedItem.removeClass('show').addClass('hide');
+			$(this).removeClass('active');	
+			$('.default-view').removeClass("hide")
+			return false;
+		}
+
 		// Toggle the content
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
 
-			filter_grid = $('.' + currentFilter).masonry({
+			filter_grid = $('ul.' + currentFilter).masonry({
 					itemSelector: '.post-item',
 					columnWidth: '.grid-sizer',
 					gutter: 16,
