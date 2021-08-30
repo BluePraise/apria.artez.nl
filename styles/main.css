@@ -328,7 +328,10 @@ a.sticky-logo .apria_logo {
     max-width: 100vw !important;
   }
   header.main-header .container {
-    display: block !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
   }
 
   a.sticky-logo {
@@ -393,6 +396,8 @@ a.sticky-logo .apria_logo {
     margin-top: 50px;
     -webkit-justify-content: space-evenly;
             justify-content: space-evenly;
+    padding-bottom: 40px;
+    padding-top: 40px;
   }
   .mobile-menu-open header.main-header nav.main-navigation ul li {
     margin-left: 0px;
