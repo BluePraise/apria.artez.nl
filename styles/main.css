@@ -669,9 +669,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   font-family: var(--font-sans-serif);
 }
 
-article.grid-item, .grid-sizer {
-  width: calc(100%/4 - 16px);
-}
 article.grid-item a, .grid-sizer a {
   text-decoration: none;
 }
