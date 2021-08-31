@@ -171,7 +171,7 @@ get_header();
 			<li>
 				<a class="latest-post-link-wrapper" href="<?php the_permalink(); ?>">
 					<h2><?php the_title(); ?></h2>
-					<span class="article-separator-large">/</span>
+					<span class="article-separator-large"></span>
 				</a>
 					<?php echo '<p class="aside-excerpt">' . get_the_excerpt() . '</p>'; ?>
 					<div class="article__meta">
@@ -185,7 +185,7 @@ get_header();
 							echo '<span class="article-separator">/</span>';
 						endif; ?>	
 						
-						
+				
 						<?php if($article_tags): $i = 0; ?>
 							<?php foreach($article_tags as $aTag): ?>
 								<a class="article__tag_link" href="<?=$aTag->url; ?>"><span class="article__tag_name"><?=$aTag->name; ?></span>
@@ -198,7 +198,6 @@ get_header();
 						<!-- </div>.tag-list -->
 						
 					</div><!-- .article__meta -->
-				
 			</li>
 			<?php endfor; ?>
 

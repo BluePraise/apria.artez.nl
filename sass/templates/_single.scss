@@ -77,13 +77,22 @@
 			margin-left: 3px;
 			margin-right: 3px;
 			&-large {
-				padding-left: 20px;
-				font-size: 40px;
+				display: block;
+				margin-left: 26px;
+				margin-top: 3px;
+				width: 7px;
+				background-color: var(--text-color-1);
+				height: 35px;
+				transform: skew(-10deg);
 			}
 		}
 		h2 {
 			display: inline-block;
 			padding-left: 20px;
+		}
+		.latest-post-link-wrapper {
+			display: block;
+			margin-bottom: 20px;
 		}
 		.aside-excerpt {
 			font-family: var(--font-mono);
@@ -91,8 +100,13 @@
 			line-height: 17px;
 			color: var(--text-color-1);
 		}
-		ul li {
-			margin-bottom: 20px;
+		ul  {
+			margin-left: 0;
+			padding-left: 0;
+			max-width: 398px;
+			li {
+				margin-bottom: 20px;
+			}
 		}
 		.article__tag_name,
 		.article__date {
