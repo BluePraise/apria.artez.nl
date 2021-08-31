@@ -7,7 +7,7 @@ global $wp_query, $wpdb;
 $authorID = get_queried_object_id();
 $author_info = get_user_by( 'id',$authorID);
 $getPosts = get_posts(array(
-    'post_type' => 'post',
+    'post_type' => 'post', 'news', 'issue',
 	'post_status' => 'publish',
 	'numberposts' => -1,
 	'author' => $authorID

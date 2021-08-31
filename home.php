@@ -145,42 +145,40 @@ get_header();
 		
 			<div class="grid-sizer"></div>
 			<?php // The Query
-				$issue_args = array(
-					'post_type'              => array( 'news' ),
-					'posts_per_page'         => -1
+				$news_args = array(
+					'post_type'         => array( 'news' ),
+					'post_status' 		=> 'publish',
+					'posts_per_page'    => -1
 				);
-				$the_query = new WP_Query( $issue_args );
+				$the_query = new WP_Query( $news_args );
 				// The Loop 
 				
-				if ( $the_query->have_posts() ) : ?>
-				<?php while ( $the_query->have_posts() ): $the_query->the_post(); ?>
-						<li class="post-item open-call-view">
-							<?php $issue_bg = get_field('background_image');?>
-							<?php if(has_post_thumbnail()): ?>
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
-							<?php else: ?>	
-								<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
+				if( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<li class="post-item open-call-view">
+						<?php if(has_post_thumbnail()): ?>
+							<a href="<?php the_permalink(); ?>" style="background-image: url(<?php the_post_thumbnail_url( ); ?>);">
+						<?php else: ?>	
+							<a href="<?php the_permalink(); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
+						<?php endif; ?>
+						<div class="post-content-wrap">
+							<h3><?php the_title(); ?></h3>
+							<?php
+							if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
+							else: ?>
+								<p><?php the_author(); ?></p>
 							<?php endif; ?>
-							<div class="post-content-wrap">
-								<h3><?php the_title(); ?></h3>
-								<?php
-								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
-								else: ?>
-									<p><?php the_author(); ?></p>
-								<?php endif; ?>
-									<p class="post-type">
-										<?php echo $post->post_type; ?>
-									</p>
-							</div>
-							</a>
-						</li>
+								<p class="post-type">
+									<?php echo $post->post_type; ?>
+								</p>
+						</div>
+						</a>
+					</li>
 
 				<?php endwhile; endif; wp_reset_postdata();?>
 
 	</ul>
 			
 		
-			
 				<?php // The Query
 				$issue_args = array(
 					'post_type'              => array( 'issue' ),

@@ -1,77 +1,40 @@
 <?php
-/**
- * The template for displaying all posts
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- **/
-
+/*
+*/
 // Exit if accessed directly.
 defined('ABSPATH') || exit;
 get_header(); 
 
-global $wp_query, $wpdb;
-
-
-
-$getPosts = get_posts(array(
+$the_query = new WP_Query(array(
     'post_type' => 'news',
     'post_status' => 'publish',
     'numberposts' => -1,
-    
-));
-
-$posts = array();
-foreach($getPosts as $aPost){
-    $posts[] = extendIssuePost($aPost);
-}
-
-$searchResults = getFilter($posts);
-
-$pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
-
-
-    $posts = $searchResults;
-    $surtitle = "Results tagged by";
-    $term = ucfirst($tag->name);
-
+)); 
 
 ?>
 
-<main>
-    <article class="main-column">
-        <div class="content-wrap">
-            
-            <div class="search-results">
-<div class="grid-sizer"></div>
-<?php 
 
-if ($searchResults->results) : 
-
-    foreach ($getPosts as $post) :
-?> 
-
-<div class="search-result"> 
-<div class="result__date"><?php echo formatDate($post->post_date); ?></div>
-   <a
-   href="<?=get_the_permalink(); ?> " class="result__title"><?php the_title(); ?> 
-   <?php the_post_thumbnail(); ?>
-    </a>
-   <div class="result__text"> <?=get_the_excerpt(); ?> </div> <div
-   class="result__info">  
-                    </div>
-                </div>
-<?php endforeach; 
-
-else : ?>
-                No Result Found
-<?php endif; ?>
-
-            </div>
-                <?php get_footer(); ?>
-        </div>
-    </article>
-
+<main class="archive-view">
+    <div class="msnry-view">
+        <div class="grid-sizer" style="width: 390px;"></div>
+        <?php if ( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <article class="grid-item">
+                <a href="<?php the_permalink(); ?>">
+                    <h2 class="subtitle"><?php the_title();?></h2>
+                    <?php if(has_post_thumbnail()): ?>
+                    <figure>
+                        <img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+                    </figure>
+                    <?php endif;?>
+                    <?php if(get_field('preview_text')): ?>
+                        <p class="article__excerpt"><?= get_field('preview_text'); ?></p>
+                    <?php else: ?>
+                        <p class="article__excerpt"><?php the_excerpt(); ?></p>
+                    <?php endif;?>
+                </a>
+        </article>
+    <?php endwhile; endif; wp_reset_postdata(  ); ?>
+    </div>
 </main>
+
+<?php get_footer(); ?>

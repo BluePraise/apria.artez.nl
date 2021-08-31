@@ -8,7 +8,7 @@ main:not(.issue-content) {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	.grid-sizer {
-		display: none;
+		// display: none;
 		grid-column-start: 1;
 		grid-column-end: 4;
 		width: calc(100%/4 - 16px);

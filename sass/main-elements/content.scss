@@ -75,14 +75,14 @@ h2.subtitle {
         margin-bottom: 20px; 
         a {
             text-decoration: underline;
+            color: var(--text-color-1);
         }
     }
     a img,
     .wp-block-image,
     .wp-block-embed {
-        margin: 3em 0em 3em -3em;
+        margin: 20px 0em 20px -130px;
         img {
-            width: 100%;
             max-width: 100%;
             height: auto;
         }

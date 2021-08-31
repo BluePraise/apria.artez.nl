@@ -15,6 +15,10 @@
 			border-bottom: 1px solid var(--text-color-1);
 		}	
 	}
+	iframe {
+		margin-left: -136px;
+		max-width: 940px !important;
+	}
 	h2.subtitle,
 	.latest-posts h2 {
 		@extend .subtitle;

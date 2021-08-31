@@ -157,7 +157,6 @@ main:not(.issue-content) {
 }
 
 .grid-view .grid-sizer {
-  display: none;
   grid-column-start: 1;
   grid-column-end: 4;
   width: calc(100%/4 - 16px);
@@ -594,18 +593,18 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 
 .article__text p a {
   text-decoration: underline;
+  color: var(--text-color-1);
 }
 
 .article__text a img,
 .article__text .wp-block-image,
 .article__text .wp-block-embed {
-  margin: 3em 0em 3em -3em;
+  margin: 20px 0em 20px -130px;
 }
 
 .article__text a img img,
 .article__text .wp-block-image img,
 .article__text .wp-block-embed img {
-  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -1032,6 +1031,8 @@ html:not(.issue-header-fixed) .issue-header {
   display: flex;
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
 }
 
 .hero .filters a {
@@ -1045,6 +1046,7 @@ html:not(.issue-header-fixed) .issue-header {
   text-align: center;
   margin-bottom: 20px;
   margin-right: 16px;
+  width: 150px;
   min-width: 130px;
 }
 
@@ -1248,6 +1250,11 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   margin-right: 16px;
   text-align: center;
   border-bottom: 1px solid var(--text-color-1);
+}
+
+.single .content-with-sidebar iframe {
+  margin-left: -136px;
+  max-width: 940px !important;
 }
 
 .single .content-with-sidebar h2.subtitle,

@@ -8,7 +8,6 @@ get_header();
 
 $the_query = new WP_Query(array(
     'post_type' => 'news',
-    'post_status' => 'publish',
     'numberposts' => -1,
 )); ?>
 
@@ -16,7 +15,7 @@ $the_query = new WP_Query(array(
     <div class="grid-sizer"></div>
     <article class="grid-item">
 
-        <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+        <?php //if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?> 
             <p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
             <h2 class="subtitle"><?php the_title();?></h2>
             <?php if(has_post_thumbnail()): ?>
@@ -30,8 +29,9 @@ $the_query = new WP_Query(array(
                 <p class="article__excerpt"><?php the_excerpt(); ?></p>
             <?php endif;?>
         <?php 
-            endwhile; 
-        endif; 
+            //endwhile; 
+        //endif; 
+        // wp_reset_postdata();
         ?>
         
     </article>
