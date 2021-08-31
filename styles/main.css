@@ -485,16 +485,16 @@ footer {
   margin: auto;
 }
 
-footer .menu-items ul {
+footer .menu-items {
   display: -webkit-inline-flex;
   display: inline-flex;
 }
 
-footer .menu-items ul li {
+footer .menu-items li {
   margin-right: 20px;
 }
 
-footer .menu-items ul li a {
+footer .menu-items li a {
   display: block;
   font-size: 10px;
   font-family: var(--font-mono);
@@ -1010,6 +1010,7 @@ html:not(.issue-header-fixed) .issue-header {
 .hero .news-column a h2 {
   display: inline-block;
   margin: 0;
+  width: 170px;
   max-width: 77px;
 }
 
@@ -1269,7 +1270,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
 
 .single .content-with-sidebar .bio__name {
   display: block;
-  font-size: 30px;
+  font-size: 22px;
   border-bottom: 1px solid;
   margin-bottom: 15px;
 }
