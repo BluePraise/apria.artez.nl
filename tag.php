@@ -1,30 +1,5 @@
 <?php
 
-/*
-	APRIA
-	Copyright (C) 2018 by Systemantics, Bureau for Informatics
-
-	Systemantics GmbH
-	Bleichstr. 11
-	41747 Viersen
-	GERMANY
-
-	Web:    www.systemantics.net
-	Email:  hello@systemantics.net
-
-	Permission granted to use the files associated with this
-	website only on your webserver.
-
-	Changes to these files are PROHIBITED due to license restrictions.
-*/
-
-
-
-// This is the WordPress adaptor for the Systemantics boilerplate
-// All access is handled by main.php (usually triggered from .htaccess)
-
-
-
 get_header();
 
 global $wp_query, $wpdb;
@@ -56,7 +31,7 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 <main class="archive-view">
 	<h1>Results tagged by <?php echo $term; ?></h1> 
 	<div class=" msnry-view">
-	<div class="grid-sizer"></div>
+	<div class="grid-sizer" style="width: 390px;"></div>
 	<?php 
 		if ($getPosts) : foreach ($getPosts as $post) :?>
 	<article class="grid-item">
@@ -70,7 +45,7 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 					</figure>
 				<?php endif;?>
 				<?php if(get_field('preview_text')): ?>
-					<p class="article__excerpt"><?= get_field('preview_text'); ?></p>
+					<p class="article__excerpt"><?php the_field('preview_text', false); ?></p>
 				<?php else: ?>
 					<p class="article__excerpt"><?php the_excerpt(); ?></p>
 				<?php endif;?>
