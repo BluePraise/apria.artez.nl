@@ -164,6 +164,11 @@ main:not(.issue-content) {
   margin-top: 0;
 }
 
+.page-template-default .page-view article {
+  max-width: 950px;
+  margin: auto;
+}
+
 @media (max-width: 767.9px) {
   main:not(.issue-content) {
     padding: 0px 24px;
@@ -550,17 +555,20 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   text-decoration: underline;
 }
 .article__text a img,
-.article__text .wp-block-image {
+.article__text .wp-block-image,
+.article__text .wp-block-embed {
   margin: 3em 0em 3em -3em;
 }
 .article__text a img img,
-.article__text .wp-block-image img {
+.article__text .wp-block-image img,
+.article__text .wp-block-embed img {
   width: 100%;
   max-width: 100%;
   height: auto;
 }
 .article__text a img figcaption,
-.article__text .wp-block-image figcaption {
+.article__text .wp-block-image figcaption,
+.article__text .wp-block-embed figcaption {
   font-family: var(--font-mono);
   font-size: 13px;
   max-width: 500px;
@@ -572,7 +580,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   margin-top: 2em;
   margin-bottom: 2em;
 }
-
+.article__text .wp-block-separator,
 .article__text hr {
   color: var(--color-1);
   height: 3px;
@@ -583,7 +591,8 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 @media (max-width: 1800px) {
   .article__text .wp-block-image,
 .article__text a img,
-.wp-block-image {
+.wp-block-image,
+.wp-block-embed {
     margin: 3em 0em 3em 0em;
   }
 
@@ -666,6 +675,12 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 
 .input--half + .input--half {
   margin-left: 9.09091%;
+}
+
+.form__text {
+  float: left;
+  margin-top: 26px;
+  width: 63.63636%;
 }
 
 .subscribe-form .form__submit {
@@ -770,9 +785,21 @@ article.grid-item figure, .grid-sizer figure {
   top: 50%;
   width: 2230px;
 }
+.main-content.issue-content .article__background-container .article__background .animation--rotation {
+  -webkit-animation: rotate 300s linear infinite;
+          animation: rotate 300s linear infinite;
+}
 .main-content.issue-content .article__background-container .article__background .article__background-image {
   height: 100%;
   width: 100%;
+}
+
+.all-colored a, .all-colored .site-title, .all-colored .preview__info {
+  color: inherit;
+}
+
+.all-colored a {
+  color: inherit !important;
 }
 
 .overlay-close-button {
@@ -1147,7 +1174,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
 }
 .single .content-with-sidebar .bio__name {
   display: block;
-  font-size: 30px;
+  font-size: 22px;
   border-bottom: 1px solid;
   margin-bottom: 15px;
 }
@@ -1218,6 +1245,11 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
           align-items: center;
   margin-top: 10px;
   color: var(--text-color-1);
+}
+
+.page-template-default .page-view article {
+  max-width: 950px;
+  margin: auto;
 }
 
 .show {
