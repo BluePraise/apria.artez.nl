@@ -595,7 +595,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .article__text a img,
 .article__text .wp-block-image,
 .article__text .wp-block-embed {
-  margin: 20px 0em 20px -130px;
+  margin: 20px 0em 20px -20px;
 }
 
 .article__text a img img,
@@ -611,6 +611,11 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   font-family: var(--font-mono);
   font-size: 13px;
   max-width: 500px;
+}
+
+.article__text a.wp-block-button__link {
+  background-color: var(--text-color-1);
+  color: #fff;
 }
 
 .article__text a img {
