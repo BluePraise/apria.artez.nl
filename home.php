@@ -299,7 +299,7 @@ get_header();
 									<p><?php the_author($post->ID); ?></p>
 								<?php endif; ?>
 									<p class="post-type">
-										<?php echo $post->post_type; ?>
+									<?php if($post->post_type == 'post'): echo 'Article'; else: echo $post->post_type; endif;?>
 									</p>
 							</div>
 							</a>
