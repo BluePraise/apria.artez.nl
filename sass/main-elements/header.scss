@@ -141,7 +141,7 @@ a.sticky-logo {
 
 	.logo-container {
  	   width: 100%;
- 	   flex: 0 0 100%;
+ 	  
 	   
 	    a.logo-svg-cover {
 		    position: absolute;
@@ -151,7 +151,7 @@ a.sticky-logo {
 		    height: 50px;
 		    z-index: 9999;
 		    margin-left: auto;
-		    margin-right: auto;
+		    
 		}
 	}
 
@@ -161,6 +161,12 @@ a.sticky-logo {
 		.container {
 			display: flex !important;
 			justify-content: space-between;
+		.main-navigation {
+			position: absolute
+			}
+		ul.social-list {
+ 		   padding-left: 0;
+			}
 		}	
 	}
 
@@ -168,7 +174,7 @@ a.sticky-logo {
 	   left:0;
 	   right:0;
 	   margin-left:auto;
-	   margin-right:auto;
+	  
 	 
 	}
 
@@ -176,11 +182,11 @@ a.sticky-logo {
 		a.sticky-logo {
 	    	display: block;
 	    	text-align: center;
-	    	margin: -60px auto 20px;
-	    	position: fixed;
+	    	margin: -60px 0 20px auto;
+   			 position: relative;
 		}
 		header.main-header {
-			padding-bottom:60px;
+			padding-bottom: 25px;
 		}
 	}
 
@@ -214,7 +220,11 @@ a.sticky-logo {
 
 		a.sticky-logo{ 
 			z-index: 99999;
-    		position: fixed;
+    		position: relative;
+    		left: 0;
+		    right: 0;
+		    margin-left: auto;
+		    margin-right: 0;
     	}
     	.home a.sticky-logo{
     		display:block;
@@ -232,7 +242,7 @@ a.sticky-logo {
 		    margin-bottom: 90px;
 			   .logo-container {
 			    height: 60px;
-    			flex: 0 0 100%;
+    			
 			   }
 		}
 		header.main-header nav.main-navigation ul {
