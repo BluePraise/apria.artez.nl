@@ -101,14 +101,16 @@ a.sticky-logo {
 		margin-right: 20px;
 		a {
 			display: block;
-			background: var(--text-color-1);
-			padding: 4px;
-			border-radius: 60px;
+			width: 24px;
+			height: auto;
+			// background: var(--text-color-1);
+			// padding: 4px;
+			// border-radius: 60px;
 			svg {
-				fill: var(--color-1);
-				width: 17px;
-				display: block;
-				height: 17px;
+				// fill: var(--color-1);
+				// width: 17px;
+				// display: block;
+				// height: 17px;
 			}
 		}
 	}

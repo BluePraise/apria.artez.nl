@@ -332,16 +332,8 @@ a.sticky-logo .apria_logo {
 
 .social-list .social-item a {
   display: block;
-  background: var(--text-color-1);
-  padding: 4px;
-  border-radius: 60px;
-}
-
-.social-list .social-item a svg {
-  fill: var(--color-1);
-  width: 17px;
-  display: block;
-  height: 17px;
+  width: 24px;
+  height: auto;
 }
 
 .mobile-menu-button {
@@ -367,8 +359,6 @@ a.sticky-logo .apria_logo {
 @media (max-width: 767.9px) {
   .logo-container {
     width: 100%;
-    -webkit-flex: 0 0 100%;
-            flex: 0 0 100%;
   }
   .logo-container a.logo-svg-cover {
     position: absolute;
@@ -378,7 +368,6 @@ a.sticky-logo .apria_logo {
     height: 50px;
     z-index: 9999;
     margin-left: auto;
-    margin-right: auto;
   }
   header.main-header {
     margin-bottom: 30px;
@@ -390,20 +379,25 @@ a.sticky-logo .apria_logo {
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
+  header.main-header .container .main-navigation {
+    position: absolute;
+  }
+  header.main-header .container ul.social-list {
+    padding-left: 0;
+  }
   a.sticky-logo {
     left: 0;
     right: 0;
     margin-left: auto;
-    margin-right: auto;
   }
   .fixed-logo a.sticky-logo {
     display: block;
     text-align: center;
-    margin: -60px auto 20px;
-    position: fixed;
+    margin: -60px 0 20px auto;
+    position: relative;
   }
   .fixed-logo header.main-header {
-    padding-bottom: 60px;
+    padding-bottom: 25px;
   }
   .mobile-menu-button.hide-on-desktop {
     display: block !important;
@@ -431,7 +425,11 @@ a.sticky-logo .apria_logo {
   }
   .mobile-menu-open a.sticky-logo {
     z-index: 99999;
-    position: fixed;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: 0;
   }
   .mobile-menu-open .home a.sticky-logo {
     display: block;
@@ -449,8 +447,6 @@ a.sticky-logo .apria_logo {
   }
   .mobile-menu-open header.main-header .logo-container {
     height: 60px;
-    -webkit-flex: 0 0 100%;
-            flex: 0 0 100%;
   }
   .mobile-menu-open header.main-header nav.main-navigation ul {
     padding: 0;
