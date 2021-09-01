@@ -25,7 +25,7 @@ $author_query = new WP_Query( $args ); ?>
 	<div class="content-container">
 	<h1>Articles by: <?= $term ?></h1> 
 	<?php if (get_field("biography" , $authorID)): ?>
-		<p><?php the_field("biography", $authorID); ?></p>
+		<p><?php the_field("biography", $authorID, false); ?></p>
 	<?php endif; ?>
 	</div>
 	<div class="msnry-view">
