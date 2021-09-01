@@ -20,7 +20,6 @@ $getPosts = get_posts(array(
 
 $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 
-
 	$posts = $posts;
 	$surtitle = "Results tagged by";
 	$term = ucfirst($tag->name);

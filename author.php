@@ -6,48 +6,31 @@ global $wp_query, $wpdb;
 
 $authorID = get_queried_object_id();
 $author_info = get_user_by( 'id',$authorID);
-$getPosts = get_posts(array(
-    'post_type' => 'post', 'news', 'issue',
-	'post_status' => 'publish',
-	'numberposts' => -1,
-	'author' => $authorID
-));
+$term = get_the_author_meta('display_name');
+$args = array(
+    'post_type' => 'post',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'author',
+            'field' => 'display_name',
+            'terms' => $term
+        )
+    ),
+);
 
-$posts = array();
-foreach($getPosts as $aPost){
+$author_query = new WP_Query( $args ); ?>
 
-	$thisPost = extendIssuePost($aPost);
-	$append = false;
-
-	foreach($thisPost->authors as $aAuthor){
-		if($aAuthor->id == $authorID){
-			$append = true;
-		}
-	}
-
-	if($append){
-		$posts[] = $thisPost;
-	}
-}
-
-	$searchResults = getFilter($posts);
-
-	$posts = $searchResults;
-	$surtitle = "Results by author";
-	$term = get_the_author_meta('display_name');
-
-?>
 
 <main class="archive-view">
-	<h1>Articles by: <?=$author_info->display_name; ?></h1> 
-	<?=get_field("biography", 'user_'.$authorID); ?>
-	<div class="grid-view msnry-view">
-	<div class="grid-sizer"></div>
-	<?php 
-		if ($getPosts) : 
-
-			foreach ($getPosts as $post) :
-		?>
+	<div class="content-container">
+	<h1>Articles by: <?= $term ?></h1> 
+	<?php if (get_field("biography" , $authorID)): ?>
+		<p><?php the_field("biography", $authorID); ?></p>
+	<?php endif; ?>
+	</div>
+	<div class="msnry-view">
+	<div class="grid-sizer" style="width: 390px;"></div>
+	<?php if ( $author_query->have_posts() ) : while ( $author_query->have_posts() ) : $author_query->the_post(); ?>
 	<article class="grid-item">
 		<a href="<?php the_permalink(); ?>">
 			<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
@@ -65,7 +48,7 @@ foreach($getPosts as $aPost){
 				<?php endif;?>
 			</a>	
 	</article>
-	<?php endforeach; endif; ?>
+	<?php endwhile; endif; ?>
 	</div>
 </main>
 

@@ -38,6 +38,9 @@ main:not(.issue-content) {
 		grid-column: 10 / 13;
 	}
 }
+.content-container {
+	max-width: 950px;
+}
 
 .page-template-default .page-view article {
     max-width: 950px;
