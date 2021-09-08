@@ -294,7 +294,8 @@ $(function() {
 				note = $('[data-footnotetext="' + el.data('footnoteanchor') + '"]').closest('.footnote');
 
 			if(note.length){
-
+				console.log($('.article__footnotes details'));
+				$('.article__footnotes details').attr("open", "");
 				position = note.offset().top - 100;
 
 				$('html, body').animate({
