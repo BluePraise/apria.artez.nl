@@ -149,6 +149,8 @@ main:not(.issue-content) {
   max-width: 1640px;
   margin: 0 auto;
   padding: 0 10px;
+  -webkit-flex: 1;
+          flex: 1;
 }
 
 .grid-view {
@@ -170,6 +172,16 @@ main:not(.issue-content) {
 
 .msnry-view .grid-item {
   width: calc(100%/4 - 16px);
+}
+
+.archive-view {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.archive-view > div, .archive-view article {
+  grid-column: 3/ 13;
 }
 
 .content-with-sidebar {
@@ -605,6 +617,21 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   color: var(--text-color-1);
 }
 
+.article__text .wp-block-embed__wrapper {
+  overflow: hidden;
+  position: relative;
+  max-width: 940px !important;
+}
+
+.article__text .wp-block-embed__wrapper iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
 .article__text a img img,
 .article__text .wp-block-image img,
 .article__text .wp-block-embed img {
@@ -633,13 +660,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   margin-bottom: 2em;
 }
 
-.article__text iframe {
-  margin-left: -14.5%;
-  width: 940px;
-  max-width: 940px !important;
-  height: 500px;
-}
-
 .article__text .wp-block-separator,
 .article__text hr {
   color: var(--color-1);
@@ -654,16 +674,10 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   border-bottom: 1px solid;
 }
 
-@media (max-width: 1800px) {
-  .article__text .wp-block-image,
-.article__text a img,
 .wp-block-image,
-.wp-block-embed {
-    margin: 40px 0em 40px -14.5%;
-  }
-  .article__text iframe {
-    margin: 3em 0em;
-  }
+.wp-block-embed,
+.article__text a img {
+  margin: 40px 0em 40px -14.5%;
 }
 
 @media screen and (max-width: 768px) {
@@ -776,6 +790,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .archive-view h1 {
   font-size: 60px;
   font-family: var(--font-sans-serif);
+  grid-column: 3 / 13;
 }
 
 article.grid-item a, .grid-sizer a {
@@ -1402,6 +1417,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
 .single .content-with-sidebar aside .article__date {
   font-family: var(--font-mono);
   font-size: 12px;
+  text-transform: uppercase;
 }
 
 .single .content-with-sidebar aside .article__meta {

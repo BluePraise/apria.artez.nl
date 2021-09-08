@@ -91,5 +91,15 @@ $( document ).ready(function() {
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
-	
+	// Sets the height for the iframe for youtube so it fits better
+	var iframeEl = $("iframe");
+	var iframeElYT = $("iframe[src*='youtube']");
+	var iframeElParent = iframeEl.parent();
+
+	if (iframeEl = iframeElYT ) {
+		iframeElYT.parent().css('height', '500px');
+	}
+	if (iframeEl != iframeElYT) {
+		iframeEl.css('margin-left', '-14.5%');
+	}
 });

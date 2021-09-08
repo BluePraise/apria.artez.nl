@@ -2,6 +2,8 @@ main:not(.issue-content) {
 	max-width: 1640px;
 	margin: 0 auto;
 	padding: 0 10px;
+
+	flex: 1;
 }
 
 .grid-view {
@@ -23,7 +25,14 @@ main:not(.issue-content) {
 .msnry-view .grid-item {
 	width: calc(100%/4 - 16px);
 }
-
+.archive-view {
+	display: grid;
+	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 16px;
+	> div, article {
+		grid-column: 3/ 13;
+	}
+}
 .content-with-sidebar {
 	display: grid;
 	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
