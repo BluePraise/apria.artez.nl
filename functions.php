@@ -3,7 +3,7 @@ global $post_id;
 
 function theme_scripts() {
 	// styles
-	if(is_singular( 'issue' ) || get_field('issue', $post_id) ):
+	if(is_singular( 'issue' ) ):
     	wp_enqueue_style('apria_styles_old', get_theme_file_uri('styles/apria-old.css'), false);
 	else:
 		// wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/wp-default.css'), false);

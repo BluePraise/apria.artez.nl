@@ -172,12 +172,6 @@ main:not(.issue-content) {
   width: calc(100%/4 - 16px);
 }
 
-.page-wrapper {
-  display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
 .content-with-sidebar {
   display: grid;
   grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -193,13 +187,13 @@ main:not(.issue-content) {
   grid-column: 10 / 13;
 }
 
-.content-container {
-  max-width: 950px;
+.page-template-default .page-view article {
+  grid-column: 3 / 9;
+  margin: auto;
 }
 
-.page-template-default .page-view article {
+.content-container {
   max-width: 950px;
-  margin: auto;
 }
 
 @media (max-width: 767.9px) {
@@ -280,6 +274,7 @@ header.main-header nav.main-navigation ul li a {
 
 .logo-container {
   position: relative;
+  grid-column: 2 / 3;
 }
 
 .logo-container a.logo-svg-cover {
@@ -565,6 +560,9 @@ h2.subtitle,
 .archive-view article,
 .page-view article {
   margin-bottom: 16px;
+}
+
+.archive-view article {
   border-bottom: 1px solid var(--text-color-1);
 }
 
@@ -607,12 +605,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   color: var(--text-color-1);
 }
 
-.article__text a img,
-.article__text .wp-block-image,
-.article__text .wp-block-embed {
-  margin: 20px 0em 20px -20px;
-}
-
 .article__text a img img,
 .article__text .wp-block-image img,
 .article__text .wp-block-embed img {
@@ -641,6 +633,13 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   margin-bottom: 2em;
 }
 
+.article__text iframe {
+  margin-left: -14.5%;
+  width: 940px;
+  max-width: 940px !important;
+  height: 500px;
+}
+
 .article__text .wp-block-separator,
 .article__text hr {
   color: var(--color-1);
@@ -660,7 +659,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .article__text a img,
 .wp-block-image,
 .wp-block-embed {
-    margin: 20px 0em 20px -15%;
+    margin: 40px 0em 40px -14.5%;
   }
   .article__text iframe {
     margin: 3em 0em;
@@ -1282,11 +1281,6 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   cursor: pointer;
 }
 
-.single .content-with-sidebar iframe {
-  margin-left: -136px;
-  max-width: 940px !important;
-}
-
 .single .content-with-sidebar h2.subtitle,
 .single .content-with-sidebar .latest-posts h2 {
   font-size: 40px;
@@ -1419,11 +1413,6 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
           align-items: center;
   margin-top: 10px;
   color: var(--text-color-1);
-}
-
-.page-template-default .page-view article {
-  max-width: 950px;
-  margin: auto;
 }
 
 .show {

@@ -1,9 +1,9 @@
 <?php
-if(get_field('issue')): 
+// if(get_field('issue')): 
 	
-	get_template_part('template-parts/singles/issuerelated');
+	// get_template_part('template-parts/singles/issuerelated');
 
-else: 
+// else: 
 get_header();
 
 	$authors = get_coauthors($aIssue->ID);
@@ -209,7 +209,7 @@ get_header();
 		</ul>
 	</aside>
 </main>
-<?php endif; ?>
+
 <?php get_footer() ?>
 
 

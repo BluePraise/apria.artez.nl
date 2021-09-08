@@ -47,6 +47,8 @@ h2.subtitle {
 .archive-view article,
 .page-view article {
     margin-bottom: 16px;
+}
+.archive-view article {
     border-bottom: 1px solid var(--text-color-1);
 }
 .archive-view .article__date,
@@ -85,7 +87,7 @@ h2.subtitle {
     a img,
     .wp-block-image,
     .wp-block-embed {
-        margin: 20px 0em 20px -20px;
+        // margin: 20px 0em 20px -20px;
         img {
             max-width: 100%;
             height: auto;
@@ -107,6 +109,12 @@ h2.subtitle {
         margin-top: 2em;
         margin-bottom: 2em;
     }
+    iframe {
+		margin-left: -14.5%;
+        width: 940px;
+		max-width: 940px !important;
+        height: 500px;
+	}
     .wp-block-separator,
     hr {
         color: var(--color-1);
@@ -126,7 +134,7 @@ h2.subtitle {
     .article__text a img,
     .wp-block-image,
     .wp-block-embed {
-        margin: 20px 0em 20px -15%;
+        margin: 40px 0em 40px -14.5%;
         
     }
     .article__text iframe {
