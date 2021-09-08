@@ -285,7 +285,7 @@ $(function() {
 
 			if(note.length){
 				$('html, body').animate({
-					scrollTop: note.offset().top,
+					scrollTop: note.offset().top - 150,
 				}, 500);
 			}
 			$('.footnote').removeClass('footnote-highlight');
@@ -295,7 +295,7 @@ $(function() {
 
 			if(note.length){
 
-				position = note.offset().top;
+				position = note.offset().top - 100;
 
 				$('html, body').animate({
 					scrollTop: position,
