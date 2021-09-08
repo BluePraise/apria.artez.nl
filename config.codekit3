@@ -1078,6 +1078,14 @@
       "oAP" : "\/template-parts\/home\/post-items.php",
       "oF" : 0
     },
+    "\/template-parts\/singles\/issuerelated.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/template-parts\/singles\/issuerelated.php",
+      "oF" : 0
+    },
     "\/webfonts\/AHAMONO-Regular.otf" : {
       "cB" : 0,
       "ft" : 8192,

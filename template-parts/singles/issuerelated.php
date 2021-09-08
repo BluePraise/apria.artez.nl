@@ -1,12 +1,6 @@
-<?php
-if(get_field('issue')): 
-	
-	get_template_part('template-parts/singles/issuerelated');
-
-else: 
-get_header();
-
-	$authors = get_coauthors($aIssue->ID);
+<?php 
+    get_template_part('head');
+    $authors = get_coauthors($aIssue->ID);
 	if(get_the_tags()){
 		$tags = get_the_tags();
 		$article_tags = array_map(function ($aTag) {
@@ -20,18 +14,29 @@ get_header();
 
 	$text = removenbsp1(get_the_content());
 
-	$footnotes = array();
+$footnotes = array();
 
-	$replace = function ($match) use (&$footnotes) {
-		$index = count($footnotes) + 1;
-		$footnotes[$index] = $match[2];
+$replace = function ($match) use (&$footnotes) {
+	$index = count($footnotes) + 1;
+	$footnotes[$index] = $match[2];
 
-		return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
-	};
+	return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
+};
 
-	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
-	$footnotes = $footnotes;
+$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
+$footnotes = $footnotes;
+
+$issue = $issue;
+$color = $issue->text_color ? $issue->text_color : '#000';
+$backgroundcolor = $issue->background_color ? $issue->background_color : '#fff';
+// $background_image = $issue->background_image ? $issue->background_image['url'] : false;
+$sidebar_posts = $sidebar_posts;
+$allIssueAutors = $allIssueAutors;
+$htmlClass = 'logo-fixed';
 ?>
+
+<body <?php body_class(); ?>>
+<?php do_action('wp_body_open'); ?>
 
 <main class="content-with-sidebar">
 	<article>
@@ -209,7 +214,3 @@ get_header();
 		</ul>
 	</aside>
 </main>
-<?php endif; ?>
-<?php get_footer() ?>
-
-

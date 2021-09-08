@@ -43,7 +43,7 @@
 	}
 	.bio__text p {
 		font-size: 22px;
-		line-height: 1.2;
+		line-height: 30px;
 	}
 	.bibliography__headline {
 		border-top: 1px solid;
@@ -59,10 +59,15 @@
 		padding-bottom: 20px;
 	}
 	.article__bibliography {
-		ul li {
-			margin-bottom: 10px;
-			font-size: 20px;
-		}
+		ul {
+			list-style: initial;
+			li {
+				margin-bottom: 10px;
+				font-size: 20px;
+				line-height: 30px;
+			}
+		 } 
+		
 	}
 	.footnote {
 		margin-left: 45px;

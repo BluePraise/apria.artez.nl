@@ -40,10 +40,14 @@ h1.content-title {
 h2.subtitle {
     font-size: 40px;
 }
+.article__date {
+    margin: 0;
+}
 // page and archive
 .archive-view article,
 .page-view article {
-    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--text-color-1);
 }
 .archive-view .article__date,
 .page-view .article__date {
@@ -117,7 +121,7 @@ h2.subtitle {
     .article__text a img,
     .wp-block-image,
     .wp-block-embed {
-        margin: 20px 0em 20px -60px;
+        margin: 20px 0em 20px -15%;
         
     }
     .article__text iframe {
@@ -131,6 +135,9 @@ h2.subtitle {
     }
     h2.subtitle {
         font-size: 20px;
+    }
+    .article__text p {
+        font-size: 14px;
     }
     
 }

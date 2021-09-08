@@ -1,9 +1,10 @@
 <?php
+global $post_id;
 
 function theme_scripts() {
 	// styles
-	if(is_singular( 'issue' )):
-    	wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/apria-old.css'), false);
+	if(is_singular( 'issue' ) || get_field('issue', $post_id) ):
+    	wp_enqueue_style('apria_styles_old', get_theme_file_uri('styles/apria-old.css'), false);
 	else:
 		// wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/wp-default.css'), false);
 		wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);
@@ -589,27 +590,27 @@ function formatIssueNumber($number){
 }
 
 if(!function_exists("footnotify")) {
-function footnotify($item) {
-	global $smarty, $documentroot;
+	function footnotify($item) {
+		// global $smarty, $documentroot;
 
-	$text = removenbsp($item->content);
+		$text = removenbsp($item->content);
 
-	$smarty->assign('documentroot', $documentroot);
+		// $smarty->assign('documentroot', $documentroot);
 
-	$footnotes = array();
+		$footnotes = array();
 
-	$replace = function ($match) use (&$footnotes, $smarty) {
-		$index = count($footnotes) + 1;
-		$footnotes[$index] = $match[2];
+		$replace = function ($match) use (&$footnotes) {
+			$index = count($footnotes) + 1;
+			$footnotes[$index] = $match[2];
 
-		return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
-	};
+			return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
+		};
 
-	$item->content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
-	$item->footnotes = $footnotes;
+		$item->content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
+		$item->footnotes = $footnotes;
 
-	return $item;
-}
+		return $item;
+	}
 }
 
 

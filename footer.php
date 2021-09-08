@@ -24,6 +24,7 @@
 	?>
 
 </footer>
+
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 </body>
 </html>
