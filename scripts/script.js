@@ -36,7 +36,6 @@ $( document ).ready(function() {
 	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
 
 	var filter_grid = " ";
-
 	 
 
 	// FILTER TOGGLE
@@ -63,24 +62,17 @@ $( document ).ready(function() {
 			selectedItem.removeClass('hide').addClass('show');
 
 			filter_grid = $('ul.' + currentFilter).masonry({
-					itemSelector: '.post-item',
-					columnWidth: '.grid-sizer',
-					gutter: 16,
-					percentPosition: true,
-					isFitWidth: true
+				itemSelector: '.post-item',
+				columnWidth: '.grid-sizer',
+				gutter: 16,
+				percentPosition: true,
+				isFitWidth: true,
 			});
-
-			setTimeout(function(){ 
-				console.log("Fired!");
-				// filter_grid.masonry('layout'); 
-
-			}, 500);
 
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
 			andTheseItems.removeClass('show').addClass('hide');
 		}
-
 		// set active class on currentFilter
 		$(this).addClass('active');
 		// check if other filters have a active class
@@ -89,9 +81,6 @@ $( document ).ready(function() {
 			andTheseItems.removeClass('active');
 
 		}
-
-		
-	
 		
 	});
 
@@ -102,9 +91,5 @@ $( document ).ready(function() {
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
-
-
 	
-
-
 });

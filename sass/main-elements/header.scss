@@ -6,14 +6,17 @@ header.main-header {
 	margin-bottom: 90px;
 	.container {
 		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+		
+	// grid-template-columns: repeat(12, 1fr);
+		grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	// grid-gap: 16px;	
 		column-gap: 16px;
 		max-width: 1640px;
 		margin-left: auto;
 		margin-right: auto;
 	}
 	nav.main-navigation {
-		grid-column: 3 /12;
+		grid-column: 4 /12;
 		ul {
 			padding: 0;
 			li {
@@ -40,7 +43,7 @@ header.main-header {
 }
 .logo-container {
     position: relative;
-
+	// grid-column: 4 /12;
     a.logo-svg-cover {
     position: absolute;
     left: 0;

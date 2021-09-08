@@ -24,13 +24,20 @@ main:not(.issue-content) {
 	width: calc(100%/4 - 16px);
 }
 
+.page-wrapper {
+	display: grid;
+	// grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-gap: 16px;	
+}
 
 .content-with-sidebar {
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	// // grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 16px;
 	article {
-		grid-column: 2 / 9;
+		grid-column: 3 / 9;
 		// max-width: 950px;
 		margin-top: 0;
 	}

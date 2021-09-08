@@ -68,7 +68,7 @@ get_header();
 				// WP_Query arguments
 				$post_args = array(
 					'post_type'              => array( 'post' ),
-					'posts_per_page'         => 10
+					'posts_per_page'         => 30
 				);
 				$issue_args = array(
 					'post_type'              => array( 'issue' ),
@@ -145,12 +145,13 @@ get_header();
 		
 			<div class="grid-sizer"></div>
 			<?php // The Query
-				$news_args = array(
-					'post_type'         => array( 'news' ),
+				$opencall_args = array(
+					'post_type'         => array( 'news', 'post' ),
+					'category_name' 	=> 'open-call-editorial',
 					'post_status' 		=> 'publish',
 					'posts_per_page'    => -1
 				);
-				$the_query = new WP_Query( $news_args );
+				$the_query = new WP_Query( $opencall_args );
 				// The Loop 
 				
 				if( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

@@ -172,14 +172,20 @@ main:not(.issue-content) {
   width: calc(100%/4 - 16px);
 }
 
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .content-with-sidebar {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 
 .content-with-sidebar article {
-  grid-column: 2 / 9;
+  grid-column: 3 / 9;
   margin-top: 0;
 }
 
@@ -233,7 +239,7 @@ header.main-header {
 
 header.main-header .container {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -243,7 +249,7 @@ header.main-header .container {
 }
 
 header.main-header nav.main-navigation {
-  grid-column: 3 /12;
+  grid-column: 4 /12;
 }
 
 header.main-header nav.main-navigation ul {
@@ -552,9 +558,14 @@ h2.subtitle,
   font-size: 40px;
 }
 
+.article__date {
+  margin: 0;
+}
+
 .archive-view article,
 .page-view article {
-  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--text-color-1);
 }
 
 .archive-view .article__date,
@@ -649,7 +660,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .article__text a img,
 .wp-block-image,
 .wp-block-embed {
-    margin: 3em 0em 3em 0em;
+    margin: 20px 0em 20px -15%;
   }
   .article__text iframe {
     margin: 3em 0em;
@@ -663,6 +674,9 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   h2.subtitle, .single .content-with-sidebar h2.subtitle,
 .single .content-with-sidebar .latest-posts h2 {
     font-size: 20px;
+  }
+  .article__text p {
+    font-size: 14px;
   }
 }
 
@@ -1223,6 +1237,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   }
   .hero p.intro-text {
     margin-top: 38px;
+    font-size: 20px;
   }
   .hero .news-column {
     margin-top: 32px;
@@ -1299,7 +1314,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
 
 .single .content-with-sidebar .bio__text p {
   font-size: 22px;
-  line-height: 1.2;
+  line-height: 30px;
 }
 
 .single .content-with-sidebar .bibliography__headline {
@@ -1318,9 +1333,14 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   padding-bottom: 20px;
 }
 
+.single .content-with-sidebar .article__bibliography ul {
+  list-style: initial;
+}
+
 .single .content-with-sidebar .article__bibliography ul li {
   margin-bottom: 10px;
   font-size: 20px;
+  line-height: 30px;
 }
 
 .single .content-with-sidebar .footnote {

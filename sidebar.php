@@ -70,7 +70,7 @@ if($aPost->authors) : ?>
 				</div>
 
 
-				<hr class="article-preview-rule"></hr>
+				<hr style="background:<?=$sidebar_issue->background_color ?>" class="article-preview-rule"></hr>
 
 <?php endforeach; 
 endif;
@@ -83,6 +83,9 @@ if($sidebar_posts):
 foreach ($sidebar_posts as $aPost): ?>
 
 <div class="article-preview clickable-block" data-href="<?=$aPost->url; ?>">
+<style>
+</style>
+
 					<div class="preview__background-container">
 
 						<div class="preview__background-image">
@@ -120,14 +123,15 @@ if($aPost->authors) : ?>
 				</div>
 
 
-				<hr class="article-preview-rule"></hr>
+				<hr style="background:<?= $sidebar_issue->background_color; ?>" class="article-preview-rule"></hr>
 
 <?php endforeach; 
 endif;
 ?>
 
-				<?php get_footer("", array("class" => "hide-on-desktop"));  ?>
+				
 			</div>
 		</div>
 	</aside>
 
+	<?php get_footer(); ?>
