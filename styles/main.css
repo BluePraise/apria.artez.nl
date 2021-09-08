@@ -1142,6 +1142,9 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   text-align: center;
   border-bottom: 1px solid var(--text-color-1);
 }
+.single .content-with-sidebar .footnote-anchor {
+  cursor: pointer;
+}
 .single .content-with-sidebar iframe {
   margin-left: -136px;
   max-width: 940px !important;
@@ -1198,7 +1201,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
 .single .content-with-sidebar .footnote p {
   font-size: 20px;
 }
-.single .content-with-sidebar .footnote span.footnote-up.icon.js-footnote-up {
+.single .content-with-sidebar .footnote span.footnote-up.icon {
   cursor: pointer;
 }
 .single .content-with-sidebar aside .article-separator {

@@ -111,7 +111,7 @@ get_header();
 				<summary class="footnotes__headline">References</summary>
 				<?php foreach($footnotes as $key => $aFootnote) : ?>
 					<div class="footnote">
-						<span class="footnote-up icon js-footnote-up" data-footnotetext="<?=$key+1 ?>">↑</span>
+						<span class="footnote-up icon js-footnote-up" data-footnotetext="<?=$key ?>">↑</span>
 						<p><?=$aFootnote; ?></p>
 					</div>
 				<?php endforeach; ?>

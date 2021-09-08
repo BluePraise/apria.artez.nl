@@ -15,6 +15,11 @@
 			border-bottom: 1px solid var(--text-color-1);
 		}	
 	}
+
+	.footnote-anchor {
+ 		   cursor: pointer;
+		}
+		
 	iframe {
 		margin-left: -136px;
 		max-width: 940px !important;
@@ -73,9 +78,10 @@
 		p {
 			font-size: 20px;
 		}
-		span.footnote-up.icon.js-footnote-up {
+		span.footnote-up.icon {
  		   cursor: pointer;
 		}
+		
 	}
 
 	aside {
