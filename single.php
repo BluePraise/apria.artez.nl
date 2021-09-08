@@ -22,7 +22,7 @@ get_header();
 		$index = count($footnotes) + 1;
 		$footnotes[$index] = $match[2];
 
-		return '<span class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</span>';
+		return '<sup class="footnote-anchor js-footnote" data-footnoteanchor="'. $index .'">' . $match[1] . '</sup>';
 	};
 
 	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
@@ -75,7 +75,7 @@ get_header();
 			</div>
 			
 			<div class="article__text">
-				<?php the_content(); ?>
+				<?php echo apply_filters('the_content', $content) ; ?>
 			</div>
 
 		<?php 
