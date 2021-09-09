@@ -24,6 +24,15 @@ $( document ).ready(function() {
 	}
 	addRandomHeight();
 
+function resetGrid() {
+		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
+		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
+			$(this).css("left", 0);
+			$(this).css("top", 0);
+		});
+	}
+
+
  	home_grid = $('.default-view').masonry({
 		// options
 		itemSelector: '.post-item',
@@ -59,11 +68,8 @@ filter_grid = $('ul.grid-view').masonry({
 		if($(this).hasClass("active")) {
 			selectedItem.removeClass('show').addClass('hide');
 			$(this).removeClass('active');	
-			$('.default-view').removeClass("hide")
-			setTimeout(function(){
-				home_grid.masonry('layout');
-						 }
-					, 100)
+			$('.default-view').removeClass("hide");
+			setTimeout(function(){ home_grid.masonry('layout'); }, 100);
 			return false;
 		}
 
@@ -71,10 +77,12 @@ filter_grid = $('ul.grid-view').masonry({
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
-			setTimeout(function(){
-				filter_grid.masonry('layout');
-						 }
-					, 100)
+		resetGrid();
+		setTimeout(function(){
+
+			filter_grid.masonry('layout');
+					 }
+				, 100)
 
 
 			// hide the other items
