@@ -37,6 +37,13 @@ $( document ).ready(function() {
 
 	var filter_grid = " ";
 	 
+filter_grid = $('ul.grid-view').masonry({
+				itemSelector: '.post-item',
+				columnWidth: '.grid-sizer',
+				gutter: 16,
+				percentPosition: true,
+				isFitWidth: true,
+			});
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
@@ -53,6 +60,10 @@ $( document ).ready(function() {
 			selectedItem.removeClass('show').addClass('hide');
 			$(this).removeClass('active');	
 			$('.default-view').removeClass("hide")
+			setTimeout(function(){
+				home_grid.masonry('layout');
+						 }
+					, 100)
 			return false;
 		}
 
@@ -60,14 +71,11 @@ $( document ).ready(function() {
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
+			setTimeout(function(){
+				filter_grid.masonry('layout');
+						 }
+					, 100)
 
-			filter_grid = $('ul.' + currentFilter).masonry({
-				itemSelector: '.post-item',
-				columnWidth: '.grid-sizer',
-				gutter: 16,
-				percentPosition: true,
-				isFitWidth: true,
-			});
 
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
