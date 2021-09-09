@@ -65,39 +65,18 @@ get_header();
 			<div class="grid-sizer" id="grid-sizer"></div>
 				<?php
 
-				// WP_Query arguments
-				$post_args = array(
-					'post_type'              => array( 'post' ),
-					'posts_per_page'         => 30
+				// // WP_Query arguments
+				$defaultquery_args = array(
+					'post_type'         => array( 'issue', 'news', 'post' ),
+					'post_status' 		=> 'publish',
+					'posts_per_page'    => -1
 				);
-				$issue_args = array(
-					'post_type'              => array( 'issue' ),
-					'posts_per_page'         => -1
-				);
-				$opencall_args = array(
-					'post_type'              => array( 'news' ),
-					'category_name'			 => 'open call',
-					'posts_per_page'         => -1
-				);
-				// The Query
-				$query_posts   = new WP_Query( $post_args );
-				$query_issues  = new WP_Query( $issue_args );
-				// Only show news with cat opencall
-				$query_opencall  = new WP_Query( $issue_args );
+				$the_query = new WP_Query( $defaultquery_args );
+				if( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
+				
+				$cats = get_categories();
+				$issue_bg = get_field('background_image');
 
-				$result        = new WP_Query();
-
-				// start putting the contents in the new object
-				$result->posts = array_unique(array_merge( $query_posts->posts, $query_opencall->posts, $query_issues->posts ), SORT_REGULAR);
-				shuffle($result->posts);
-				$result->post_count = count( $result->posts );
-				// var_dump($result);
-
-				// The Loop
-				for($i = 1; $result->have_posts(); $i++) :
-                   $result->the_post();
-				   $issue_bg = get_field('background_image');
-				   $cats = get_categories();
 				?>
 				<?php if($post->post_type == 'issue'): ?>
 				<li class="post-item issue">
@@ -135,7 +114,9 @@ get_header();
 					</a>
 				</li>
 
-					<?php endfor;?>
+					<?php //endfor; 
+						endwhile; endif;
+					?>
 			<?php wp_reset_postdata(); ?>
 
 		</ul>
@@ -153,7 +134,6 @@ get_header();
 				);
 				$the_query = new WP_Query( $opencall_args );
 				// The Loop 
-				
 				if( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					<li class="post-item open-call-view">
 						<?php if(has_post_thumbnail()): ?>
