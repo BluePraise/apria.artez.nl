@@ -84,6 +84,9 @@ h2.subtitle {
             color: var(--text-color-1);
         }
     }
+    .is-type-video .wp-block-embed__wrapper {
+        min-height: 500px;
+    }
     .wp-block-embed__wrapper {
         overflow: hidden;
         // margin: 40px 0em 40px -14.5%;
