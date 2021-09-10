@@ -18,6 +18,7 @@ header.main-header {
 	nav.main-navigation {
 		grid-column: 4 /12;
 		ul {
+			position: relative;
 			padding: 0;
 			li {
 				display: inline-block;
@@ -106,15 +107,6 @@ a.sticky-logo {
 			display: block;
 			width: 24px;
 			height: auto;
-			// background: var(--text-color-1);
-			// padding: 4px;
-			// border-radius: 60px;
-			svg {
-				// fill: var(--color-1);
-				// width: 17px;
-				// display: block;
-				// height: 17px;
-			}
 		}
 	}
 }
@@ -139,6 +131,17 @@ a.sticky-logo {
     top: 15px;
     width: 24px;
 }
+
+
+.search-field.positionable {
+	position: absolute;
+	margin-top: 16px;
+	input[type=search] {
+		padding: 10px;
+		border: 1px solid var(--text-color-1);
+	}
+}
+
 
 // RESPONSIVE
 

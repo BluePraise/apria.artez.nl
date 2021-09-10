@@ -5,7 +5,7 @@ $( document ).ready(function() {
 			$("html").addClass("fixed-logo");
 		} else {
 
-				$("html").removeClass("fixed-logo");
+			$("html").removeClass("fixed-logo");
 		}
 	});
 	var home_grid;
@@ -118,4 +118,39 @@ filter_grid = $('ul.grid-view').masonry({
 	if (iframeEl != iframeElYT) {
 		iframeEl.css('margin-left', '-14.5%');
 	}
+
+	// Sets position of searchbar in header
+	// Finds the last menu item (which is searchbutton in nav)
+	var _element = $('.main-navigation .menu-item').last();
+	var cloneSearch = $('.search-field').clone().addClass('positionable');
+	cloneSearch.insertAfter(_element);
+	// get the offset for this element
+	// find the left position + margin-left + 2px for the border.
+	var _elLeft = _element.position().left + 18;
+	//find the right position of this element
+	// _elposition - width of the element
+	var _elWidth = _element.width();
+	var _elRight = _elLeft + _elWidth;
+	var _searchbarWidth = $('.positionable').width();
+	var _desiredPos = _elRight - _searchbarWidth;
+	
+	$('.positionable').css('left', _desiredPos);
+
+	// on click show the search bar input.
+	_element.on('click', function(e) {
+		e.preventDefault();
+		$('.positionable').toggleClass('hide show');
+		if ($("html").hasClass("fixed-logo") && $('.positionable').hasClass('show')) {
+			$('header.main-header').css("height", "128px");
+		}
+		else if ($("html").hasClass("fixed-logo") && $('.positionable').hasClass('hide')) {
+			$('header.main-header').css("height", "81px");
+		}
+		if ($(document).scroll() && $('.positionable').hasClass('show')) {
+			$('header.main-header').css("height", "128px");
+		}
+		else if ($(document).scroll() && $('.positionable').hasClass('hide')) {
+			$('header.main-header').css("height", "81px");
+		}
+	});
 });

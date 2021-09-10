@@ -22,7 +22,6 @@
 			'depth' => 1,
 			]);
 
-
 	// Social Medias
 		$social_media_group = get_field("social_media_links", "options");
 
@@ -39,13 +38,18 @@
 				</li>
 			</ul>
 		<?php endif; ?>
+		<div class="search-field hide">
+			<input type="search" class="search-input"/>
+		</div>
 		<div class="mobile-menu-close-button js-mobile-menu-close-button hide-on-desktop">
 				<img src="<?= get_stylesheet_directory_uri(). '/assets/svg/icon_close_highlight.svg'; ?>">
-			</div>
-			
 		</div>
+
+	</div><!-- .container -->
 		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">
 			<svg fill="#ff0000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="35px" height="35px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
-		
-	</div>
+		</div>
+
+
+	
 </header>

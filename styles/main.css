@@ -259,6 +259,7 @@ header.main-header nav.main-navigation {
 }
 
 header.main-header nav.main-navigation ul {
+  position: relative;
   padding: 0;
 }
 
@@ -371,6 +372,16 @@ a.sticky-logo .apria_logo {
   left: 15px;
   top: 15px;
   width: 24px;
+}
+
+.search-field.positionable {
+  position: absolute;
+  margin-top: 16px;
+}
+
+.search-field.positionable input[type=search] {
+  padding: 10px;
+  border: 1px solid var(--text-color-1);
 }
 
 @media (max-width: 767.9px) {
