@@ -24,6 +24,15 @@ $( document ).ready(function() {
 	}
 	addRandomHeight();
 
+function resetGrid() {
+		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
+		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
+			$(this).css("left", 0);
+			$(this).css("top", 0);
+		});
+	}
+
+
  	home_grid = $('.default-view').masonry({
 		// options
 		itemSelector: '.post-item',
@@ -37,6 +46,13 @@ $( document ).ready(function() {
 
 	var filter_grid = " ";
 	 
+filter_grid = $('ul.grid-view').masonry({
+				itemSelector: '.post-item',
+				columnWidth: '.grid-sizer',
+				gutter: 16,
+				percentPosition: true,
+				isFitWidth: true,
+			});
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
@@ -52,7 +68,8 @@ $( document ).ready(function() {
 		if($(this).hasClass("active")) {
 			selectedItem.removeClass('show').addClass('hide');
 			$(this).removeClass('active');	
-			$('.default-view').removeClass("hide")
+			$('.default-view').removeClass("hide");
+			setTimeout(function(){ home_grid.masonry('layout'); }, 100);
 			return false;
 		}
 
@@ -60,14 +77,13 @@ $( document ).ready(function() {
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
+		resetGrid();
+		setTimeout(function(){
 
-			filter_grid = $('ul.' + currentFilter).masonry({
-				itemSelector: '.post-item',
-				columnWidth: '.grid-sizer',
-				gutter: 16,
-				percentPosition: true,
-				isFitWidth: true,
-			});
+			filter_grid.masonry('layout');
+					 }
+				, 100)
+
 
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
