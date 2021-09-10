@@ -7,6 +7,7 @@ footer {
     margin: auto;
     .menu-items {
         display: inline-flex;
+        flex-wrap: wrap;
         li {
             margin-right: 20px;
             a {

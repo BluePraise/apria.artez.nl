@@ -526,6 +526,8 @@ footer {
 footer .menu-items {
   display: -webkit-inline-flex;
   display: inline-flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 footer .menu-items li {
@@ -1295,6 +1297,9 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   .filters {
     -webkit-justify-content: center;
             justify-content: center;
+  }
+  .filters a {
+    width: auto;
   }
 }
 
