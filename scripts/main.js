@@ -524,18 +524,23 @@ $(function() {
 
 	$(document).on("click", ".js-filter", function(){
 		 var filterValue = $(this).attr('data-filter');
-		 if($(this).is(":checked")) {
-  			$search_results.isotope({ filter: filterValue });
-  		}
+
+		 var sList = "";
+			$('.js-filter').each(function () {
+			    var sThisVal = (this.checked ? $(this).attr('data-filter') : "");
+			    if(sThisVal.length > 0){
+			    	sList += (sList=="" ? sThisVal : ", " +sThisVal);
+			    }
+			});
+		//console.log (sList);
+
+		if(sList.length > 0) {
+  			$search_results.isotope({ filter: sList });
+		}
+  		
   		else {
-  			if ($(".js-filter:checkbox:checked").length > 0)
-				{
-				    $search_results.isotope({ filter: ':not('+filterValue+')' });
-				}
-			else
-				{
+  			
 				   $search_results.isotope({ filter: '*' });
-				}
   			
   		}
 		//filter();
