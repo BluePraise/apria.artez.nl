@@ -63,7 +63,7 @@ $getPosts = get_posts(array(
 
 			<div class="article__head">
 				<div class="head__top-line">
-					<h1>Results tagged by <?php echo ucfirst($search); ?></h1> 
+					<h1>Results search by <?php echo ucfirst($search); ?></h1> 
 				</div>
 			</div>
 
