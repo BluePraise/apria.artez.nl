@@ -5,17 +5,21 @@ get_header();
 global $wp_query, $wpdb;
 
 $authorID = get_queried_object_id();
-$author_info = get_user_by( 'id',$authorID);
-$term = get_the_author_meta('display_name');
+$author_info = get_user_by( 'id', $authorID);
+$coauth = coauthors();
+$term = get_the_author_meta($coauth);
+// $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+// var_dump($author_name); 
+
 $args = array(
-    'post_type' => 'post',
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'author',
-            'field' => 'display_name',
-            'terms' => $term
-        )
-    ),
+    'post_type' => 'post'
+    // 'tax_query' => array(
+    //     array(
+    //         'taxonomy' => 'author',
+    //         'field' 	=> 'display_name',
+    //         'terms' 	=> $term
+    //     )
+    // ),
 );
 
 $author_query = new WP_Query( $args ); ?>
@@ -26,10 +30,11 @@ $author_query = new WP_Query( $args ); ?>
 	<h1>Articles by: <?= $term ?></h1> 
 	<?php if (get_field("biography" , $authorID)): ?>
 		<p><?php the_field("biography", $authorID, false); ?></p>
+		
 	<?php endif; ?>
 	</div>
 	<div class="msnry-view">
-	<div class="grid-sizer" style="width: 390px;"></div>
+	<div class="grid-sizer" style="width: 316px;"></div>
 	<?php if ( $author_query->have_posts() ) : while ( $author_query->have_posts() ) : $author_query->the_post(); ?>
 	<article class="grid-item">
 		<a href="<?php the_permalink(); ?>">

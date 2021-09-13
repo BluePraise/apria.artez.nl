@@ -1387,6 +1387,11 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   line-height: 30px;
 }
 
+.single .content-with-sidebar .article__footnote,
+.single .content-with-sidebar .article__bibliography {
+  outline: none;
+}
+
 .single .content-with-sidebar .footnote {
   margin-left: 45px;
   margin-bottom: 10px;
