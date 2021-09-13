@@ -19,6 +19,7 @@ function theme_scripts() {
 	wp_enqueue_script('apria_scripts_balancetext', get_theme_file_uri('scripts/balancetext.min.js'), '', '', true);
 	wp_enqueue_script('apria_scripts_cookie', get_theme_file_uri('scripts/jquery.cookie.min.js'),'scripts_jquery', '', true);
 	wp_enqueue_script('apria_scripts_masonry', get_theme_file_uri('scripts/masonry.pkgd.min.js'),'scripts_jquery', '', true);
+	wp_enqueue_script('apria_scripts_isotope', get_theme_file_uri('scripts/isotope.pkgd.min.js'),'scripts_jquery', '', true);
 	wp_enqueue_script('apria_scripts_planck', get_theme_file_uri('scripts/planck.min.js'), '', '',  true);
 	wp_enqueue_script('apria_scripts_d3', get_theme_file_uri('scripts/d3.min.js'), '', '', true);
 	// old code from previous developer

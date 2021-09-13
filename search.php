@@ -39,35 +39,39 @@ get_header();
 
 $args = array(
 				'post_type' => 'post',
-               's' => get_search_query()
+               's' => get_search_query(),
+               'numberposts' => -1,
+               'posts_per_page' => -1
             );
-
 
 $aposts = new WP_Query( $args );
 
+$search = get_search_query();
+
+$getPosts = get_posts(array(
+    'post_type' => 'post',
+	'post_status' => 'publish',
+	'numberposts' => -1,
+	'posts_per_page' => -1,
+    's' => $search
+));
+
 ?>
 
-<div class="main-content">
-	<article class="main-column">
-		<div class="content-wrap">
+<main class="content-with-sidebar archive-view">
+		<article>
 
 			<div class="article__head">
 				<div class="head__top-line">
-					<span class="article__surtitle"> Search Results for: </span>
+					<h1>Results tagged by <?php echo ucfirst($search); ?></h1> 
 				</div>
-				<h1 class="article__title"><?php 
-				// var_dump($_GET); 
-				echo ucfirst(get_search_query()); ?></h1>
 			</div>
 
 			<div class="search-results">
-
+				<div class="grid-sizer"></div>
 <?php 
 
 $searchResults = array();
-
-
-
 
 if ($aposts->have_posts()) : 
 
@@ -82,42 +86,33 @@ endif;
 
 $searchResults = getFilter($searchResults);
 
-if ($searchResults->results) : 
 
-	foreach ($searchResults->results as $aPost) :
+if ($getPosts) : 
+
+	foreach ($getPosts as $post) :
+		$aPost = extendIssuePost($post);
+		//var_dump($aPost); Die();
 ?> 
 
-<div class="search-result <?php if($aPost->tag_ids) { foreach ($aPost->tag_ids as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } 
-   if($aPost->author_ids) { foreach ($aPost->author_ids as $aId): ?> filter-author-<?=$aId;  endforeach; } ?>"> <a
-   href="<?=$aPost->url; ?> " class="result__title"><?=$aPost->title?> <?php if
-   ($aPost->subtitle) { ?> <em> <?=$aPost->subtitle ?></em> <?php } ?></a>
-   <div class="result__text"> <?=$aPost->previewtext; ?> </div> <div
-   class="result__info"> <div class="result__date"><?php echo
-   formatDate($aPost->date); ?></div> <ul class="result__meta"> <?php if
-   ($aPost->authors) : ?> <li> <?php foreach ($aPost->authors as
-   $aAuthor) : ?> <a
-   href="<?=$aAuthor->post_url ?>"><?=$aAuthor->name; ?></a> <?php
-   endforeach; ?> </li> <?php endif; 
+<article class="search-result grid-item <?php if($aPost->tagIds) { foreach ($aPost->tagIds as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } ?> <?php if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } if($aPost->authors) { foreach ($aPost->authors as $aId): ?> filter-author-<?=$aId->id;  endforeach; } ?>">
+		<a href="<?php the_permalink(); ?>">
+			<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
+				<h2 class="subtitle"><?php the_title();?></h2>
+				
+				<?php if(has_post_thumbnail()): ?>
+					<figure>
+						<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+					</figure>
+				<?php endif;?>
+				<?php if(get_field('preview_text')): ?>
+					<p class="article__excerpt"><?php the_field('preview_text', false); ?></p>
+				<?php else: ?>
+					<p class="article__excerpt"><?php the_excerpt(); ?></p>
+				<?php endif;?>
+			</a>	
+	</article>
 
-	if ($aPost->tags) :
-?>
 
-
-							<li>
-<?php foreach ($aPost->tags as $aTag) : ?>
-
-								<a href="<?=$aTag->url ?>"><?=$aTag->name; ?></a>
-<?php endforeach; ?>
-							</li>
-<?php endif; 
-if ($aPost->issue_number) :
-?>
-
-							<li>Published in <a href="<?=$aPost->issue_url ?>">ISSUE <?=$aPost->issue_number ?></a></li>
-<?php endif; ?>
-						</ul>
-					</div>
-				</div>
 <?php endforeach; 
 
 else : ?>
@@ -126,7 +121,7 @@ else : ?>
 
 			</div>
 				<?php get_footer(); ?>
-		</div>
+	
 	</article>
 <?php 
 
@@ -148,7 +143,7 @@ if ($posts->filterableAuthors || $posts->filterableTags || $posts->filterableIss
 						<div class="filter__items">
 <?php foreach ($posts->filterableIssues as $key=>$aIssue) : ?>
 							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_issue_<?=$key?>"  value="<?=$aIssue->id ?>" data-type="issue">
+								<input class="js-filter" type="checkbox" id="checkbox_issue_<?=$key?>" data-filter=".filter-issue-<?=$aIssue->id ?>"  value="<?=$aIssue->id ?>" data-type="issue">
 								<label for="checkbox_issue_<?=$key?>"> <?=$aIssue->number; ?> <?=$aIssue->title; ?> (<?=$aIssue->count; ?>)</label>
 							</div>
 <?php endforeach; ?>
@@ -164,7 +159,7 @@ if ($posts->filterableAuthors) : ?>
 						<div class="filter__items">
 <?php foreach ($posts->filterableAuthors as $key=>$aAuthor) : ?>
 							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_author_<?=$key?>"  value="<?=$aAuthor->id; ?>" data-type="author">
+								<input class="js-filter" type="checkbox" id="checkbox_author_<?=$key?>" data-filter=".filter-author-<?=$aAuthor->id; ?>"  value="<?=$aAuthor->id; ?>" data-type="author">
 								<label for="checkbox_author_<?=$key?>"> <?=$aAuthor->display_name?>  (<?=$aAuthor->count; ?>)</label>
 							</div>
 <?php endforeach; ?>
@@ -180,7 +175,7 @@ if ($posts->filterableTags) : ?>
 						<div class="filter__items">
 <?php foreach ($posts->filterableTags as $key=>$aTag) : ?>
 							<div class="filter-checkbox filter__item">
-								<input class="js-filter" type="checkbox" id="checkbox_tag_<?=$key?>" value="<?=$aTag->id; ?>" data-type="tag">
+								<input class="js-filter" type="checkbox" id="checkbox_tag_<?=$key?>" data-filter=".filter-tag-<?=$aTag->id; ?>" value="<?=$aTag->id; ?>" data-type="tag">
 								<label for="checkbox_tag_<?=$key?>"><?=$aTag->name; ?> (<?=$aTag->count; ?>)</label>
 							</div>
 <?php endforeach; ?>

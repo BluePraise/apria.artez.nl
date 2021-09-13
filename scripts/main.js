@@ -127,6 +127,7 @@ function initNewsletter(){
 }
 
 function filter(){
+
 	var filters = [];
 
 	$(this).toggleClass("checked");
@@ -147,25 +148,28 @@ function filter(){
 		filters[i] = filters[i].join(",");
 	}
 
-	$('.search-results').empty();
+	$('div.search-results').empty();
+	$('div.search-results').append('<div class="grid-sizer" id="grid-sizer"></div>');
 	$('.search-results-hidden .search-result').removeClass('cloned');
 
 	if($(".js-filter:checked").length == 0){
-		$('.search-results-hidden').find('.search-result').clone().appendTo($('.search-results'));
+		$('.search-results-hidden').find('.search-result').clone().appendTo($('div.search-results'));
+
 	}
 
 	$(".search-results-hidden .search-result").filter(function () {
 		var el = $(this),
 		matches = true;
-
+	
 		for (var i in filters) {
 			var filtersByGroup = filters[i];
 
 			if (el.is(filtersByGroup) && !el.hasClass('cloned')) {
-				el.clone().appendTo($('.search-results'));
+				el.clone().appendTo($('div.search-results'));
 				el.addClass('cloned');
 			}
 		}
+		
 	});
 }
 
@@ -504,25 +508,50 @@ $(function() {
 	// 	});
 	// }
 
+	$search_results = $('div.search-results').isotope({
+	  // options
+	  itemSelector: '.grid-item',
+	  masonry: {
+  		gutter: 20
+	},
+});
+
 	if($('.search-result').length){
-		$('<div class="search-results-hidden" style="display: none;"></div>').appendTo($('body'));
+		$('<div class="search-results-hidden" style="display: none;"><div class="grid-sizer" id="grid-sizer"></div></div>').appendTo($('body'));
 		$('.search-result').clone().appendTo($('.search-results-hidden'));
 	}
+	
 
 	$(document).on("click", ".js-filter", function(){
-		filter();
+		 var filterValue = $(this).attr('data-filter');
+		 if($(this).is(":checked")) {
+  			$search_results.isotope({ filter: filterValue });
+  		}
+  		else {
+  			if ($(".js-filter:checkbox:checked").length > 0)
+				{
+				    $search_results.isotope({ filter: ':not('+filterValue+')' });
+				}
+			else
+				{
+				   $search_results.isotope({ filter: '*' });
+				}
+  			
+  		}
+		//filter();
+		
 	});
 
 	$(document).on('click', '.js-reset-filter', function(){
 		$('.js-filter').prop('checked', false);
-
-		filter();
+		$search_results.isotope({ filter: "*" });
+		//filter();
 	});
 
 	$(document).on('click', '.js-reset-filter-group', function(){
 		$(this).closest('.filter__group').find('.js-filter').prop('checked', false);
-
-		filter();
+		$search_results.isotope({ filter: "*" });
+		//filter();
 	});
 
 	$(document).on('click', '.js-opencall-close-button', function(e){
