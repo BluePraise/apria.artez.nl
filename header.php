@@ -39,7 +39,8 @@
 			</ul>
 		<?php endif; ?>
 		<div class="search-field hide">
-			<input type="search" class="search-input"/>
+			<form action="/" method="get">
+			<input type="search" name="s" class="search-input"/>
 		</div>
 		<div class="mobile-menu-close-button js-mobile-menu-close-button hide-on-desktop">
 				<img src="<?= get_stylesheet_directory_uri(). '/assets/svg/icon_close_highlight.svg'; ?>">

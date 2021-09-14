@@ -668,7 +668,7 @@
     },
     "\/sass\/main.scss" : {
       "aP" : 1,
-      "bl" : 0,
+      "bl" : 1,
       "dP" : 10,
       "ec" : 1,
       "ft" : 4,
@@ -677,8 +677,8 @@
       "oAP" : "\/styles\/main.css",
       "oF" : 3,
       "oS" : 1,
-      "pg" : 0,
-      "sct" : 1
+      "pg" : 2,
+      "sct" : 0
     },
     "\/sass\/templates\/_archive.scss" : {
       "aP" : 0,
@@ -790,6 +790,17 @@
       "mi" : 1,
       "oA" : 0,
       "oAP" : "\/scripts\/fastclick-min.js",
+      "oF" : 0,
+      "sC" : 3,
+      "tS" : 0
+    },
+    "\/scripts\/isotope.pkgd.min.js" : {
+      "bF" : 0,
+      "ft" : 64,
+      "ma" : 0,
+      "mi" : 1,
+      "oA" : 0,
+      "oAP" : "\/scripts\/isotope.pkgd.min-min.js",
       "oF" : 0,
       "sC" : 3,
       "tS" : 0
@@ -1466,7 +1477,7 @@
     "bowerUseExactVersion" : 0,
     "browserRefreshDelay" : 0,
     "browserslistString" : ">0.2%, last 2 versions, Firefox ESR, not dead",
-    "buildEnvironment" : 1,
+    "buildEnvironment" : 0,
     "buildFolderActive" : 0,
     "buildFolderName" : "build",
     "cleanBuild" : 1,
@@ -1611,7 +1622,7 @@
     "cssoForceMediaMerge" : 0,
     "cssoRestructure" : 1,
     "environmentVariableEntries" : [
-      "NODE_ENV:::development"
+      "NODE_ENV:::production"
     ],
     "esLintConfigFileHandlingType" : 0,
     "esLintECMAVersion" : 7,
