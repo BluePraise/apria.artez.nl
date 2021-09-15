@@ -87,7 +87,7 @@ $getPosts = get_posts(array(
 			<div class="content-wrap">
 				<div class="filter">
 					<div class="filter__header">
-						<span>Filter Results</span> (<?=$posts->total ?>) | <span class="filter-reset js-reset-filter">Clear all filters</span>
+						<span>Filter Results</span> (<?php echo count($getPosts); ?>) | <span class="filter-reset js-reset-filter">Clear all filters</span>
 					</div>
 				<?php if  ($posts->filterableIssues) : ?>
 					<div class="filter__group">
