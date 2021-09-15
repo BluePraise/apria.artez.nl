@@ -260,7 +260,7 @@ get_header();
 					<?php $post_object = get_sub_field('curated_item'); ?>
 
 						<?php if( $post_object ): 
-							//var_dump($post_object);  
+							
 							foreach($post_object as $post)
 							?>
 							<li class="post-item issue">
