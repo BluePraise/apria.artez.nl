@@ -45,14 +45,15 @@ h2.subtitle {
 }
 // page and archive
 .archive-view article,
-.page-view article {
+.page-view article,
+.msnry-sidebar article {
     margin-bottom: 16px;
 }
+.msnry-sidebar article,
 .archive-view article {
     border-bottom: 1px solid var(--text-color-1);
 }
-.archive-view .article__date,
-.page-view .article__date {
+.article__date {
     text-transform: uppercase;
     font-family: var(--font-sans-serif);
     color: white;

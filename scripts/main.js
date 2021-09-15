@@ -517,7 +517,7 @@ $(function() {
 });
 
 	if($('.search-result').length){
-		$('<div class="search-results-hidden" style="display: none;"><div class="grid-sizer" id="grid-sizer"></div></div>').appendTo($('body'));
+		$('<div class="search-results-hidden" style="display: none;"><div class="grid-sizer"></div></div>').appendTo($('body'));
 		$('.search-result').clone().appendTo($('.search-results-hidden'));
 	}
 	

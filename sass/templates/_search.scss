@@ -1,0 +1,39 @@
+.search.search-results {
+    .sidebar-column.affix-placeholder {
+        font-family: var(--font-mono);
+        font-size: 12px;
+    }
+    
+}
+
+.search-result { 
+	img {
+	    max-width: 100%;
+	    height: auto;
+	    margin-top:10px;
+	}
+
+	a.result__title {
+	    font-family: var(--font-sans-serif);
+	    color: var(--text-color-1);
+	    text-transform: uppercase;
+	    line-height: 1;
+	    font-size: 30px;
+	    text-decoration: none;
+	    display: block;
+    }
+	.result__date {
+	    font-family: var(--font-sans-serif);
+	    color: #ffffff;
+	    text-transform: uppercase;
+	    line-height: 1;
+	    font-size: 30px;
+	    text-decoration: none;
+	    display: block;
+    }
+    .result__text {
+        font-family: var(--font-mono);
+        color: var(--text-color-1);
+        font-size: 12px;
+	}
+}

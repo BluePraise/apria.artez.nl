@@ -3,49 +3,20 @@
 /*
 Template Name: Search Page
 */
-/*
-	APRIA
-	Copyright (C) 2018 by Systemantics, Bureau for Informatics
-
-	Systemantics GmbH
-	Bleichstr. 11
-	41747 Viersen
-	GERMANY
-
-	Web:    www.systemantics.net
-	Email:  hello@systemantics.net
-
-	Permission granted to use the files associated with this
-	website only on your webserver.
-
-	Changes to these files are PROHIBITED due to license restrictions.
-*/
-
 
 get_header();
 
-// This is the WordPress adaptor for the Systemantics boilerplate
-// All access is handled by main.php (usually triggered from .htaccess)
 
-
-//define('WORDPRESS', true);
-
-
-// Redirect request to main.php controller
-//require __DIR__ . '/main.php';
-
- global $wp_query, $wpdb;
-
+global $wp_query, $wpdb;
 
 $args = array(
-				'post_type' => 'post',
-               's' => get_search_query(),
-               'numberposts' => -1,
-               'posts_per_page' => -1
-            );
+	'post_type' => 'post',
+	's' => get_search_query(),
+	'numberposts' => -1,
+	'posts_per_page' => -1
+);
 
 $aposts = new WP_Query( $args );
-
 $search = get_search_query();
 
 $getPosts = get_posts(array(
@@ -58,77 +29,59 @@ $getPosts = get_posts(array(
 
 ?>
 
-<main class="content-with-sidebar archive-view">
-		<article>
+<main class="content-with-sidebar msnry-sidebar">
+	<h1>Results search by <?php echo ucfirst($search); ?></h1> 
+	<div class="msnry-view">
+		<div class="grid-sizer" style="width: calc(50% - 16px);"></div>
+		<?php 
 
-			<div class="article__head">
-				<div class="head__top-line">
-					<h1>Results search by <?php echo ucfirst($search); ?></h1> 
-				</div>
-			</div>
+		$searchResults = array();
 
-			<div class="search-results">
-				<div class="grid-sizer"></div>
-<?php 
+		if ($aposts->have_posts()) : 
 
-$searchResults = array();
+			foreach ($aposts->posts as $aPost) :
 
-if ($aposts->have_posts()) : 
+				$searchResults[] = extendIssuePost($aPost);
 
-	foreach ($aposts->posts as $aPost) :
+			endforeach;
+		endif;
 
-		$searchResults[] = extendIssuePost($aPost);
+		//var_dump($searchResults);
 
-	endforeach;
-endif;
-
-//var_dump($searchResults);
-
-$searchResults = getFilter($searchResults);
+		$searchResults = getFilter($searchResults);
 
 
-if ($getPosts) : 
+		if ($getPosts) : 
 
-	foreach ($getPosts as $post) :
-		$aPost = extendIssuePost($post);
-		//var_dump($aPost); Die();
-?> 
+			foreach ($getPosts as $post) :
+				$aPost = extendIssuePost($post);
+				//var_dump($aPost); Die();
+		?> 
+		<article class="search-result grid-item <?php if($aPost->tagIds) { foreach ($aPost->tagIds as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } ?> <?php if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } if($aPost->authors) { foreach ($aPost->authors as $aId): ?> filter-author-<?=$aId->id;  endforeach; } ?>">
+			<a href="<?php the_permalink(); ?>">
+				<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
+					<h2 class="subtitle"><?php the_title();?></h2>
+					
+					<?php if(has_post_thumbnail()): ?>
+						<figure>
+							<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
+						</figure>
+					<?php endif;?>
+					<?php if(get_field('preview_text')): ?>
+						<p class="article__excerpt"><?php the_field('preview_text', false); ?></p>
+					<?php else: ?>
+						<p class="article__excerpt"><?php the_excerpt(); ?></p>
+					<?php endif;?>
+				</a>	
+		</article>
+		<?php endforeach; ?>
+		</div>
+		<?php else : ?>
+			No Result Found
+		<?php endif; 
 
-<article class="search-result grid-item <?php if($aPost->tagIds) { foreach ($aPost->tagIds as $aId) : ?> filter-tag-<?php echo $aId;  endforeach; } ?> <?php if ($aPost->issue_id) { ?> filter-issue-<?php echo $aPost->issue_id; } if($aPost->authors) { foreach ($aPost->authors as $aId): ?> filter-author-<?=$aId->id;  endforeach; } ?>">
-		<a href="<?php the_permalink(); ?>">
-			<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
-				<h2 class="subtitle"><?php the_title();?></h2>
-				
-				<?php if(has_post_thumbnail()): ?>
-					<figure>
-						<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
-					</figure>
-				<?php endif;?>
-				<?php if(get_field('preview_text')): ?>
-					<p class="article__excerpt"><?php the_field('preview_text', false); ?></p>
-				<?php else: ?>
-					<p class="article__excerpt"><?php the_excerpt(); ?></p>
-				<?php endif;?>
-			</a>	
-	</article>
-
-
-<?php endforeach; 
-
-else : ?>
-				No Result Found
-<?php endif; ?>
-
-			</div>
-				<?php get_footer(); ?>
-	
-	</article>
-<?php 
-
-$posts = $searchResults;
-
-if ($posts->filterableAuthors || $posts->filterableTags || $posts->filterableIssues) : ?>
-
+	$posts = $searchResults;
+	if ($posts->filterableAuthors || $posts->filterableTags || $posts->filterableIssues) : ?>
 	<aside class="sidebar-column affix-placeholder">
 		<div class="affix-content js-affix-scrolling">
 			<div class="content-wrap">
@@ -136,52 +89,52 @@ if ($posts->filterableAuthors || $posts->filterableTags || $posts->filterableIss
 					<div class="filter__header">
 						<span>Filter Results</span> (<?=$posts->total ?>) | <span class="filter-reset js-reset-filter">Clear all filters</span>
 					</div>
-<?php if  ($posts->filterableIssues) : ?>
+				<?php if  ($posts->filterableIssues) : ?>
 					<div class="filter__group">
 						<div class="filter__group-title">By issue</div>
 						<div class="filter-clear-button icon js-reset-filter-group">×</div>
 						<div class="filter__items">
-<?php foreach ($posts->filterableIssues as $key=>$aIssue) : ?>
+					<?php foreach ($posts->filterableIssues as $key=>$aIssue) : ?>
 							<div class="filter-checkbox filter__item">
 								<input class="js-filter" type="checkbox" id="checkbox_issue_<?=$key?>" data-filter=".filter-issue-<?=$aIssue->id ?>"  value="<?=$aIssue->id ?>" data-type="issue">
 								<label for="checkbox_issue_<?=$key?>"> <?=$aIssue->number; ?> <?=$aIssue->title; ?> (<?=$aIssue->count; ?>)</label>
 							</div>
-<?php endforeach; ?>
+					<?php endforeach; ?>
 						</div>
 					</div>
-<?php endif; 
+				<?php endif; 
 
-if ($posts->filterableAuthors) : ?>
+					if ($posts->filterableAuthors) : ?>
 
 					<div class="filter__group">
 						<div class="filter__group-title">By Author</div>
 						<div class="filter-clear-button icon js-reset-filter-group">×</div>
 						<div class="filter__items">
-<?php foreach ($posts->filterableAuthors as $key=>$aAuthor) : ?>
+						<?php foreach ($posts->filterableAuthors as $key=>$aAuthor) : ?>
 							<div class="filter-checkbox filter__item">
 								<input class="js-filter" type="checkbox" id="checkbox_author_<?=$key?>" data-filter=".filter-author-<?=$aAuthor->id; ?>"  value="<?=$aAuthor->id; ?>" data-type="author">
 								<label for="checkbox_author_<?=$key?>"> <?=$aAuthor->display_name?>  (<?=$aAuthor->count; ?>)</label>
 							</div>
-<?php endforeach; ?>
+						<?php endforeach; ?>
 
 						</div>
 					</div>
-<?php endif; 
+				<?php endif; 
 
-if ($posts->filterableTags) : ?>
+					if ($posts->filterableTags) : ?>
 					<div class="filter__group">
 						<div class="filter__group-title">By Tag</div>
 						<div class="filter-clear-button icon js-reset-filter-group">×</div>
 						<div class="filter__items">
-<?php foreach ($posts->filterableTags as $key=>$aTag) : ?>
+						<?php foreach ($posts->filterableTags as $key=>$aTag) : ?>
 							<div class="filter-checkbox filter__item">
 								<input class="js-filter" type="checkbox" id="checkbox_tag_<?=$key?>" data-filter=".filter-tag-<?=$aTag->id; ?>" value="<?=$aTag->id; ?>" data-type="tag">
 								<label for="checkbox_tag_<?=$key?>"><?=$aTag->name; ?> (<?=$aTag->count; ?>)</label>
 							</div>
-<?php endforeach; ?>
+					<?php endforeach; ?>
 						</div>
 					</div>
-<?php endif; ?>
+				<?php endif; ?>
 <!-- // {*
 // 					<div class="filter__group">
 // 						<div class="filter__group-title">{#filter_by_date#}</div>
@@ -192,10 +145,10 @@ if ($posts->filterableTags) : ?>
 				</div>
 
 				<!-- // {include "element_footer.tpl" class="hide-on-desktop"} -->
-				<?php get_footer(); ?>
 			</div>
 		</div>
 	</aside>
 <?php endif; ?>
-</div>
+</main>
+<?php get_footer(); ?>
 

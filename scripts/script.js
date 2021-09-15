@@ -25,12 +25,12 @@ $( document ).ready(function() {
 	addRandomHeight();
 
 function resetGrid() {
-		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
-		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
-			$(this).css("left", 0);
-			$(this).css("top", 0);
-		});
-	}
+	// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
+	$('.post-item').each(function(i) { // the element(s) you want to add the class to.
+		$(this).css("left", 0);
+		$(this).css("top", 0);
+	});
+}
 
 
  	home_grid = $('.default-view').masonry({
@@ -47,12 +47,12 @@ function resetGrid() {
 	var filter_grid = " ";
 	 
 filter_grid = $('ul.grid-view').masonry({
-				itemSelector: '.post-item',
-				columnWidth: '.grid-sizer',
-				gutter: 16,
-				percentPosition: true,
-				isFitWidth: true,
-			});
+	itemSelector: '.post-item',
+	columnWidth: '.grid-sizer',
+	gutter: 16,
+	percentPosition: true,
+	isFitWidth: true,
+});
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {

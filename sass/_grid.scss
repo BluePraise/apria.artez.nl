@@ -22,8 +22,12 @@ main:not(.issue-content) {
 	}
 }
 
-.msnry-view .grid-item {
-	width: calc(100%/4 - 16px);
+.msnry-view:not(.msnry-sidebar) .grid-item {
+	// width: calc(100%/4 - 16px);
+}
+
+.msnry-sidebar .grid-item {
+	width: calc(50% - 16px);
 }
 .archive-view {
 	display: grid;
