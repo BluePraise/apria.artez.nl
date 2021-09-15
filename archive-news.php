@@ -16,7 +16,7 @@ $the_query = new WP_Query(array(
 
 <main class="archive-view">
     <div class="msnry-view">
-        <div class="grid-sizer" style="width: 316px;"></div>
+        <div class="grid-sizer" style="width: calc(25% - 16px);"></div>
         <?php if ( $the_query->have_posts() ): while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <article class="grid-item">
                 <a href="<?php the_permalink(); ?>">

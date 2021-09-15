@@ -30,7 +30,7 @@ $pageTitle = ucfirst($tag->name) . ' - ' . $pageTitle;
 <main class="archive-view">
 	<h1>Results tagged by <?php echo $term; ?></h1> 
 	<div class=" msnry-view">
-	<div class="grid-sizer" style="width: 316px;"></div>
+	<div class="grid-sizer" style="width: calc(25% - 16px);"></div>
 	<?php 
 		if ($getPosts) : foreach ($getPosts as $post) :?>
 	<article class="grid-item">
