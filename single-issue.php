@@ -203,7 +203,6 @@ if ($footnotes):  ?>
 			</div>
 <?php endif; ?>
 
-<?php get_footer('', array("color"=> $color)); ?>
 
 
 		</div>
@@ -213,3 +212,4 @@ if ($footnotes):  ?>
 
 </main>
 
+<?php get_footer('', array("color"=> $color)); ?>
