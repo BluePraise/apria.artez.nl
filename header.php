@@ -6,10 +6,10 @@
 <header class="main-header">
 	<div class="container">
 		<div class="logo-container">
-				<a href="<?=get_bloginfo('url'); ?>" class="logo-svg-cover"></a>
-			<a xlink:href="<?=get_bloginfo('url'); ?>" target="_blank" class="sticky-logo">
-  				<svg  class="apria_logo" style="background-color: var(--text-color-1);"></svg>
-  			</a>
+				<a href="<?php if(!is_home( )): echo get_bloginfo('url'); endif; ?>" class="logo-svg-cover"></a>
+				<a xlink:href="<?php if(!is_home( )): echo get_bloginfo('url'); endif; ?>" target="_blank" class="sticky-logo">
+					<svg  class="apria_logo" style="background-color: var(--text-color-1);"></svg>
+				</a>
 		
 		</div>
 	<?php

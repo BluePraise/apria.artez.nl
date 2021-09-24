@@ -99,7 +99,7 @@ a.sticky-logo {
 
 // SOCIAL MEDIA NAV
 .social-list {
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 	.social-item {
 		margin-right: 20px;
@@ -145,7 +145,7 @@ a.sticky-logo {
 
 // RESPONSIVE
 
-@media (max-width: 767.9px) {
+@media (max-width: 1400px) {
 
 	.logo-container {
  	   width: 100%;
@@ -159,7 +159,6 @@ a.sticky-logo {
 		    height: 50px;
 		    z-index: 9999;
 		    margin-left: auto;
-		    
 		}
 	}
 
@@ -180,18 +179,19 @@ a.sticky-logo {
 	}
 
 	a.sticky-logo {
-	   left:0;
+	   left: calc(-50% + 132px);
 	   right:0;
 	   margin-left:auto;
-	  
-	}
+	}  
+
 
 	.fixed-logo {
 		a.sticky-logo {
 	    	display: block;
 	    	text-align: center;
 	    	margin: -60px 0 20px auto;
-   			 position: relative;
+   			position: relative;
+			left: calc(-50% + 132px);
 		}
 		header.main-header {
 			padding-bottom: 25px;

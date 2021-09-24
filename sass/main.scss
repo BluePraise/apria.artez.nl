@@ -1,5 +1,5 @@
 @import "base/index.scss";
-@import "_grid";
+// @import "_grid";
 @import "main-elements/index.scss";
 @import "templates/index.scss";
 
@@ -10,4 +10,10 @@
 }
 .hide {
 	display: none;
+}
+
+// HACKS FOR CLIENTS
+.home .logo-container .logo-svg-cover:hover,
+.home.logo-container .sticky-logo:hover {
+	cursor: default !important;
 }
