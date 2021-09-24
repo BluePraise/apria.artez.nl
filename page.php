@@ -5,7 +5,7 @@ defined('ABSPATH') || exit;
 get_header(); 
 ?>
 
-<main class="page-view grid-view">
+<main class="page-view">
     <article>
             <h2 class="subtitle"><?php the_title();?></h2>
             <?php if(has_post_thumbnail()): ?>

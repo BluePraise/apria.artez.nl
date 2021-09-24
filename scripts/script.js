@@ -100,12 +100,15 @@ filter_grid = $('ul.grid-view').masonry({
 		
 	});
 
-	var gridMasonry = $('.msnry-view').masonry({
+	$('.msnry-view').masonry({
 	// options
 		itemSelector: '.grid-item',
 		gutter: 20,
 		percentPosition: true,
-		columnWidth: '.grid-sizer'
+		// isFitWidth: true,
+		resize: false,
+		// columnWidth: '.grid-sizer'
+		
 	});
 	// Sets the height for the iframe for youtube so it fits better
 	var iframeEl = $("iframe");

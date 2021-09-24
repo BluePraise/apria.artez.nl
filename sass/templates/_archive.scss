@@ -31,3 +31,9 @@ article.grid-item, .grid-sizer {
 	grid-column: 3 / 9;
 }
 
+
+@media screen and (max-width: 1100px) {
+	.archive-view h1 {
+		grid-column: 1/ 13;
+	}
+}
