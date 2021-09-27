@@ -742,6 +742,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   width: 100%;
 }
 
+.tnp-field-button .form__input,
 .input-wrap .form__input {
   border-bottom: 1px solid var(--text-color-1);
   width: 100%;
@@ -755,7 +756,8 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   border-color: #000;
 }
 
-.input-wrap .form__label {
+.input-wrap .form__label,
+.tnp-field-button .form__label {
   font: normal 12px/14px var(--font-mono);
   display: block;
   margin-top: 3px;
@@ -777,13 +779,14 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   margin-left: 9.09091%;
 }
 
-.subscribe-form .form__submit {
+.tnp-field-button .form__submit {
   border: none;
-  font: bold 30px/43px var(--font-serif);
+  font: normal 16px/24px var(--font-mono);
   background-color: var(--text-color-1);
   color: #fff;
   margin-top: 19px;
   padding: 4px 10px;
+  text-transform: uppercase;
 }
 
 .tnp-field-button {

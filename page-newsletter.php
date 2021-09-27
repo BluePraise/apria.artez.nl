@@ -1,23 +1,7 @@
 <?php
 /*
 Template Name: Newsletter
-*/
-/*
-	APRIA
-	Copyright (C) 2018 by Systemantics, Bureau for Informatics
 
-	Systemantics GmbH
-	Bleichstr. 11
-	41747 Viersen
-	GERMANY
-
-	Web:    www.systemantics.net
-	Email:  hello@systemantics.net
-
-	Permission granted to use the files associated with this
-	website only on your webserver.
-
-	Changes to these files are PROHIBITED due to license restrictions.
 */
 
 
@@ -37,9 +21,9 @@ get_header();
 		</a>
 	</div> -->
 
-	<article class="main-column">
+	<article>
 	
-			<h1 class="article__title">Subscribe to our newsletter to stay up-to-date with the APRIA Journal and Platform.</h1>
+			<h1 class="content-title">Subscribe to our newsletter to stay up-to-date with the APRIA Journal and Platform.</h1>
 
 			<div class="tnp">
 				<form method="post" id="newsletter" action="http://apriawp1.local/?na=s" onsubmit="return newsletter_check(this)" class="subscribe-form">

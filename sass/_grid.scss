@@ -57,6 +57,7 @@ main:not(.issue-content) {
 		grid-column: 10 / 13;
 	}
 }
+.page-template .page-view article,
 .page-template-default .page-view article {
     grid-column: 3 / 9;
     margin: auto;
