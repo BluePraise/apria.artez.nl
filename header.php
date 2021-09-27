@@ -6,11 +6,10 @@
 <header class="main-header">
 	<div class="container">
 		<div class="logo-container">
-				<a href="<?php if(!is_home( )): echo get_bloginfo('url'); endif; ?>" class="logo-svg-cover"></a>
-				<a xlink:href="<?php if(!is_home( )): echo get_bloginfo('url'); endif; ?>" target="_blank" class="sticky-logo">
-					<svg  class="apria_logo" style="background-color: var(--text-color-1);"></svg>
-				</a>
-		
+			<a href="<?php if(!is_home( )): echo get_bloginfo('url'); endif; ?>" class="logo-svg-cover"></a>
+			<a xlink:href="<?php if(!is_home( )): echo get_bloginfo('url'); endif; ?>" target="_blank" class="sticky-logo">
+				<svg  class="apria_logo" style="background-color: var(--text-color-1);"></svg>
+			</a>
 		</div>
 	<?php
 		wp_nav_menu([
@@ -38,6 +37,7 @@
 				</li>
 			</ul>
 		<?php endif; ?>
+		
 		<div class="search-field hide">
 			<form action="/" method="get">
 			<input type="search" name="s" class="search-input"/>

@@ -297,8 +297,6 @@ strong {
 
 .column-label {
     font: normal 12px/14px "Ahamono", monospace;
-    -moz-transform: translateY(-50%) rotate(-90deg);
-    -ms-transform: translateY(-50%) rotate(-90deg);
     -webkit-transform: translateY(-50%) rotate(-90deg);
     transform: translateY(-50%) rotate(-90deg);
     text-transform: uppercase;
@@ -324,9 +322,6 @@ strong {
 
 header {
     zoom: 1;
-    -moz-transition: margin-top 250ms;
-    -o-transition: margin-top 250ms;
-    -webkit-transition: margin-top 250ms;
     transition: margin-top 250ms;
     display: flex;
     left: 0;
@@ -371,17 +366,12 @@ header .main-column {
 }
 
 .header-fixed.header-open header {
-    -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
     box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
     margin-top: 139px
 }
 
 .menu {
     font: normal 12px/14px "Ahamono", monospace;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     color: #ff2020;
     margin-bottom: 28px;
@@ -509,13 +499,8 @@ header .main-column {
 }
 
 .logo {
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    -moz-transition: margin-top 250ms;
-    -o-transition: margin-top 250ms;
-    -webkit-transition: margin-top 250ms;
     transition: margin-top 250ms;
     border-radius: 50px;
     display: block;
@@ -553,9 +538,6 @@ header .main-column {
 
 .site-title {
     font: bold 30px/26px "Crimson", serif;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     color: #ff2020;
     float: left;
@@ -609,9 +591,6 @@ header .main-column {
 
 .additional-links {
     font: normal 12px/14px "Ahamono", monospace;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     color: #ff2020;
     padding-top: 8px;
@@ -771,9 +750,6 @@ footer a {
 
 .article__preview-text {
     font: normal 16px/17px "Crimson", serif;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     float: left;
     opacity: 1;
@@ -811,9 +787,6 @@ footer a {
 .article__title {
     font: normal 55px/50px "Crimson", serif;
     font-weight: bold;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     display: block;
     text-decoration: none;
@@ -845,9 +818,6 @@ footer a {
 .article__subtitle {
     font: normal 55px/50px "Crimson", serif;
     font-style: italic;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     opacity: 1
 }
@@ -1109,9 +1079,6 @@ figcaption {
 
 .preview__title {
     font: bold 30px/30px "Crimson", serif;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     display: block;
     padding-left: 10px;
@@ -1127,9 +1094,6 @@ figcaption {
 .preview__subtitle {
     font: bold 30px/30px "Crimson", serif;
     font-style: italic;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     padding-left: 10px;
     opacity: 1
@@ -1147,9 +1111,6 @@ figcaption {
 
 .preview__text {
     font: normal 13px/17px "Ahamono", monospace;
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     opacity: 1
 }
@@ -1206,9 +1167,6 @@ figcaption {
 }
 
 .preview__background-image {
-    -moz-transition: opacity 250ms;
-    -o-transition: opacity 250ms;
-    -webkit-transition: opacity 250ms;
     transition: opacity 250ms;
     height: 100%;
     opacity: 0;
@@ -1250,9 +1208,6 @@ figcaption {
     -ms-user-select: none;
     -webkit-user-select: none;
     user-select: none;
-    -moz-transition: background-color 250ms, border 250ms;
-    -o-transition: background-color 250ms, border 250ms;
-    -webkit-transition: background-color 250ms, border 250ms;
     transition: background-color 250ms, border 250ms;
     background-color: #ff2020;
     border-radius: 10px;
@@ -1262,9 +1217,6 @@ figcaption {
 }
 
 .toggle-inner {
-    -moz-transition: top 250ms, border 250ms;
-    -o-transition: top 250ms, border 250ms;
-    -webkit-transition: top 250ms, border 250ms;
     transition: top 250ms, border 250ms;
     background-color: #fff;
     border-radius: 8px;
@@ -1402,8 +1354,6 @@ figcaption {
 }
 
 .article__background {
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-position: center;
@@ -1423,14 +1373,7 @@ figcaption {
 
 .animation--rotate {
     -webkit-animation: rotate 300s linear infinite;
-    -moz-animation: rotate 300s linear infinite;
     animation: rotate 300s linear infinite
-}
-
-@-moz-keyframes rotate {
-    100% {
-        -moz-transform: rotate(360deg)
-    }
 }
 
 @-webkit-keyframes rotate {
@@ -1975,8 +1918,6 @@ html:not(.issue-header-fixed) .issue-header {
 }
 
 .holder-content {
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     text-align: center;
@@ -2233,8 +2174,6 @@ html:not(.issue-header-fixed) .issue-header {
     }
 
     .menu {
-        -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
         box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
         background: #fce4e9;
         display: none;
@@ -2409,8 +2348,6 @@ html:not(.issue-header-fixed) .issue-header {
     }
 
     .column-label {
-        -moz-transform: translateY(0) rotate(0deg);
-        -ms-transform: translateY(0) rotate(0deg);
         -webkit-transform: translateY(0) rotate(0deg);
         transform: translateY(0) rotate(0deg);
         display: block;

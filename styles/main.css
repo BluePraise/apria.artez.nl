@@ -1401,4 +1401,9 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
 .home.logo-container .sticky-logo:hover {
   cursor: default !important;
 }
+
+.main-column,
+.sidebar-column {
+  margin-top: 140px;
+}
 /*# sourceMappingURL=main.css.map */

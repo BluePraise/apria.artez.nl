@@ -18,8 +18,7 @@
 	cursor: default !important;
 }
 
-.page-template .page-view article,
-.page-template-default .page-view article {
-    grid-column: 3 / 9;
-    margin: auto;
+.main-column,
+.sidebar-column {
+	margin-top: 140px;
 }
