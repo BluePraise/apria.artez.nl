@@ -15,11 +15,11 @@ get_header();
 ?>
 
 <main class="page-view">
-	<!-- <div class="overlay-close-button js-newsletter-close-button">
+	<div class="overlay-close-button js-newsletter-close-button">
 		<a href="<?=get_home_url() ?>" >
 			<img src="/wp-content/themes/apria/elements/icon_close_black.svg">
 		</a>
-	</div> -->
+	</div>
 
 	<article>
 	

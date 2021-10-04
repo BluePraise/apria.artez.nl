@@ -54,7 +54,6 @@
 				$result->posts = array_unique(array_merge( $query_posts->posts, $query_news->posts, $query_issues->posts ), SORT_REGULAR );
 
 				$result->post_count = count( $result->posts );
-				// var_dump($result);
 
 
 				// The Loop
@@ -80,6 +79,14 @@
 					<?php echo '<p class="aside-excerpt">' . get_the_excerpt() . '</p>'; ?>
 					<div class="article__meta">
 						<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
+						<span class="article-separator">/</span>
+
+						<span class="article__author">
+							<?php $authors = get_coauthors(get_the_ID()); ?>
+							<?php foreach($authors as $author): ?>
+								<?php echo $author->display_name;  ?>
+							<?php endforeach; ?>
+						</span>
 						<span class="article-separator">/</span>
 						
 						<?php if($post->post_type == 'issue'): 

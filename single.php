@@ -136,23 +136,18 @@ get_header();
 					'post__not_in' => array( $post->ID )
 				);
 
-				$news_args = array(
-					'post_type'              => array( 'news' ),
-					'posts_per_page'         => 2
-				);
 				$issue_args = array(
 					'post_type'              => array( 'issue' ),
 					'posts_per_page'         => 1
 				);
 				// The Query
 				$query_posts   = new WP_Query( $post_args );
-				$query_news    = new WP_Query( $news_args );
 				$query_issues  = new WP_Query( $issue_args );
 
 				$result        = new WP_Query();
 
 				// start putting the contents in the new object
-				$result->posts = array_unique(array_merge( $query_posts->posts, $query_news->posts, $query_issues->posts ), SORT_REGULAR );
+				$result->posts = array_unique(array_merge( $query_posts->posts, $query_issues->posts ), SORT_REGULAR );
 
 				$result->post_count = count( $result->posts );
 				// var_dump($result);
@@ -188,9 +183,15 @@ get_header();
 							echo $post->post_title; 
 							echo '</span>';
 							echo '<span class="article-separator">/</span>';
-						endif; ?>	
+						endif; ?>
+							<span class="article__author">
+								<?php $authors = get_coauthors(get_the_ID()); ?>
+								<?php foreach($authors as $author): ?>
+									<?php echo $author->display_name;  ?>
+								<?php endforeach; ?>
+							</span>
+							<span class="article-separator">/</span>
 						
-				
 						<?php if($article_tags): $i = 0; ?>
 							<?php foreach($article_tags as $aTag): ?>
 								<a class="article__tag_link" href="<?=$aTag->url; ?>"><span class="article__tag_name"><?=$aTag->name; ?></span>
@@ -200,7 +201,7 @@ get_header();
 								</a> 
 							<?php endforeach; endif; ?>
 						
-						<!-- </div>.tag-list -->
+					
 						
 					</div><!-- .article__meta -->
 			</li>

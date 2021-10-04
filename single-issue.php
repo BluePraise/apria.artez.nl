@@ -109,7 +109,7 @@ foreach ($sidebar_posts as $aPost) {
 		background: linear-gradient(to bottom, rgba(<?=$bg_rgb?>, 1) 0%,rgba(<?=$bg_rgb?>, 0); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?=$backgroundcolor; ?>', endColorstr='<?=$backgroundcolor;?>00',GradientType=0 ); /* IE6-9 */"></div>
 	</div>
-	
+	<div class="content-with-sidebar">
 		<article class="main-column" style="background-color: <?=$backgroundcolor; ?>">
 			<div class="article__background-mobile hide-on-desktop" <?php if ($background_image): ?> style="background-image: url(<?=$background_image?>); opacity: <?=$opacity ?>" <?php endif; ?>></div>
 			<div class="content-wrap">
@@ -145,7 +145,10 @@ foreach ($sidebar_posts as $aPost) {
 				<?php endif; ?>
 
 				<div class="article__text text--large">
-					<?=$issue->content ?>
+					<?php  //the_content(); ?>
+					<?php echo apply_filters('the_content', $content) ; ?>
+					<?php// echo $issue->content ?>
+					<?php //echo strip_shortcodes($issue->content); ?>
 				</div>
 
 				<!-- {include "element_article_footer.tpl" authors=$issue->authors footnotes=$issue->footnotes bibliography=$issue->bibliography} -->
@@ -185,7 +188,7 @@ foreach ($sidebar_posts as $aPost) {
 			</div>
 		</article>
 		<?php get_sidebar("", array("sidebar_posts"=> $sidebar_posts, "sidebar_issue" => false)); ?>
-
+	</div>
 </main>
 
 <?php get_footer('', array("color"=> $color)); ?>

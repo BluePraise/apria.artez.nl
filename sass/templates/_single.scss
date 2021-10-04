@@ -30,6 +30,7 @@
 		margin-top: 16px;
 		margin-bottom: 16px;
 	}
+	
 	.issue__name,
 	a.article__tag {
 		font-family: var(--font-mono);
@@ -126,6 +127,7 @@
 				margin-bottom: 20px;
 			}
 		}
+		.article__author,
 		.article__tag_name,
 		.article__date {
 			font-family: var(--font-mono);

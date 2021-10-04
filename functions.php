@@ -546,6 +546,13 @@ function formatDateShort($date) {
 	return myStrftime($formatCode, $date);
 }
 
+function wpdocs_remove_shortcode_from_index( $content ) {
+    
+    $content = strip_shortcodes( $content );
+    return $content;
+}
+// add_filter( 'the_content', 'wpdocs_remove_shortcode_from_index' );
+
 function formatDateLarge($date) {
 	//January 2019
 	if (is_object($date)) {

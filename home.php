@@ -202,13 +202,13 @@ get_header();
 	
 			<?php
 				// The Query
-				$issue_args = array(
+				$latest_args = array(
 					'post_type'         => array( 'post' ),
-					'posts_per_page'    => 10,
+					'posts_per_page'    => 30,
 					'orderby'			=> 'date',
 					'order'				=> 'ASC'
 				);
-				$the_query = new WP_Query( $issue_args );
+				$the_query = new WP_Query( $latest_args );
 
 				// The Loop
 				if ( $the_query->have_posts() ) : ?>
