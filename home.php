@@ -273,7 +273,7 @@ get_header();
 								<a href="<?php the_permalink($post->ID); ?>" style="background-image: url(<?= get_stylesheet_directory_uri(). '/assets/placeholder.jpeg'; ?>);">
 							<?php endif; ?>
 							<div class="post-content-wrap">
-								<h3><?php the_title($post->ID); ?></h3>
+								<h3><?php the_title(); ?></h3>
 								<?php
 								if ( function_exists( 'coauthors_posts_links' ) ) : coauthors(null, null, '<p>', '</p>', true);
 								else: ?>
