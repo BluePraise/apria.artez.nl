@@ -58,7 +58,7 @@ foreach ($sidebar_posts as $aPost) {
 	$issue = $issue;
 	$color = $issue->text_color ? $issue->text_color : 'var(--text-color-1)';
 	$backgroundcolor = $issue->background_color ? $issue->background_color : 'var(--text-color-1)';
-	// $background_image = $issue->background_image ? $issue->background_image['url'] : false;
+	$background_image = $issue->background_image ? $issue->background_image : false;
 	$sidebar_posts = $sidebar_posts;
 	$allIssueAutors = $allIssueAutors;
 	$htmlClass = 'logo-fixed';
@@ -145,13 +145,9 @@ foreach ($sidebar_posts as $aPost) {
 				<?php endif; ?>
 
 				<div class="article__text text--large">
-					<?php  //the_content(); ?>
 					<?php echo apply_filters('the_content', $content) ; ?>
-					<?php// echo $issue->content ?>
-					<?php //echo strip_shortcodes($issue->content); ?>
 				</div>
 
-				<!-- {include "element_article_footer.tpl" authors=$issue->authors footnotes=$issue->footnotes bibliography=$issue->bibliography} -->
 				<?php 
 					$authors = getAuthors(get_the_ID());
 					if($authors):

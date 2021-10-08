@@ -1401,7 +1401,7 @@ figcaption {
     overflow: hidden;
     position: fixed;
     height: 100vh;
-    width: calc((100% - 1024px) / 2 + 680px)
+    width: 100%;
 }
 
 .article__background {
