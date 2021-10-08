@@ -1,14 +1,76 @@
 <?php get_template_part('head'); ?>
+<?php if(get_field('issue') && is_single()): 
+	// get the issue variables
+	$issue = get_field('issue')->post_type;
+	$issue_ID = get_field('issue')->ID;
+	// checks if article is related to post type issue 
+	if($issue === 'issue' ):  
+		// get the needed variables
+		if (get_field('text_color', $issue_ID)):
+			$issue_text_color = get_field('text_color', $issue_ID);
+		else: 
+			$issue_text_color = 'var(--text-color-2)';
+		endif;
+		if (get_field('background_color', $issue_ID)):
+			$issue_bg_color = get_field('background_color', $issue_ID);
+		endif;
+		if (get_field('background_image', $issue_ID)):
+			$issue_bg_img = get_field('background_image', $issue_ID);	
+		endif;
+	endif;	?>
+	<style>
+		:root {
+			--issue-text-color: <?php echo $issue_text_color ?>;
+			--issue-bg-color: <?php echo $issue_bg_color ?>;
+			--issue_bg_img: <?php echo $issue_bg_img ?>;
+		}
+		.issue-styling {
+			background-color: var(--issue-bg-color) !important;
+			color: var(--issue-text-color) !important;
+		}
+		.single .content-with-sidebar header.article-header span,
+		h1.content-title,
+		.article__text {
+			border-bottom: 1px solid var(--issue-text-color);
+			color: var(--issue-text-color) !important;
+		}
+		header.main-header nav.main-navigation ul li {
+			border: 1px solid var(--issue-text-color);
+		}
+		/* just color */
+		.aside-excerpt,
+		.article-separator,
+		h1.content-title, h2.subtitle, 
+		.single .content-with-sidebar h2.subtitle, 
+		.single .content-with-sidebar .latest-posts h2,
+		.single .content-with-sidebar aside .article__meta,
+		header.main-header nav.main-navigation ul li a,
+		.content-with-sidebar a {
+			color: var(--issue-text-color) !important;
+		}
+		/* just BG Color */
+		.single .content-with-sidebar aside .article-separator-large {
+			background-color: var(--issue-text-color);
+		}
+		.article__text hr {
+			color: var(--issue-bg-color);
+			background-color: var(--issue-text-color);
+			border: 1px solid var(--issue-bg-color);
+		}
+	</style>
+	<body <?php body_class('issue-styling'); ?>>
+	<?php else: ?>
+		<body <?php body_class(); ?>>
+<?php endif; ?>
 
-<body <?php body_class(); ?>>
 <?php do_action('wp_body_open'); ?>
 
-<header class="main-header">
+<header class="main-header <?php if(get_field('issue')): ?> issue-styling <?php endif; ?>">
 	<div class="container">
 		<div class="logo-container">
 			<a href="<?php echo get_bloginfo('url'); ?>" class="logo-svg-cover"></a>
 			<a xlink:href="<?php echo get_bloginfo('url'); ?>" target="_blank" class="sticky-logo">
-				<svg  class="apria_logo" style="background-color: var(--text-color-1);"></svg>
+				<svg  class="apria_logo" style="background-color: <?php if(get_field('issue')): ?> var(--issue-text-color); <?php endif; ?>var(--text-color-1);"></svg>
 			</a>
 		</div>
 	<?php

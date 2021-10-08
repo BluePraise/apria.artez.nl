@@ -1,9 +1,5 @@
 <?php
-// if(get_field('issue')): 
-	
-	// get_template_part('template-parts/singles/issuerelated');
 
-// else: 
 get_header();
 
 	$authors = get_coauthors($aIssue->ID);
@@ -32,9 +28,7 @@ get_header();
 	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
 	$footnotes = $footnotes;
 ?>
-
 <main class="content-with-sidebar">
-
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
