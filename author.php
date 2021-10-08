@@ -5,24 +5,6 @@ get_header();
 global $wp_query, $wpdb;
 
 $authorID = get_queried_object_id();
-$author_info = get_user_by( 'id', $authorID);
-$coauth = coauthors();
-$term = get_the_author_meta($coauth);
-// $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-
-
-$args = array(
-    'post_type' => 'post'
-    // 'tax_query' => array(
-    //     array(
-    //         'taxonomy' => 'author',
-    //         'field' 	=> 'display_name',
-    //         'terms' 	=> $term
-    //     )
-    // ),
-);
-
-$author_query = new WP_Query( $args ); 
 
 ?>
 
@@ -35,7 +17,7 @@ $author_query = new WP_Query( $args );
 		<?php endif; ?>
 	</div>
 	<div class="msnry-view">
-	<?php if ( $author_query->have_posts() ) : while ( $author_query->have_posts() ) : $author_query->the_post(); ?>
+	<?php if (have_posts() ) : while (have_posts() ) : the_post(); ?>
 	<article class="grid-item">
 		<a href="<?php the_permalink(); ?>">
 			<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
