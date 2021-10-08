@@ -20,8 +20,29 @@
 		'issue_authors' => get_field('issue_authors'),
 	];
 }
-
+	$issue_ID = get_field('issue')->ID;
+	// get the needed variables
+	if (get_field('text_color')):
+		$issue_text_color = $issue->text_color;
+	else: 
+		$issue_text_color = 'var(--text-color-2)';
+	endif;
+		$issue_bg_color = $issue->background_color;
+	
 ?>
+<style>
+	:root {
+		--issue-bg-color: <?php echo $issue_bg_color ?>;
+		--issue-text-color: <?php echo $issue_text_color ?>;
+	}
+	.preview__info {
+		color: var(--issue-text-color);
+	}
+	.article-preview-rule,
+	.single .content-with-sidebar aside .article-separator-large {
+		background-color: var(--issue-text-color);
+	}
+</style>
 
 <aside class="sidebar-column <?php if($newsPosts): ?> sidebar-column--news<?php endif; ?> affix-placeholder">
 		<div class="affix-content <?php if($realm == "issue"): ?> js-affix-scrolling-issue <?php else: ?> js-affix-scrolling <?php endif; ?>">
@@ -123,7 +144,7 @@ if ($aPost->subtitle): ?>
 					</div>
 					<div class="preview__info">
 				<?php if($aPost->date): ?>
-				<span style="color: <?php if(get_field('text_color')): get_field('text_color'); else: echo ('#000'); endif; ?>" class="preview__date"><?php echo date("m-d-Y", strtotime($aPost->date)); ?></span>
+				<span class="preview__date"><?php echo date("m-d-Y", strtotime($aPost->date)); ?></span>
 				<?php endif; 
 					if($aPost->authors) : ?>
 						<span class="preview__authors">
@@ -136,7 +157,7 @@ if ($aPost->subtitle): ?>
 				</div>
 				
 
-				<hr style="background:<?php if(get_field('text_color')): get_field('text_color'); else: echo ('#000'); endif; ?>" class="article-preview-rule"></hr>
+				<hr class="article-preview-rule"></hr>
 
 <?php endforeach; 
 endif;
