@@ -1,34 +1,34 @@
-<?php 
+<?php
 	if($args) {
 		$sidebar_issue = $args["sidebar_issue"];
 		$sidebar_posts = $args["sidebar_posts"];
 	}
 	$issue = get_post(get_the_ID());
 	if($issue){
-	$issue = (object)[
-		'ID' 			=> $issue->ID,
-		'title' 		=> get_the_title(),
-		'subtitle' 		=> get_field('subtitle', $issue->ID),
-		'date' 			=> $issue->post_date,
-		'content' 		=> apply_filters('the_content', $issue->post_content),
-		'authors' 		=> getAuthors($issue->ID),
-		'number' 		=> get_field('number'),
-		'text_color' 	=> get_field('text_color'),
-		'background_color' => get_field('background_color'),
-		'background_image' => get_field('background_image'),
-		'bibliography' 	=> get_field('bibliography'),
-		'issue_authors' => get_field('issue_authors'),
-	];
-}
+		$issue = (object)[
+			'ID' 			=> $issue->ID,
+			'title' 		=> get_the_title(),
+			'subtitle' 		=> get_field('subtitle', $issue->ID),
+			'date' 			=> $issue->post_date,
+			'content' 		=> apply_filters('the_content', $issue->post_content),
+			'authors' 		=> getAuthors($issue->ID),
+			'number' 		=> get_field('number'),
+			'text_color' 	=> get_field('text_color'),
+			'background_color' => get_field('background_color'),
+			'background_image' => get_field('background_image'),
+			'bibliography' 	=> get_field('bibliography'),
+			'issue_authors' => get_field('issue_authors'),
+		];
+	}
 	$issue_ID = get_field('issue')->ID;
 	// get the needed variables
 	if (get_field('text_color')):
 		$issue_text_color = $issue->text_color;
-	else: 
+	else:
 		$issue_text_color = 'var(--text-color-2)';
 	endif;
 		$issue_bg_color = $issue->background_color;
-	
+
 ?>
 <style>
 	:root {
@@ -66,7 +66,7 @@
 				</div>
 <?php endif; ?>
 
-<?php 
+<?php
 
 if($newsPosts) :
 	foreach ($newsPosts as $aPost) : ?>
@@ -96,7 +96,7 @@ if($newsPosts) :
 					<div class="preview__info">
 <?php if($aPost->date): ?>
 						<span class="preview__date">{$aPost->date|formatDate}</span>
-				<?php endif; 
+				<?php endif;
 					if($aPost->authors) : ?>
 						<span class="preview__authors">
 							<?php foreach($aPost->authors as $aAuthor) : ?>
@@ -110,8 +110,8 @@ if($newsPosts) :
 
 <?php endforeach; endif; ?>
 
-<?php 
-if($sidebar_posts): 
+<?php
+if($sidebar_posts):
 
 foreach ($sidebar_posts as $aPost): ?>
 
@@ -145,7 +145,7 @@ if ($aPost->subtitle): ?>
 					<div class="preview__info">
 				<?php if($aPost->date): ?>
 				<span class="preview__date"><?php echo date("m-d-Y", strtotime($aPost->date)); ?></span>
-				<?php endif; 
+				<?php endif;
 					if($aPost->authors) : ?>
 						<span class="preview__authors">
 							<?php foreach($aPost->authors as $aAuthor): ?>
@@ -155,15 +155,15 @@ if ($aPost->subtitle): ?>
 					<?php endif; ?>
 					</div>
 				</div>
-				
+
 
 				<hr class="article-preview-rule"></hr>
 
-<?php endforeach; 
+<?php endforeach;
 endif;
 ?>
 
-				
+
 			</div>
 		</div>
 	</aside>
