@@ -126,7 +126,7 @@ function initNewsletter(){
         });
 }
 
-function filter(){
+function filter( ){
 
 	var filters = [];
 
@@ -160,7 +160,7 @@ function filter(){
 	$(".search-results-hidden .search-result").filter(function () {
 		var el = $(this),
 		matches = true;
-	
+
 		for (var i in filters) {
 			var filtersByGroup = filters[i];
 
@@ -169,7 +169,7 @@ function filter(){
 				el.addClass('cloned');
 			}
 		}
-		
+
 	});
 }
 
@@ -200,82 +200,33 @@ $(function() {
 
 	FastClick.attach(document.body);
 
-	// Rewrite WP image embeds
-	// $('.article__text img').each(function () {
-	// 	var img = $(this),
-	// 		wrap = img.closest('.wp-caption'),
-	// 		caption;
-
-	// 	if(img.closest('.rl-gallery-container').length){
-	// 		return;
-	// 	}
-
-	// 	if (wrap.length == 1) {
-	// 		// With caption
-	// 		caption = wrap.find('.wp-caption-text');
-
-	// 	} else {
-	// 		// No caption
-	// 		wrap = img.closest('.wp-block-image');
-	// 		if (wrap.length == 0) {
-	// 			wrap = img.closest('p');
-	// 		}
-	// 		caption = false;
-	// 	}
-
-	// 	var figure = $('<figure class="inline-image"></figure>').append(img);
-
-	// 	if(caption){
-	// 		$('<figcaption>' + caption.html() + '</figcaption>').appendTo(figure);
-	// 	}
-
-	// 	figure.insertAfter(wrap);
-	// 	wrap.remove();
-	// });
-
-	// // Wrap figures
-	// $('.article__text .inline-image').each(function () {
-	// 	var item = $(this),
-	// 		figure = $(
-	// 			'<figure class="inline-images inline-images--one"></figure>'
-	// 		),
-	// 		caption,
-	// 		prevItem = item.prev();
-
-	// 	if(prevItem.hasClass('inline-images')){
-	// 		prevItem.append(item);
-	// 		prevItem.removeClass('inline-images--one').addClass('inline-images--two');
-
-	// 	}else{
-
-	// 		figure.insertAfter(item);
-	// 		figure.append(item);
-	// 	}
-	// });
-
 	// Balance text and headlines
 	balanceText();
 
 	// Place column label correctly.
-	$(window)
-		.on('resize', function () {
-			if(getBreakpoint() != 'mobile') {
-				positionColumnLabel();
-			}
+	// $(window)
+	// 	.on('resize', function () {
 
-			captionWidth();
+	// 		if(getBreakpoint() != 'mobile') {
+	// 			positionColumnLabel();
+	// 		}
 
-			affixHeight();
+	// 		captionWidth();
 
-		}).trigger('resize');
+	// 		affixHeight();
 
-	// Picture text toogle
+	// 	}).trigger('resize');
+
+	// Picture text toggle
 	$(document)
 		.on('click', '.js-picture-text-toggle', function () {
+
 			if ($('html').hasClass('text-view')) {
+				;
 				$('html').removeClass('text-view').addClass('picture-view');
 				$.cookie('displayMode', 'picture', {path: '/'});
 			} else {
+
 				$('html').removeClass('picture-view').addClass('text-view');
 				$.cookie('displayMode', 'text', {path: '/'});
 			}
@@ -283,22 +234,25 @@ $(function() {
 
 	// Footnotes
 	$(document)
-		.on('click', '.js-footnote-up', function(){
+		.on('click', '.js-footnote-up', function () {
+
 			var el = $(this),
 				note = $('[data-footnoteanchor="' + el.data('footnotetext') + '"]');
 
-			if(note.length){
+			if (note.length) {
+
 				$('html, body').animate({
 					scrollTop: note.offset().top - 150,
 				}, 500);
 			}
 			$('.footnote').removeClass('footnote-highlight');
-		}).on('click', '.js-footnote', function(){
+		}).on('click', '.js-footnote', function () {
+
 			var el = $(this),
 				note = $('[data-footnotetext="' + el.data('footnoteanchor') + '"]').closest('.footnote');
 
 			if(note.length){
-				console.log($('.article__footnotes details'));
+				// console.log($('.article__footnotes details'));
 				$('.article__footnotes details').attr("open", "");
 				position = note.offset().top - 100;
 
@@ -314,6 +268,7 @@ $(function() {
 	// Overlay for issue, newsletter subscrube
 	$(document)
 		.on('click', '.js-open-as-overlay', function (e) {
+
 			if ($(e.target).is("a")) {
 				var url = $(this).attr("href");
 			} else if ($(this).closest('.issue-preview, .home-issue').hasClass("clickable-block")) {
@@ -323,13 +278,11 @@ $(function() {
 			}
 			e.stopPropagation();
 
-
 			var bodyWidth = $('body').width();
 
 			var processResponse = function (htmlIn) {
 				// Strip JavaScript blocks from input HTML
 				var html = $("<div/>").append(htmlIn.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, ""));
-
 				// Prevent scrolling
 				$('html').addClass('no-scroll overlay-open');
 
@@ -372,25 +325,6 @@ $(function() {
 				if(getBreakpoint() != 'mobile') {
 					positionColumnLabel(overlay, bodyWidth);
 				}
-
-				// Make newsletter subscribe form functional
-				// $('.form-newsletter', content).ajaxForm({
-				// 	success: function (response) {
-
-				// 		$('.js-form-message').remove();
-
-				// 		var displayMessage = $('<div class="js-form-message">' + response.message + '</div>');
-
-				// 		if(response.ok){
-				// 			$('.js-required-fields').remove();
-				// 			$('.overlay-content-container').append(displayMessage);
-
-				// 		}else{
-				// 			displayMessage.insertAfter($('.overlay-content').find('.form-submit'));
-				// 			$('.js-required-fields').find('[name="email"]').focus();
-				// 		}
-				// 	}
-				// });
 			};
 			$.get(url, processResponse);
 			return false;
@@ -411,22 +345,9 @@ $(function() {
 		}
 	});
 
-
-
-	// Header behaviour
-	// "Open" header when hovering
-	// $(document)
-	// 	.on('mouseenter', 'header', function () {
-	// 		$('html').addClass('header-open');
-	// 	})
-	// 	.on('mouseleave', 'header', function () {
-	// 		$('html').removeClass('header-open');
-	// 	});
-	// Make header fixed
-	// debugger;
 	$(window).on('scroll', function (e) {
 		e.preventDefault();
-			
+
 			if ($('.main-header').length) {
 				var headerPos,
 					logoPos;
@@ -473,10 +394,11 @@ $(function() {
 	// Mobile menu
 	$(document)
 		.on('click', '.js-mobile-menu-button', function () {
-			if ($('html').hasClass('mobile-menu-open')) {
+
+			if ($('html').hasClass('mobile-menu-open')) {
 				return;
 			} else {
-				$('html').addClass('mobile-menu-open')
+				$('html').addClass('mobile-menu-open');
 			}
 		})
 		.on('click', '.js-mobile-menu-close-button', function () {
@@ -490,24 +412,6 @@ $(function() {
 		});
 	}
 
-	// Subscribe form
-	// if ($('.subscribe-form').length) {
-	// 	$('.subscribe-form .form__input').each(function () {
-	// 		var input = $(this),
-	// 			form = input.closest('form');
-
-	// 		input.on('focusout', function () {
-	// 			if (input.val() != '') {
-	// 				input.removeClass('has-error');
-
-	// 				if (form.find('.has-error').length == 0) {
-	// 					form.find('.form__submit').removeClass('disabled');
-	// 				}
-	// 			}
-	// 		})
-	// 	});
-	// }
-
 	$search_results = $('div.search-results').isotope({
 	  // options
 	  itemSelector: '.grid-item',
@@ -520,11 +424,9 @@ $(function() {
 		$('<div class="search-results-hidden" style="display: none;"><div class="grid-sizer"></div></div>').appendTo($('body'));
 		$('.search-result').clone().appendTo($('.search-results-hidden'));
 	}
-	
+
 
 	$(document).on("click", ".js-filter", function(){
-		 var filterValue = $(this).attr('data-filter');
-
 		 var sList = "";
 			$('.js-filter').each(function () {
 			    var sThisVal = (this.checked ? $(this).attr('data-filter') : "");
@@ -532,38 +434,30 @@ $(function() {
 			    	sList += (sList=="" ? sThisVal : ", " +sThisVal);
 			    }
 			});
-		//console.log (sList);
 
 		if(sList.length > 0) {
   			$search_results.isotope({ filter: sList });
 		}
-  		
   		else {
-  			
-				   $search_results.isotope({ filter: '*' });
-  			
+			$search_results.isotope({ filter: '*' });
   		}
-		//filter();
-		
+
 	});
 
 	$(document).on('click', '.js-reset-filter', function(){
 		$('.js-filter').prop('checked', false);
 		$search_results.isotope({ filter: "*" });
-		//filter();
+
 	});
 
 	$(document).on('click', '.js-reset-filter-group', function(){
 		$(this).closest('.filter__group').find('.js-filter').prop('checked', false);
 		$search_results.isotope({ filter: "*" });
-		//filter();
 	});
 
 	$(document).on('click', '.js-opencall-close-button', function(e){
 		if($('#overlay-content').length){
-
 			closeOverlayer();
-
 			e.preventDefault();
 		}
 	});
@@ -578,32 +472,9 @@ $(function() {
 		});
 
 	$(window).on('load', function(){
-		affixHeight();
+		// affixHeight();
 	});
 
-	$(document)
-		.on('click', '.clickable-block:not(.js-open-as-overlay)', function (e) {
-			if ($(e.target).is('a')) {
-				return;
-			}
-			var href = $(this).data('href');
-			if (href) {
-				location.href = href;
-				return false;
-			}
-		});
-
-	$(document)
-		.on('click', 'a', function (e) {
-			if(!$(this).attr('href')){
-			}
-			else if (this.hostname != location.hostname && $(this).attr('href').substr(0,7) != 'mailto:') {
-				this.blur();
-				window.open(this.href);
-				e.preventDefault();
-			}
-		});
-	
 }); // end doc ready
 
 

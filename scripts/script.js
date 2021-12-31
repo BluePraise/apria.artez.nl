@@ -4,11 +4,10 @@ $( document ).ready(function() {
 		if($(this).scrollTop() >= ($('html').offset().top + 100)) {
 			$("html").addClass("fixed-logo");
 		} else {
-
 			$("html").removeClass("fixed-logo");
 		}
 	});
-	var home_grid;
+
 
 	function addRandomHeight() {
 		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
@@ -24,15 +23,14 @@ $( document ).ready(function() {
 	}
 	addRandomHeight();
 
-function resetGrid() {
-	// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
-	$('.post-item').each(function(i) { // the element(s) you want to add the class to.
-		$(this).css("left", 0);
-		$(this).css("top", 0);
-	});
-}
-
-
+	function resetGrid() {
+		// var classes = [ 'circle', 'ellipse-small', 'ellipse-big' ]; // the classes you want to add
+		$('.post-item').each(function(i) { // the element(s) you want to add the class to.
+			$(this).css("left", 0);
+			$(this).css("top", 0);
+		});
+	}
+	var home_grid;
  	home_grid = $('.default-view').masonry({
 		// options
 		itemSelector: '.post-item',
@@ -42,17 +40,17 @@ function resetGrid() {
 		isFitWidth: true
 	});
 
-	setTimeout(function(){ home_grid.masonry('layout'); }, 100);
+	setTimeout( function() { home_grid.masonry('layout'); }, 50);
 
 	var filter_grid = " ";
-	 
-filter_grid = $('ul.grid-view').masonry({
-	itemSelector: '.post-item',
-	columnWidth: '.grid-sizer',
-	gutter: 16,
-	percentPosition: true,
-	isFitWidth: true,
-});
+
+	filter_grid = $('ul.grid-view').masonry({
+		itemSelector: '.post-item',
+		columnWidth: '.grid-sizer',
+		gutter: 16,
+		percentPosition: true,
+		isFitWidth: true,
+	});
 
 	// FILTER TOGGLE
 	$('.filter-item').on('click', function (e) {
@@ -61,13 +59,12 @@ filter_grid = $('ul.grid-view').masonry({
 		var otherFilters = $(this).siblings();
 		var currentFilter = $(this).data('filter');
 		var selectedItem = $('.home').find('.' + currentFilter);
-		var msnryItem = $('.main-content').find('.' + currentFilter);
 		var otherItems = $('.main-content > *').not(selectedItem);
 		var andTheseItems = $('.filter-paragraphs > *').not(selectedItem);
-		
+
 		if($(this).hasClass("active")) {
 			selectedItem.removeClass('show').addClass('hide');
-			$(this).removeClass('active');	
+			$(this).removeClass('active');
 			$('.default-view').removeClass("hide");
 			setTimeout(function(){ home_grid.masonry('layout'); }, 100);
 			return false;
@@ -77,14 +74,8 @@ filter_grid = $('ul.grid-view').masonry({
 		if (selectedItem.hasClass('hide')) {
 			// show the selected item
 			selectedItem.removeClass('hide').addClass('show');
-		resetGrid();
-		setTimeout(function(){
-
-			filter_grid.masonry('layout');
-					 }
-				, 100)
-
-
+			resetGrid();
+			setTimeout(function() {filter_grid.masonry('layout'); } , 50)
 			// hide the other items
 			otherItems.removeClass('show').addClass('hide');
 			andTheseItems.removeClass('show').addClass('hide');
@@ -95,9 +86,8 @@ filter_grid = $('ul.grid-view').masonry({
 		if (otherFilters.hasClass('active')) {
 			otherFilters.removeClass('active');
 			andTheseItems.removeClass('active');
-
 		}
-		
+
 	});
 
 	$('.msnry-view').masonry({
@@ -108,12 +98,11 @@ filter_grid = $('ul.grid-view').masonry({
 		// isFitWidth: true,
 		resize: false,
 		// columnWidth: '.grid-sizer'
-		
+
 	});
 	// Sets the height for the iframe for youtube so it fits better
 	var iframeEl = $("iframe");
 	var iframeElYT = $("iframe[src*='youtube']");
-	var iframeElParent = iframeEl.parent();
 
 	if (iframeEl = iframeElYT ) {
 		iframeElYT.parent().css('height', '500px');
@@ -136,23 +125,28 @@ filter_grid = $('ul.grid-view').masonry({
 	var _elRight = _elLeft + _elWidth;
 	var _searchbarWidth = $('.positionable').width();
 	var _desiredPos = _elRight - _searchbarWidth;
-	
+
 	$('.positionable').css('left', _desiredPos);
 
 	// on click show the search bar input.
 	_element.on('click', function(e) {
 		e.preventDefault();
 		$('.positionable').toggleClass('hide show');
+		console.log('hit 1');
 		if ($("html").hasClass("fixed-logo") && $('.positionable').hasClass('show')) {
+			console.log('hit 2');
 			$('header.main-header').css("height", "128px");
 		}
 		else if ($("html").hasClass("fixed-logo") && $('.positionable').hasClass('hide')) {
+			console.log('hit 3');
 			$('header.main-header').css("height", "81px");
 		}
 		if ($(document).scroll() && $('.positionable').hasClass('show')) {
+			console.log('hit 4');
 			$('header.main-header').css("height", "128px");
 		}
 		else if ($(document).scroll() && $('.positionable').hasClass('hide')) {
+			console.log('hit 5');
 			$('header.main-header').css("height", "81px");
 		}
 	});

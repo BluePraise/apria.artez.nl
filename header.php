@@ -1,21 +1,21 @@
 <?php get_template_part('head'); ?>
-<?php if(get_field('issue') && is_single()): 
+<?php if(get_field('issue') && is_single()):
 	// get the issue variables
 	$issue = get_field('issue')->post_type;
 	$issue_ID = get_field('issue')->ID;
-	// checks if article is related to post type issue 
-	if($issue === 'issue' ):  
+	// checks if article is related to post type issue
+	if($issue === 'issue' ):
 		// get the needed variables
 		if (get_field('text_color', $issue_ID)):
 			$issue_text_color = get_field('text_color', $issue_ID);
-		else: 
+		else:
 			$issue_text_color = 'var(--text-color-2)';
 		endif;
 		if (get_field('background_color', $issue_ID)):
 			$issue_bg_color = get_field('background_color', $issue_ID);
 		endif;
 		if (get_field('background_image', $issue_ID)):
-			$issue_bg_img = get_field('background_image', $issue_ID);	
+			$issue_bg_img = get_field('background_image', $issue_ID);
 		endif;
 	endif;	?>
 	<style>
@@ -40,8 +40,8 @@
 		/* just color */
 		.aside-excerpt,
 		.article-separator,
-		h1.content-title, h2.subtitle, 
-		.single .content-with-sidebar h2.subtitle, 
+		h1.content-title, h2.subtitle,
+		.single .content-with-sidebar h2.subtitle,
 		.single .content-with-sidebar .latest-posts h2,
 		.single .content-with-sidebar aside .article__meta,
 		header.main-header nav.main-navigation ul li a,
@@ -68,9 +68,8 @@
 <header class="main-header <?php if(get_field('issue')): ?> issue-styling <?php endif; ?>">
 	<div class="container">
 		<div class="logo-container">
-			<a href="<?php echo get_bloginfo('url'); ?>" class="logo-svg-cover"></a>
-			<a xlink:href="<?php echo get_bloginfo('url'); ?>" target="_blank" class="sticky-logo">
-				<svg  class="apria_logo" style="background-color: <?php if(get_field('issue')): ?> var(--issue-text-color); <?php endif; ?>var(--text-color-1);"></svg>
+			<a class="sticky-logo" href="http://localhost:10004">
+				<svg class="apria_logo" style="background-color: <?php if(get_field('issue')): ?> var(--issue-text-color); <?php endif; ?>var(--text-color-1);"></svg>
 			</a>
 		</div>
 	<?php
@@ -99,7 +98,7 @@
 				</li>
 			</ul>
 		<?php endif; ?>
-		
+
 		<div class="search-field hide">
 			<form action="/" method="get">
 			<input type="search" name="s" class="search-input"/>
@@ -110,9 +109,10 @@
 
 	</div><!-- .container -->
 		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">
-			<svg fill="#ff0000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="35px" height="35px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
+
+				<svg fill="#ff0000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="35px" height="35px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
 		</div>
 
 
-	
+
 </header>

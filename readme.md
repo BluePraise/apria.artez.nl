@@ -18,3 +18,8 @@
 - Used by: `single.php`, `page-sidebar.php`
 - Widget/Sidebar: `rp-right-sidebar`
 
+## Changelog
+2021.12
+- Fixes selected posts view in singles
+- Refactored home php. Everything is now in template php
+- Logo in mobile open now is centered correctly.

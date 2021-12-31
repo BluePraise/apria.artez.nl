@@ -242,6 +242,7 @@ main:not(.issue-content) {
 }
 header.main-header {
   zoom: 1;
+  position: relative;
   z-index: 1;
   transition: margin-top 250ms;
   margin-top: 0;
@@ -249,7 +250,7 @@ header.main-header {
 }
 header.main-header .container {
   display: grid;
-  grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 120px repeat(11, 1fr);
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
@@ -284,37 +285,19 @@ header.main-header nav.main-navigation ul li a {
   text-align: center;
 }
 
-.logo-container {
+a.sticky-logo {
   position: relative;
   grid-column: 2/3;
-}
-.logo-container a.logo-svg-cover {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-}
-
-a.sticky-logo {
   display: block;
   transition: margin-top 250ms;
   border-radius: 50px;
-  left: 0%;
-  top: 0;
   z-index: 105;
   margin-top: -50px;
-  height: 100px;
   width: 100px;
-  margin-left: 20px;
   position: relative;
 }
 .home a.sticky-logo {
   display: none;
-}
-html.fixed-logo a.sticky-logo {
-  display: block;
 }
 a.sticky-logo .apria_logo {
   border-radius: 50px;
@@ -378,15 +361,6 @@ a.sticky-logo .apria_logo {
   .logo-container {
     width: 100%;
   }
-  .logo-container a.logo-svg-cover {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100px;
-    height: 50px;
-    z-index: 9999;
-    margin-left: auto;
-  }
 
   header.main-header {
     margin-bottom: 30px;
@@ -406,17 +380,9 @@ a.sticky-logo .apria_logo {
 
   a.sticky-logo {
     left: calc(-50% + 132px);
-    right: 0;
     margin-left: auto;
   }
 
-  .fixed-logo a.sticky-logo {
-    display: block;
-    text-align: center;
-    margin: -60px 0 20px auto;
-    position: relative;
-    left: calc(-50% + 132px);
-  }
   .fixed-logo header.main-header {
     padding-bottom: 25px;
   }
@@ -450,7 +416,7 @@ a.sticky-logo .apria_logo {
   .mobile-menu-open a.sticky-logo {
     z-index: 99999;
     position: relative;
-    left: 0;
+    left: calc(-50% + 132px);
     right: 0;
     margin-left: auto;
     margin-right: 0;
@@ -627,13 +593,11 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   text-decoration: underline;
   color: var(--text-color-1);
 }
-.article__text a img img,
-.article__text .wp-block-image img {
+.article__text a img img {
   max-width: 100%;
   height: auto;
 }
-.article__text a img figcaption,
-.article__text .wp-block-image figcaption {
+.article__text a img figcaption {
   font-family: var(--font-mono);
   font-size: 13px;
   max-width: 500px;
@@ -658,7 +622,7 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   border-bottom: 1px solid;
 }
 
-.wp-block-image,
+
 .article__text a img {
   margin: 40px 0em 40px -14.5%;
 }
@@ -715,10 +679,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   width: 100%;
 }
 
-.input-wrap .form__input.has-error {
-  border-color: #ff2020;
-}
-
 .input-wrap .form__input:focus {
   border-color: #000;
 }
@@ -728,10 +688,6 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
   font: normal 12px/14px var(--font-mono);
   display: block;
   margin-top: 3px;
-}
-
-.input-wrap .form__input.has-error + .form__label {
-  color: #ff2020;
 }
 
 .input-wrap .form__input:focus + .form__label {
@@ -1301,7 +1257,7 @@ ul.home-grid li.post-item.open-call-view .post-content-wrap {
   display: none;
 }
 
-.home .logo-container .logo-svg-cover:hover,
+
 .home.logo-container .sticky-logo:hover {
   cursor: default !important;
 }
