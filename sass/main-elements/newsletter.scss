@@ -36,7 +36,7 @@
     width: 100%
 }
 
-.tnp-field-button .form__input, 
+.tnp-field-button .form__input,
 .input-wrap .form__input {
     border-bottom: 1px solid var(--text-color-1);
     width: 100%
@@ -49,11 +49,17 @@
 .input-wrap .form__input:focus {
     border-color: #000
 }
+
+.indicates-required,
 .input-wrap .form__label,
 .tnp-field-button .form__label {
     font: normal 12px/14px var(--font-mono);
     display: block;
     margin-top: 3px
+}
+
+.indicates-required {
+	margin-bottom: 30px;
 }
 
 .input-wrap .form__input.has-error+.form__label {
@@ -88,8 +94,11 @@
     padding: 4px 10px;
     text-transform: uppercase;
 }
-.tnp-field-button {
+.tnp-field-button  {
     text-align: right;
+	input[type=submit]:hover {
+		cursor: pointer;
+	}
 }
 .subscribe-form .form__submit:not(.disabled) {
     cursor: pointer;
