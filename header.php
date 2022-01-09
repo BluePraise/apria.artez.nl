@@ -68,8 +68,8 @@
 <header class="main-header <?php if(get_field('issue')): ?> issue-styling <?php endif; ?>">
 	<div class="container">
 		<div class="logo-container">
-			<a class="sticky-logo" href="http://localhost:10004">
-				<svg class="apria_logo" style="background-color: <?php if(get_field('issue')): ?> var(--issue-text-color); <?php endif; ?>var(--text-color-1);"></svg>
+			<a href="<?php echo get_bloginfo('url'); ?>" xlink:href="<?php echo get_bloginfo('url'); ?>"  class="sticky-logo">
+				<svg  class="apria_logo" style="background-color: <?php if(get_field('issue')): ?> var(--issue-text-color); <?php endif; ?>var(--text-color-1);"></svg>
 			</a>
 		</div>
 	<?php
