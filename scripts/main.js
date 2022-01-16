@@ -1,4 +1,4 @@
-
+var $=jQuery.noConflict();
 // Detect touch device
 var isTouch = 'ontouchstart' in document,
 	noTouch = !isTouch;
