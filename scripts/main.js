@@ -57,75 +57,6 @@ function validateEmail(email) {
 	return re.test(email);
 };
 
-// function initNewsletter(){
-//     $('#newsletter')
-//         .attr('novalidate', true)
-//         .each( function() {
-//             var $this = $(this),
-//                 $input = $this.find( 'input[name="ne"]'),
-//                 $noti = $input.prev(),
-//                 $submit = $this.find( 'input[type="submit"]'),
-//                 showNoti = function(txt) {
-//                     var $msg = $noti.clone();
-
-//                     $noti.before($msg);
-//                     $noti.remove();
-
-//                     $msg.text( txt ).addClass('vaporize').attr('aria-hidden', 'false');
-//                 },
-//                 success = function() {
-//                     $this
-//                         .fadeOut('slow', function() {
-//                             $this.replaceWith( '<p class="appear-nicely dynamic-msg">Thank you!</p>' );
-//                         });
-//                 };
-
-//             // Submit handler
-//             $this.submit( function(e) {
-//                 var serializedData = $this.serialize();
-
-//                 $noti = $input.prev();
-
-//                 e.preventDefault();
-
-//                 // validate
-//                 if( validateEmail( $input.val() ) ) {
-//                     var data = {};
-
-//                     // Prepare ajax data
-//                     data = {
-//                         action: 'realhero_subscribe',
-//                         nonce: ajax.ajax_nonce,
-//                         data: serializedData
-//                     }
-
-//                     // send ajax request
-//                     $.ajax({
-//                         method: "POST",
-//                         url: ajax.url,
-//                         data: data,
-//                         beforeSend: function() {
-//                             $input.prop( 'disabled', true );
-//                             $submit.val('Wait').prop( 'disabled', true );
-//                         },
-//                         success: function( data ) {
-//                             if( data.status == 'success' ) {
-//                                 success();
-//                             } else {
-//                                 $input.prop( 'disabled', false );
-//                                 $submit.val('Submit').prop( 'disabled', false );
-
-//                                 showNoti( data.msg );
-//                             }
-//                         }
-//                     });
-//                 } else {
-//                     showNoti( 'Enter valid e-mail address!' );
-//                 };
-//             });
-//         });
-// }
-
 function filter() {
 
 	var filters = [];
@@ -199,59 +130,6 @@ $(function () {
 	$('html').addClass(isTouch ? 'is-touch' : 'no-touch');
 
 	FastClick.attach(document.body);
-
-	// Rewrite WP image embeds
-	// $('.article__text img').each(function () {
-	// 	var img = $(this),
-	// 		wrap = img.closest('.wp-caption'),
-	// 		caption;
-
-	// 	if(img.closest('.rl-gallery-container').length){
-	// 		return;
-	// 	}
-
-	// 	if (wrap.length == 1) {
-	// 		// With caption
-	// 		caption = wrap.find('.wp-caption-text');
-
-	// 	} else {
-	// 		// No caption
-	// 		wrap = img.closest('.wp-block-image');
-	// 		if (wrap.length == 0) {
-	// 			wrap = img.closest('p');
-	// 		}
-	// 		caption = false;
-	// 	}
-
-	// 	var figure = $('<figure class="inline-image"></figure>').append(img);
-
-	// 	if(caption){
-	// 		$('<figcaption>' + caption.html() + '</figcaption>').appendTo(figure);
-	// 	}
-
-	// 	figure.insertAfter(wrap);
-	// 	wrap.remove();
-	// });
-
-	// // Wrap figures
-	// $('.article__text .inline-image').each(function () {
-	// 	var item = $(this),
-	// 		figure = $(
-	// 			'<figure class="inline-images inline-images--one"></figure>'
-	// 		),
-	// 		caption,
-	// 		prevItem = item.prev();
-
-	// 	if(prevItem.hasClass('inline-images')){
-	// 		prevItem.append(item);
-	// 		prevItem.removeClass('inline-images--one').addClass('inline-images--two');
-
-	// 	}else{
-
-	// 		figure.insertAfter(item);
-	// 		figure.append(item);
-	// 	}
-	// });
 
 	// Balance text and headlines
 	balanceText();
@@ -372,25 +250,6 @@ $(function () {
 				if (getBreakpoint() != 'mobile') {
 					positionColumnLabel(overlay, bodyWidth);
 				}
-
-				// Make newsletter subscribe form functional
-				// $('.form-newsletter', content).ajaxForm({
-				// 	success: function (response) {
-
-				// 		$('.js-form-message').remove();
-
-				// 		var displayMessage = $('<div class="js-form-message">' + response.message + '</div>');
-
-				// 		if(response.ok){
-				// 			$('.js-required-fields').remove();
-				// 			$('.overlay-content-container').append(displayMessage);
-
-				// 		}else{
-				// 			displayMessage.insertAfter($('.overlay-content').find('.form-submit'));
-				// 			$('.js-required-fields').find('[name="email"]').focus();
-				// 		}
-				// 	}
-				// });
 			};
 			$.get(url, processResponse);
 			return false;
@@ -413,17 +272,6 @@ $(function () {
 
 
 
-	// Header behaviour
-	// "Open" header when hovering
-	// $(document)
-	// 	.on('mouseenter', 'header', function () {
-	// 		$('html').addClass('header-open');
-	// 	})
-	// 	.on('mouseleave', 'header', function () {
-	// 		$('html').removeClass('header-open');
-	// 	});
-	// Make header fixed
-	// debugger;
 	$(window).on('scroll', function (e) {
 		e.preventDefault();
 
@@ -490,23 +338,6 @@ $(function () {
 		});
 	}
 
-	// Subscribe form
-	// if ($('.subscribe-form').length) {
-	// 	$('.subscribe-form .form__input').each(function () {
-	// 		var input = $(this),
-	// 			form = input.closest('form');
-
-	// 		input.on('focusout', function () {
-	// 			if (input.val() != '') {
-	// 				input.removeClass('has-error');
-
-	// 				if (form.find('.has-error').length == 0) {
-	// 					form.find('.form__submit').removeClass('disabled');
-	// 				}
-	// 			}
-	// 		})
-	// 	});
-	// }
 
 	$search_results = $('div.search-results').isotope({
 		// options
