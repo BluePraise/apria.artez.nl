@@ -21,8 +21,6 @@
 				<?php the_content(); ?>
 			</div>
 
-
-
 	</article>
 
 	<aside class="latest-posts latest-news">

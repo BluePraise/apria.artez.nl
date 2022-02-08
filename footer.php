@@ -1,7 +1,10 @@
 
 <?php wp_footer(); ?>
-
-<footer>
+<?php
+	$issue_id 			= get_post(get_the_ID());
+	$background_color 	= get_field('background_color', $issue_id);
+?>
+<footer style="background-color: <?= $background_color; ?>">
 	<span class="copyright-info">
 		&copy;<?php echo esc_html(date("Y") . " " . __("APRIA", 'apria')); ?>
 		<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" class="creative-commons-license">
