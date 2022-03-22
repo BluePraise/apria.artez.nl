@@ -38,24 +38,36 @@
 			border: 1px solid var(--issue-text-color);
 		}
 		/* just color */
+		.single .content-with-sidebar .bio__text p,
 		.aside-excerpt,
 		.article-separator,
+		.preview__info a,
 		h1.content-title, h2.subtitle,
 		.single .content-with-sidebar h2.subtitle,
 		.single .content-with-sidebar .latest-posts h2,
 		.single .content-with-sidebar aside .article__meta,
 		header.main-header nav.main-navigation ul li a,
+		.content-with-sidebar article,
 		.content-with-sidebar a {
 			color: var(--issue-text-color) !important;
 		}
+		.content-with-sidebar a {
+			text-decoration: underline;
+		}
 		/* just BG Color */
+		.article-preview-rule,
 		.single .content-with-sidebar aside .article-separator-large {
 			background-color: var(--issue-text-color);
 		}
+		.article__text .wp-block-separator,
 		.article__text hr {
 			color: var(--issue-bg-color);
 			background-color: var(--issue-text-color);
 			border: 1px solid var(--issue-bg-color);
+		}
+		.single .content-with-sidebar .bibliography__headline {
+			border-top: 1px solid var(--issue-text-color);
+    		border-bottom: 1px solid var(--issue-text-color);
 		}
 	</style>
 	<body <?php body_class('issue-styling'); ?>>
@@ -68,6 +80,7 @@
 <header class="main-header <?php if(get_field('issue')): ?> issue-styling <?php endif; ?>">
 	<div class="container">
 		<div class="logo-container">
+			<a class="show-desktop" href="<?php echo get_bloginfo('url'); ?>" class="logo-svg-cover"></a>
 			<a href="<?php echo get_bloginfo('url'); ?>" xlink:href="<?php echo get_bloginfo('url'); ?>"  class="sticky-logo">
 				<svg  class="apria_logo" style="background-color: <?php if(get_field('issue')): ?> var(--issue-text-color); <?php endif; ?>var(--text-color-1);"></svg>
 			</a>
@@ -101,7 +114,8 @@
 
 		<div class="search-field hide">
 			<form action="/" method="get">
-			<input type="search" name="s" class="search-input"/>
+				<input type="search" name="s" class="search-input"/>
+			</form>
 		</div>
 		<div class="mobile-menu-close-button js-mobile-menu-close-button hide-on-desktop">
 				<img src="<?= get_stylesheet_directory_uri(). '/assets/svg/icon_close_highlight.svg'; ?>">
@@ -109,8 +123,7 @@
 
 	</div><!-- .container -->
 		<div class="mobile-menu-button js-mobile-menu-button icon hide-on-desktop">
-
-				<svg fill="#ff0000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="35px" height="35px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
+			<svg fill="#ff0000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="35px" height="35px"><path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"/></svg>
 		</div>
 
 

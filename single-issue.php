@@ -113,7 +113,6 @@ foreach ($sidebar_posts as $aPost) {
 	<div class="content-with-sidebar">
 		<article class="main-column" style="background-color: <?=$backgroundcolor; ?>">
 			<div class="article__background-mobile hide-on-desktop" <?php if ($background_image): ?> style="background-image: url(<?=$background_image?>); opacity: <?=$opacity ?>" <?php endif; ?>></div>
-			<div class="content-wrap">
 				<div class="article__head">
 
 					<div class="head__top-line hide-on-desktop" style="color: <?=$color ?>">
@@ -182,7 +181,7 @@ foreach ($sidebar_posts as $aPost) {
 						<?=get_field('bibliography'); ?>
 					</div>
 				<?php endif; ?>
-			</div>
+
 		</article>
 		<?php
 	if($args) {

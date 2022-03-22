@@ -155,4 +155,6 @@ jQuery(document).ready(function ($) {
 			$('header.main-header').css("height", "81px");
 		}
 	});
+
+	$('#my_iframe p').css('color', 'black');
 });

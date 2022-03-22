@@ -9,9 +9,9 @@ $authorID = get_queried_object_id();
 ?>
 
 
-<main class="author-view">
+<main class="author-view page-view">
 	<div class="content-container">
-		<h1>Articles by: <?= get_the_author_meta(); ?></h1> 
+		<h1>Articles by: <?= get_the_author_meta(); ?></h1>
 		<?php if (get_field("biography" , $authorID)): ?>
 			<p><?php the_field("biography", $authorID, false); ?></p>
 		<?php endif; ?>
@@ -22,7 +22,7 @@ $authorID = get_queried_object_id();
 		<a href="<?php the_permalink(); ?>">
 			<p class="article__date"><?=get_the_date('d-M-Y'); ?></p>
 				<h2 class="subtitle"><?php the_title();?></h2>
-				
+
 				<?php if(has_post_thumbnail()): ?>
 					<figure>
 						<img src="<?php echo the_post_thumbnail_url(); ?>" alt="<?php the_title();?>">
@@ -33,10 +33,10 @@ $authorID = get_queried_object_id();
 				<?php else: ?>
 					<p class="article__excerpt"><?php the_excerpt(); ?></p>
 				<?php endif;?>
-			</a>	
+			</a>
 	</article>
 	<?php endwhile; endif; ?>
 	</div>
 </main>
 
-<?php get_footer(); 
+<?php get_footer();

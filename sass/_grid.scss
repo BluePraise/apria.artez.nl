@@ -35,12 +35,16 @@ main:not(.issue-content) {
 .msnry-sidebar .grid-item {
 	width: calc(50% - 16px);
 }
+
 .archive-view,
 .page-view {
 	display: grid;
 	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-gap: 16px;
-	h1, 
+	.content-container {
+		grid-column: 3 / 9;
+	}
+	h1,
 	> div.msnry-view {
 		grid-column: 3/ 13;
 	}
@@ -79,7 +83,7 @@ main:not(.issue-content) {
 	}
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
 
 	.grid-sizer, .grid-item {
 		grid-column-start: 1;
@@ -93,7 +97,7 @@ main:not(.issue-content) {
 		article,
 		aside {
 			max-width: 100%;
-		}	
+		}
 	}
 	.content-with-sidebar aside ul {
 		padding-left: 0;
