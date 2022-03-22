@@ -111,7 +111,12 @@ foreach ($sidebar_posts as $aPost) {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?=$backgroundcolor; ?>', endColorstr='<?=$backgroundcolor;?>00',GradientType=0 ); /* IE6-9 */"></div>
 	</div>
 	<div class="content-with-sidebar page-view">
-		<article class="main-column" style="background-color: <?=$backgroundcolor; ?>">
+		<?php if(get_field('wide_image')): ?>
+			<figure class="full-width-banner" data-image-url="<?php the_field('wide_image'); ?>">
+				<img class="issue-banner-image" src="<?php the_field('wide_image'); ?>" alt="<?=$issue->title ?>">
+			</figure>
+		<?php endif; ?>
+		<article class="main-column <?php if(get_field('wide_image')): ?>fix-margin-top<?php endif; ?>" style="background-color: <?=$backgroundcolor; ?>">
 			<div class="article__background-mobile hide-on-desktop" <?php if ($background_image): ?> style="background-image: url(<?=$background_image?>); opacity: <?=$opacity ?>" <?php endif; ?>></div>
 				<div class="article__head">
 
@@ -126,6 +131,7 @@ foreach ($sidebar_posts as $aPost) {
 							</span>
 						<?php endif; ?>
 					</div><!-- .head__top-line -->
+
 
 						<h1 class="article__title balance-text"><?=$issue->title ?></h1>
 						<?php if ($issue->subtitle) : ?>
@@ -230,7 +236,7 @@ foreach ($sidebar_posts as $aPost) {
 	}
 </style>
 
-	<aside class="sidebar-column affix-placeholder">
+	<aside class="sidebar-column affix-placeholder <?php if(get_field('wide_image')): ?>fix-margin-top<?php endif; ?>">
 		<div class="affix-content">
 
 			<div class="content-wrap">

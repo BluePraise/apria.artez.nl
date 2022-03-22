@@ -23,3 +23,9 @@
 - Fixes selected posts view in singles
 - Refactored home php. Everything is now in template php
 - Logo in mobile open now is centered correctly.
+2022.03.22
+- Fixed author display on author.php
+- Fixed grid on author.
+- Consolidated grid to `.page-view`
+- Refactored SCSS folders
+- Added wide image in ACF to issue page

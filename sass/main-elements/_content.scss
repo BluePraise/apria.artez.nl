@@ -143,18 +143,18 @@ h2.subtitle {
     }
 }
 
-.article__text .wp-block-image,
-.article__text a img,
-.wp-block-image,
-.wp-block-embed,
-.article__text iframe {
-    // margin: 40px 0em 40px -14.5%;
 
-}
 .wp-block-image,
 .wp-block-embed,
 .article__text a img {
     margin: 40px 0em 40px -14.5%;
+}
+// Dit staat ook in Apria Old
+.full-width-banner {
+	grid-column: 3 / 11;
+}
+.issue-content article.main-column.fix-margin-top {
+	margin-top: 0;
 }
 
 @media screen and (max-width: 768px) {

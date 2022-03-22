@@ -2528,7 +2528,7 @@ html:not(.issue-header-fixed) .issue-header {
 
 .single-issue .content-with-sidebar {
     display: grid;
-    grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 120px repeat(11, 1fr);
     grid-gap: 16px;
     max-width: 1640px;
     margin: auto;
@@ -2542,10 +2542,22 @@ html:not(.issue-header-fixed) .issue-header {
   .content-with-sidebar aside {
     grid-column: 9 / 12;
   }
+  .full-width-banner {
+	grid-column: 3 / 12;
+	margin-top: 170px;
+}
+.issue-content aside.sidebar-column.fix-margin-top,
+.issue-content article.main-column.fix-margin-top {
+	margin-top: 0;
+}
+
 
   @media (max-width: 768px) {
     .content-with-sidebar {
         display: flex !important;
         flex-direction: column;
     }
+	 .full-width-banner {
+		 margin-top: 0px;
+	 }
 }

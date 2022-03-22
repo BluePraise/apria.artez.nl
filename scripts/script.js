@@ -1,4 +1,5 @@
-jQuery( document ).ready(function($) {
+
+jQuery(document).ready(function ($) {
 	$(document).scroll(function(){
 		// console.log('test');
 		if ($(this).scrollTop() >= ($('html').offset().top + 100)) {
@@ -126,7 +127,7 @@ jQuery( document ).ready(function($) {
 	cloneSearch.insertAfter(_element);
 	// get the offset for this element
 	// find the left position + margin-left + 2px for the border.
-	var _elLeft = _element.position().left + 18;
+	var _elLeft = _element.position() + 18;
 	//find the right position of this element
 	// _elposition - width of the element
 	var _elWidth = _element.width();
@@ -155,4 +156,18 @@ jQuery( document ).ready(function($) {
 	});
 
 	$('#my_iframe p').css('color', 'black');
+
+	// a pop up for the single-issue page
+	$('.issue-banner-image').colorbox({
+		rel: 'gal',
+		photo: true,
+		href: function () {
+			var _url = $(this).attr('src');
+			console.log(_url);
+			return _url;
+		}
+	});
+
+	console.log('hello');
+
 });

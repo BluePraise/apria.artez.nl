@@ -3,30 +3,6 @@
     "title": "Article Top",
     "fields": [
         {
-            "key": "field_623a0771f4bb2",
-            "label": "Wide Image",
-            "name": "wide_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "full",
-            "library": "uploadedTo",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
             "key": "field_5cb70e310299b",
             "label": "Subtitle",
             "name": "subtitle",
@@ -126,5 +102,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1647970427
+    "modified": 1647978337
 }
