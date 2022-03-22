@@ -12,7 +12,7 @@ if($content){
 }
 
 get_header();?>
-<main class="content-with-sidebar">
+<main class="content-with-sidebar page-view">
         <article>
 			<div class="content-wrap">
 				<h1 class="content-title balance-text">

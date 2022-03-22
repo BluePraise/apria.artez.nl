@@ -28,7 +28,7 @@ get_header();
 	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
 	$footnotes = $footnotes;
 ?>
-<main class="content-with-sidebar">
+<main class="content-with-sidebar page-view">
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
@@ -126,14 +126,32 @@ get_header();
 
 				$post_args = array(
 					'post_type'              => array( 'post' ),
-					'posts_per_page'         => 8
+					'posts_per_page'         => 5,
+					'post__not_in' => array( $post->ID )
+				);
+
+				$issue_args = array(
+					'post_type'              => array( 'issue' ),
+					'posts_per_page'         => 1
 				);
 				// The Query
-				$result        = new WP_Query($post_args);
-				// The Loop
-				while($result->have_posts()): $result->the_post();
+				$query_posts   = new WP_Query( $post_args );
+				$query_issues  = new WP_Query( $issue_args );
 
-					if(get_the_tags()):
+				$result        = new WP_Query();
+
+				// start putting the contents in the new object
+				$result->posts = array_unique(array_merge( $query_posts->posts, $query_issues->posts ), SORT_REGULAR );
+
+				$result->post_count = count( $result->posts );
+				// var_dump($result);
+
+
+				// The Loop
+				for($i = 1; $result->have_posts(); $i++) :
+					$result->the_post();
+
+					if(get_the_tags()){
 						$tags = get_the_tags();
 						$article_tags = array_map(function ($aTag) {
 						return (object)[
@@ -142,7 +160,7 @@ get_header();
 							'url' => get_tag_link($aTag),
 						];
 						}, $tags);
-					endif;
+					}
 			?>
 			<li>
 				<a class="latest-post-link-wrapper" href="<?php the_permalink(); ?>">
@@ -153,6 +171,13 @@ get_header();
 					<div class="article__meta">
 						<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
 						<span class="article-separator">/</span>
+
+						<?php if($post->post_type == 'issue'):
+							echo '<span class="issue__name">';
+							echo $post->post_title;
+							echo '</span>';
+							echo '<span class="article-separator">/</span>';
+						endif; ?>
 							<span class="article__author">
 								<?php $authors = get_coauthors(get_the_ID()); ?>
 								<?php foreach($authors as $author): ?>
@@ -174,7 +199,7 @@ get_header();
 
 					</div><!-- .article__meta -->
 			</li>
-			<?php endwhile; ?>
+			<?php endfor; ?>
 
 			<?php wp_reset_postdata(); ?>
 		</ul>

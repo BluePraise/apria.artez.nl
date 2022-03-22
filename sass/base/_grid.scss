@@ -24,28 +24,33 @@ main:not(.issue-content) {
 }
 
 .msnry-view .grid-item {
-	width: calc(100%/4 - 16px);	
+	width: calc(100%/4 - 16px);
 	margin-bottom: 30px;
 }
 
 .msnry-sidebar .grid-item {
 	width: calc(50% - 16px);
 }
-.archive-view,
+
 .page-view {
 	display: grid;
-	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 120px repeat(11, 1fr);
 	grid-gap: 16px;
-	h1, 
+}
+
+.archive-view,
+.page-view {
+	h1,
 	> div.msnry-view {
 		grid-column-start: 3;
 		grid-column-end: 13;
 	}
+	.content-container {
+		grid-column: 3/10;
+		max-width: 950px;
+	}
 }
 .content-with-sidebar {
-	display: grid;
-	grid-template-columns: 120px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 16px;
 	article {
 		grid-column: 3 / 9;
 		margin-top: 0;
@@ -60,14 +65,12 @@ main:not(.issue-content) {
     margin: auto;
 }
 
-.content-container {
-	max-width: 950px;
-}
+
 @media screen and (max-width: 1100px) {
 	// .archive-view { display: flex; }
 	.archive-view,
 	.page-view {
-		h1, 
+		h1,
 		> div.msnry-view {
 			grid-column: 1/ 13;
 		}
@@ -92,7 +95,7 @@ main:not(.issue-content) {
 	}
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
 
 	.grid-sizer, .grid-item {
 		grid-column-start: 1;
@@ -106,7 +109,7 @@ main:not(.issue-content) {
 		article,
 		aside {
 			max-width: 100%;
-		}	
+		}
 	}
 	.content-with-sidebar aside ul {
 		padding-left: 0;

@@ -13,13 +13,13 @@
 			text-align: center;
 			// padding: 0 5% 10px 5%;
 			border-bottom: 1px solid var(--text-color-1);
-		}	
+		}
 	}
 
 	.footnote-anchor {
  		   cursor: pointer;
 		}
-		
+
 	h2.subtitle,
 	.latest-posts h2 {
 		@extend .subtitle;
@@ -30,7 +30,7 @@
 		margin-top: 16px;
 		margin-bottom: 16px;
 	}
-	
+
 	.issue__name,
 	a.article__tag {
 		font-family: var(--font-mono);
@@ -42,6 +42,7 @@
 		font-size: 22px;
 		border-bottom: 1px solid;
 		margin-bottom: 15px;
+    	padding: 16px 0;
 	}
 	.bio__text p {
 		font-size: 22px;
@@ -68,8 +69,8 @@
 				font-size: 20px;
 				line-height: 30px;
 			}
-		 } 
-		
+		 }
+
 	}
 	.article__footnote,
 	.article__bibliography {
@@ -87,7 +88,7 @@
 		span.footnote-up.icon {
  		   cursor: pointer;
 		}
-		
+
 	}
 
 	aside {

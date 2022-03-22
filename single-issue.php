@@ -1,7 +1,7 @@
 <?php
 get_template_part('head');
-$text = removenbsp1(get_the_content());
 
+$text = removenbsp1(get_the_content());
 $footnotes = array();
 
 $replace = function ($match) use (&$footnotes) {
@@ -15,18 +15,18 @@ $footnotes = $footnotes;
 $issue = get_post(get_the_ID());
 	if($issue){
 	$issue = (object)[
-		'ID' 			=> $issue->ID,
-		'title' 		=> get_the_title(),
-		'subtitle' 		=> get_field('subtitle', $issue->ID),
-		'date' 			=> $issue->post_date,
-		'content' 		=> apply_filters('the_content', $issue->post_content),
-		'authors' 		=> getAuthors($issue->ID),
-		'number' 		=> get_field('number'),
-		'text_color' 	=> get_field('text_color'),
-		'background_color' => get_field('background_color'),
-		'background_image' => get_field('background_image'),
-		'bibliography' 	=> get_field('bibliography'),
-		'issue_authors' => get_field('issue_authors'),
+		'ID' 				=> $issue->ID,
+		'title' 			=> get_the_title(),
+		'subtitle' 			=> get_field('subtitle', $issue->ID),
+		'date' 				=> $issue->post_date,
+		'content' 			=> apply_filters('the_content', $issue->post_content),
+		'authors' 			=> getAuthors($issue->ID),
+		'number' 			=> get_field('number'),
+		'text_color' 		=> get_field('text_color'),
+		'background_color' 	=> get_field('background_color'),
+		'background_image' 	=> get_field('background_image'),
+		'bibliography' 		=> get_field('bibliography'),
+		'issue_authors' 	=> get_field('issue_authors'),
 	];
 }
 
@@ -42,7 +42,7 @@ $sidebar_posts = array();
 foreach($related_posts as $aPost){
 	$sidebar_posts[] = extendIssuePost($aPost);
 }
-// var_dump($sidebar_posts);
+
 $allIssueAutors = array();
 foreach ($sidebar_posts as $aPost) {
 
@@ -63,6 +63,7 @@ foreach ($sidebar_posts as $aPost) {
 	$allIssueAutors = $allIssueAutors;
 	$htmlClass = 'logo-fixed';
 ?>
+
 <body <?php body_class(); ?>>
 <?php do_action('wp_body_open'); ?>
 
@@ -87,7 +88,7 @@ foreach ($sidebar_posts as $aPost) {
 		<a href="<?=get_home_url() ?>" class="logo">
 			<svg class="apria_logo" <?php if($backgroundcolor) : ?> style="background-color: <?=$backgroundcolor ?>" <?php endif; ?> ></svg>
 		</a>
-		
+
 	</div> <!-- .main-column.logo-fixed -->
 	<div class="content-wrap hide-on-mobile meta-info">
 			<div class="head__top-line hide-on-mobile" style="color: <?=$color ?>">
@@ -109,10 +110,9 @@ foreach ($sidebar_posts as $aPost) {
 		background: linear-gradient(to bottom, rgba(<?=$bg_rgb?>, 1) 0%,rgba(<?=$bg_rgb?>, 0); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?=$backgroundcolor; ?>', endColorstr='<?=$backgroundcolor;?>00',GradientType=0 ); /* IE6-9 */"></div>
 	</div>
-	<div class="content-with-sidebar">
+	<div class="content-with-sidebar page-view">
 		<article class="main-column" style="background-color: <?=$backgroundcolor; ?>">
 			<div class="article__background-mobile hide-on-desktop" <?php if ($background_image): ?> style="background-image: url(<?=$background_image?>); opacity: <?=$opacity ?>" <?php endif; ?>></div>
-			<div class="content-wrap">
 				<div class="article__head">
 
 					<div class="head__top-line hide-on-desktop" style="color: <?=$color ?>">
@@ -148,7 +148,7 @@ foreach ($sidebar_posts as $aPost) {
 					<?php echo apply_filters('the_content', $content) ; ?>
 				</div>
 
-				<?php 
+				<?php
 					$authors = getAuthors(get_the_ID());
 					if($authors):
 				?>
@@ -160,9 +160,9 @@ foreach ($sidebar_posts as $aPost) {
 						</div>
 					<?php endforeach; ?>
 				</div>
-				<?php 
+				<?php
 					endif; // end if $authors
-					if ($footnotes):  
+					if ($footnotes):
 				?>
 				<div class="article__footnotes">
 					<div class="footnotes__headline">References</div>
@@ -181,10 +181,102 @@ foreach ($sidebar_posts as $aPost) {
 						<?=get_field('bibliography'); ?>
 					</div>
 				<?php endif; ?>
-			</div>
+
 		</article>
-		<?php get_sidebar("", array("sidebar_posts"=> $sidebar_posts, "sidebar_issue" => false)); ?>
+		<?php
+	if($args) {
+		$sidebar_issue = $args["sidebar_issue"];
+		$sidebar_posts = $args["sidebar_posts"];
+	}
+	$issue = get_post(get_the_ID());
+	if($issue){
+		$issue = (object)[
+			'ID' 			=> $issue->ID,
+			'title' 		=> get_the_title(),
+			'subtitle' 		=> get_field('subtitle', $issue->ID),
+			'date' 			=> $issue->post_date,
+			'content' 		=> apply_filters('the_content', $issue->post_content),
+			'authors' 		=> getAuthors($issue->ID),
+			'number' 		=> get_field('number'),
+			'text_color' 	=> get_field('text_color'),
+			'background_color' => get_field('background_color'),
+			'background_image' => get_field('background_image'),
+			'bibliography' 	=> get_field('bibliography'),
+			'issue_authors' => get_field('issue_authors'),
+		];
+	}
+	$issue_ID = get_field('issue')->ID;
+	// get the needed variables
+	if (get_field('text_color')):
+		$issue_text_color = $issue->text_color;
+	else:
+		$issue_text_color = 'var(--text-color-2)';
+	endif;
+		$issue_bg_color = $issue->background_color;
+
+?>
+<style>
+
+	:root {
+		--issue-bg-color: <?php echo $issue_bg_color ?>;
+		--issue-text-color: <?php echo $issue_text_color ?>;
+	}
+	.preview__info {
+		color: var(--issue-text-color);
+	}
+	.article-preview-rule,
+	.single .content-with-sidebar aside .article-separator-large {
+		background-color: var(--issue-text-color);
+	}
+</style>
+
+	<aside class="sidebar-column affix-placeholder">
+		<div class="affix-content">
+
+			<div class="content-wrap">
+				<?php if($sidebar_posts): foreach ($sidebar_posts as $aPost): ?>
+				<div class="article-preview clickable-block" data-href="<?=$aPost->url; ?>">
+
+					<?php if($aPost->url): ?>
+						<a href="<?=$aPost->url; ?>" class="preview__title balance-text"><?=$aPost->title; ?></a>
+					<?php else: ?>
+							<span class="preview__title balance-text"><?=$aPost->title; ?></span>
+					<?php endif;
+
+					if ($aPost->subtitle): ?>
+						<div class="preview__subtitle balance-text"><?=$aPost->subtitle; ?></div>
+					<?php endif; ?>
+						<div class="preview__text">
+							<?=$aPost->previewtext; ?>
+						</div>
+				</div>
+				<div class="preview__info">
+					<?php if($aPost->date): ?>
+						<span class="preview__date"><?php echo date("m-d-Y", strtotime($aPost->date)); ?></span>
+					<?php endif;
+
+					if($aPost->authors) : ?>
+						<span class="preview__authors">
+							<?php foreach($aPost->authors as $aAuthor): ?>
+								<a style="color: <?php if(get_field('text_color')): get_field('text_color'); else: echo ('#000'); endif; ?>" href="<?=$aAuthor->post_url;?>"><?=$aAuthor->name; ?></a>
+							<?php endforeach; ?>
+						</span>
+					<?php endif; ?>
+				</div>
+
+
+			<hr class="article-preview-rule"></hr>
+
+		<?php
+			endforeach;
+			endif;
+		?>
+			</div>
+		</div>
+		</aside>
+
 	</div>
+
 </main>
 
-<?php get_footer('', array("color"=> $color)); ?>
+<?php get_footer();?>
