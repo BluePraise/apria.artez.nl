@@ -28,7 +28,7 @@ get_header();
 	$content = preg_replace_callback('/\[footnote (.*?)\](.*?)\[\/footnote\]/', $replace, $text);
 	$footnotes = $footnotes;
 ?>
-<main class="content-with-sidebar">
+<main class="content-with-sidebar page-view">
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
@@ -37,14 +37,14 @@ get_header();
 					<a href="<?=get_site_url().'/author/'.$aAuthor->user_nicename.'/'; ?>"><?=$aAuthor->display_name; ?></a>
 				<?php endforeach; ?>
 			</span>
-			<?php if(get_field('issue')): 
+			<?php if(get_field('issue')):
 				$article_issue = get_field('issue');?>
 				<span class="article__source">
 					Published in<br />
 					<?=$article_issue->post_title; ?>
 				</span>
 			<?php endif; ?>
-		
+
 			<?php if(get_field('doi')): ?>
 				<span class="article__issue">
 					<a href="https://doi.org/{$article->doi|trim}">
@@ -63,20 +63,20 @@ get_header();
 			<div class="tag-list">
 				<?php if($article_tags): $i = 0; ?>
 					<?php foreach($article_tags as $aTag): ?>
-						<a class="article__tag" href="<?=$aTag->url; ?>"><?=$aTag->name; ?></a> 
+						<a class="article__tag" href="<?=$aTag->url; ?>"><?=$aTag->name; ?></a>
 							<?php if(++$i !== count($article_tags)):
 								echo '<span class="article-separator">/</span>';
 							endif; ?>
 					<?php endforeach; ?>
-				
+
 				<?php endif; ?>
 			</div>
-			
+
 			<div class="article__text">
 				<?php echo apply_filters('the_content', $content) ; ?>
 			</div>
 
-		<?php 
+		<?php
 			$authors = getAuthors(get_the_ID());
 			if($authors):
 		?>
@@ -90,7 +90,7 @@ get_header();
 					</div><!-- .bio__text -->
 				</div><!-- .author-bio -->
 			<?php endforeach; ?>
-			<?php endif;  // AUTHOR  ?>	
+			<?php endif;  // AUTHOR  ?>
 
 		</div><!-- .article__bios -->
 		<?php if(get_field('bibliography')): ?>
@@ -100,10 +100,10 @@ get_header();
     			<?php echo get_field('bibliography'); ?>
 			</details>
 		</div>
-		
-		<?php endif;  // Bibliography  
-		
-		
+
+		<?php endif;  // Bibliography
+
+
 		if ($footnotes): ?>
 		<div class="article__footnotes">
 			<details>
@@ -119,10 +119,10 @@ get_header();
 		<?php endif; ?>
 
 	</article>
-	
+
 	<aside class="latest-posts">
 		<ul>
-			<?php 
+			<?php
 
 				$post_args = array(
 					'post_type'              => array( 'post' ),
@@ -150,7 +150,7 @@ get_header();
 				// The Loop
 				for($i = 1; $result->have_posts(); $i++) :
 					$result->the_post();
-					
+
 					if(get_the_tags()){
 						$tags = get_the_tags();
 						$article_tags = array_map(function ($aTag) {
@@ -171,10 +171,10 @@ get_header();
 					<div class="article__meta">
 						<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
 						<span class="article-separator">/</span>
-						
-						<?php if($post->post_type == 'issue'): 
+
+						<?php if($post->post_type == 'issue'):
 							echo '<span class="issue__name">';
-							echo $post->post_title; 
+							echo $post->post_title;
 							echo '</span>';
 							echo '<span class="article-separator">/</span>';
 						endif; ?>
@@ -185,18 +185,18 @@ get_header();
 								<?php endforeach; ?>
 							</span>
 							<span class="article-separator">/</span>
-						
+
 						<?php if($article_tags): $i = 0; ?>
 							<?php foreach($article_tags as $aTag): ?>
 								<a class="article__tag_link" href="<?=$aTag->url; ?>"><span class="article__tag_name"><?=$aTag->name; ?></span>
 									<?php if(++$i !== count($article_tags)):
 										echo '<span class="article-separator">/</span>';
 									endif; ?>
-								</a> 
+								</a>
 							<?php endforeach; endif; ?>
-						
-					
-						
+
+
+
 					</div><!-- .article__meta -->
 			</li>
 			<?php endfor; ?>

@@ -110,7 +110,7 @@ foreach ($sidebar_posts as $aPost) {
 		background: linear-gradient(to bottom, rgba(<?=$bg_rgb?>, 1) 0%,rgba(<?=$bg_rgb?>, 0); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?=$backgroundcolor; ?>', endColorstr='<?=$backgroundcolor;?>00',GradientType=0 ); /* IE6-9 */"></div>
 	</div>
-	<div class="content-with-sidebar">
+	<div class="content-with-sidebar page-view">
 		<article class="main-column" style="background-color: <?=$backgroundcolor; ?>">
 			<div class="article__background-mobile hide-on-desktop" <?php if ($background_image): ?> style="background-image: url(<?=$background_image?>); opacity: <?=$opacity ?>" <?php endif; ?>></div>
 				<div class="article__head">

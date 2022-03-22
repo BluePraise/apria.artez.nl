@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="content-with-sidebar">
+<main class="content-with-sidebar page-view">
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
