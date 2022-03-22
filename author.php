@@ -2,8 +2,7 @@
 
 get_header();
 
-global $wp_query, $wpdb;
-
+global $wp_query, $wpdb, $post;
 $authorID = get_queried_object_id();
 
 ?>
@@ -11,7 +10,7 @@ $authorID = get_queried_object_id();
 
 <main class="author-view page-view">
 	<div class="content-container">
-		<h1>Articles by: <?= get_the_author_meta(); ?></h1>
+		<h1>Articles by: <?php coauthors(); ?></h1>
 		<?php if (get_field("biography" , $authorID)): ?>
 			<p><?php the_field("biography", $authorID, false); ?></p>
 		<?php endif; ?>
