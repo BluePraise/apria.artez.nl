@@ -2464,6 +2464,8 @@ html:not(.issue-header-fixed) .issue-header {
 
 
 .single-issue .content-with-sidebar {
+	position: relative;
+	z-index: 0; /* this is because of rotating svg */
     display: grid;
     grid-template-columns: 120px repeat(11, 1fr);
     grid-gap: 16px;
