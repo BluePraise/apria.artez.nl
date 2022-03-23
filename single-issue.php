@@ -86,7 +86,7 @@ foreach ($sidebar_posts as $aPost) {
 	<div class="issue-header" style="background-color: <?=$backgroundcolor ?>">
 	<div class="main-column logo-fixed">
 		<a href="<?=get_home_url() ?>" class="logo">
-			<svg class="apria_logo" <?php if($backgroundcolor) : ?> style="background-color: <?=$backgroundcolor ?>" <?php endif; ?> ></svg>
+			<svg class="apria_logo" <?php if($backgroundcolor): ?> style="background-color: <?=$backgroundcolor ?>" <?php endif; ?> ></svg>
 		</a>
 
 	</div> <!-- .main-column.logo-fixed -->
@@ -149,6 +149,24 @@ foreach ($sidebar_posts as $aPost) {
 						<?php endforeach; ?>
 					</div> <!-- .issue__authors -->
 				<?php endif; ?>
+
+				<?php //List of Related Articles
+
+							$related_issue_article = get_field('related_issue_article'); if( $related_issue_article ): ?>
+							<ul class="issue__related_posts">
+								<?php foreach( $related_issue_article as $post ):
+
+									// Setup this post for WP functions (variable must be named $post).
+									setup_postdata($post); ?>
+									<li>
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</li>
+								<?php endforeach; ?>
+							</ul>
+							<?php
+							// Reset the global post object so that the rest of the page works correctly.
+							wp_reset_postdata(); ?>
+					<?php endif; ?>
 
 				<div class="article__text text--large">
 					<?php echo apply_filters('the_content', $content) ; ?>

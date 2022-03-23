@@ -157,6 +157,13 @@ h2.subtitle {
 	margin-top: 0;
 }
 
+.issue__related_posts li {
+	text-align: center;
+	+ li {
+		margin-top: 10px;
+	}
+}
+
 @media screen and (max-width: 768px) {
     h1.content-title {
         font-size: 40px;

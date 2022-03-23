@@ -2551,6 +2551,14 @@ html:not(.issue-header-fixed) .issue-header {
 	margin-top: 0;
 }
 
+.issue__related_posts {
+	margin-top: 40px;
+}
+.issue__related_posts li {
+  text-align: center; }
+  .issue__related_posts li + li {
+    margin-top: 10px; }
+
 
   @media (max-width: 768px) {
     .content-with-sidebar {

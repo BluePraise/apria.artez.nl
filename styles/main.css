@@ -548,6 +548,13 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
 
 .issue-content article.main-column.fix-margin-top {
   margin-top: 0; }
+.issue__related_posts {
+	margin-top: 40px;
+}
+.issue__related_posts li {
+  text-align: center; }
+  .issue__related_posts li + li {
+    margin-top: 10px; }
 
 @media screen and (max-width: 768px) {
   h1.content-title {

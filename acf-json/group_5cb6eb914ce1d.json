@@ -84,6 +84,31 @@
             "delay": 0
         },
         {
+            "key": "field_623a4a26adc84",
+            "label": "Issue Related Articles",
+            "name": "related_issue_article",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": "",
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
             "key": "field_623a4a5f59faf",
             "label": "",
             "name": "related_articles",
@@ -101,33 +126,7 @@
             "max": 0,
             "layout": "table",
             "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_623a4a26adc84",
-                    "label": "Related Issue Articles",
-                    "name": "related_issue_articles",
-                    "type": "relationship",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "filters": [
-                        "search",
-                        "post_type",
-                        "taxonomy"
-                    ],
-                    "elements": "",
-                    "min": "",
-                    "max": "",
-                    "return_format": "id"
-                }
-            ]
+            "sub_fields": []
         }
     ],
     "location": [
@@ -148,5 +147,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1647987457
+    "modified": 1648061372
 }
