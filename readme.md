@@ -29,3 +29,7 @@
 - Consolidated grid to `.page-view`
 - Refactored SCSS folders
 - Added wide image in ACF to issue page
+2022.03.23
+- Added relationship (acf) of issue-posts for editorial (single-issue)
+- Fixed an issue where links weren't clickable due a z-index problem
+

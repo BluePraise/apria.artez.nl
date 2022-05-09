@@ -2,36 +2,36 @@
 global $post_id;
 
 function theme_scripts() {
-	// styles
+		// styles
 	if(is_singular( 'issue' ) ):
     	wp_enqueue_style('apria_styles_old', get_theme_file_uri('styles/apria-old.css'), false);
-		wp_enqueue_script('apria_scripts_colorbox', get_theme_file_uri('scripts/jquery.colorbox-min.js'),'jquery-core', '', true);
 	else:
+		// wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/wp-default.css'), false);
 		wp_enqueue_style('apria_styles_main', get_theme_file_uri('styles/main.css'), false);
 	endif;
     // wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
 
 	// scripts
 	// libs
-	// wp_enqueue_script('scripts_jquery', get_theme_file_uri('scripts/jquery-latest.min.js'), '', '3.6', true);
-	wp_enqueue_script('apria_scripts_fastclick', get_theme_file_uri('scripts/fastclick.js'), 'jquery-core', '', true);
-	wp_enqueue_script('apria_scripts_sysaffix', get_theme_file_uri('scripts/jquery.sys-affix.js'), 'jquery-core', '', true);
+// 	wp_enqueue_script('scripts_jquery', get_theme_file_uri('scripts/jquery-latest.min.js'), '', '3.6', true);
+	wp_enqueue_script('apria_scripts_fastclick', get_theme_file_uri('scripts/fastclick.js'), 'scripts_jquery', '', true);
+	wp_enqueue_script('apria_scripts_sysaffix', get_theme_file_uri('scripts/jquery.sys-affix.js'), 'scripts_jquery', '', true);
 	wp_enqueue_script('apria_scripts_balancetext', get_theme_file_uri('scripts/balancetext.min.js'), '', '', true);
-	wp_enqueue_script('apria_scripts_cookie', get_theme_file_uri('scripts/jquery.cookie.min.js'),'jquery-core', '', true);
-	wp_enqueue_script('apria_scripts_masonry', get_theme_file_uri('scripts/masonry.pkgd.min.js'),'jquery-core', '', true);
-	wp_enqueue_script('apria_scripts_isotope', get_theme_file_uri('scripts/isotope.pkgd.min.js'),'jquery-core', '', true);
+	wp_enqueue_script('apria_scripts_cookie', get_theme_file_uri('scripts/jquery.cookie.min.js'),'scripts_jquery', '', true);
+	wp_enqueue_script('apria_scripts_masonry', get_theme_file_uri('scripts/masonry.pkgd.min.js'),'scripts_jquery', '', true);
+	wp_enqueue_script('apria_scripts_isotope', get_theme_file_uri('scripts/isotope.pkgd.min.js'),'scripts_jquery', '', true);
 	wp_enqueue_script('apria_scripts_planck', get_theme_file_uri('scripts/planck.min.js'), '', '',  true);
 	wp_enqueue_script('apria_scripts_d3', get_theme_file_uri('scripts/d3.min.js'), '', '', true);
 	// old code from previous developer
-	wp_enqueue_script('apria_scripts_main', get_theme_file_uri('scripts/main.js'), 'jquery-core-js', '',  true);
+	wp_enqueue_script('apria_scripts_main', get_theme_file_uri('scripts/main.js'), 'scripts_jquery', '',  true);
 	wp_localize_script('apria_scripts_main', 'ajax', array(
 		'url' => admin_url('admin-ajax.php'),
 		'ajax_nonce' => wp_create_nonce('noncy_nonce'),
 		'assets_url' => get_stylesheet_directory_uri(),
 	));
 	// Magalie Chetrit
-	wp_enqueue_script('apria_scripts_aprialogo', get_theme_file_uri('scripts/apria_logo.js'), 'jquery-core-js', '', true);
-	wp_enqueue_script('apria_new_scripts', get_theme_file_uri('scripts/script.js'), '', '0.1', true);
+	wp_enqueue_script('apria_scripts_aprialogo', get_theme_file_uri('scripts/apria_logo.js'), 'scripts_jquery', '', true);
+	wp_enqueue_script('apria_new_scripts', get_theme_file_uri('scripts/script.js'), 'apria_scripts_jquery', '0.1', true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
@@ -40,6 +40,8 @@ add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 add_image_size('preview-size', 1024, false, false);
 
 add_theme_support('post-thumbnails');
+// Add support for responsive embedded content.
+add_theme_support( 'responsive-embeds' );
 
 show_admin_bar(false);
 

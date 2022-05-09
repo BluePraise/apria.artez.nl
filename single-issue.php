@@ -189,15 +189,17 @@ foreach ($sidebar_posts as $aPost) {
 					if ($footnotes):
 				?>
 				<div class="article__footnotes">
-					<div class="footnotes__headline">References</div>
-					<?php foreach($footnotes as $aFootnote) : ?>
-						<div class="footnote">
-							<span class="footnote-up icon js-footnote-up" data-footnotetext="{$aFootnote@iteration}">↑</span>
-							<p><?=$aFootnote; ?></p>
-						</div>
-					<?php endforeach; ?>
-				</div>
-				<?php endif; // end if $footnotes ?>
+					<details>
+						<summary class="footnotes__headline">References</summary>
+						<?php foreach($footnotes as $key => $aFootnote) : ?>
+							<div class="footnote">
+								<span class="footnote-up icon js-footnote-up" data-footnotetext="<?= $key ?>">↑ <?= $key ?></span>
+								<p><?=$aFootnote; ?></p>
+							</div>
+						<?php endforeach; ?>
+						</details>
+					</div><!-- article__footnotes -->
+				<?php endif; // end if $footnotes?>
 
 				<?php if(get_field('bibliography')): ?>
 					<div class="article__bibliography">

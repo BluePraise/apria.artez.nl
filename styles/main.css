@@ -500,19 +500,10 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
     overflow: hidden;
     position: relative;
     max-width: 940px !important; }
-    .article__text .wp-block-embed__wrapper iframe {
-      border: 0;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%; }
-  .article__text a img img,
   .article__text .wp-block-image img,
   .article__text .wp-block-embed img {
     max-width: 100%;
     height: auto; }
-  .article__text a img figcaption,
   .article__text .wp-block-image figcaption,
   .article__text .wp-block-embed figcaption {
     font-family: var(--font-mono);
@@ -538,19 +529,13 @@ h2.subtitle, .single .content-with-sidebar h2.subtitle,
     font-size: 14px;
     border-bottom: 1px solid; }
 
-.wp-block-image,
-.wp-block-embed,
-.article__text a img {
-  margin: 40px 0em 40px -14.5%; }
-
 .full-width-banner {
-  grid-column: 3 / 11; }
+  margin: 0;
+  grid-column: 3 / 13; }
 
 .issue-content article.main-column.fix-margin-top {
   margin-top: 0; }
-.issue__related_posts {
-	margin-top: 40px;
-}
+
 .issue__related_posts li {
   text-align: center; }
   .issue__related_posts li + li {

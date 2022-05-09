@@ -29,6 +29,11 @@ get_header();
 	$footnotes = $footnotes;
 ?>
 <main class="content-with-sidebar page-view">
+	<?php if(get_field('wide_banner')): ?>
+		<figure class="full-width-banner" data-image-url="<?php the_field('wide_banner'); ?>">
+			<img class="issue-banner-image" src="<?php the_field('wide_banner'); ?>" alt="<?=$issue->title ?>">
+		</figure>
+	<?php endif; ?>
 	<article>
 		<header class="article-header">
 			<span class="article__date"><?=get_the_date('d-M-Y'); ?></span>
@@ -73,7 +78,8 @@ get_header();
 			</div>
 
 			<div class="article__text">
-				<?php echo apply_filters('the_content', $content) ; ?>
+				<?php
+				echo apply_filters('the_content', $content); ?>
 			</div>
 
 		<?php
@@ -110,7 +116,7 @@ get_header();
 				<summary class="footnotes__headline">References</summary>
 				<?php foreach($footnotes as $key => $aFootnote) : ?>
 					<div class="footnote">
-						<span class="footnote-up icon js-footnote-up" data-footnotetext="<?=$key ?>">↑</span>
+						<span class="footnote-up icon js-footnote-up" data-footnotetext="<?= $key ?>">↑ <?= $key ?></span>
 						<p><?=$aFootnote; ?></p>
 					</div>
 				<?php endforeach; ?>

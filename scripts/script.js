@@ -1,6 +1,6 @@
-
-jQuery(document).ready(function ($) {
-	$(document).scroll(function(){
+var $ = jQuery.noConflict();
+$(document).ready(function ($) {
+	$(document).scroll(function () {
 		// console.log('test');
 		if ($(this).scrollTop() >= ($('html').offset().top + 100)) {
 			$("html").addClass("fixed-logo");
@@ -137,7 +137,7 @@ jQuery(document).ready(function ($) {
 
 	$('.positionable').css('left', _desiredPos);
 
-	// on click show the search bar input.
+	// // on click show the search bar input.
 	_element.on('click', function (e) {
 		e.preventDefault();
 		$('.positionable').toggleClass('hide show');
@@ -154,20 +154,5 @@ jQuery(document).ready(function ($) {
 			$('header.main-header').css("height", "81px");
 		}
 	});
-
-	$('#my_iframe p').css('color', 'black');
-
-	// a pop up for the single-issue page
-	$('.issue-banner-image').colorbox({
-		rel: 'gal',
-		photo: true,
-		href: function () {
-			var _url = $(this).attr('src');
-			console.log(_url);
-			return _url;
-		}
-	});
-
-	console.log('hello');
 
 });

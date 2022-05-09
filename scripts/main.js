@@ -1,4 +1,3 @@
-var $=jQuery.noConflict();
 // Detect touch device
 var $ = jQuery.noConflict();
 var isTouch = 'ontouchstart' in document,
@@ -177,7 +176,7 @@ $(function () {
 				note = $('[data-footnotetext="' + el.data('footnoteanchor') + '"]').closest('.footnote');
 
 			if (note.length) {
-				console.log($('.article__footnotes details'));
+				// console.log($('.article__footnotes details'));
 				$('.article__footnotes details').attr("open", "");
 				position = note.offset().top - 100;
 
@@ -436,10 +435,25 @@ $(function () {
 			}
 		});
 
+
+	$('#my_iframe p').css('color', 'black');
+
+	// a pop up for the single-issue page
+	$('.issue-banner-image').colorbox({
+		rel: 'gal',
+		photo: true,
+		href: function () {
+			var _url = $(this).attr('src');
+			// console.log(_url);
+			return _url;
+		}
+	});
+
+
+
 }); // end doc ready
 
 
-// TWINE ADDITION:
 
 
 

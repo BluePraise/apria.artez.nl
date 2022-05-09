@@ -96,15 +96,14 @@ h2.subtitle {
         max-width: 940px !important;
         // min-height: 214px;
         iframe {
-            border: 0;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
+            // border: 0;
+            // height: 100%;
+            // left: 0;
+            // position: absolute;
+            // top: 0;
+            // width: 100%;
         }
     }
-    a img,
     .wp-block-image,
     .wp-block-embed {
         img {
@@ -147,11 +146,12 @@ h2.subtitle {
 .wp-block-image,
 .wp-block-embed,
 .article__text a img {
-    margin: 40px 0em 40px -14.5%;
+    // margin: 40px 0em 40px -14.5%;
 }
-// Dit staat ook in Apria Old
+// Dit staat ook in Apria Old maar deze wordt alleen geladen in single issue
 .full-width-banner {
-	grid-column: 3 / 11;
+	margin: 0;
+	grid-column: 3 / 13;
 }
 .issue-content article.main-column.fix-margin-top {
 	margin-top: 0;
