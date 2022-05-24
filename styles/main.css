@@ -163,12 +163,13 @@ main:not(.issue-content) {
   grid-column: 3/10;
   max-width: 950px; }
 
-.content-with-sidebar article {
-  grid-column: 3 / 9;
-  margin-top: 0; }
-
-.content-with-sidebar aside {
-  grid-column: 10 / 13; }
+.content-with-sidebar {
+  display: grid; }
+  .content-with-sidebar article {
+    grid-column: 3 / 9;
+    margin-top: 0; }
+  .content-with-sidebar aside {
+    grid-column: 10 / 13; }
 
 .page-template-default .page-view article {
   grid-column: 3 / 9;

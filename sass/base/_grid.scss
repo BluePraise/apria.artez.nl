@@ -51,6 +51,7 @@ main:not(.issue-content) {
 	}
 }
 .content-with-sidebar {
+	display: grid;
 	article {
 		grid-column: 3 / 9;
 		margin-top: 0;

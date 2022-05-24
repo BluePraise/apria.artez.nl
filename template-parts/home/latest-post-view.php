@@ -2,9 +2,9 @@
 	// The Query
 	$latest_args = array(
 		'post_type'         => array( 'post' ),
-		'posts_per_page'    => 10,
+		'posts_per_page'    => -1,
 		'orderby'			=> 'date',
-		'order'				=> 'ASC'
+		'order'				=> 'DESC'
 	);
 	$the_query = new WP_Query( $latest_args );
 	$issue_bg = get_field('background_image');

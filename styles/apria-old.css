@@ -653,6 +653,21 @@ footer .footer-pages .menu-items {
 	align-items: center;
 	justify-content: space-evenly;
 }
+@media (max-width: 768px) { 
+    footer {
+        display: block;
+    }
+    footer .footer-pages .menu-items {
+        flex-direction: column;
+    }
+    footer .copyright-info,
+    .footer-pages { 
+        flex:  unset;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+}
 
 .social-media {
     float: left;
@@ -2493,7 +2508,8 @@ html:not(.issue-header-fixed) .issue-header {
         height: calc(100% + 50px);
         top: -50px;
         width: 100%;
-        left: 0
+        left: 0;
+        z-index:  -1;
     }
 
     .issue-content aside.sidebar-column {
