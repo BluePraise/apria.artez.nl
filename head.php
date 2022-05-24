@@ -8,5 +8,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+	<link rel="icon" type="icon" sizes="any" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/favicon.ico">
 	<?php wp_head(); ?>
 </head>
